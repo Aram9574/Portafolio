@@ -9,7 +9,7 @@ import NoiseOverlay from '@/components/layout/NoiseOverlay'
 import TiltFX from '@/components/TiltFX'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://www.example.com'),
+  metadataBase: new URL('https://alejandrozakzuk.com'),
   title: {
     default: 'Alejandro Zakzuk, MD | AI in Healthcare',
     template: '%s · Alejandro Zakzuk, MD'
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'es_ES',
-    url: 'https://www.example.com',
+    url: 'https://alejandrozakzuk.com',
     siteName: 'Alejandro Zakzuk, MD | AI in Healthcare',
     title: 'De la bata al código. IA aplicada a la Sanidad.',
     description: 'Portafolio y proyectos de IA clínica, interoperabilidad y ERP.',
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     description: 'Portafolio y proyectos de IA clínica, interoperabilidad y ERP.',
     images: ['/og-default.png']
   },
-  authors: [{ name: 'Alejandro Zakzuk, MD', url: 'https://www.example.com' }],
+  authors: [{ name: 'Alejandro Zakzuk, MD', url: 'https://alejandrozakzuk.com' }],
   category: 'technology'
 }
 

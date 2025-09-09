@@ -3,7 +3,9 @@ import { useEffect } from 'react'
 
 export default function TiltFX() {
   useEffect(() => {
+    // Respeta usuarios con menor movimiento y evita activar en pantallas táctiles
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
+    if (window.matchMedia('(pointer: coarse)').matches) return
     const els = Array.from(document.querySelectorAll<HTMLElement>([
       '[data-tilt]',
       '.btn-primary',
