@@ -1,177 +1,179 @@
-import { Hero } from '@/components/Hero'
-import Link from 'next/link'
-import { Cpu, Activity, Database } from 'lucide-react'
+import Section from '@/components/ui/Section';
+import { Card } from '@/components/ui/Card';
+import Metric from '@/components/ui/Metric';
+import Testimonial from '@/components/ui/Testimonial';
+import ProjectCard from '@/components/sections/ProjectCard';
+import { projects } from '@/lib/data/projects';
+import { services } from '@/lib/data/services';
+import { publications } from '@/lib/data/publications';
+import { testimonials } from '@/lib/data/testimonials';
+import { Network, Settings, HeartPulse, Server, Activity, Brain } from 'lucide-react';
 
 export default function HomePage() {
+  const destacados = projects.slice(0,3);
   return (
-    <div>
-      <Hero />
+    <>
+      <section id="home" className="pt-32 pb-24 text-center">
+        <div className="container mx-auto px-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6">
+            De la bata al código. <span className="text-emerald-400">IA aplicada a la Sanidad.</span>
+          </h1>
+          <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8">
+            Médico e innovador en salud digital. Transformo datos clínicos en decisiones que mejoran la atención, optimizan procesos hospitalarios y conectan la clínica con la tecnología.
+          </p>
+          <div className="flex justify-center gap-4 mb-10">
+            <a href="/contacto" className="px-6 py-3 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition">
+              Hablemos
+            </a>
+            <a href="#proyectos" className="px-6 py-3 rounded-lg border border-emerald-400/50 text-emerald-400 hover:border-emerald-400 transition">
+              Ver proyectos
+            </a>
+          </div>
+          <div className="flex justify-center flex-wrap gap-2 text-sm mt-6">
+            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full border border-white/10 bg-white/5">
+              <Network className="w-4 h-4 text-emerald-400" />
+              HL7/FHIR
+            </span>
+            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full border border-white/10 bg-white/5">
+              <Settings className="w-4 h-4 text-emerald-400" />
+              MLOps
+            </span>
+            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full border border-white/10 bg-white/5">
+              <HeartPulse className="w-4 h-4 text-emerald-400" />
+              Medicina Preventiva
+            </span>
+            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full border border-white/10 bg-white/5">
+              <Server className="w-4 h-4 text-emerald-400" />
+              Cloud & Datos Clínicos
+            </span>
+          </div>
+        </div>
+      </section>
 
-      {/* About / Quién soy */}
-      <section id="about" className="py-16 md:py-20" data-aos="fade-up">
-        <div className="container">
-          <div className="flex flex-col md:flex-row items-center gap-10">
-            <div className="w-full md:w-1/3 flex justify-center" data-aos="fade-right">
-              <div className="w-56 h-56 md:w-64 md:h-64 rounded-full p-1" style={{ background: 'linear-gradient(135deg, var(--primary), var(--accent))' }}>
-                <div className="w-full h-full rounded-full overflow-hidden" style={{ background: 'var(--surface)' }}>
-                    <img src="https://picsum.photos/seed/aram/640/640" alt="Alejandro Zakzuk, MD" className="w-full h-full object-cover" />
-                </div>
-              </div>
+      <section id="about" className="py-20">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-3xl font-bold mb-6">Un perfil clínico con visión tecnológica</h2>
+          <p className="text-gray-300 max-w-3xl mx-auto mb-12">
+            Soy médico con especialización en Inteligencia Artificial aplicada a la Sanidad. Mi experiencia combina el conocimiento clínico con la analítica avanzada de datos para diseñar soluciones de impacto en hospitales, sistemas de salud y entornos de salud digital
+          </p>
+
+          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
+            <div className="rounded-xl border border-white/10 bg-white/5 p-6">
+              <div className="text-2xl font-bold text-emerald-400 mb-2">+10</div>
+              <p className="text-sm text-gray-300">Modelos ML prototipados</p>
             </div>
-            <div className="w-full md:w-2/3">
-              <h2 className="text-3xl font-semibold mb-4">Quién soy</h2>
-              <p className="text-muted mb-6 text-lg leading-relaxed" data-aos="fade-up" data-aos-delay="120">
-                Médico con especialización en IA para la Sanidad. Formación en Integración del Conocimiento Médico y Resolución de Problemas Clínicos; profundización en Medicina Familiar y Preventiva. Enfoque práctico: llevar modelos y automatizaciones a problemas reales (triaje, riesgo, adherencia, gestión de camas, registros), con base en datos, interoperabilidad y seguridad.
-              </p>
-              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4" data-aos="fade-up" data-aos-delay="220">
-                <div className="p-4 rounded-lg" style={{ background: 'var(--bg)' }}>
-                  <h3 className="text-primary text-2xl font-semibold">+10</h3>
-                  <p className="text-muted text-sm">modelos ML prototipados</p>
-                </div>
-                <div className="p-4 rounded-lg" style={{ background: 'var(--bg)' }}>
-                  <h3 className="text-primary text-2xl font-semibold">HL7/FHIR</h3>
-                  <p className="text-muted text-sm">en ERP geriátrico</p>
-                </div>
-                <div className="p-4 rounded-lg" style={{ background: 'var(--bg)' }}>
-                  <h3 className="text-primary text-2xl font-semibold">+5</h3>
-                  <p className="text-muted text-sm">publicaciones en IA clínica</p>
-                </div>
-              </div>
+            <div className="rounded-xl border border-white/10 bg-white/5 p-6">
+              <div className="text-2xl font-bold text-emerald-400 mb-2">HL7/FHIR</div>
+              <p className="text-sm text-gray-300">Integración en ERP Sanitario</p>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/5 p-6">
+              <div className="text-2xl font-bold text-emerald-400 mb-2">+5</div>
+              <p className="text-sm text-gray-300">Aportes en IA clínica</p>
+            </div>
+            <div className="rounded-xl border border-white/10 bg-white/5 p-6">
+              <div className="text-2xl font-bold text-emerald-400 mb-2">-38%</div>
+              <p className="text-sm text-gray-300">Tiempo de registro en piloto</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Projects grid (3 featured) */}
-      <section id="proyectos" className="py-16 md:py-20">
-        <div className="container">
-          <h2 className="text-3xl font-semibold mb-10 text-center" data-aos="fade-up">Proyectos destacados</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="card p-6" data-aos="fade-up">
-                <div className="mb-4">
-                  <div className="w-full h-48 rounded-lg overflow-hidden mb-4">
-                    <img src="https://picsum.photos/seed/ml1/800/480" alt="Clasificación de cáncer de mama" className="w-full h-full object-cover" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">Clasificación de cáncer de mama</h3>
-                  <p className="text-muted text-sm mb-4">Modelo baseline con regresión logística. Matriz de confusión y métricas por clase; próximos pasos: calibración, re-muestreo y modelos no lineales.</p>
-                  <ul className="flex flex-wrap gap-2 mb-4">
-                    {['Python','scikit-learn','Matplotlib'].map(s => (
-                      <li key={s} className="chip flex items-center gap-2">
-                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden>
-                          <path stroke="currentColor" d="M12 2v20M2 12h20"/>
-                        </svg>
-                        {s}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link href="/proyectos/cancer-mama-ml" className="text-primary text-sm font-medium inline-flex items-center">Leer caso <span className="ml-1">→</span></Link>
-                </div>
-              </div>
-            <div className="card p-6" data-aos="fade-up" data-aos-delay="120">
-                <div className="mb-4">
-                  <div className="w-full h-48 rounded-lg overflow-hidden mb-4">
-                    <img src="https://picsum.photos/seed/med2/800/480" alt="Riesgo cardiovascular" className="w-full h-full object-cover" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">Riesgo cardiovascular a 10 años</h3>
-                  <p className="text-muted text-sm mb-4">Preprocesamiento, imputación, normalización, selección de características y evaluación. En exploración: balanceo de clases, umbrales y XGBoost.</p>
-                  <ul className="flex flex-wrap gap-2 mb-4">
-                    {['Python','scikit-learn','Pandas'].map(s => (
-                      <li key={s} className="chip flex items-center gap-2">
-                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden>
-                          <path stroke="currentColor" d="M12 2v20M2 12h20"/>
-                        </svg>
-                        {s}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link href="/proyectos/riesgo-cardiovascular" className="text-primary text-sm font-medium inline-flex items-center">Leer caso <span className="ml-1">→</span></Link>
-                </div>
-              </div>
-            <div className="card p-6" data-aos="fade-up" data-aos-delay="220">
-                <div className="mb-4">
-                  <div className="w-full h-48 rounded-lg overflow-hidden mb-4">
-                    <img src="https://picsum.photos/seed/erp3/800/480" alt="GeriCare ERP" className="w-full h-full object-cover" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">GeriCare ERP (Django/DRF)</h3>
-                  <p className="text-muted text-sm mb-4">MVP para residencias: pacientes, medicación, valoraciones (Morse), inventario, reportes CSV; diseño pensando en RGPD e interoperabilidad.</p>
-                  <ul className="flex flex-wrap gap-2 mb-4">
-                    {['Django','DRF','PostgreSQL','Bootstrap'].map(s => (
-                      <li key={s} className="chip flex items-center gap-2">
-                        <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden>
-                          <path stroke="currentColor" d="M12 2v20M2 12h20"/>
-                        </svg>
-                        {s}
-                      </li>
-                    ))}
-                  </ul>
-                  <Link href="/proyectos/gericare-erp" className="text-primary text-sm font-medium inline-flex items-center">Leer caso <span className="ml-1">→</span></Link>
-                </div>
-              </div>
+      <Section id="propuesta-valor">
+        <h2 id="propuesta" className="scroll-mt-24 text-3xl font-bold mb-8 text-center">¿Por qué colaborar conmigo?</h2>
+        <div className="grid gap-8 md:grid-cols-3">
+          <div className="rounded-xl border border-white/10 bg-white/5 p-6 hover:border-emerald-400/40 transition">
+            <Activity className="w-8 h-8 text-emerald-400 mb-4" />
+            <h3 className="font-semibold text-lg mb-2">Del dato al impacto clínico</h3>
+            <p className="text-sm text-gray-300">Transformo información médica en soluciones accionables que reducen tiempos, errores y costes.</p>
           </div>
-          <div className="mt-12 text-center" data-aos="fade-up" data-aos-delay="320">
-            <Link href="/proyectos" className="inline-flex items-center px-5 py-3 rounded-xl border border-teal-400 text-teal-300 font-semibold hover:bg-white/5 transition">Ver todos los proyectos <span className="ml-2">→</span></Link>
+
+          <div className="rounded-xl border border-white/10 bg-white/5 p-6 hover:border-emerald-400/40 transition">
+            <Network className="w-8 h-8 text-emerald-400 mb-4" />
+            <h3 className="font-semibold text-lg mb-2">Interoperabilidad real, no teórica</h3>
+            <p className="text-sm text-gray-300">Experiencia aplicando HL7/FHIR en entornos hospitalarios y residenciales, con métricas de mejora en eficiencia.</p>
+          </div>
+
+          <div className="rounded-xl border border-white/10 bg-white/5 p-6 hover:border-emerald-400/40 transition">
+            <Brain className="w-8 h-8 text-emerald-400 mb-4" />
+            <h3 className="font-semibold text-lg mb-2">Modelos validados con rigor médico</h3>
+            <p className="text-sm text-gray-300">Prototipos de IA con métricas claras (AUC, sensibilidad, especificidad) para decisiones de confianza.</p>
           </div>
         </div>
-      </section>
+      </Section>
 
-      {/* Services */}
-      <section id="skills" className="py-16 md:py-20">
-        <div className="container">
-          <h2 className="text-3xl font-semibold mb-10 text-center" data-aos="fade-up">Servicios</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="card p-8 text-center" data-aos="fade-up">
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[rgba(0,194,168,0.1)] flex items-center justify-center text-primary">
-                  <Cpu className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Consultoría en IA clínica</h3>
-                <p className="text-muted text-sm">Problema → hipótesis de datos → PoC. Identificación de oportunidades para aplicar IA en procesos clínicos.</p>
-              </div>
-              <div className="card p-8 text-center" data-aos="fade-up" data-aos-delay="120">
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[rgba(0,194,168,0.1)] flex items-center justify-center text-primary">
-                  <Activity className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Prototipado ML</h3>
-                <p className="text-muted text-sm">Pipeline, métricas, explicabilidad básica. Desarrollo de modelos predictivos para problemas clínicos específicos.</p>
-              </div>
-              <div className="card p-8 text-center" data-aos="fade-up" data-aos-delay="220">
-                <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-[rgba(0,194,168,0.1)] flex items-center justify-center text-primary">
-                  <Database className="w-8 h-8" />
-                </div>
-                <h3 className="text-xl font-semibold mb-3">Interoperabilidad HL7/FHIR</h3>
-                <p className="text-muted text-sm">Mapas de datos, endpoints, validaciones mínimas. Implementación de estándares para intercambio de información clínica.</p>
-              </div>
-          </div>
+      <Section id="proyectos" title="Proyectos destacados" subtitle="Casos reales con problema → solución → impacto.">
+        <div className="grid md:grid-cols-3 gap-6">
+          {destacados.map(p => (
+            <ProjectCard key={p.slug}
+              title={p.title} context={p.context} solution={p.solution} impact={p.impact}
+              tags={p.tags} cover={p.cover} href={`/proyectos/${p.slug}`} />
+          ))}
         </div>
-      </section>
+        <div className="mt-8">
+          <a href="/proyectos" className="text-emerald-400 hover:underline">Ver todos los proyectos →</a>
+        </div>
+      </Section>
 
-      {/* Tech stack */}
-      <section id="experience" className="py-16 md:py-20" data-aos="fade-up">
-        <div className="container">
-          <h2 className="text-3xl font-semibold mb-10 text-center">Stack técnico</h2>
-          <ul className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
-            {['Python','SQL','Pandas','scikit-learn','Django','DRF','Bootstrap','Azure','Git/GitHub','HL7/FHIR','Notion','Streamlit'].map(s => (
-              <li key={s} className="chip flex items-center gap-2">
-                <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" aria-hidden>
-                  <path stroke="currentColor" d="M12 2v20M2 12h20"/>
-                </svg>
-                {s}
-              </li>
+      <Section id="servicios" title="Servicios" subtitle="De idea a resultado medible.">
+        <div className="grid md:grid-cols-3 gap-6">
+          {services.map(s => (
+            <Card key={s.id}>
+              <h3 className="text-lg font-semibold mb-1">{s.title}</h3>
+              <p className="text-sm text-muted-foreground mb-3">{s.summary}</p>
+              <ul className="text-sm list-disc ml-5">
+                {s.deliverables.slice(0,4).map(d => <li key={d}>{d}</li>)}
+              </ul>
+              <p className="text-xs text-muted-foreground mt-3">Duración: {s.duration} · {s.priceRange}</p>
+            </Card>
+          ))}
+        </div>
+        <div className="mt-6">
+          <a href="/contacto#agenda" className="inline-block px-5 py-2 rounded-full border border-white/10">Agenda 15’</a>
+        </div>
+      </Section>
+
+      
+
+      <Section id="publicaciones" title="Publicaciones y divulgación">
+        <div className="grid md:grid-cols-3 gap-6">
+          {publications.slice(0,3).map(p => (
+            <Card key={p.id}>
+              <div className="text-lg font-semibold">{p.title}</div>
+              <div className="text-xs text-muted-foreground mt-1">{p.type} · {p.venue} · {p.year}</div>
+              {Array.isArray(p.tags) && (
+                <div className="mt-2 flex flex-wrap gap-2 text-xs text-muted-foreground">
+                  {p.tags.map((t:string) => (
+                    <span key={t} className="px-2 py-1 rounded-full bg-white/5 border border-white/10">{t}</span>
+                  ))}
+                </div>
+              )}
+              <a href={p.link} className="mt-3 inline-block text-emerald-400 hover:underline">Ver →</a>
+            </Card>
+          ))}
+        </div>
+        <div className="mt-8">
+          <a href="/publicaciones" className="text-emerald-400 hover:underline">Ver todas →</a>
+        </div>
+      </Section>
+
+      {testimonials && testimonials.length >= 2 && (
+        <Section id="testimonios" title="Testimonios">
+          <div className="grid md:grid-cols-3 gap-6">
+            {testimonials.slice(0,3).map(t => (
+              <Testimonial key={t.name} quote={t.quote} name={t.name} role={t.role} />
             ))}
-          </ul>
-        </div>
-      </section>
+          </div>
+        </Section>
+      )}
 
-      {/* CTA */}
-      <section id="contact" className="py-16 md:py-20 bg-[linear-gradient(135deg,rgba(0,194,168,0.1),rgba(111,125,255,0.1))]" data-aos="fade-up">
-        <div className="container text-center max-w-3xl">
-          <h2 className="text-3xl font-semibold mb-4">¿Colaboramos?</h2>
-          <p className="text-muted text-lg mb-8">Cuéntame tu reto clínico o de datos.</p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contacto" className="btn-primary">Escríbeme</Link>
-              <Link href="/contacto" className="inline-flex items-center px-5 py-3 rounded-xl border border-teal-400 text-teal-300 font-semibold hover:bg-white/5 transition">Agenda 15'</Link>
-            </div>
+      
+
+      <Section id="cta" title="¿Colaboramos?" subtitle="Cuéntame tu reto clínico o de datos.">
+        <div className="flex gap-3">
+          <a href="/contacto" className="px-5 py-2 rounded-full bg-emerald-500/90 text-black font-medium">Escríbeme</a>
+          <a href="/cv/Alejandro-Zakzuk-CV.pdf" download className="px-5 py-2 rounded-full border border-white/10">Descargar CV</a>
         </div>
-      </section>
-    </div>
-  )
+      </Section>
+    </>
+  );
 }

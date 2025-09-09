@@ -29,7 +29,7 @@ export function ProjectCard({ href, title, subtitle, bullets, stack }: Props) {
         ))}
       </ul>
       <div className="mt-6">
-        <Link href={href} className="inline-flex items-center px-4 py-2 rounded-xl border border-teal-400 text-teal-300 font-semibold hover:bg-white/5 transition text-sm">Leer caso</Link>
+        <a href={href} className="inline-flex items-center px-4 py-2 rounded-xl border border-teal-400 text-teal-300 font-semibold hover:bg-white/5 transition text-sm">Leer caso</a>
       </div>
     </div>
   )

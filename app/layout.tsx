@@ -4,6 +4,9 @@ import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { CookieBanner } from '@/components/CookieBanner'
 import { AOSProvider } from '@/components/AOSProvider'
+import BackgroundSpotlight from '@/components/layout/BackgroundSpotlight'
+import NoiseOverlay from '@/components/layout/NoiseOverlay'
+import TiltFX from '@/components/TiltFX'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.example.com'),
@@ -35,8 +38,11 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" data-theme="dark">
-      <body className="min-h-screen flex flex-col">
+      <body className="relative min-h-screen antialiased flex flex-col">
         <AOSProvider />
+        <TiltFX />
+        <BackgroundSpotlight />
+        <NoiseOverlay />
         <Navbar />
         <main className="flex-1 pt-16">{children}</main>
         <Footer />

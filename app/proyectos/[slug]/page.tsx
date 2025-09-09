@@ -1,3 +1,6 @@
+import Section from '@/components/ui/Section'
+import Image from 'next/image'
+import { Card } from '@/components/ui/Card'
 import { projects } from '@/lib/data/projects'
 import { notFound } from 'next/navigation'
 
@@ -14,47 +17,58 @@ export default function ProjectDetailPage({ params }: Props) {
   if (!project) return notFound()
 
   return (
-    <div className="container py-12">
-      <header>
-        <h1 className="section-title">{project.title}</h1>
-        <p className="mt-2 text-muted max-w-3xl">{project.subtitle}</p>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {project.stack.map((s) => <span key={s} className="chip">{s}</span>)}
+    <>
+      <Section id="project-hero">
+        <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">{project.title}</h1>
+        <div className="mt-3 flex flex-wrap gap-2 text-xs text-muted-foreground">
+          {project.tags.map((s) => <span key={s} className="px-2 py-1 rounded-full bg-white/5 border border-white/10">{s}</span>)}
         </div>
-      </header>
+        {project.cover && (
+          <div className="mt-6 relative w-full aspect-[16/9] rounded-xl overflow-hidden">
+            <Image src={project.cover} alt={project.title} fill className="object-cover" />
+          </div>
+        )}
+      </Section>
 
-      <section className="mt-8 grid md:grid-cols-3 gap-8">
-        <div className="md:col-span-2 space-y-6">
-          <div className="card p-6">
-            <h2 className="text-white font-semibold">Contexto clínico y objetivo</h2>
-            <p className="mt-2 text-sm text-muted">Descripción breve del problema, población y objetivo del proyecto.</p>
+      <Section id="detalle" className="pt-0">
+        <div className="grid md:grid-cols-3 gap-6">
+          <div className="md:col-span-2 space-y-6">
+            <Card>
+              <h2 className="text-white font-semibold mb-1">Problema</h2>
+              <p className="text-sm text-muted-foreground">{project.context}</p>
+            </Card>
+            <Card>
+              <h2 className="text-white font-semibold mb-1">Solución</h2>
+              <p className="text-sm text-muted-foreground">{project.solution}</p>
+            </Card>
+            <Card>
+              <h2 className="text-white font-semibold mb-1">Resultado</h2>
+              <p className="text-sm text-muted-foreground">{project.impact}</p>
+            </Card>
+            <Card>
+              <h2 className="text-white font-semibold mb-1">Lecciones</h2>
+              <p className="text-sm text-muted-foreground">Iteraciones, riesgos y aprendizajes clave.</p>
+            </Card>
+            <Card>
+              <h2 className="text-white font-semibold mb-1">Próximos pasos</h2>
+              <p className="text-sm text-muted-foreground">Extensiones y roadmap sugerido.</p>
+            </Card>
           </div>
-          <div className="card p-6">
-            <h2 className="text-white font-semibold">Metodología</h2>
-            <ol className="mt-2 text-sm text-muted list-decimal list-inside space-y-1">
-              <li>Preprocesamiento y EDA</li>
-              <li>Modelado y validación</li>
-              <li>Evaluación y próximos pasos</li>
-            </ol>
-          </div>
-          <div className="card p-6">
-            <h2 className="text-white font-semibold">Resultados</h2>
-            <p className="mt-2 text-sm text-muted">Métricas clave y visualizaciones (AUC, sensibilidad, especificidad, matriz de confusión).</p>
-          </div>
-          <div className="card p-6">
-            <h2 className="text-white font-semibold">Lecciones y roadmap</h2>
-            <p className="mt-2 text-sm text-muted">Aspectos a mejorar y siguientes iteraciones.</p>
-          </div>
+          <aside className="space-y-6">
+            <Card>
+              <h3 className="text-white font-semibold">¿Quieres algo similar?</h3>
+              <p className="mt-2 text-sm text-muted-foreground">Escríbeme para explorar un piloto adaptado a tu centro.</p>
+              <a href="/contacto" className="mt-4 inline-flex px-4 py-2 rounded-lg border border-white/10">Contactar</a>
+              {project.links?.repo && (
+                <a href={project.links.repo} target="_blank" rel="noreferrer" className="mt-2 inline-block text-emerald-400 text-sm hover:underline">Repositorio →</a>
+              )}
+              {project.links?.demo && (
+                <a href={project.links.demo} target="_blank" rel="noreferrer" className="mt-1 inline-block text-emerald-400 text-sm hover:underline">Demo →</a>
+              )}
+            </Card>
+          </aside>
         </div>
-        <aside className="space-y-6">
-          <div className="card p-6">
-            <h3 className="text-white font-semibold">¿Quieres algo similar?</h3>
-            <p className="mt-2 text-sm text-muted">Escríbeme para explorar un piloto adaptado a tu centro.</p>
-            <a href="/contacto" className="btn-primary mt-4 inline-flex">Contactar</a>
-          </div>
-        </aside>
-      </section>
-    </div>
+      </Section>
+    </>
   )
 }
-
