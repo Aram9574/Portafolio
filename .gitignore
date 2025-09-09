@@ -32,3 +32,6 @@ dist/
 .cache/
 .parcel-cache/
 
+# Lockfiles (standardize on Yarn)
+package-lock.json
+pnpm-lock.yaml

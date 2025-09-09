@@ -17,7 +17,7 @@ Guía rápida para publicar y verificar la web en producción.
 2) Alternativa (servidor propio)
 
 - Node 18+ instalado.
-- `npm ci && npm run build && npm run start` detrás de un proxy (Nginx/Caddy) con TLS.
+- `yarn install --immutable && yarn build && yarn start` detrás de un proxy (Nginx/Caddy) con TLS.
 - Exporta las mismas variables de entorno del punto anterior.
 
 3) Post‑deploy checklist
@@ -48,7 +48,6 @@ Guía rápida para publicar y verificar la web en producción.
 
 5) Troubleshooting
 
-- Build local: `rm -rf .next && npm ci && npm run build`.
+- Build local: `rm -rf .next && yarn install --immutable && yarn build`.
 - Variables: comprueba que existen en el entorno de Vercel (Production/Preview).
 - Resend: si falla, revisa remitente verificado y logs en el panel de Resend.
-
