@@ -1,7 +1,6 @@
 export const metadata = { title: 'Sobre mí' }
 
 import Section from '@/components/ui/Section'
-import Image from 'next/image'
 import { Card } from '@/components/ui/Card'
 import { Globe, Code, Database, Layout, MessageSquare, Shield, Network, Brain, FileText, TrendingDown } from 'lucide-react'
 import EducationSection from '@/components/sections/EducationSection'
@@ -16,7 +15,7 @@ export default function SobreMiPage() {
           <div className="w-full md:col-span-1 flex justify-center md:justify-start" data-aos="fade-right">
             <div className="w-[21rem] h-[21rem] md:w-96 md:h-96 rounded-full p-1 bg-gradient-to-br from-primary to-accent">
               <div className="w-full h-full rounded-full bg-surface overflow-hidden">
-                <Image src="/images/profile.jpg" alt="Alejandro Zakzuk" priority fill sizes="(min-width: 768px) 24rem, 21rem" className="object-cover" />
+                <img src="/images/profile.png" alt="Alejandro Zakzuk" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>

@@ -109,7 +109,16 @@ export function ContactForm() {
           {errors.mensaje && <div id="err-mensaje" className="mt-1 text-xs text-red-300">{errors.mensaje}</div>}
         </label>
         <label className="flex items-center gap-2 text-xs text-muted">
-          <input name="privacidad" type="checkbox" onChange={(e)=> setErrors(prev=>({ ...prev, privacidad: e.currentTarget.checked ? '' : 'Debes aceptar la política de privacidad.' }))} />
+          <input
+            name="privacidad"
+            type="checkbox"
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+              setErrors(prev => ({
+                ...prev,
+                privacidad: e.target.checked ? '' : 'Debes aceptar la política de privacidad.'
+              }))
+            }
+          />
           <span>
             Acepto el tratamiento de mis datos según la
             {' '}<a className="underline hover:text-white" href="/legal/privacidad" target="_blank" rel="noreferrer">política de privacidad</a>.
