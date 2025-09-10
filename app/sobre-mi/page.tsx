@@ -2,7 +2,7 @@ export const metadata = { title: 'Sobre mí' }
 
 import Section from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
-import { Globe, Code, Database, Layout, MessageSquare, Shield, Network, Brain, FileText, TrendingDown } from 'lucide-react'
+import { Globe, Code, Database, Layout, MessageSquare, Shield } from 'lucide-react'
 import EducationSection from '@/components/sections/EducationSection'
 import SkillsGrid from '@/components/sections/SkillsGrid'
 
@@ -35,38 +35,7 @@ export default function SobreMiPage() {
         </div>
       </Section>
 
-      {/* Sobre (resumen clínico-tecnológico) */}
-      <section id="about" className="py-20">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold mb-6">Un perfil clínico con visión tecnológica</h2>
-          <p className="text-gray-300 max-w-3xl mx-auto mb-12">
-            Soy médico especializado en Inteligencia Artificial aplicada a la sanidad. Mi experiencia integra el conocimiento clínico con la analítica avanzada de datos para diseñar soluciones que generan valor para pacientes, profesionales, cuidadores y entornos de salud digital.
-          </p>
-
-          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
-            <div className="rounded-xl border border-white/10 bg-white/5 p-6 hover:border-emerald-400/40 transition">
-              <Brain className="w-6 h-6 text-emerald-400 mx-auto mb-3" />
-              <div className="text-2xl font-bold text-emerald-400 mb-2">+10</div>
-              <p className="text-sm text-gray-300">Modelos diseñados para problemas clínicos reales</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/5 p-6 hover:border-emerald-400/40 transition">
-              <Network className="w-6 h-6 text-emerald-400 mx-auto mb-3" />
-              <div className="text-xl font-bold text-emerald-400 mb-2">HL7/FHIR</div>
-              <p className="text-sm text-gray-300">Integración aplicada en ERP</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/5 p-6 hover:border-emerald-400/40 transition">
-              <FileText className="w-6 h-6 text-emerald-400 mx-auto mb-3" />
-              <div className="text-2xl font-bold text-emerald-400 mb-2">+5</div>
-              <p className="text-sm text-gray-300">Aportes en IA clínica</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/5 p-6 hover:border-emerald-400/40 transition">
-              <TrendingDown className="w-6 h-6 text-emerald-400 mx-auto mb-3" />
-              <div className="text-2xl font-bold text-emerald-400 mb-2">-38%</div>
-              <p className="text-sm text-gray-300">Menos tiempo de registro en MVP real</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      
 
 
 
