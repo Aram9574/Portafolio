@@ -7,7 +7,7 @@ import { projects } from '@/lib/data/projects';
 import { services } from '@/lib/data/services';
 import { publications } from '@/lib/data/publications';
 import { testimonials } from '@/lib/data/testimonials';
-import { Network, Settings, HeartPulse, Server, Activity, Brain } from 'lucide-react';
+import { Network, Settings, HeartPulse, Server, Activity, Brain, FileText, TrendingDown } from 'lucide-react';
 
 export default function HomePage() {
   const destacados = projects.slice(0,3);
@@ -50,29 +50,34 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Sobre (resumen clínico-tecnológico) */}
       <section id="about" className="py-20">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Un perfil clínico con visión tecnológica</h2>
           <p className="text-gray-300 max-w-3xl mx-auto mb-12">
-            Soy médico con especialización en Inteligencia Artificial aplicada a la Sanidad. Mi experiencia combina el conocimiento clínico con la analítica avanzada de datos para diseñar soluciones de impacto en hospitales, sistemas de salud y entornos de salud digital
+            Soy médico especializado en Inteligencia Artificial aplicada a la sanidad. Mi experiencia integra el conocimiento clínico con la analítica avanzada de datos para diseñar soluciones que generan valor para pacientes, profesionales, cuidadores y entornos de salud digital.
           </p>
 
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
-            <div className="rounded-xl border border-white/10 bg-white/5 p-6">
+            <div className="rounded-xl border border-white/10 bg-white/5 p-6 hover:border-emerald-400/40 transition">
+              <Brain className="w-6 h-6 text-emerald-400 mx-auto mb-3" />
               <div className="text-2xl font-bold text-emerald-400 mb-2">+10</div>
-              <p className="text-sm text-gray-300">Modelos ML prototipados</p>
+              <p className="text-sm text-gray-300">Modelos diseñados para problemas clínicos reales</p>
             </div>
-            <div className="rounded-xl border border-white/10 bg-white/5 p-6">
-              <div className="text-2xl font-bold text-emerald-400 mb-2">HL7/FHIR</div>
-              <p className="text-sm text-gray-300">Integración en ERP Sanitario</p>
+            <div className="rounded-xl border border-white/10 bg-white/5 p-6 hover:border-emerald-400/40 transition">
+              <Network className="w-6 h-6 text-emerald-400 mx-auto mb-3" />
+              <div className="text-xl font-bold text-emerald-400 mb-2">HL7/FHIR</div>
+              <p className="text-sm text-gray-300">Integración aplicada en ERP</p>
             </div>
-            <div className="rounded-xl border border-white/10 bg-white/5 p-6">
+            <div className="rounded-xl border border-white/10 bg-white/5 p-6 hover:border-emerald-400/40 transition">
+              <FileText className="w-6 h-6 text-emerald-400 mx-auto mb-3" />
               <div className="text-2xl font-bold text-emerald-400 mb-2">+5</div>
               <p className="text-sm text-gray-300">Aportes en IA clínica</p>
             </div>
-            <div className="rounded-xl border border-white/10 bg-white/5 p-6">
+            <div className="rounded-xl border border-white/10 bg-white/5 p-6 hover:border-emerald-400/40 transition">
+              <TrendingDown className="w-6 h-6 text-emerald-400 mx-auto mb-3" />
               <div className="text-2xl font-bold text-emerald-400 mb-2">-38%</div>
-              <p className="text-sm text-gray-300">Tiempo de registro en piloto</p>
+              <p className="text-sm text-gray-300">Menos tiempo de registro en MVP real</p>
             </div>
           </div>
         </div>

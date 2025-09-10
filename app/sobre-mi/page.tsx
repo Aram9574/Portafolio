@@ -22,11 +22,11 @@ export default function SobreMiPage() {
           <div className="md:col-span-2" data-aos="fade-left">
             <h1 className="text-4xl md:text-5xl font-semibold mb-6">Sobre mí</h1>
             <p className="text-muted md:text-lg leading-relaxed">
-              Soy Alejandro Zakzuk, médico con vocación clínica y visión tecnológica. Desde el inicio de mi carrera comprendí que la medicina por sí sola no basta para enfrentar los grandes retos de los sistemas de salud, como la saturación hospitalaria, la falta de interoperabilidad y el desperdicio de datos que podrían mejorar la atención y salvar vidas.
+              Soy Alejandro Zakzuk, médico con vocación clínica y visión tecnológica. Desde el inicio de mi carrera comprendí que la medicina, por sí sola, no basta para enfrentar los grandes retos de los sistemas de salud, como la saturación hospitalaria, la falta de interoperabilidad y el desperdicio de datos que podrían mejorar la atención y salvar vidas.
               <br /><br />
-              Mi respuesta a ese desafío fue especializarme en inteligencia artificial aplicada a la salud, uniendo la rigurosidad médica con la fuerza de la ciencia de datos. Esta doble mirada, clínica y tecnológica, me permite transformar la complejidad de los flujos hospitalarios en modelos predictivos, plataformas digitales e iniciativas de interoperabilidad que generan valor real para pacientes, profesionales y gestores. He trabajado en proyectos que abarcan desde la predicción de ocupación hospitalaria hasta el desarrollo de un sistema de gestión para residencias de mayores basado en estándares internacionales.
+              Mi respuesta a ese desafío ha sido especializarme en inteligencia artificial aplicada a la salud, uniendo la rigurosidad médica con el poder de la ciencia de datos. Esta doble mirada, tanto clínica como tecnológica, me permite transformar la complejidad de los flujos hospitalarios en modelos predictivos, plataformas digitales e iniciativas de interoperabilidad que generan valor real para pacientes, profesionales y gestores. He participado en proyectos que abarcan desde la predicción de la ocupación hospitalaria hasta el desarrollo de un sistema de gestión para residencias de mayores, basado en estándares internacionales.
               <br /><br />
-              Mi propósito es ser un puente entre la medicina y la tecnología. Aspiro a liderar proyectos que impulsen la innovación en salud digital con visión estratégica, ética y centrada en el paciente. Creo en un futuro donde la inteligencia artificial no sustituya al profesional, sino que amplifique su capacidad de decisión y haga posible una atención más humana, precisa y cercana.
+              Mi propósito es ser un puente entre la medicina y la tecnología. Aspiro a liderar proyectos que impulsen la innovación en salud digital con una visión estratégica, ética y centrada en el paciente. Creo en un futuro en el que la inteligencia artificial no sustituya al profesional, sino que amplifique su capacidad de decisión y haga posible una atención más humana, precisa y cercana.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a href="/contacto" className="px-5 py-2 rounded-lg border border-white/10">Contactar</a>
@@ -40,7 +40,7 @@ export default function SobreMiPage() {
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Un perfil clínico con visión tecnológica</h2>
           <p className="text-gray-300 max-w-3xl mx-auto mb-12">
-            Soy médico con especialización en Inteligencia Artificial aplicada a la Sanidad. Mi experiencia combina el conocimiento clínico con la analítica avanzada de datos para diseñar soluciones de impacto en hospitales, residencias y entornos de salud digital.
+            Soy médico especializado en Inteligencia Artificial aplicada a la sanidad. Mi experiencia integra el conocimiento clínico con la analítica avanzada de datos para diseñar soluciones que generan valor para pacientes, profesionales, cuidadores y entornos de salud digital.
           </p>
 
           <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
