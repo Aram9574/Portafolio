@@ -6,6 +6,21 @@ export function ContactForm() {
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [message, setMessage] = useState<string>('')
   const statusRef = useRef<HTMLDivElement>(null)
+  const siteKey = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY
+
+  // Cargar reCAPTCHA v3 solo si hay clave pública configurada
+  useEffect(() => {
+    if (!siteKey) return
+    if (typeof window === 'undefined') return
+    const id = 'recaptcha-v3'
+    if (document.getElementById(id)) return
+    const s = document.createElement('script')
+    s.id = id
+    s.async = true
+    s.defer = true
+    s.src = `https://www.google.com/recaptcha/api.js?render=${encodeURIComponent(siteKey)}`
+    document.head.appendChild(s)
+  }, [siteKey])
 
   function validate(form: HTMLFormElement) {
     const data = Object.fromEntries(new FormData(form).entries()) as Record<string, string>
@@ -37,10 +52,20 @@ export function ContactForm() {
     }
     setState('sending')
     try {
+      // Ejecutar reCAPTCHA v3 si está disponible
+      let recaptchaToken: string | undefined
+      if (siteKey && typeof window !== 'undefined' && (window as any).grecaptcha) {
+        try {
+          await new Promise<void>((resolve) => (window as any).grecaptcha.ready(() => resolve()))
+          recaptchaToken = await (window as any).grecaptcha.execute(siteKey, { action: 'contact' })
+        } catch {
+          // Si falla reCAPTCHA, continuamos con honeypot y rate limit
+        }
+      }
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data)
+        body: JSON.stringify({ ...data, recaptchaToken })
       })
       const json = await res.json().catch(() => ({}))
       if (!res.ok || json?.ok === false) {
@@ -125,6 +150,17 @@ export function ContactForm() {
           </span>
         </label>
         {errors.privacidad && <div className="-mt-2 text-xs text-red-300">{errors.privacidad}</div>}
+        {/* Consentimiento opcional de comunicaciones (no requerido) */}
+        <label className="flex items-center gap-2 text-xs text-muted">
+          <input
+            name="consentimiento"
+            type="checkbox"
+            defaultChecked={process.env.NEXT_PUBLIC_DEFAULT_MARKETING_CONSENT === 'true'}
+          />
+          <span>
+            Quiero recibir recursos y novedades puntuales por email (opcional).
+          </span>
+        </label>
         <button disabled={state==='sending'} className="inline-flex items-center px-5 py-3 rounded-xl bg-teal-500 text-slate-900 font-semibold shadow hover:bg-teal-400 transition disabled:opacity-60">
           {state==='idle' && 'Enviar'}
           {state==='sending' && 'Enviando…'}

@@ -9,7 +9,7 @@ declare global {
 
 export async function POST(req: Request) {
   try {
-    const { nombre, email, mensaje, website } = await req.json()
+    const { nombre, email, mensaje, website, recaptchaToken, consentimiento } = await req.json()
     if (!nombre || !email || !mensaje) {
       return NextResponse.json({ ok: false, error: 'Datos incompletos' }, { status: 400 })
     }
@@ -31,6 +31,30 @@ export async function POST(req: Request) {
       )
     }
     globalThis.__contact_last__.set(ip, now)
+
+    // Verificación reCAPTCHA v3 si hay secreto configurado
+    if (process.env.RECAPTCHA_SECRET) {
+      try {
+        if (!recaptchaToken) {
+          return NextResponse.json({ ok: false, error: 'Verificación reCAPTCHA requerida' }, { status: 400 })
+        }
+        const params = new URLSearchParams()
+        params.set('secret', process.env.RECAPTCHA_SECRET)
+        params.set('response', recaptchaToken)
+        // params.set('remoteip', ip) // opcional
+        const verify = await fetch('https://www.google.com/recaptcha/api/siteverify', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: params.toString(),
+        })
+        const result = await verify.json().catch(() => ({} as any))
+        if (!result?.success || (typeof result?.score === 'number' && result.score < 0.5)) {
+          return NextResponse.json({ ok: false, error: 'Verificación reCAPTCHA fallida' }, { status: 400 })
+        }
+      } catch {
+        return NextResponse.json({ ok: false, error: 'No se pudo validar reCAPTCHA' }, { status: 400 })
+      }
+    }
     // Enviar email usando la API de Resend (sin dependencias adicionales)
     const apiKey = process.env.RESEND_API_KEY
     const to = process.env.CONTACT_TO
@@ -44,12 +68,13 @@ export async function POST(req: Request) {
     }
 
     const subject = `Nuevo mensaje del portafolio: ${nombre}`
-    const text = `Nombre: ${nombre}\nEmail: ${email}\n\n${mensaje}`
+    const text = `Nombre: ${nombre}\nEmail: ${email}\nConsentimiento: ${consentimiento ? 'Sí' : 'No'}\n\n${mensaje}`
     const html = `
       <div style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height:1.6; color:#0f172a">
         <h2 style="margin:0 0 12px">Nuevo mensaje del portafolio</h2>
         <p style="margin:0 0 8px"><strong>Nombre:</strong> ${nombre}</p>
         <p style="margin:0 0 8px"><strong>Email:</strong> ${email}</p>
+        <p style="margin:0 0 8px"><strong>Consentimiento:</strong> ${consentimiento ? 'Sí' : 'No'}</p>
         <pre style="white-space:pre-wrap; background:#f1f5f9; padding:12px; border-radius:8px; margin-top:12px">${mensaje}</pre>
       </div>
     `

@@ -100,7 +100,7 @@ export default function SobreMiPage() {
 
       {/* Lenguas y valores */}
       <Section id="lenguas-valores">
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-40">
           <div data-aos="fade-right">
             <h2 className="scroll-mt-24 text-3xl font-bold mb-6">Lenguas</h2>
             <div className="space-y-4">

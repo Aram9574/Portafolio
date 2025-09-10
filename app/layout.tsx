@@ -55,7 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               name: 'Alejandro Zakzuk, MD',
               jobTitle: 'AI in Healthcare',
               address: { '@type': 'PostalAddress', addressLocality: 'Madrid', addressCountry: 'ES' },
-              url: 'https://www.example.com',
+              url: 'https://alejandrozakzuk.com',
               sameAs: ['https://www.linkedin.com/in/azakzuk-md', 'https://github.com/azakzuk']
             })
           }}

@@ -29,7 +29,7 @@ export function CookieBanner() {
     <div className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2">
       <div className="card max-w-xl p-4 text-sm text-muted">
         <p>
-          Usamos cookies analíticas respetuosas con la privacidad (desactivadas por defecto). Puedes aceptar para habilitarlas. Más info en{' '}
+          Usamos cookies técnicas necesarias y, opcionalmente, analítica anónima (desactivada por defecto). Puedes aceptar para habilitarla. Más info en{' '}
           <a className="underline hover:text-white" href="/cookies.html">Cookies</a>.
         </p>
         <div className="mt-3 flex gap-3">
@@ -46,4 +46,3 @@ export function CookieBanner() {
     </div>
   )
 }
-
