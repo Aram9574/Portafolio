@@ -6,9 +6,9 @@ export const projects: Project[] = [
   {
     slug: 'erp-geriatrico-fhir',
     title: 'ERP Sanitario',
-    context: 'Plataforma para centros de salud: pacientes, medicación, fisioterapia, evaluaciones y mas.',
+    context: 'Plataforma para centros de salud: pacientes, medicación, fisioterapia, evaluaciones y más.',
     solution: 'Django + DRF, integración HL7/FHIR para interoperabilidad, PostgreSQL, despliegue en Render.',
-    impact: 'Reducción de tiempos de registro en 38% y menor error de medicación (near-miss) en 22%.',
+    impact: 'Reducción de tiempos de registro en 38% y menor error de medicación (incidentes de medicación evitados (near miss)) en 22%.',
     tags: ['HL7/FHIR','Django','DRF','PostgreSQL','Bootstrap'],
     cover: '/images/projects/erp-geriatrico-fhir.jpg',
     links: { repo: 'https://github.com/Aram9574' }

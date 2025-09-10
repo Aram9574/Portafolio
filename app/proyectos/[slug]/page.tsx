@@ -58,9 +58,9 @@ export default function ProjectDetailPage({ params }: Props) {
             <Card>
               <h3 className="text-white font-semibold">¿Quieres algo similar?</h3>
               <p className="mt-2 text-sm text-muted-foreground">Escríbeme para explorar un piloto adaptado a tu centro.</p>
-              <a href="/contacto" className="mt-4 inline-flex px-4 py-2 rounded-lg border border-white/10">Contactar</a>
+              <a href="/contacto" className="btn-primary mt-4 inline-flex">Contactar</a>
               {project.links?.repo && (
-                <a href={project.links.repo} target="_blank" rel="noreferrer" className="mt-2 inline-block text-emerald-400 text-sm hover:underline">Repositorio →</a>
+                <a href={project.links.repo} target="_blank" rel="noreferrer" className="btn-outline mt-2 inline-flex">Repositorio</a>
               )}
               {project.links?.demo && (
                 <a href={project.links.demo} target="_blank" rel="noreferrer" className="mt-1 inline-block text-emerald-400 text-sm hover:underline">Demo →</a>

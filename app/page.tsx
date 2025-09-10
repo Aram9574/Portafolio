@@ -44,7 +44,7 @@ export default function HomePage() {
             </span>
             <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full border border-white/10 bg-white/5">
               <Server className="w-4 h-4 text-emerald-400" />
-              Cloud & Datos Clínicos
+              Cloud y datos clínicos
             </span>
           </div>
         </div>
