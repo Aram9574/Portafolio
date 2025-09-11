@@ -21,7 +21,7 @@ export const projects: Project[] = [
     impact: 'AUC 0.79 en validación; informe con umbral clínico y matriz de confusión.',
     tags: ['Scikit-learn','Pandas','Modelado clínico'],
     cover: '/images/projects/framingham.jpg',
-    links: { repo: 'https://github.com/Aram9574' }
+    links: { repo: 'https://github.com/Aram9574/Modelos_IA/blob/main/Riesgo_Cardiovascular_RandomForest-2.ipynb' }
   },
   {
     slug: 'bcancer-logistic-regression',
@@ -31,7 +31,7 @@ export const projects: Project[] = [
     impact: 'F1 0.91 global; recomendaciones para mejorar sensibilidad en la clase riesgo.',
     tags: ['Logistic Regression','Python','ML Ops básico'],
     cover: '/images/projects/breast-cancer.jpg',
-    links: { repo: 'https://github.com/Aram9574' }
+    links: { repo: 'https://github.com/Aram9574/Modelos_IA/blob/main/Regresión%20Logística%20Cancer%20de%20mama.ipynb' }
   },
   {
     slug: 'prediccion-readmisiones',
