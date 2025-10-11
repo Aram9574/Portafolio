@@ -34,7 +34,7 @@ export default function PublicationDetailPage({ params }: Props) {
           </section>
           <section id="cta" className="card p-6 mt-6 text-center">
             <p className="text-sm text-muted">¿Te interesa este tema? Conectemos en LinkedIn.</p>
-            <a href="https://www.linkedin.com/in/azakzuk-md" target="_blank" rel="noreferrer" className="btn-primary mt-4 inline-flex">Conectar en LinkedIn</a>
+            <a href="https://www.linkedin.com/in/alejandrozakzuk-ia-salud-digital/" target="_blank" rel="noreferrer" className="btn-primary mt-4 inline-flex">Conectar en LinkedIn</a>
           </section>
         </article>
       </div>

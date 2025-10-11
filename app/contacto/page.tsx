@@ -27,7 +27,7 @@ export default function ContactoPage() {
                 <Linkedin className="w-4 h-4 text-emerald-400" />
                 <span>
                   <span className="sr-only">LinkedIn: </span>
-                  <a className="hover:text-white" href="https://www.linkedin.com/in/azakzuk-md" target="_blank" rel="noreferrer">/in/azakzuk-md</a>
+                  <a className="hover:text-white" href="https://www.linkedin.com/in/alejandrozakzuk-ia-salud-digital/" target="_blank" rel="noreferrer">/in/alejandrozakzuk-ia-salud-digital/</a>
                 </span>
               </li>
               <li className="flex items-center gap-3">

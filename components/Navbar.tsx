@@ -34,7 +34,7 @@ export function Navbar() {
             <Github className="w-5 h-5" />
           </a>
           <a
-            href="https://www.linkedin.com/in/azakzuk-md"
+            href="https://www.linkedin.com/in/alejandrozakzuk-ia-salud-digital/"
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
@@ -77,7 +77,7 @@ export function Navbar() {
               <a href="https://github.com/Aram9574" target="_blank" rel="noreferrer" aria-label="GitHub" className="text-muted hover:text-white">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="https://www.linkedin.com/in/azakzuk-md" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-muted hover:text-white">
+              <a href="https://www.linkedin.com/in/alejandrozakzuk-ia-salud-digital/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-muted hover:text-white">
                 <Linkedin className="w-5 h-5" />
               </a>
               <a href="https://www.youtube.com/@MedIA_ES_1" target="_blank" rel="noreferrer" aria-label="YouTube" className="text-muted hover:text-white">
