@@ -176,7 +176,7 @@ export default function HomePage() {
       <Section id="cta" title="¿Colaboramos?" subtitle="Cuéntame tu reto clínico o de datos.">
         <div className="flex gap-3">
           <a href="/contacto" className="px-5 py-2 rounded-full bg-emerald-500/90 text-black font-medium">Escríbeme</a>
-          <a href="/cv/Alejandro-Zakzuk-CV.pdf" download className="px-5 py-2 rounded-full border border-white/10">Descargar CV</a>
+          <a href="/cv/CV_Alejandro_Zakzuk_2026.pdf" download className="px-5 py-2 rounded-full border border-white/10">Descargar CV</a>
         </div>
       </Section>
     </>
