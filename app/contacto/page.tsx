@@ -41,7 +41,7 @@ export default function ContactoPage() {
                 <Github className="w-4 h-4 text-emerald-400" />
                 <span>
                   <span className="sr-only">GitHub: </span>
-                  <a className="hover:text-white" href="https://github.com/azakzuk" target="_blank" rel="noreferrer">@azakzuk</a>
+                  <a className="hover:text-white" href="https://github.com/Aram9574" target="_blank" rel="noreferrer">@Aram9574</a>
                 </span>
               </li>
             </ul>
