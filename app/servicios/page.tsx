@@ -3,7 +3,7 @@ import { Card } from '@/components/ui/Card'
 import FAQItem from '@/components/ui/FAQItem'
 import { services } from '@/lib/data/services'
 
-export const metadata = { title: 'Servicios' }
+export const metadata = { title: 'Servicios', robots: 'noindex, nofollow' }
 
 export default function ServiciosPage() {
   return (
