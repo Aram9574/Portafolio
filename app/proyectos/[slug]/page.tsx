@@ -10,6 +10,15 @@ export function generateStaticParams() {
   return projects.map(p => ({ slug: p.slug }))
 }
 
+export async function generateMetadata({ params }: Props) {
+  const project = projects.find(p => p.slug === params.slug)
+  if (!project) return {}
+  return {
+    title: project.title,
+    description: project.description || project.context
+  }
+}
+
 export const dynamicParams = false
 
 export default function ProjectDetailPage({ params }: Props) {
@@ -45,14 +54,30 @@ export default function ProjectDetailPage({ params }: Props) {
               <h2 className="text-white font-semibold mb-1">Resultado</h2>
               <p className="text-sm text-muted-foreground">{project.impact}</p>
             </Card>
-            <Card>
-              <h2 className="text-white font-semibold mb-1">Lecciones</h2>
-              <p className="text-sm text-muted-foreground">Iteraciones, riesgos y aprendizajes clave.</p>
-            </Card>
-            <Card>
-              <h2 className="text-white font-semibold mb-1">Próximos pasos</h2>
-              <p className="text-sm text-muted-foreground">Extensiones y roadmap sugerido.</p>
-            </Card>
+            {project.regulatory && (
+              <Card>
+                <h2 className="text-white font-semibold mb-1">Marco regulatorio</h2>
+                <p className="text-sm text-muted-foreground">{project.regulatory}</p>
+              </Card>
+            )}
+            {project.conclusion && (
+              <Card>
+                <h2 className="text-white font-semibold mb-1">Conclusión</h2>
+                <p className="text-sm text-muted-foreground">{project.conclusion}</p>
+              </Card>
+            )}
+            {project.lessons && (
+              <Card>
+                <h2 className="text-white font-semibold mb-1">Lecciones</h2>
+                <p className="text-sm text-muted-foreground">{project.lessons}</p>
+              </Card>
+            )}
+            {project.nextSteps && (
+              <Card>
+                <h3 className="text-white font-semibold mb-1">Próximos pasos</h3>
+                <p className="text-sm text-muted-foreground">{project.nextSteps}</p>
+              </Card>
+            )}
           </div>
           <aside className="space-y-6">
             <Card>
@@ -60,10 +85,17 @@ export default function ProjectDetailPage({ params }: Props) {
               <p className="mt-2 text-sm text-muted-foreground">Escríbeme para explorar un piloto adaptado a tu centro.</p>
               <a href="/contacto" className="btn-primary mt-4 inline-flex">Contactar</a>
               {project.links?.repo && (
-                <a href={project.links.repo} target="_blank" rel="noreferrer" className="btn-outline mt-2 inline-flex">Repositorio</a>
+                <a href={project.links.repo} target="_blank" rel="noreferrer" className="btn-outline mt-2 inline-flex w-full justify-center">Repositorio GitHub</a>
               )}
               {project.links?.demo && (
-                <a href={project.links.demo} target="_blank" rel="noreferrer" className="mt-1 inline-block text-emerald-400 text-sm hover:underline">Demo →</a>
+                <a 
+                  href={project.links.demo} 
+                  target="_blank" 
+                  rel="noreferrer" 
+                  className="mt-3 inline-flex w-full justify-center px-4 py-2 rounded-lg bg-emerald-500 text-black font-semibold hover:bg-emerald-400 transition text-sm"
+                >
+                  {project.links.demo.includes('huggingface.co') ? 'Ver demo en Hugging Face' : 'Ver demo en vivo'}
+                </a>
               )}
             </Card>
           </aside>
