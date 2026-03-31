@@ -7,7 +7,7 @@ import { Mail, MapPin, Linkedin, Youtube, Github } from 'lucide-react'
 export default function ContactoPage() {
   return (
     <>
-      <Section id="contacto" title="Contacto" subtitle="Cuéntame tu reto clínico u operativo.">
+      <Section id="contacto" title="Contacto" subtitle="¿Hablamos de una oportunidad?">
         <div className="grid md:grid-cols-2 gap-8">
           <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
             <h2 className="text-white font-semibold">Datos directos</h2>
