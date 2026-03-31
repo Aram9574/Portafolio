@@ -6,6 +6,7 @@ import { CookieBanner } from '@/components/CookieBanner'
 import { AOSProvider } from '@/components/AOSProvider'
 import BackgroundSpotlight from '@/components/layout/BackgroundSpotlight'
 import NoiseOverlay from '@/components/layout/NoiseOverlay'
+import { SOCIAL } from '@/lib/site'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://alejandrozakzuk.com'),
@@ -56,7 +57,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               jobTitle: 'AI in Healthcare',
               address: { '@type': 'PostalAddress', addressLocality: 'Madrid', addressCountry: 'ES' },
               url: 'https://alejandrozakzuk.com',
-              sameAs: ['https://www.linkedin.com/in/alejandrozakzuk-ia-salud-digital/', 'https://github.com/Aram9574']
+              sameAs: [SOCIAL.linkedin, SOCIAL.github]
             })
           }}
         />

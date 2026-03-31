@@ -2,6 +2,7 @@
 import Link from 'next/link'
 import { Github, Linkedin, Youtube, Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
+import { SOCIAL } from '@/lib/site'
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
@@ -25,7 +26,7 @@ export function Navbar() {
         </nav>
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="https://github.com/Aram9574"
+            href={SOCIAL.github}
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
@@ -34,7 +35,7 @@ export function Navbar() {
             <Github className="w-5 h-5" />
           </a>
           <a
-            href="https://www.linkedin.com/in/alejandrozakzuk-ia-salud-digital/"
+            href={SOCIAL.linkedin}
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
@@ -43,7 +44,7 @@ export function Navbar() {
             <Linkedin className="w-5 h-5" />
           </a>
           <a
-            href="https://www.youtube.com/@MedIA_ES_1"
+            href={SOCIAL.youtube}
             target="_blank"
             rel="noreferrer"
             aria-label="YouTube"
@@ -74,13 +75,13 @@ export function Navbar() {
               <Link href="/contacto" className="px-3 py-2 rounded-lg hover:bg-white/5" onClick={() => setOpen(false)}>Contacto</Link>
             </nav>
             <div className="mt-3 flex items-center gap-4 px-3">
-              <a href="https://github.com/Aram9574" target="_blank" rel="noreferrer" aria-label="GitHub" className="text-muted hover:text-white">
+              <a href={SOCIAL.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="text-muted hover:text-white">
                 <Github className="w-5 h-5" />
               </a>
-              <a href="https://www.linkedin.com/in/alejandrozakzuk-ia-salud-digital/" target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-muted hover:text-white">
+              <a href={SOCIAL.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-muted hover:text-white">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href="https://www.youtube.com/@MedIA_ES_1" target="_blank" rel="noreferrer" aria-label="YouTube" className="text-muted hover:text-white">
+              <a href={SOCIAL.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="text-muted hover:text-white">
                 <Youtube className="w-5 h-5" />
               </a>
             </div>

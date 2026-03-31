@@ -108,7 +108,7 @@ export default function HomePage() {
         <div className="grid md:grid-cols-3 gap-6">
           {destacados.map(p => (
             <ProjectCard key={p.slug}
-              title={p.title} context={p.context} solution={p.solution} impact={p.impact}
+              title={p.title} description={p.shortDescription}
               tags={p.tags} cover={p.cover} href={`/proyectos/${p.slug}`} />
           ))}
         </div>
@@ -164,8 +164,8 @@ export default function HomePage() {
 
       {testimonials && testimonials.length >= 2 && (
         <Section id="testimonios" title="Testimonios">
-          <div className="grid md:grid-cols-3 gap-6">
-            {testimonials.slice(0,3).map(t => (
+          <div className="grid md:grid-cols-2 gap-6">
+            {testimonials.slice(0,2).map(t => (
               <Testimonial key={t.name} quote={t.quote} name={t.name} role={t.role} />
             ))}
           </div>
@@ -174,10 +174,10 @@ export default function HomePage() {
 
       
 
-      <Section id="cta" title="¿Quieres hablar sobre una oportunidad?" subtitle="">
+      <Section id="cta" title="¿Hablamos de una oportunidad?" subtitle="">
         <div className="flex gap-3">
-          <a href="/contacto" className="px-5 py-2 rounded-full bg-emerald-500/90 text-black font-medium">Escríbeme</a>
-          <a href="/cv/CV_Alejandro_Zakzuk_2026.pdf" download className="px-5 py-2 rounded-full border border-white/10">Descargar CV</a>
+          <a href="/contacto" className="px-6 py-3 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition">Contactar</a>
+          <a href="/cv/CV_Alejandro_Zakzuk_2026.pdf" download className="px-6 py-3 rounded-lg border border-emerald-400/50 text-emerald-400 hover:border-emerald-400 transition">Descargar CV</a>
         </div>
       </Section>
     </>

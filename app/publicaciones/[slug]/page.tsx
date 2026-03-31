@@ -1,5 +1,6 @@
 import { publications } from '@/lib/data/publications'
 import { notFound } from 'next/navigation'
+import { SOCIAL } from '@/lib/site'
 
 type Props = { params: { slug: string } }
 
@@ -33,8 +34,8 @@ export default function PublicationDetailPage({ params }: Props) {
             <p className="text-sm text-muted">Contenido del artículo. Placeholder.</p>
           </section>
           <section id="cta" className="card p-6 mt-6 text-center">
-            <p className="text-sm text-muted">¿Te interesa este tema? Conectemos en LinkedIn.</p>
-            <a href="https://www.linkedin.com/in/alejandrozakzuk-ia-salud-digital/" target="_blank" rel="noreferrer" className="btn-primary mt-4 inline-flex">Conectar en LinkedIn</a>
+            <p className="text-sm text-muted">¿Te interesa este tema? Sígueme en LinkedIn.</p>
+            <a href={SOCIAL.linkedin} target="_blank" rel="noreferrer" className="btn-primary mt-4 inline-flex">Seguir en LinkedIn</a>
           </section>
         </article>
       </div>

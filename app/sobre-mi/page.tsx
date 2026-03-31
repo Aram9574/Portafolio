@@ -1,4 +1,7 @@
-export const metadata = { title: 'Sobre mí' }
+export const metadata = { 
+  title: 'Sobre mí — Alejandro Zakzuk | Médico & Clinical AI',
+  description: 'Médico con formación en IA aplicada a salud (CEMP) y Salud Digital (Universidad Europea). Experiencia clínica real combinada con ML, NLP y estándares FHIR/HL7.'
+}
 
 import Section from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
@@ -157,12 +160,12 @@ export default function SobreMiPage() {
       {/* CTA al final */}
       <Section id="cta">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">¿Quieres hablar sobre una oportunidad?</h2>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">¿Hablamos de una oportunidad?</h2>
           <p className="text-muted-foreground mb-8">Estaré encantado de conocer tu equipo y cómo puedo aportar valor.</p>
         </div>
         <div className="flex gap-3 justify-center">
-          <a href="/contacto" className="px-5 py-2 rounded-full bg-emerald-500/90 text-black font-medium">Contactar</a>
-          <a href="/cv/CV_Alejandro_Zakzuk_2026.pdf" download className="px-5 py-2 rounded-full border border-white/10">Descargar CV</a>
+          <a href="/contacto" className="px-6 py-3 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition">Contactar</a>
+          <a href="/cv/CV_Alejandro_Zakzuk_2026.pdf" download className="px-6 py-3 rounded-lg border border-emerald-400/50 text-emerald-400 hover:border-emerald-400 transition">Descargar CV</a>
         </div>
       </Section>
     </>

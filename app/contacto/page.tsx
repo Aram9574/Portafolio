@@ -3,6 +3,7 @@
 import { ContactForm } from '@/components/ContactForm'
 import Section from '@/components/ui/Section'
 import { Mail, MapPin, Linkedin, Youtube, Github } from 'lucide-react'
+import { SOCIAL } from '@/lib/site'
 
 export default function ContactoPage() {
   return (
@@ -16,32 +17,32 @@ export default function ContactoPage() {
                 <Mail className="w-4 h-4 text-emerald-400" />
                 <span>
                   <span className="sr-only">Email: </span>
-                  <a className="hover:text-white" href="mailto:zakzukaram@gmail.com">zakzukaram@gmail.com</a>
+                  <a className="hover:text-white" href={`mailto:${SOCIAL.email}`}>{SOCIAL.email}</a>
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <MapPin className="w-4 h-4 text-emerald-400" />
-                <span>Madrid, España</span>
+                <span>{SOCIAL.location}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Linkedin className="w-4 h-4 text-emerald-400" />
                 <span>
                   <span className="sr-only">LinkedIn: </span>
-                  <a className="hover:text-white" href="https://www.linkedin.com/in/alejandrozakzuk-ia-salud-digital/" target="_blank" rel="noreferrer">/in/alejandrozakzuk-ia-salud-digital/</a>
+                  <a className="hover:text-white" href={SOCIAL.linkedin} target="_blank" rel="noreferrer">Seguir en LinkedIn</a>
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Youtube className="w-4 h-4 text-emerald-400" />
                 <span>
                   <span className="sr-only">YouTube: </span>
-                  <a className="hover:text-white" href="https://www.youtube.com/@MedIA_ES_1" target="_blank" rel="noreferrer">@MedIA_ES_1</a>
+                  <a className="hover:text-white" href={SOCIAL.youtube} target="_blank" rel="noreferrer">@MedIA_ES_1</a>
                 </span>
               </li>
               <li className="flex items-center gap-3">
                 <Github className="w-4 h-4 text-emerald-400" />
                 <span>
                   <span className="sr-only">GitHub: </span>
-                  <a className="hover:text-white" href="https://github.com/Aram9574" target="_blank" rel="noreferrer">@Aram9574</a>
+                  <a className="hover:text-white" href={SOCIAL.github} target="_blank" rel="noreferrer">@Aram9574</a>
                 </span>
               </li>
             </ul>
