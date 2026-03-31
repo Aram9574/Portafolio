@@ -4,6 +4,36 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: 'deteccion-metabolica-tfm',
+    title: 'Detección temprana de condición metabólica (TFM CEMP)',
+    context: 'Desarrollo de un modelo predictivo para la identificación precoz de alteraciones metabólicas.',
+    solution: 'Análisis multivariante, selección de features clínicas y entrenamiento de modelos supervisados con validación cruzada.',
+    impact: 'Base para sistemas de alerta temprana en medicina preventiva y salud poblacional.',
+    tags: ['Python','Modelado clínico','Salud Poblacional','TFM'],
+    cover: '/images/projects/framingham.jpg',
+    links: { repo: 'https://github.com/Aram9574' }
+  },
+  {
+    slug: 'riesgo-metabolico-cdc',
+    title: 'Clasificación de riesgo metabólico CDC BRFSS',
+    context: 'Análisis masivo de 253.680 registros del CDC para clasificar perfiles de riesgo metabólico.',
+    solution: 'Pipeline de Big Data con Pandas/Scikit-learn, manejo de desbalance de clases y optimización de hiperparámetros.',
+    impact: 'Identificación de patrones de riesgo a gran escala con alta precisión estadística.',
+    tags: ['Big Data','CDC','Python','Machine Learning'],
+    cover: '/images/projects/prediccion-readmisiones.jpg',
+    links: { repo: 'https://github.com/Aram9574' }
+  },
+  {
+    slug: 'ocupacion-hospitalaria-ia',
+    title: 'Predicción de ocupación hospitalaria mediante IA',
+    context: 'Modelo de capacidad hospitalaria para optimizar el flujo de pacientes y la gestión de recursos.',
+    solution: 'Series temporales y modelos de regresión avanzados para predecir picos de demanda asistencial.',
+    impact: 'Mejora en la planificación de camas y reducción de cuellos de botella en servicios críticos.',
+    tags: ['Predictive Analytics','Gestión Hospitalaria','Python'],
+    cover: '/images/projects/longitud-estancia-ml.jpg',
+    links: { repo: 'https://github.com/Aram9574' }
+  },
+  {
     slug: 'erp-geriatrico-fhir',
     title: 'ERP Sanitario',
     context: 'Plataforma para centros de salud: pacientes, medicación, fisioterapia, evaluaciones y más.',

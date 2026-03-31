@@ -19,13 +19,16 @@ export default function HomePage() {
             De la bata al código. <span className="text-emerald-400">IA aplicada a la Sanidad.</span>
           </h1>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8">
-            Médico e innovador en salud digital. Transformo datos clínicos en decisiones que mejoran la atención, optimizan procesos hospitalarios y conectan la clínica con la tecnología.
+            Médico con especialización en IA aplicada a salud. Combino criterio clínico real con capacidad técnica en ML, NLP e interoperabilidad (FHIR/HL7) para trabajar en la intersección entre medicina y tecnología.
           </p>
-          <div className="flex justify-center gap-4 mb-10">
+          <div className="flex justify-center flex-wrap gap-4 mb-10">
             <a href="/contacto" className="px-6 py-3 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition">
-              Hablemos
+              Contactar
             </a>
-            <a href="#proyectos" className="px-6 py-3 rounded-lg border border-emerald-400/50 text-emerald-400 hover:border-emerald-400 transition">
+            <a href="/cv/CV_Alejandro_Zakzuk_2026.pdf" download className="px-6 py-3 rounded-lg border border-emerald-400/50 text-emerald-400 hover:border-emerald-400 transition">
+              Descargar CV
+            </a>
+            <a href="#proyectos" className="px-6 py-3 rounded-lg border border-white/20 text-white hover:bg-white/5 transition">
               Ver proyectos
             </a>
           </div>
@@ -58,7 +61,7 @@ export default function HomePage() {
             Soy médico especializado en Inteligencia Artificial aplicada a la sanidad. Mi experiencia integra el conocimiento clínico con la analítica avanzada de datos para diseñar soluciones que generan valor para pacientes, profesionales, cuidadores y entornos de salud digital.
           </p>
 
-          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3">
             <div className="rounded-xl border border-white/10 bg-white/5 p-6 hover:border-emerald-400/40 transition">
               <Brain className="w-6 h-6 text-emerald-400 mx-auto mb-3" />
               <div className="text-2xl font-bold text-emerald-400 mb-2">+10</div>
@@ -74,17 +77,12 @@ export default function HomePage() {
               <div className="text-2xl font-bold text-emerald-400 mb-2">+5</div>
               <p className="text-sm text-gray-300">Aportes en IA clínica</p>
             </div>
-            <div className="rounded-xl border border-white/10 bg-white/5 p-6 hover:border-emerald-400/40 transition">
-              <TrendingDown className="w-6 h-6 text-emerald-400 mx-auto mb-3" />
-              <div className="text-2xl font-bold text-emerald-400 mb-2">-38%</div>
-              <p className="text-sm text-gray-300">Menos tiempo de registro en MVP real</p>
-            </div>
           </div>
         </div>
       </section>
 
       <Section id="propuesta-valor">
-        <h2 id="propuesta" className="scroll-mt-24 text-3xl font-bold mb-8 text-center">¿Por qué colaborar conmigo?</h2>
+        <h2 id="propuesta" className="scroll-mt-24 text-3xl font-bold mb-8 text-center">¿Por qué trabajar conmigo?</h2>
         <div className="grid gap-8 md:grid-cols-3">
           <div className="rounded-xl border border-white/10 bg-white/5 p-6 hover:border-emerald-400/40 transition">
             <Activity className="w-8 h-8 text-emerald-400 mb-4" />
@@ -119,21 +117,24 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section id="servicios" title="Servicios" subtitle="De idea a resultado medible.">
-        <div className="grid md:grid-cols-3 gap-6">
-          {services.map(s => (
-            <Card key={s.id}>
-              <h3 className="text-lg font-semibold mb-1">{s.title}</h3>
-              <p className="text-sm text-muted-foreground mb-3">{s.summary}</p>
-              <ul className="text-sm list-disc ml-5">
-                {s.deliverables.slice(0,4).map(d => <li key={d}>{d}</li>)}
-              </ul>
-              <p className="text-xs text-muted-foreground mt-3">Duración: {s.duration} · {s.priceRange}</p>
-            </Card>
-          ))}
-        </div>
-        <div className="mt-6">
-          <a href="/contacto#agenda" className="inline-block px-5 py-2 rounded-full border border-white/10">Agenda 15’</a>
+      <Section id="lo-que-aporto" title="Lo que aporto" subtitle="Valor diferencial en la intersección de salud y tecnología.">
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          <div className="p-6 rounded-xl border border-white/10 bg-white/5">
+            <h3 className="font-bold text-emerald-400 mb-2">Criterio clínico para validar IA</h3>
+            <p className="text-sm text-gray-400">Más de 6 años de práctica hospitalaria real. Entiendo el problema antes de diseñar la solución.</p>
+          </div>
+          <div className="p-6 rounded-xl border border-white/10 bg-white/5">
+            <h3 className="font-bold text-emerald-400 mb-2">Pipeline técnico completo</h3>
+            <p className="text-sm text-gray-400">Desde la pregunta clínica hasta el modelo desplegado: Python, ML, NLP, XAI/SHAP, FHIR.</p>
+          </div>
+          <div className="p-6 rounded-xl border border-white/10 bg-white/5">
+            <h3 className="font-bold text-emerald-400 mb-2">Marco regulatorio europeo</h3>
+            <p className="text-sm text-gray-400">RGPD, EU AI Act, EHDS. No como checklist, sino como parte del diseño desde el inicio.</p>
+          </div>
+          <div className="p-6 rounded-xl border border-white/10 bg-white/5">
+            <h3 className="font-bold text-emerald-400 mb-2">Disponibilidad inmediata en Madrid</h3>
+            <p className="text-sm text-gray-400">Buscando incorporación a equipo en consultoría, pharma, healthtech o innovación hospitalaria.</p>
+          </div>
         </div>
       </Section>
 
@@ -173,7 +174,7 @@ export default function HomePage() {
 
       
 
-      <Section id="cta" title="¿Colaboramos?" subtitle="Cuéntame tu reto clínico o de datos.">
+      <Section id="cta" title="¿Quieres hablar sobre una oportunidad?" subtitle="">
         <div className="flex gap-3">
           <a href="/contacto" className="px-5 py-2 rounded-full bg-emerald-500/90 text-black font-medium">Escríbeme</a>
           <a href="/cv/CV_Alejandro_Zakzuk_2026.pdf" download className="px-5 py-2 rounded-full border border-white/10">Descargar CV</a>

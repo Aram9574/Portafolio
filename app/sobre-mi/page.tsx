@@ -29,7 +29,8 @@ export default function SobreMiPage() {
               Mi propósito es ser un puente entre la medicina y la tecnología. Aspiro a liderar proyectos que impulsen la innovación en salud digital con una visión estratégica, ética y centrada en el paciente. Creo en un futuro en el que la inteligencia artificial no sustituya al profesional, sino que amplifique su capacidad de decisión y haga posible una atención más humana, precisa y cercana.
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
-              <a href="/contacto" className="px-5 py-2 rounded-lg border border-white/10">Contactar</a>
+              <a href="/contacto" className="px-5 py-2 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition">Contactar</a>
+              <a href="/cv/CV_Alejandro_Zakzuk_2026.pdf" download className="px-5 py-2 rounded-lg border border-white/20 hover:bg-white/5 transition">Descargar CV</a>
             </div>
           </div>
         </div>
@@ -156,12 +157,12 @@ export default function SobreMiPage() {
       {/* CTA al final */}
       <Section id="cta">
         <div className="text-center">
-          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">¿Colaboramos?</h2>
-          <p className="text-muted-foreground mb-8">Cuéntame tu reto clínico u operativo.</p>
+          <h2 className="text-3xl md:text-4xl font-semibold tracking-tight mb-4">¿Quieres hablar sobre una oportunidad?</h2>
+          <p className="text-muted-foreground mb-8">Estaré encantado de conocer tu equipo y cómo puedo aportar valor.</p>
         </div>
         <div className="flex gap-3 justify-center">
-          <a href="/contacto" className="px-5 py-2 rounded-full bg-emerald-500/90 text-black font-medium">Escríbeme</a>
-          <a href="/contacto#agenda" className="px-5 py-2 rounded-full border border-white/10">Agenda 15’</a>
+          <a href="/contacto" className="px-5 py-2 rounded-full bg-emerald-500/90 text-black font-medium">Contactar</a>
+          <a href="/cv/CV_Alejandro_Zakzuk_2026.pdf" download className="px-5 py-2 rounded-full border border-white/10">Descargar CV</a>
         </div>
       </Section>
     </>
