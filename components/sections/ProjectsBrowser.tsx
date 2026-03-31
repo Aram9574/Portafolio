@@ -87,10 +87,11 @@ export default function ProjectsBrowser({ projects }: { projects: Project[] }) {
           <ProjectCard
             key={p.slug}
             title={p.title}
-            context={p.context}
+            description={p.shortDescription}
             tags={p.tags}
             cover={p.cover}
             href={`/proyectos/${p.slug}`}
+            tipo={p.tipo}
           />
         ))}
       </div>

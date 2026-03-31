@@ -25,6 +25,7 @@ export const projects: Project[] = [
     impact: 'Mejor modelo: Random Forest. AUC-ROC: 0.942. Análisis de interpretabilidad: XAI/SHAP para identificar las variables clínicas con mayor poder predictivo y explicar las predicciones individuales del modelo.',
     regulatory: 'El proyecto incorporó un análisis de cumplimiento normativo europeo aplicado al despliegue de modelos de IA en entornos clínicos: RGPD (gestión de datos de salud), EU AI Act (IA de alto riesgo en ámbito sanitario) y EHDS (consideraciones para el uso secundario de datos clínicos).',
     conclusion: 'Este proyecto demuestra que es posible construir modelos predictivos clínicamente útiles con datasets reales, combinando rigor metodológico, interpretabilidad y cumplimiento regulatorio desde el diseño. El AUC-ROC de 0.942 representa una capacidad discriminativa alta para el contexto clínico de detección temprana.',
+    tipo: 'estrella',
     tags: ['Machine Learning', 'Random Forest', 'XAI/SHAP', 'EU AI Act', 'Python', 'Scikit-learn'],
     cover: '/images/projects/framingham.jpg',
     links: { repo: 'https://github.com/Aram9574' }
@@ -36,6 +37,7 @@ export const projects: Project[] = [
     context: 'Análisis masivo de 253.680 registros del CDC para clasificar perfiles de riesgo metabólico y predecir diabetes.',
     solution: 'Pipeline de Big Data con Pandas/Scikit-learn, manejo de desbalance de clases y optimización de hiperparámetros. Desplegado como CDSS interactivo.',
     impact: 'Identificación de patrones de riesgo a gran escala con alta precisión estadística. Incluye validación de modelos y dashboard de visualización.',
+    tipo: 'estrella',
     tags: ['Big Data','CDC','Python','Hugging Face'],
     cover: '/images/projects/prediccion-readmisiones.jpg',
     links: { 
@@ -50,6 +52,7 @@ export const projects: Project[] = [
     context: 'Proyecto de diseño de sistema predictivo para gestión de camas hospitalarias. Desarrollo conceptual y técnico: arquitectura del modelo, variables clínicas seleccionadas, metodología propuesta y marco de implementación. Asociado al Máster en IA Aplicada a Sanidad (CEMP, 2025).',
     solution: 'Series temporales y modelos de regresión avanzados para predecir picos de demanda asistencial.',
     impact: 'Mejora en la planificación de camas y reducción de cuellos de botella en servicios críticos.',
+    tipo: 'estrella',
     tags: ['Predictive Analytics','Gestión Hospitalaria','Python'],
     cover: '/images/projects/longitud-estancia-ml.jpg',
     links: { repo: 'https://github.com/Aram9574' }
@@ -61,6 +64,7 @@ export const projects: Project[] = [
     context: 'Plataforma para centros de salud: pacientes, medicación, fisioterapia, evaluaciones y más.',
     solution: 'Django + DRF, integración HL7/FHIR para interoperabilidad, PostgreSQL, despliegue en Render.',
     impact: 'Reducción de tiempos de registro en 38% y menor error de medicación (incidentes de medicación evitados (near miss)) en 22%.',
+    tipo: 'academico',
     tags: ['HL7/FHIR','Django','DRF','PostgreSQL','Bootstrap'],
     cover: '/images/projects/erp-geriatrico-fhir.jpg',
     links: { repo: 'https://github.com/Aram9574' }
@@ -72,6 +76,7 @@ export const projects: Project[] = [
     context: 'Predicción a 10 años de riesgo para enfermedad coronaria usando dataset Framingham.',
     solution: 'Scikit-learn: imputación, normalización, selección de variables, LR y árboles; validación estratificada.',
     impact: 'AUC 0.79 en validación; informe con umbral clínico y matriz de confusión.',
+    tipo: 'academico',
     tags: ['Scikit-learn','Pandas','Modelado clínico'],
     cover: '/images/projects/framingham.jpg',
     links: { repo: 'https://github.com/Aram9574/Modelos_IA/blob/main/Riesgo_Cardiovascular_RandomForest-2.ipynb' }
@@ -83,6 +88,7 @@ export const projects: Project[] = [
     context: 'Proyecto con regresión logística en dataset de cáncer de mama.',
     solution: 'Pipeline reproducible, notebook con métricas y curvas ROC/PR, README orientado a salud.',
     impact: 'F1 0.91 global; recomendaciones para mejorar sensibilidad en la clase riesgo.',
+    tipo: 'academico',
     tags: ['Logistic Regression','Python','ML Ops básico'],
     cover: '/images/projects/breast-cancer.jpg',
     links: { repo: 'https://github.com/Aram9574/Modelos_IA/blob/main/Regresión%20Logística%20Cancer%20de%20mama.ipynb' }
@@ -94,6 +100,7 @@ export const projects: Project[] = [
     context: 'Modelo para estimar riesgo de reingreso a 30 días usando EHR y antecedentes clínicos.',
     solution: 'Pipelines con scikit-learn/XGBoost, manejo de desbalance y validación temporal.',
     impact: 'Priorización de seguimiento postalta y reducción de reingresos evitables.',
+    tipo: 'academico',
     tags: ['Python','Pandas','XGBoost','SHAP'],
     cover: '/images/projects/prediccion-readmisiones.jpg',
     links: { repo: 'https://github.com/Aram9574' }
@@ -105,6 +112,7 @@ export const projects: Project[] = [
     context: 'Visualización de indicadores asistenciales: tiempos de espera, ocupación y seguimiento.',
     solution: 'Streamlit/Plotly sobre datos agregados de HIS; despliegue en Vercel/Render.',
     impact: 'Mejor visibilidad operativa y toma de decisiones en tiempo casi real.',
+    tipo: 'academico',
     tags: ['Streamlit','Plotly','Pandas'],
     cover: '/images/projects/dashboard-clinico-kpis.jpg',
     links: { repo: 'https://github.com/Aram9574' }
@@ -116,6 +124,7 @@ export const projects: Project[] = [
     context: 'Jobs automáticos: resúmenes, extracción de entidades y alertas básicas.',
     solution: 'Tareas programadas, NLP básico y notificaciones; logs y monitorización.',
     impact: 'Ahorro de tiempo administrativo y mejor priorización del trabajo.',
+    tipo: 'academico',
     tags: ['Python','NLP','APIs'],
     cover: '/images/projects/automatizaciones-ia-salud.jpg',
     links: { repo: 'https://github.com/Aram9574' }
@@ -127,6 +136,7 @@ export const projects: Project[] = [
     context: 'Estimación de días de estancia por episodio para planificación de camas.',
     solution: 'Modelos baselines + gradiente boosting; validación por servicio y cohorte.',
     impact: 'Mejor planificación operativa y uso eficiente de recursos.',
+    tipo: 'academico',
     tags: ['scikit-learn','Modelado clínico','Métricas'],
     cover: '/images/projects/longitud-estancia-ml.jpg',
     links: { repo: 'https://github.com/Aram9574' }
@@ -138,6 +148,7 @@ export const projects: Project[] = [
     context: 'Identificación de potenciales eventos adversos a partir de notas clínicas.',
     solution: 'Preprocesamiento, regex clínicas y clasificación supervisada; revisión médica.',
     impact: 'Soporte a seguridad del paciente y vigilancia proactiva.',
+    tipo: 'academico',
     tags: ['NLP','Clasificación','Seguridad del paciente'],
     cover: '/images/projects/nlp-eventos-adversos.jpg',
     links: { repo: 'https://github.com/Aram9574' }
@@ -149,6 +160,7 @@ export const projects: Project[] = [
     context: 'Interfaz de laboratorio (LIS) con mapeo a recursos FHIR para resultados.',
     solution: 'Modelado Observation/Patient/ServiceRequest, validaciones y endpoints.',
     impact: 'Interoperabilidad de resultados y menos trabajo manual de registro.',
+    tipo: 'academico',
     tags: ['FHIR R4','HL7 v2','Interoperabilidad'],
     cover: '/images/projects/integracion-lis-fhir.jpg',
     links: { repo: 'https://github.com/Aram9574' }
