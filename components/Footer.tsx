@@ -36,9 +36,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 py-4 text-center text-xs text-muted">
-        © {year} Alejandro Zakzuk. Todos los derechos reservados. ·{' '}
-        <a className="hover:text-white" href="/privacy.html">Privacidad</a> ·{' '}
-        <a className="hover:text-white" href="/cookies.html">Cookies</a>
+        © {year} Alejandro Zakzuk. Todos los derechos reservados.
       </div>
     </footer>
   )
