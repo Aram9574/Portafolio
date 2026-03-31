@@ -46,8 +46,8 @@ export const projects: Project[] = [
   {
     slug: 'ocupacion-hospitalaria-ia',
     title: 'Predicción de ocupación hospitalaria mediante IA',
-    shortDescription: 'Modelo predictivo de capacidad hospitalaria para optimizar el flujo de pacientes y gestión de recursos críticos.',
-    context: 'Modelo de capacidad hospitalaria para optimizar el flujo de pacientes y la gestión de recursos.',
+    shortDescription: 'Diseño de sistema predictivo para gestión de camas hospitalarias. Arquitectura del modelo, variables clínicas y metodología propuesta. Máster en IA Aplicada a Sanidad (CEMP, 2025).',
+    context: 'Proyecto de diseño de sistema predictivo para gestión de camas hospitalarias. Desarrollo conceptual y técnico: arquitectura del modelo, variables clínicas seleccionadas, metodología propuesta y marco de implementación. Asociado al Máster en IA Aplicada a Sanidad (CEMP, 2025).',
     solution: 'Series temporales y modelos de regresión avanzados para predecir picos de demanda asistencial.',
     impact: 'Mejora en la planificación de camas y reducción de cuellos de botella en servicios críticos.',
     tags: ['Predictive Analytics','Gestión Hospitalaria','Python'],
