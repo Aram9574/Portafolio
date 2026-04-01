@@ -15,7 +15,7 @@ export async function generateMetadata({ params }: Props) {
   if (!project) return {}
   return {
     title: project.title,
-    description: project.description || project.context
+    description: project.shortDescription || project.context
   }
 }
 
