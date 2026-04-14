@@ -3,6 +3,7 @@ import Image from 'next/image'
 import { Card } from '@/components/ui/Card'
 import { projects } from '@/lib/data/projects'
 import { notFound } from 'next/navigation'
+import ReactMarkdown from 'react-markdown'
 
 type Props = { params: { slug: string } }
 
@@ -21,9 +22,32 @@ export async function generateMetadata({ params }: Props) {
 
 export const dynamicParams = false
 
-export default function ProjectDetailPage({ params }: Props) {
+export default async function ProjectDetailPage({ params }: Props) {
   const project = projects.find(p => p.slug === params.slug)
   if (!project) return notFound()
+
+  let readmeContent = null;
+  if (project.links?.repo && project.links.repo.includes('github.com')) {
+    try {
+      const urlParts = project.links.repo.split('github.com/')[1].split('/');
+      const user = urlParts[0];
+      const repo = urlParts[1];
+      
+      if (user && repo) {
+        const res = await fetch(`https://raw.githubusercontent.com/${user}/${repo}/main/README.md`, { next: { revalidate: 3600 } });
+        if (res.ok) {
+          readmeContent = await res.text();
+        } else {
+          const resMaster = await fetch(`https://raw.githubusercontent.com/${user}/${repo}/master/README.md`, { next: { revalidate: 3600 } });
+          if (resMaster.ok) {
+            readmeContent = await resMaster.text();
+          }
+        }
+      }
+    } catch (e) {
+      console.error("Failed to fetch README", e);
+    }
+  }
 
   return (
     <>
@@ -40,46 +64,54 @@ export default function ProjectDetailPage({ params }: Props) {
       </Section>
 
       <Section id="detalle" className="pt-0">
-        <div className="grid md:grid-cols-3 gap-6">
-          <div className="md:col-span-2 space-y-6">
-            <Card>
-              <h2 className="text-white font-semibold mb-1">Problema</h2>
-              <p className="text-sm text-muted-foreground">{project.context}</p>
-            </Card>
-            <Card>
-              <h2 className="text-white font-semibold mb-1">Solución</h2>
-              <p className="text-sm text-muted-foreground">{project.solution}</p>
-            </Card>
-            <Card>
-              <h2 className="text-white font-semibold mb-1">Resultado</h2>
-              <p className="text-sm text-muted-foreground">{project.impact}</p>
-            </Card>
-            {project.regulatory && (
-              <Card>
-                <h2 className="text-white font-semibold mb-1">Marco regulatorio</h2>
-                <p className="text-sm text-muted-foreground">{project.regulatory}</p>
-              </Card>
-            )}
-            {project.conclusion && (
-              <Card>
-                <h2 className="text-white font-semibold mb-1">Conclusión</h2>
-                <p className="text-sm text-muted-foreground">{project.conclusion}</p>
-              </Card>
-            )}
-            {project.lessons && (
-              <Card>
-                <h2 className="text-white font-semibold mb-1">Lecciones</h2>
-                <p className="text-sm text-muted-foreground">{project.lessons}</p>
-              </Card>
-            )}
-            {project.nextSteps && (
-              <Card>
-                <h3 className="text-white font-semibold mb-1">Próximos pasos</h3>
-                <p className="text-sm text-muted-foreground">{project.nextSteps}</p>
-              </Card>
+        <div className="flex flex-col lg:flex-row lg:items-start gap-8">
+          <div className="flex-1 min-w-0 space-y-6">
+            {readmeContent ? (
+              <div className="prose prose-invert prose-emerald max-w-none bg-white/5 border border-white/10 p-6 md:p-8 rounded-xl overflow-hidden">
+                <ReactMarkdown>{readmeContent}</ReactMarkdown>
+              </div>
+            ) : (
+              <>
+                <Card>
+                  <h2 className="text-white font-semibold mb-1">Problema</h2>
+                  <p className="text-sm text-muted-foreground">{project.context}</p>
+                </Card>
+                <Card>
+                  <h2 className="text-white font-semibold mb-1">Solución</h2>
+                  <p className="text-sm text-muted-foreground">{project.solution}</p>
+                </Card>
+                <Card>
+                  <h2 className="text-white font-semibold mb-1">Resultado</h2>
+                  <p className="text-sm text-muted-foreground">{project.impact}</p>
+                </Card>
+                {project.regulatory && (
+                  <Card>
+                    <h2 className="text-white font-semibold mb-1">Marco regulatorio</h2>
+                    <p className="text-sm text-muted-foreground">{project.regulatory}</p>
+                  </Card>
+                )}
+                {project.conclusion && (
+                  <Card>
+                    <h2 className="text-white font-semibold mb-1">Conclusión</h2>
+                    <p className="text-sm text-muted-foreground">{project.conclusion}</p>
+                  </Card>
+                )}
+                {project.lessons && (
+                  <Card>
+                    <h2 className="text-white font-semibold mb-1">Lecciones</h2>
+                    <p className="text-sm text-muted-foreground">{project.lessons}</p>
+                  </Card>
+                )}
+                {project.nextSteps && (
+                  <Card>
+                    <h3 className="text-white font-semibold mb-1">Próximos pasos</h3>
+                    <p className="text-sm text-muted-foreground">{project.nextSteps}</p>
+                  </Card>
+                )}
+              </>
             )}
           </div>
-          <aside className="space-y-6">
+          <aside className="w-full lg:w-80 shrink-0 sticky top-24 space-y-6">
             <Card>
               <h3 className="text-white font-semibold">¿Quieres algo similar?</h3>
               <p className="mt-2 text-sm text-muted-foreground">Escríbeme para explorar un piloto adaptado a tu centro.</p>

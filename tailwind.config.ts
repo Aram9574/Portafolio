@@ -34,7 +34,9 @@ const config: Config = {
       padding: '1rem'
     }
   },
-  plugins: []
+  plugins: [
+    require('@tailwindcss/typography'),
+  ]
 }
 
 export default config

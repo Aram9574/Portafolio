@@ -162,11 +162,11 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {testimonials && testimonials.length >= 2 && (
+      {testimonials && testimonials.length > 0 && (
         <Section id="testimonios" title="Testimonios">
           <div className="grid md:grid-cols-2 gap-6">
-            {testimonials.slice(0,2).map(t => (
-              <Testimonial key={t.name} quote={t.quote} name={t.name} role={t.role} />
+            {testimonials.map((t, index) => (
+              <Testimonial key={t.name + index} quote={t.quote} name={t.name} role={t.role} />
             ))}
           </div>
         </Section>

@@ -1,6 +1,6 @@
 "use client";
 import Link from 'next/link'
-import { Github, Linkedin, Youtube, Menu, X } from 'lucide-react'
+import { Github, Linkedin, Menu, X } from 'lucide-react'
 import { useEffect, useState } from 'react'
 import { SOCIAL } from '@/lib/site'
 
@@ -43,15 +43,7 @@ export function Navbar() {
           >
             <Linkedin className="w-5 h-5" />
           </a>
-          <a
-            href={SOCIAL.youtube}
-            target="_blank"
-            rel="noreferrer"
-            aria-label="YouTube"
-            className="text-muted hover:text-white transition-colors"
-          >
-            <Youtube className="w-5 h-5" />
-          </a>
+
         </div>
         <button
           className="md:hidden inline-flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-2 text-white/80"
@@ -81,9 +73,7 @@ export function Navbar() {
               <a href={SOCIAL.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-muted hover:text-white">
                 <Linkedin className="w-5 h-5" />
               </a>
-              <a href={SOCIAL.youtube} target="_blank" rel="noreferrer" aria-label="YouTube" className="text-muted hover:text-white">
-                <Youtube className="w-5 h-5" />
-              </a>
+
             </div>
           </div>
         </div>

@@ -2,7 +2,7 @@
 
 import { ContactForm } from '@/components/ContactForm'
 import Section from '@/components/ui/Section'
-import { Mail, MapPin, Linkedin, Youtube, Github } from 'lucide-react'
+import { Mail, MapPin, Linkedin, Github } from 'lucide-react'
 import { SOCIAL } from '@/lib/site'
 import Script from 'next/script'
 
@@ -32,13 +32,7 @@ export default function ContactoPage() {
                   <a className="hover:text-white" href={SOCIAL.linkedin} target="_blank" rel="noreferrer">Seguir en LinkedIn</a>
                 </span>
               </li>
-              <li className="flex items-center gap-3">
-                <Youtube className="w-4 h-4 text-emerald-400" />
-                <span>
-                  <span className="sr-only">YouTube: </span>
-                  <a className="hover:text-white" href={SOCIAL.youtube} target="_blank" rel="noreferrer">@MedIA_ES_1</a>
-                </span>
-              </li>
+
               <li className="flex items-center gap-3">
                 <Github className="w-4 h-4 text-emerald-400" />
                 <span>

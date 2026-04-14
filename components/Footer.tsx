@@ -13,7 +13,7 @@ export function Footer() {
             <li><a className="hover:text-white" href={`mailto:${SOCIAL.email}`}>{SOCIAL.email}</a></li>
             <li><a className="hover:text-white" href={SOCIAL.linkedin} target="_blank" rel="noreferrer">LinkedIn</a></li>
             <li><a className="hover:text-white" href={SOCIAL.github} target="_blank" rel="noreferrer">GitHub</a></li>
-            <li><a className="hover:text-white" href={SOCIAL.youtube} target="_blank" rel="noreferrer">YouTube</a></li>
+
           </ul>
         </div>
         <div>
