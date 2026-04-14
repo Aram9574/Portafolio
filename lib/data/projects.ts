@@ -19,7 +19,7 @@ export const projects: Project[] = [
   {
     slug: 'tfm-deteccion-metabolica',
     title: 'Detección de patología metabólica mediante ML (TFM)',
-    shortDescription: 'Clasificación de riesgo metabólico sobre dataset CDC BRFSS 2015. Modelo Random Forest con AUC-ROC 0.942 y análisis XAI/SHAP.',
+    shortDescription: 'AUC-ROC de 0.942 en predicción de riesgo metabólico usando 253k+ registros del CDC e interpretabilidad SHAP.',
     context: 'Trabajo Final de Máster: La detección tardía de condiciones metabólicas eleva drásticamente los costes en salud. El objetivo fue construir y desplegar un modelo predictivo validado empíricamente usando una cohorte robusta de 253.680 registros del CDC.',
     solution: 'Pipeline completo de machine learning en Python (Scikit-learn/Pandas). Tratamiento del desbalance de clases. Entrenamiento de múltiples algoritmos seleccionando Random Forest como óptimo. Creación de un CDSS interactivo.',
     impact: 'AUC-ROC: 0.942. Aplicación de interpretabilidad clínica (XAI/SHAP) validando qué variables priorizan el riesgo empírico (p.ej.: IMC extremo, hipertensión).',
@@ -35,7 +35,7 @@ export const projects: Project[] = [
   {
     slug: 'clinote-saas',
     title: 'Clinote — Clinical NLP Platform',
-    shortDescription: 'Clinical NLP SaaS para médicos de habla hispana. Extrae y estructura notas clínicas de texto libre a formatos médicos estándar.',
+    shortDescription: 'SaaS NLP que facilita reducir el burnout clínico extrayendo entidades biomédicas estructuradas del texto libre.',
     context: 'La carga administrativa por redacción clínica (burnout) resta tiempo de atención directa al paciente. Clinote soluciona este flujo integrando IA generativa y extracción semántica.',
     solution: 'Plataforma SaaS en Next.js y TypeScript. Integra procesamiento de lenguaje natural (NLP) avanzado usando LLMs, autenticación moderna segura (Supabase) y almacenamiento de base de datos eficiente.',
     impact: 'Prototipo enfocado a agilizar radicalmente el triaje y el registro de la evolución clínica diaria.',
@@ -47,7 +47,7 @@ export const projects: Project[] = [
   {
     slug: 'erp-geriatrico-fhir',
     title: 'GeriCare — ERP Sanitario Interoperable',
-    shortDescription: 'Plataforma integral con integración HL7/FHIR desarrollada en Python/Django para gestión clínica de residencias.',
+    shortDescription: 'Infraestructura Django HL7/FHIR diseñada para mitigar errores cruzados de medicación geriátrica.',
     context: 'Centros geriátricos con historiales fragmentados requerían un sistema unificado para coordinar enfermería, medicina, fisioterapia y farmacia en un solo entorno.',
     solution: 'Arquitectura en Django y PostgreSQL modelada respetando el marco FHIR R4 para permitir el intercambio de datos clínicos (Patient, Observation, MedicationStatement).',
     impact: 'Orientado a mitigar errores preventivos de medicación y estandarizar la interoperabilidad para transferencias agudas.',

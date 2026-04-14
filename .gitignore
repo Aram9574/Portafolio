@@ -35,3 +35,6 @@ dist/
 # Lockfiles (standardize on Yarn)
 package-lock.json
 pnpm-lock.yaml
+
+# Local Knowledge Base
+awesome-skills-repo/

@@ -83,16 +83,17 @@ export default function ProjectsBrowser({ projects }: { projects: Project[] }) {
       </div>
       <div className="text-sm text-gray-400 mb-2">{list.length} proyecto(s)</div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
-        {list.map((p) => (
-          <ProjectCard
-            key={p.slug}
-            title={p.title}
-            description={p.shortDescription}
-            tags={p.tags}
-            cover={p.cover}
-            href={`/proyectos/${p.slug}`}
-            tipo={p.tipo}
-          />
+        {list.map((p, index) => (
+          <div data-aos="zoom-in-up" data-aos-delay={100 * ((index % 6) + 1)} key={p.slug}>
+            <ProjectCard
+              title={p.title}
+              description={p.shortDescription}
+              tags={p.tags}
+              cover={p.cover}
+              href={`/proyectos/${p.slug}`}
+              tipo={p.tipo}
+            />
+          </div>
         ))}
       </div>
     </>

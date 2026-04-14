@@ -11,22 +11,22 @@ export default function ContactoPage() {
     <>
       <Section id="contacto" title="Contacto" subtitle="¿Hablamos de una oportunidad?">
         <div className="grid md:grid-cols-2 gap-8">
-          <div className="rounded-2xl border border-white/10 bg-white/5 p-6">
+          <div className="rounded-2xl border border-white/10 bg-white/5 p-6" data-aos="fade-right">
             <h2 className="text-white font-semibold">Datos directos</h2>
             <ul className="mt-2 text-sm text-muted-foreground space-y-2">
               <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-emerald-400" />
+                <Mail className="w-4 h-4 text-emerald-400" aria-hidden="true" />
                 <span>
                   <span className="sr-only">Email: </span>
                   <a className="hover:text-white" href={`mailto:${SOCIAL.email}`}>{SOCIAL.email}</a>
                 </span>
               </li>
               <li className="flex items-center gap-3">
-                <MapPin className="w-4 h-4 text-emerald-400" />
+                <MapPin className="w-4 h-4 text-emerald-400" aria-hidden="true" />
                 <span>{SOCIAL.location}</span>
               </li>
               <li className="flex items-center gap-3">
-                <Linkedin className="w-4 h-4 text-emerald-400" />
+                <Linkedin className="w-4 h-4 text-emerald-400" aria-hidden="true" />
                 <span>
                   <span className="sr-only">LinkedIn: </span>
                   <a className="hover:text-white" href={SOCIAL.linkedin} target="_blank" rel="noreferrer">Seguir en LinkedIn</a>
@@ -34,7 +34,7 @@ export default function ContactoPage() {
               </li>
 
               <li className="flex items-center gap-3">
-                <Github className="w-4 h-4 text-emerald-400" />
+                <Github className="w-4 h-4 text-emerald-400" aria-hidden="true" />
                 <span>
                   <span className="sr-only">GitHub: </span>
                   <a className="hover:text-white" href={SOCIAL.github} target="_blank" rel="noreferrer">@Aram9574</a>
@@ -59,12 +59,14 @@ export default function ContactoPage() {
               </div>
             </div>
           </div>
-          <ContactForm />
+          <div data-aos="fade-left" data-aos-delay="200">
+            <ContactForm />
+          </div>
         </div>
       </Section>
 
       <Section id="agenda" title="Agenda" subtitle="Reserva una breve llamada de descubrimiento.">
-        <div className="rounded-2xl border border-white/10 bg-white/5 p-2">
+        <div className="rounded-2xl border border-white/10 bg-white/5 p-2" data-aos="zoom-in" data-aos-offset="-100">
           <div className="aspect-[16/9] w-full">
             <iframe
               title="Calendly"

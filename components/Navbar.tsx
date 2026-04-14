@@ -68,10 +68,10 @@ export function Navbar() {
             </nav>
             <div className="mt-3 flex items-center gap-4 px-3">
               <a href={SOCIAL.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="text-muted hover:text-white">
-                <Github className="w-5 h-5" />
+                <Github className="w-5 h-5" aria-hidden="true" />
               </a>
               <a href={SOCIAL.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-muted hover:text-white">
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-5 h-5" aria-hidden="true" />
               </a>
 
             </div>

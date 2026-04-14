@@ -4,8 +4,10 @@ import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { CookieBanner } from '@/components/CookieBanner'
 import { AOSProvider } from '@/components/AOSProvider'
+import CustomCursor from '@/components/ui/CustomCursor'
 import BackgroundSpotlight from '@/components/layout/BackgroundSpotlight'
 import NoiseOverlay from '@/components/layout/NoiseOverlay'
+import { SmoothScrollProvider } from '@/components/providers/SmoothScrollProvider'
 import { SOCIAL } from '@/lib/site'
 
 export const metadata: Metadata = {
@@ -38,14 +40,17 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" data-theme="dark">
-      <body className="relative min-h-screen antialiased flex flex-col">
-        <AOSProvider />
-        <BackgroundSpotlight />
-        <NoiseOverlay />
-        <Navbar />
-        <main className="flex-1 pt-16">{children}</main>
-        <Footer />
-        <CookieBanner />
+      <body className="relative min-h-screen antialiased flex flex-col cursor-none md:cursor-auto">
+        <CustomCursor />
+        <SmoothScrollProvider>
+          <AOSProvider />
+          <BackgroundSpotlight />
+          <NoiseOverlay />
+          <Navbar />
+          <main className="flex-1 pt-16">{children}</main>
+          <Footer />
+          <CookieBanner />
+        </SmoothScrollProvider>
         {/* Schema.org Person & E-E-A-T Medical Authority */}
         <script
           type="application/ld+json"

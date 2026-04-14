@@ -52,12 +52,12 @@ export default async function ProjectDetailPage({ params }: Props) {
   return (
     <>
       <Section id="project-hero">
-        <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">{project.title}</h1>
-        <div className="mt-3 flex flex-wrap gap-2 text-xs text-muted-foreground">
+        <h1 className="text-3xl md:text-4xl font-semibold tracking-tight" data-aos="fade-down">{project.title}</h1>
+        <div className="mt-3 flex flex-wrap gap-2 text-xs text-muted-foreground" data-aos="fade-up" data-aos-delay="100">
           {project.tags.map((s) => <span key={s} className="px-2 py-1 rounded-full bg-white/5 border border-white/10">{s}</span>)}
         </div>
         {project.cover && (
-          <div className="mt-6 relative w-full aspect-[16/9] rounded-xl overflow-hidden">
+          <div className="mt-6 relative w-full aspect-[16/9] rounded-xl overflow-hidden" data-aos="zoom-in" data-aos-delay="200">
             <Image src={project.cover} alt={project.title} fill className="object-cover" />
           </div>
         )}
@@ -111,7 +111,7 @@ export default async function ProjectDetailPage({ params }: Props) {
               </>
             )}
           </div>
-          <aside className="w-full lg:w-80 shrink-0 sticky top-24 space-y-6">
+          <aside className="w-full lg:w-80 shrink-0 sticky top-24 space-y-6" data-aos="fade-left" data-aos-delay="300">
             <Card>
               <h3 className="text-white font-semibold">¿Quieres algo similar?</h3>
               <p className="mt-2 text-sm text-muted-foreground">Escríbeme para explorar un piloto adaptado a tu centro.</p>
@@ -133,6 +133,26 @@ export default async function ProjectDetailPage({ params }: Props) {
           </aside>
         </div>
       </Section>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SoftwareApplication",
+            "name": project.title,
+            "applicationCategory": "HealthApplication",
+            "operatingSystem": "Web",
+            "description": project.shortDescription || project.context,
+            "creator": {
+              "@type": "Person",
+              "name": "Alejandro Zakzuk"
+            },
+            ...(project.cover ? { "image": `https://alejandrozakzuk.com${project.cover}` } : {}),
+            ...(project.links?.repo ? { "codeRepository": project.links.repo } : {}),
+            ...(project.links?.demo ? { "url": project.links.demo } : {})
+          })
+        }}
+      />
     </>
   )
 }
