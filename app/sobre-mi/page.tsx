@@ -1,5 +1,5 @@
 export const metadata = { 
-  title: 'Sobre mí — Alejandro Zakzuk | Médico & Clinical AI',
+  title: 'Sobre mí · Aram Zakzuk · Clinical AI Specialist',
   description: 'Médico con formación en IA aplicada a salud (CEMP) y Salud Digital (Universidad Europea). Experiencia clínica real combinada con ML, NLP y estándares FHIR/HL7.'
 }
 
@@ -22,7 +22,7 @@ export default function SobreMiPage() {
               <div className="w-full h-full rounded-full bg-surface overflow-hidden relative">
                 <Image 
                   src="/images/profile.png" 
-                  alt="Alejandro Zakzuk" 
+                  alt="Aram Zakzuk" 
                   fill 
                   sizes="(min-width: 768px) 384px, 100vw"
                   className="object-cover" 
@@ -34,11 +34,11 @@ export default function SobreMiPage() {
           <div className="md:col-span-2" data-aos="fade-left">
             <h1 className="text-4xl md:text-5xl font-semibold mb-6">Sobre mí</h1>
             <p className="text-muted md:text-lg leading-relaxed">
-              Soy médico y desarrollador clínico. Comprendí pronto que la destreza médica por sí sola no puede resolver problemas sistémicos. Los hospitales fallan por saturación y sistemas asilados. Los datos clínicos críticos se desperdician en silos que las máquinas no entienden y los médicos no tienen tiempo de procesar.
+              Médico con 6 años de práctica clínica real en entornos hospitalarios de alta demanda. Formación técnica avanzada en Machine Learning aplicado a medicina, NLP clínico, interoperabilidad sanitaria (FHIR · HL7 · SNOMED-CT) y regulación europea (RGPD · EU AI Act · EHDS · MDR).
               <br /><br />
-              Por eso aprendí a programar. Analizo los flujos de trabajo hospitalarios y construyo los modelos predictivos e infraestructuras FHIR/HL7 que los automatizan. Extraigo e implemento modelos de inteligencia artificial en entornos hospitalarios reales. Mis proyectos varían desde predecir el colapso de camas UCI hasta construir un ERP completo para gestión geriátrica en un entorno no digitalizado.
+              El perfil que el ecosistema HealthTech busca y rara vez encuentra: criterio clínico para validar soluciones de IA que otros no pueden cuestionar desde dentro, combinado con capacidad técnica para construirlas.
               <br /><br />
-              La tecnología médica actual tropieza porque los ingenieros de software no evalúan pacientes y los especialistas no escriben código. Mi posición ejecuta ambos extremos. La inteligencia artificial no reemplazará al clínico; el clínico que comprenda la ingeniería de datos y la automatización inteligente redefinirá la medicina.
+              Trabajo en consultoría HealthTech, Clinical AI e innovación en entornos hospitalarios y salud digital. Disponible en Madrid de forma presencial y en toda Europa de forma remota.
             </p>
             <div className="mt-6 flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="200">
               <a href="/contacto" className="px-5 py-2 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition hover:-translate-y-1">Contactar</a>

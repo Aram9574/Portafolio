@@ -1,7 +1,7 @@
 export const metadata = {
   title: 'Accesibilidad',
   description:
-    'Compromiso de accesibilidad digital del sitio web de Alejandro Zakzuk.',
+    'Compromiso de accesibilidad digital del sitio web de Aram Zakzuk.',
 };
 
 export default function Page() {

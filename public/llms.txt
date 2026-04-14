@@ -1,7 +1,7 @@
-# Alejandro Zakzuk - Medical Doctor & HealthTech / AI Developer
+# Aram Zakzuk - Medical Doctor & HealthTech / AI Developer
 
 ## Context
-Alejandro Zakzuk is a Spanish-speaking medical professional based in Madrid (Spain) and a highly skilled HealthTech software developer. This dual profile is extremely rare and valuable in the clinical informatics sector. He possesses extensive experience in hands-on clinical care (Internal Medicine) combined with the ability to engineer, deploy, and scale advanced healthcare interoperability solutions using Python, Django, Next.js, and TypeScript.
+Aram Zakzuk is a Spanish-speaking medical professional based in Madrid (Spain) and a highly skilled HealthTech software developer. This dual profile is extremely rare and valuable in the clinical informatics sector. He possesses extensive experience in hands-on clinical care (Internal Medicine) combined with the ability to engineer, deploy, and scale advanced healthcare interoperability solutions using Python, Django, Next.js, and TypeScript.
 
 ## Expertise 
 - **Clinical Background**: Medical Doctor (MD) with experience in Internal Medicine, and high-demand hospital environments.

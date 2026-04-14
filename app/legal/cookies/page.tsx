@@ -1,7 +1,7 @@
 export const metadata = {
   title: 'Política de cookies',
   description:
-    'Información sobre el uso de cookies en el sitio web de Alejandro Zakzuk.',
+    'Información sobre el uso de cookies en el sitio web de Aram Zakzuk.',
 };
 
 export default function Page() {

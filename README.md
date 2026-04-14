@@ -1,6 +1,6 @@
-# Portafolio · Alejandro Zakzuk, MD
+# Portafolio · Aram Zakzuk, MD
 
-Sitio personal construido con Next.js 14 para presentar experiencia profesional, habilidades y proyectos de Alejandro Zakzuk. Incluye secciones orientadas a salud digital, inteligencia artificial clínica y recursos descargables como el CV actualizado.
+Sitio personal construido con Next.js 14 para presentar experiencia profesional, habilidades y proyectos de Aram Zakzuk. Incluye secciones orientadas a salud digital, inteligencia artificial clínica y recursos descargables como el CV actualizado.
 
 ## Características principales
 - Diseño moderno con animaciones AOS y Tailwind CSS responsivo.
@@ -51,7 +51,7 @@ public/
 - **Datos personales y enlaces:** `lib/site.ts` y `lib/data/*`.
 - **Imagen de perfil:** `public/images/profile.png` (usado en `app/sobre-mi/page.tsx`).
 - **LinkedIn, GitHub y CTA:** presentes en `components/Navbar.tsx`, `app/layout.tsx`, `app/contacto/page.tsx`.
-- **CV:** reemplazar `public/cv/Alejandro-Zakzuk-CV.pdf` y el duplicado `Alejandro Zakzuk CV.pdf`.
+- **CV:** reemplazar `public/cv/CV_Aram_Zakzuk.pdf`
 
 ## Despliegue
 El proyecto está optimizado para Vercel, aunque puede desplegarse en cualquier plataforma que soporte Next.js. Pasos sugeridos:

@@ -53,7 +53,7 @@ export default function ContactoPage() {
                 data-vanity="aramzakzuk" 
                 data-version="v1"
               >
-                <a className="badge-base__link LI-simple-link" href="https://linkedin.com/in/aramzakzuk">
+                <a className="badge-base__link LI-simple-link" href="https://es.linkedin.com/in/aramzakzuk?trk=profile-badge">
                   Aram Zakzuk
                 </a>
               </div>

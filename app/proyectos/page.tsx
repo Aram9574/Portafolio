@@ -3,7 +3,7 @@ import { Suspense } from 'react'
 import ProjectsBrowser from '@/components/sections/ProjectsBrowser'
 import { projects } from '@/lib/data/projects'
 
-export const metadata = { title: 'Proyectos de IA Clínica · Alejandro Zakzuk, MD' }
+export const metadata = { title: 'Proyectos de IA Clínica · Aram Zakzuk, MD' }
 
 export default function ProyectosPage() {
   return (

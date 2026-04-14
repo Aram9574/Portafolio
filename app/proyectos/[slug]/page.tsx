@@ -145,7 +145,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             "description": project.shortDescription || project.context,
             "creator": {
               "@type": "Person",
-              "name": "Alejandro Zakzuk"
+              "name": "Aram Zakzuk"
             },
             ...(project.cover ? { "image": `https://alejandrozakzuk.com${project.cover}` } : {}),
             ...(project.links?.repo ? { "codeRepository": project.links.repo } : {}),

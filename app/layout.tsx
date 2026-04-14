@@ -13,27 +13,27 @@ import { SOCIAL } from '@/lib/site'
 export const metadata: Metadata = {
   metadataBase: new URL('https://alejandrozakzuk.com'),
   title: {
-    default: 'Alejandro Zakzuk — Médico | IA Aplicada a Salud | Madrid',
-    template: '%s · Alejandro Zakzuk, MD'
+    default: 'Aram Zakzuk · Clinical AI Specialist · Médico · HealthTech · Madrid',
+    template: '%s · Aram Zakzuk'
   },
-  description: 'Médico colombiano en Madrid especializado en IA aplicada a salud, Machine Learning clínico e interoperabilidad FHIR. Disponible para roles en consultoría, healthtech y pharma.',
+  description: 'Médico con formación avanzada en Machine Learning clínico, NLP, FHIR/HL7 y regulación europea (EU AI Act · RGPD). Consultoría HealthTech y Clinical AI en Madrid y Europa.',
   keywords: ['IA en salud', 'inteligencia artificial sanitaria', 'machine learning clínico', 'interoperabilidad HL7 FHIR', 'Django salud', 'consultoría IA sanitaria', 'Madrid'],
   openGraph: {
     type: 'website',
     locale: 'es_ES',
     url: 'https://alejandrozakzuk.com',
-    siteName: 'Alejandro Zakzuk, MD | AI in Healthcare',
-    title: 'De la bata al código. IA aplicada a la Sanidad.',
-    description: 'Portafolio y proyectos de IA clínica, interoperabilidad y ERP.',
+    siteName: 'Aram Zakzuk | AI in Healthcare',
+    title: 'Aram Zakzuk · Clinical AI Specialist · Médico · HealthTech · Madrid',
+    description: 'Médico con formación avanzada en Machine Learning clínico, NLP, FHIR/HL7 y regulación europea (EU AI Act · RGPD). Consultoría HealthTech y Clinical AI en Madrid y Europa.',
     images: [{ url: '/og-default.png', width: 1200, height: 630 }]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'De la bata al código. IA aplicada a la Sanidad.',
-    description: 'Portafolio y proyectos de IA clínica, interoperabilidad y ERP.',
+    title: 'Aram Zakzuk · Clinical AI Specialist · Médico · HealthTech · Madrid',
+    description: 'Médico con formación avanzada en Machine Learning clínico, NLP, FHIR/HL7 y regulación europea (EU AI Act · RGPD). Consultoría HealthTech y Clinical AI en Madrid y Europa.',
     images: ['/og-default.png']
   },
-  authors: [{ name: 'Alejandro Zakzuk, MD', url: 'https://alejandrozakzuk.com' }],
+  authors: [{ name: 'Aram Zakzuk', url: 'https://alejandrozakzuk.com' }],
   category: 'technology'
 }
 
@@ -58,7 +58,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': ['Person', 'Physician'],
-              name: 'Alejandro Zakzuk',
+              name: 'Aram Zakzuk',
               honorificPrefix: 'Dr.',
               jobTitle: 'HealthTech Developer & MD',
               description: 'Médico experto en analítica de datos e inteligencia artificial clínica. Desarrollador especializado en aplicaciones SaaS para el sector salud con Next.js y ecosistemas de interoperabilidad HL7/FHIR.',

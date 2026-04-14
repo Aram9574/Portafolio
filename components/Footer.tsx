@@ -2,7 +2,7 @@ import Link from 'next/link'
 import { SOCIAL } from '@/lib/site'
 
 export function Footer() {
-  const year = new Date().getFullYear()
+  const year = 2026
   return (
     <footer className="mt-20 border-t border-white/10">
       <div className="container grid grid-cols-1 md:grid-cols-3 gap-10 py-12">
@@ -36,7 +36,7 @@ export function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10 py-4 text-center text-xs text-muted">
-        © {year} Alejandro Zakzuk. Todos los derechos reservados.
+        © {year} Aram Zakzuk. Todos los derechos reservados.
       </div>
     </footer>
   )

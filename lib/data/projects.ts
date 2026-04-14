@@ -70,7 +70,7 @@ export const projects: Project[] = [
   },
   {
     slug: 'portafolio-arquitectura',
-    title: 'Portafolio Web (Alejandro Zakzuk)',
+    title: 'Portafolio Web (Aram Zakzuk)',
     shortDescription: 'Arquitectura fron-tend moderna en React/Next.js hospedando mi portafolio digital, con enfoque técnico y clínico.',
     context: 'Necesidad de un escaparate profesional indexable, estático/dinámico, que respalde la faceta tecnológica del perfil biomédico.',
     solution: 'Stack actual con TypeScript, entorno de componentes React, TailwindCSS para estilos utilitarios y despliegue rápido automatizado.',

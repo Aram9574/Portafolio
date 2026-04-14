@@ -18,10 +18,10 @@ export default function HomePage() {
       <section id="home" className="pt-32 pb-24 text-center">
         <div className="container mx-auto px-4">
           <h1 className="text-4xl md:text-6xl font-bold mb-6" data-aos="fade-up">
-            De la bata al código. <span className="text-emerald-400">IA aplicada a la Sanidad.</span>
+            Médico · Clinical AI Specialist · HealthTech
           </h1>
           <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="100">
-            Médico con especialización en IA aplicada a salud. Combino criterio clínico real con capacidad técnica en ML, NLP e interoperabilidad (FHIR/HL7) para trabajar en la intersección entre medicina y tecnología.
+            Criterio clínico real combinado con capacidad técnica en Machine Learning, NLP clínico e interoperabilidad sanitaria (FHIR · HL7 · SNOMED-CT). Diseño, valido e implemento soluciones de Clinical AI y Healthcare Data Analytics que funcionan en entornos clínicos reales.
           </p>
           <div className="flex justify-center flex-wrap gap-4 mb-10" data-aos="fade-up" data-aos-delay="200">
             <a href="/contacto" className="px-6 py-3 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition">
