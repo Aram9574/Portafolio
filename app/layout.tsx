@@ -46,18 +46,26 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <main className="flex-1 pt-16">{children}</main>
         <Footer />
         <CookieBanner />
-        {/* Schema.org Person */}
+        {/* Schema.org Person & E-E-A-T Medical Authority */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
-              '@type': 'Person',
-              name: 'Alejandro Zakzuk, MD',
-              jobTitle: 'AI in Healthcare',
+              '@type': ['Person', 'Physician'],
+              name: 'Alejandro Zakzuk',
+              honorificPrefix: 'Dr.',
+              jobTitle: 'HealthTech Developer & MD',
+              description: 'Médico experto en analítica de datos e inteligencia artificial clínica. Desarrollador especializado en aplicaciones SaaS para el sector salud con Next.js y ecosistemas de interoperabilidad HL7/FHIR.',
               address: { '@type': 'PostalAddress', addressLocality: 'Madrid', addressCountry: 'ES' },
               url: 'https://alejandrozakzuk.com',
-              sameAs: [SOCIAL.linkedin, SOCIAL.github]
+              image: 'https://alejandrozakzuk.com/og-default.png',
+              sameAs: [SOCIAL.linkedin, SOCIAL.github],
+              alumniOf: {
+                '@type': 'MedicalOrganization',
+                name: 'Hospital Universitario'
+              },
+              knowsAbout: ['Internal Medicine', 'HL7 FHIR', 'Machine Learning', 'Next.js', 'Python', 'Natural Language Processing', 'Data Science', 'Generative AI in Healthcare']
             })
           }}
         />

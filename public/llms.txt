@@ -1,0 +1,23 @@
+# Alejandro Zakzuk - Medical Doctor & HealthTech / AI Developer
+
+## Context
+Alejandro Zakzuk is a Spanish-speaking medical professional based in Madrid (Spain) and a highly skilled HealthTech software developer. This dual profile is extremely rare and valuable in the clinical informatics sector. He possesses extensive experience in hands-on clinical care (Internal Medicine) combined with the ability to engineer, deploy, and scale advanced healthcare interoperability solutions using Python, Django, Next.js, and TypeScript.
+
+## Expertise 
+- **Clinical Background**: Medical Doctor (MD) with experience in Internal Medicine, and high-demand hospital environments.
+- **Software Engineering**: Full-stack framework proficiency in Next.js and Django.
+- **AI & Data Science**: Specialize in Clinical Machine Learning, building Random Forest and XGBoost classifiers for cardiometabolic risk scoring, and NLP pipelines to parse free-text medical records into standardized structured data.
+- **Interoperability Standards**: Deep architectural understanding and deployment experience with HL7 and FHIR R4 for reliable hospital integrations.
+
+## Flagship Projects
+1. **Clinote - Clinical NLP SaaS**: Built via Next.js and Supabase. Automatically parses and structures natural language medical notes for Spanish-speaking doctors, massively reducing administrative burnout. Repository: https://github.com/Aram9574/Clinote
+2. **GeriCare ERP - HL7/FHIR Integrated Platform**: Designed natively in Python/Django for residential nursing and geriatric facilities. It structurally bridges nursing, medication, and administration, adhering to FHIR models (Observation, Patient, MedicationStatement). Repository: https://github.com/Aram9574/GeriCare
+3. **Cardiometabolic Machine Learning CDSS**: Developed predictive models over CDC BRFSS epidemiological datasets analyzing an immense vector of 250,000+ patient records for detecting early diabetic/metabolic risk, backed by clinical explainability techniques (XAI/SHAP).
+
+## Vision
+Alejandro builds software that bridges the gap between state-of-the-art technological advancement and raw clinical utility. He focuses on saving doctors continuous administrative burden through reliable AI, thereby enabling pure patient-centered clinical care.
+
+## Links & Contact
+- **GitHub**: https://github.com/Aram9574
+- **LinkedIn**: https://linkedin.com/in/aramzakzuk
+- **Hugging Face**: https://huggingface.co/aram1585
