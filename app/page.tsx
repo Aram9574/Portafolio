@@ -25,8 +25,8 @@ export default function HomePage() {
             <a href="/contacto" className="px-6 py-3 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition">
               Contactar
             </a>
-            <a href="/cv/CV_Alejandro_Zakzuk_2026.pdf" download className="px-6 py-3 rounded-lg border border-emerald-400/50 text-emerald-400 hover:border-emerald-400 transition">
-              Descargar CV
+            <a href="/cv/CV_Aram_Zakzuk.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-lg border border-emerald-400/50 text-emerald-400 hover:border-emerald-400 transition">
+              Ver CV
             </a>
             <a href="#proyectos" className="px-6 py-3 rounded-lg border border-white/20 text-white hover:bg-white/5 transition">
               Ver proyectos
@@ -177,7 +177,7 @@ export default function HomePage() {
       <Section id="cta" title="¿Hablamos de una oportunidad?" subtitle="">
         <div className="flex gap-3">
           <a href="/contacto" className="px-6 py-3 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition">Contactar</a>
-          <a href="/cv/CV_Alejandro_Zakzuk_2026.pdf" download className="px-6 py-3 rounded-lg border border-emerald-400/50 text-emerald-400 hover:border-emerald-400 transition">Descargar CV</a>
+          <a href="/cv/CV_Aram_Zakzuk.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-lg border border-emerald-400/50 text-emerald-400 hover:border-emerald-400 transition">Ver CV</a>
         </div>
       </Section>
     </>

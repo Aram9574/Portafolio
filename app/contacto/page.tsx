@@ -4,6 +4,7 @@ import { ContactForm } from '@/components/ContactForm'
 import Section from '@/components/ui/Section'
 import { Mail, MapPin, Linkedin, Youtube, Github } from 'lucide-react'
 import { SOCIAL } from '@/lib/site'
+import Script from 'next/script'
 
 export default function ContactoPage() {
   return (
@@ -46,6 +47,23 @@ export default function ContactoPage() {
                 </span>
               </li>
             </ul>
+
+            <div className="mt-8 flex justify-center md:justify-start">
+              <Script src="https://platform.linkedin.com/badges/js/profile.js" strategy="lazyOnload" />
+              <div 
+                className="badge-base LI-profile-badge" 
+                data-locale="es_ES" 
+                data-size="medium" 
+                data-theme="light" 
+                data-type="VERTICAL" 
+                data-vanity="aramzakzuk" 
+                data-version="v1"
+              >
+                <a className="badge-base__link LI-simple-link" href="https://linkedin.com/in/aramzakzuk">
+                  Aram Zakzuk
+                </a>
+              </div>
+            </div>
           </div>
           <ContactForm />
         </div>

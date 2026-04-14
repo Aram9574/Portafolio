@@ -33,7 +33,7 @@ export default function SobreMiPage() {
             </p>
             <div className="mt-6 flex flex-wrap gap-3">
               <a href="/contacto" className="px-5 py-2 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition">Contactar</a>
-              <a href="/cv/CV_Alejandro_Zakzuk_2026.pdf" download className="px-5 py-2 rounded-lg border border-white/20 hover:bg-white/5 transition">Descargar CV</a>
+              <a href="/cv/CV_Aram_Zakzuk.pdf" target="_blank" rel="noopener noreferrer" className="px-5 py-2 rounded-lg border border-white/20 hover:bg-white/5 transition">Ver CV</a>
             </div>
           </div>
         </div>
@@ -165,7 +165,7 @@ export default function SobreMiPage() {
         </div>
         <div className="flex gap-3 justify-center">
           <a href="/contacto" className="px-6 py-3 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition">Contactar</a>
-          <a href="/cv/CV_Alejandro_Zakzuk_2026.pdf" download className="px-6 py-3 rounded-lg border border-emerald-400/50 text-emerald-400 hover:border-emerald-400 transition">Descargar CV</a>
+          <a href="/cv/CV_Aram_Zakzuk.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-lg border border-emerald-400/50 text-emerald-400 hover:border-emerald-400 transition">Ver CV</a>
         </div>
       </Section>
     </>
