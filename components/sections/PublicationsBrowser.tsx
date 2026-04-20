@@ -6,8 +6,8 @@ type Pub = { id:string; title:string; type:string; venue:string; year:number; li
 
 const TABS = [
   { key: 'All', label: 'Todas' },
-  { key: 'post', label: 'Posts técnicos' },
-  { key: 'talk', label: 'Charlas' },
+  { key: 'Artículo', label: 'Artículos' },
+  { key: 'Charla', label: 'Charlas' },
 ]
 
 export default function PublicationsBrowser({ publications }:{ publications: Pub[] }) {
@@ -25,26 +25,26 @@ export default function PublicationsBrowser({ publications }:{ publications: Pub
       <div className="flex flex-wrap items-center gap-3 mb-4">
         <div className="flex gap-2">
           {TABS.map(t => (
-            <button key={t.key} onClick={() => setTab(t.key)} className={`px-3 py-1 rounded-full text-sm border ${tab===t.key ? 'border-emerald-400 text-emerald-300' : 'border-white/10 text-muted-foreground hover:text-white'} bg-white/5`}>
+            <button key={t.key} onClick={() => setTab(t.key)} className={`px-3 py-1 text-sm border font-mono transition-colors ${tab===t.key ? 'border-ink bg-ink text-bone' : 'border-rule text-ink-2 bg-paper hover:text-ink hover:border-ink'}`}>
               {t.label}
             </button>
           ))}
         </div>
-        <input value={q} onChange={e=>setQ(e.target.value)} placeholder="Buscar..." className="ml-auto w-full md:w-64 rounded-xl bg-white/5 border border-white/10 px-3 py-2 outline-none" />
+        <input value={q} onChange={e=>setQ(e.target.value)} placeholder="Buscar..." className="ml-auto w-full md:w-64 bg-transparent border border-rule text-ink placeholder:text-muted focus:outline-none focus:border-ink font-mono px-3 py-2" />
       </div>
       <div className="grid md:grid-cols-3 gap-6">
         {list.map(p => (
           <Card key={p.id}>
-            <div className="text-lg font-semibold">{p.title}</div>
-            <div className="text-xs text-muted-foreground mt-1">{p.type} · {p.venue} · {p.year}</div>
+            <div className="text-lg font-semibold text-ink">{p.title}</div>
+            <div className="text-xs text-muted mt-1 font-mono">{p.type} · {p.venue} · {p.year}</div>
             {Array.isArray(p.tags) && (
-              <div className="mt-2 flex flex-wrap gap-2 text-xs text-muted-foreground">
+              <div className="mt-2 flex flex-wrap gap-2">
                 {p.tags.map((t:string) => (
-                  <span key={t} className="px-2 py-1 rounded-full bg-white/5 border border-white/10">{t}</span>
+                  <span key={t} className="chip-ed">{t}</span>
                 ))}
               </div>
             )}
-            <a href={p.link} target="_blank" rel="noreferrer" className="mt-3 inline-block text-emerald-400 hover:underline">Ver →</a>
+            <a href={p.link} target="_blank" rel="noreferrer" className="ed-link mt-3 inline-block">Leer en LinkedIn →</a>
           </Card>
         ))}
       </div>

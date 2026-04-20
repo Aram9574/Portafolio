@@ -52,12 +52,12 @@ export default async function ProjectDetailPage({ params }: Props) {
   return (
     <>
       <Section id="project-hero">
-        <h1 className="text-3xl md:text-4xl font-semibold tracking-tight" data-aos="fade-down">{project.title}</h1>
-        <div className="mt-3 flex flex-wrap gap-2 text-xs text-muted-foreground" data-aos="fade-up" data-aos-delay="100">
-          {project.tags.map((s) => <span key={s} className="px-2 py-1 rounded-full bg-white/5 border border-white/10">{s}</span>)}
+        <h1 className="display-l text-ink" data-aos="fade-down">{project.title}</h1>
+        <div className="mt-3 flex flex-wrap gap-2" data-aos="fade-up" data-aos-delay="100">
+          {project.tags.map((s) => <span key={s} className="chip-ed">{s}</span>)}
         </div>
         {project.cover && (
-          <div className="mt-6 relative w-full aspect-[16/9] rounded-xl overflow-hidden" data-aos="zoom-in" data-aos-delay="200">
+          <div className="mt-6 relative w-full aspect-[16/9] border border-rule overflow-hidden" data-aos="zoom-in" data-aos-delay="200">
             <Image src={project.cover} alt={project.title} fill className="object-cover" />
           </div>
         )}
@@ -67,45 +67,45 @@ export default async function ProjectDetailPage({ params }: Props) {
         <div className="flex flex-col lg:flex-row lg:items-start gap-8">
           <div className="flex-1 min-w-0 space-y-6">
             {readmeContent ? (
-              <div className="prose prose-invert prose-emerald max-w-none bg-white/5 border border-white/10 p-6 md:p-8 rounded-xl overflow-hidden">
+              <div className="prose prose-stone max-w-none bg-paper border border-rule p-6 md:p-8 overflow-hidden">
                 <ReactMarkdown>{readmeContent}</ReactMarkdown>
               </div>
             ) : (
               <>
                 <Card>
-                  <h2 className="text-white font-semibold mb-1">Problema</h2>
-                  <p className="text-sm text-muted-foreground">{project.context}</p>
+                  <h2 className="text-ink font-semibold mb-1">Problema</h2>
+                  <p className="text-sm text-ink-2">{project.context}</p>
                 </Card>
                 <Card>
-                  <h2 className="text-white font-semibold mb-1">Solución</h2>
-                  <p className="text-sm text-muted-foreground">{project.solution}</p>
+                  <h2 className="text-ink font-semibold mb-1">Solución</h2>
+                  <p className="text-sm text-ink-2">{project.solution}</p>
                 </Card>
                 <Card>
-                  <h2 className="text-white font-semibold mb-1">Resultado</h2>
-                  <p className="text-sm text-muted-foreground">{project.impact}</p>
+                  <h2 className="text-ink font-semibold mb-1">Resultado</h2>
+                  <p className="text-sm text-ink-2">{project.impact}</p>
                 </Card>
                 {project.regulatory && (
                   <Card>
-                    <h2 className="text-white font-semibold mb-1">Marco regulatorio</h2>
-                    <p className="text-sm text-muted-foreground">{project.regulatory}</p>
+                    <h2 className="text-ink font-semibold mb-1">Marco regulatorio</h2>
+                    <p className="text-sm text-ink-2">{project.regulatory}</p>
                   </Card>
                 )}
                 {project.conclusion && (
                   <Card>
-                    <h2 className="text-white font-semibold mb-1">Conclusión</h2>
-                    <p className="text-sm text-muted-foreground">{project.conclusion}</p>
+                    <h2 className="text-ink font-semibold mb-1">Conclusión</h2>
+                    <p className="text-sm text-ink-2">{project.conclusion}</p>
                   </Card>
                 )}
                 {project.lessons && (
                   <Card>
-                    <h2 className="text-white font-semibold mb-1">Lecciones</h2>
-                    <p className="text-sm text-muted-foreground">{project.lessons}</p>
+                    <h2 className="text-ink font-semibold mb-1">Lecciones</h2>
+                    <p className="text-sm text-ink-2">{project.lessons}</p>
                   </Card>
                 )}
                 {project.nextSteps && (
                   <Card>
-                    <h3 className="text-white font-semibold mb-1">Próximos pasos</h3>
-                    <p className="text-sm text-muted-foreground">{project.nextSteps}</p>
+                    <h3 className="text-ink font-semibold mb-1">Próximos pasos</h3>
+                    <p className="text-sm text-ink-2">{project.nextSteps}</p>
                   </Card>
                 )}
               </>
@@ -113,18 +113,18 @@ export default async function ProjectDetailPage({ params }: Props) {
           </div>
           <aside className="w-full lg:w-80 shrink-0 sticky top-24 space-y-6" data-aos="fade-left" data-aos-delay="300">
             <Card>
-              <h3 className="text-white font-semibold">¿Quieres algo similar?</h3>
-              <p className="mt-2 text-sm text-muted-foreground">Escríbeme para explorar un piloto adaptado a tu centro.</p>
-              <a href="/contacto" className="btn-primary mt-4 inline-flex">Contactar</a>
+              <h3 className="text-ink font-semibold">¿Quieres algo similar?</h3>
+              <p className="mt-2 text-sm text-ink-2">Escríbeme para explorar un piloto adaptado a tu centro.</p>
+              <a href="/contacto" className="btn-ink mt-4 inline-flex">Contactar</a>
               {project.links?.repo && (
-                <a href={project.links.repo} target="_blank" rel="noreferrer" className="btn-outline mt-2 inline-flex w-full justify-center">Repositorio GitHub</a>
+                <a href={project.links.repo} target="_blank" rel="noreferrer" className="btn-ghost mt-2 inline-flex w-full justify-center">Repositorio GitHub</a>
               )}
               {project.links?.demo && (
-                <a 
-                  href={project.links.demo} 
-                  target="_blank" 
-                  rel="noreferrer" 
-                  className="mt-3 inline-flex w-full justify-center px-4 py-2 rounded-lg bg-emerald-500 text-black font-semibold hover:bg-emerald-400 transition text-sm"
+                <a
+                  href={project.links.demo}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn-ink mt-3 inline-flex w-full justify-center text-sm"
                 >
                   {project.links.demo.includes('huggingface.co') ? 'Ver demo en Hugging Face' : 'Ver demo en vivo'}
                 </a>

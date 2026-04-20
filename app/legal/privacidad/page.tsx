@@ -5,8 +5,8 @@ export const metadata = { title: 'Política de privacidad' }
 export default function PoliticaPrivacidadPage() {
   return (
     <Section id="legal-privacidad" title="Política de privacidad">
-      <div className="prose prose-invert max-w-none">
-        <p className="text-gray-300">La presente página web es de carácter personal y tiene únicamente fines informativos y de divulgación.
+      <div className="prose prose-stone max-w-none">
+        <p className="text-ink-2">La presente página web es de carácter personal y tiene únicamente fines informativos y de divulgación.
 No se recogen datos personales sensibles de los usuarios ni se almacenan historiales médicos.
 El único dato que podría recopilarse de manera directa es el correo electrónico en caso de que el usuario decida contactar voluntariamente.
 El sitio puede utilizar herramientas de analítica web que funcionan de manera agregada y anónima para medir la interacción con los contenidos.

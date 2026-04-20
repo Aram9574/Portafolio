@@ -31,6 +31,10 @@ dist/
 .eslintcache
 .cache/
 .parcel-cache/
+tsconfig.tsbuildinfo
+
+# Local work files (no commit)
+Foto Perfil Pagina Web*.png
 
 # Lockfiles (standardize on Yarn)
 package-lock.json

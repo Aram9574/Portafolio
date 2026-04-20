@@ -26,19 +26,19 @@ export function CookieBanner() {
 
   if (!visible) return null
   return (
-    <div className="fixed bottom-4 left-1/2 z-50 -translate-x-1/2">
-      <div className="card max-w-xl p-4 text-sm text-muted">
+    <div className="fixed bottom-4 right-4 z-50 max-w-sm">
+      <div className="border border-rule bg-paper p-4 text-xs text-ink-2">
         <p>
-          Usamos cookies técnicas necesarias y, opcionalmente, analítica anónima (desactivada por defecto). Puedes aceptar para habilitarla. Más info en{' '}
-          <a className="underline hover:text-white" href="/cookies.html">Cookies</a>.
+          Usamos cookies técnicas necesarias y, opcionalmente, analítica anónima (desactivada por defecto). Más info en{' '}
+          <a className="ed-link" href="/cookies.html">Cookies</a>.
         </p>
-        <div className="mt-3 flex gap-3">
+        <div className="mt-3 flex gap-2">
           <button
-            className="btn-primary text-sm"
+            className="btn-ink text-xs px-3 py-1.5"
             onClick={() => { localStorage.setItem(KEY, 'true'); setConsented(true); setVisible(false) }}
           >Aceptar</button>
           <button
-            className="btn-outline text-sm"
+            className="btn-ghost text-xs px-3 py-1.5"
             onClick={() => { localStorage.setItem(KEY, 'false'); setVisible(false) }}
           >Rechazar</button>
         </div>

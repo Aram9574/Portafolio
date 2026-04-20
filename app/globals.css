@@ -2,142 +2,401 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --bg: #0B0F14;
-  --surface: #0F172A;
-  --primary: #00C2A8;
-  --primary-600: #00A18D;
-  --accent: #6F7DFF;
-  --muted: #94A3B8;
-  --success: #22C55E;
+/* =========================================================
+   Clinical Editorial — INK MODE (oscuro)
+   Negro tinta + crema + chartreuse clínico
+   ========================================================= */
+:root, [data-theme="ink"] {
+  --ink: #1A1815;          /* tipografía: tinta cálida */
+  --ink-2: #3A3630;
+  --bone: #E8E2D4;         /* fondo: crema papel */
+  --paper: #F0EADC;        /* superficies elevadas: crema claro */
+  --rule: #1A1815;         /* reglas: tinta */
+  --accent: #C4F542;       /* lima clínico */
+  --accent-hover: #B3E833;
+  --danger: #D63B1F;
+  --muted: #6B655A;
+  --muted-2: #8A8478;
+
+  /* Legacy mapping */
+  --bg: var(--bone);
+  --surface: var(--paper);
+  --primary: var(--accent);
+  --primary-600: var(--accent-hover);
+  --success: #4ADE80;
   --warning: #F59E0B;
 }
 
-html, body {
-  height: 100%;
+[data-theme="paper"] {
+  --ink: #0A0A0A;
+  --ink-2: #1A1A1A;
+  --bone: #F4EFE6;
+  --paper: #FAF7F1;
+  --rule: #1A1A1A;
+  --muted: #6B6560;
+  --muted-2: #8A857F;
+}
+
+html, body { height: 100%; }
+
+html {
+  scroll-behavior: smooth;
+  background: var(--bone);
 }
 
 body {
-  color: white;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  background: var(--bone);
+  color: var(--ink);
+  font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 400;
+  font-feature-settings: "ss01", "cv11";
 }
 
-/* Suavizado de scroll para anclas */
-html { scroll-behavior: smooth; }
-
-/* Efectos suaves por defecto en elementos interactivos */
-:where(a, button, [role="button"]) {
-  transition: transform .18s ease, filter .18s ease, box-shadow .18s ease, opacity .18s ease, background-color .18s ease, border-color .18s ease;
+.font-display {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 144, "SOFT" 30;
+  letter-spacing: -0.02em;
 }
-:where(a, button, [role="button"]):hover { transform: translateY(-1px); }
-:where(a, button, [role="button"]):active { transform: translateY(0); }
 
+.font-mono {
+  font-family: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+  font-feature-settings: "tnum" 1, "zero" 1;
+  letter-spacing: 0;
+}
+
+/* =========================================================
+   Reglas editoriales
+   ========================================================= */
+.rule-t { border-top: 1px solid var(--rule); }
+.rule-b { border-bottom: 1px solid var(--rule); }
+.rule-y { border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); }
+
+.section-index {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* =========================================================
+   Tipografía editorial
+   ========================================================= */
+.display-xl {
+  font-family: var(--font-display), serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 144, "SOFT" 20;
+  font-weight: 400;
+  font-size: clamp(2.5rem, 6.4vw, 5.6rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: manual;
+}
+
+.display-l {
+  font-family: var(--font-display), serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 96, "SOFT" 30;
+  font-weight: 400;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 0.98;
+  letter-spacing: -0.025em;
+  color: var(--ink);
+}
+
+.display-m {
+  font-family: var(--font-display), serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 48;
+  font-weight: 400;
+  font-size: clamp(1.5rem, 3vw, 2.25rem);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+}
+
+.metric-numeral {
+  font-family: var(--font-display), serif;
+  font-variation-settings: "opsz" 144, "SOFT" 0;
+  font-feature-settings: "tnum" 1;
+  font-size: clamp(3.5rem, 8vw, 6rem);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.eyebrow {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.lead {
+  font-family: var(--font-body), sans-serif;
+  font-size: clamp(1rem, 1.4vw, 1.2rem);
+  line-height: 1.55;
+  color: var(--ink-2);
+  max-width: 62ch;
+}
+
+.caption {
+  font-family: var(--font-mono), monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+/* =========================================================
+   Botones
+   ========================================================= */
+.btn-ink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.4rem;
+  background: var(--ink);
+  color: var(--bone);
+  border: 1px solid var(--ink);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+}
+.btn-ink:hover { background: var(--accent); color: var(--bone); border-color: var(--accent); }
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.9rem 1.4rem;
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--ink);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: background 180ms ease, color 180ms ease;
+}
+.btn-ghost:hover { background: var(--ink); color: var(--bone); }
+
+.chip-ed {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid var(--rule);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.82rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink);
+  background: transparent;
+  transition: background 180ms ease, color 180ms ease;
+}
+.chip-ed:hover {
+  background: var(--ink);
+  color: var(--bone);
+}
+.chip-ed svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.hl-accent {
+  background: linear-gradient(transparent 62%, var(--accent) 62%);
+  padding: 0 0.12em;
+  color: var(--ink);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+/* Enlaces editoriales */
+a.ed-link {
+  position: relative;
+  color: var(--ink);
+  text-decoration: none;
+  padding-bottom: 2px;
+  background-image: linear-gradient(var(--ink), var(--ink));
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: background-size 280ms ease, color 180ms ease;
+}
+a.ed-link:hover {
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-size: 100% 40%;
+  background-position: 0 90%;
+  color: var(--bone);
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* =========================================================
+   Ticker clínico
+   ========================================================= */
+.ticker {
+  border-bottom: 1px solid var(--rule);
+  background: var(--bone);
+  overflow: hidden;
+  position: fixed;
+  top: 4rem;
+  left: 0;
+  right: 0;
+  z-index: 30;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+}
+.ticker-track {
+  display: inline-flex;
+  gap: 3rem;
+  white-space: nowrap;
+  animation: ticker-scroll 60s linear infinite;
+  font-family: var(--font-mono), monospace;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+}
+.ticker-dot {
+  width: 6px; height: 6px;
+  background: var(--accent);
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track { animation: none; }
+}
+
+/* =========================================================
+   Reveal por palabra
+   ========================================================= */
+@keyframes word-reveal {
+  0% { opacity: 0; transform: translateY(40%); font-variation-settings: "opsz" 9, "SOFT" 100; }
+  100% { opacity: 1; transform: translateY(0); font-variation-settings: "opsz" 144, "SOFT" 20; }
+}
+.word-reveal > span {
+  display: inline-block;
+  opacity: 1;
+  animation: word-reveal 900ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+}
+@media (prefers-reduced-motion: reduce) {
+  .word-reveal > span {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* =========================================================
+   Legacy: .card / .chip / .btn-primary — versión oscura
+   ========================================================= */
 .card {
-  @apply rounded-2xl border border-white/10 backdrop-blur-md shadow-sm transition duration-200 ease-out hover:border-white/20;
-  @apply bg-[rgba(15,23,42,0.8)];
+  border: 1px solid var(--rule);
+  background: var(--paper);
+  padding: 1.5rem;
+  border-radius: 0;
+  transition: border-color 200ms ease;
 }
+.card:hover { border-color: var(--ink); }
 
 .chip {
-  @apply inline-flex items-center rounded-lg border border-white/10 bg-white/5 backdrop-blur-md px-3 py-1 text-sm text-slate-200 transition duration-200 ease-out hover:-translate-y-0.5 hover:border-white/20 hover:bg-white/10;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid var(--rule);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: transparent;
+  color: var(--ink);
+  border-radius: 0;
 }
 
 .btn-primary {
-  @apply inline-flex items-center justify-center rounded-xl bg-primary px-5 py-3 font-medium text-black transition-transform duration-200 ease-out hover:-translate-y-0.5 hover:brightness-110 focus:outline-none focus:ring-2;
-  @apply focus:ring-[rgba(0,161,141,0.6)];
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.4rem;
+  background: var(--accent);
+  color: var(--bone);
+  border: 1px solid var(--accent);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 0;
 }
+.btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
 
 .btn-outline {
-  @apply inline-flex items-center justify-center rounded-xl px-5 py-3 font-medium text-primary transition-all duration-200 ease-out hover:-translate-y-0.5 focus:outline-none focus:ring-2;
-  @apply border-[rgba(0,194,168,0.6)] hover:bg-[rgba(0,194,168,0.1)] focus:ring-[rgba(0,194,168,0.4)];
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.4rem;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border-radius: 0;
+  background: transparent;
 }
+.btn-outline:hover { background: var(--ink); color: var(--bone); }
 
 .section-title {
-  @apply text-3xl md:text-5xl font-semibold tracking-tight text-white;
+  font-family: var(--font-display), serif;
+  font-variation-settings: "opsz" 96;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: var(--ink);
 }
 
 .subtle {
-  @apply text-sm text-muted;
+  color: var(--muted);
+  font-family: var(--font-mono), monospace;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
 }
 
-/* Focus visible for a11y */
-:focus-visible {
-  outline: 2px solid var(--primary);
-  outline-offset: 2px;
-}
+/* =========================================================
+   Overrides para la vieja paleta emerald → ahora chartreuse
+   (mantiene los componentes legacy visualmente coherentes)
+   ========================================================= */
+.text-emerald-400, .text-emerald-500, .text-emerald-300 { color: var(--ink) !important; }
+.bg-emerald-400, .bg-emerald-500 { background-color: var(--ink) !important; color: var(--bone) !important; }
+.border-emerald-400\/50, .border-emerald-400\/40, .border-emerald-400,
+.hover\:border-emerald-400\/50:hover, .hover\:border-emerald-400\/40:hover { border-color: var(--ink) !important; }
+.hover\:bg-emerald-300:hover { background-color: var(--ink-2) !important; }
+.hover\:text-emerald-400:hover { color: var(--ink) !important; }
 
-/* Hero gradient like the provided HTML */
-.hero-gradient {
-  background: radial-gradient(circle at top center,
-    rgba(0, 194, 168, 0.35) 0%,
-    rgba(0, 194, 168, 0.15) 25%,
-    rgba(15, 23, 42, 0.95) 70%,
-    #0B0F14 100%
-  );
-}
+/* El viejo "black" de botones ahora debe ser "bone" (fondo) para contraste sobre accent */
+.text-black { color: var(--bone) !important; }
 
-/* Alternative hero background per provided spec */
-.hero-bg{
-  background:
-    radial-gradient(1200px 600px at 35% 20%, rgba(0,194,168,.25) 0%, rgba(0,194,168,.10) 35%, rgba(15,23,42,1) 70%),
-    linear-gradient(180deg, #0f172a 0%, #0b1220 100%);
-}
+/* AOS timing */
+[data-aos] { transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1); }
 
-/* Hero spotlight overlay */
-.hero-spotlight{ position: relative; }
-.hero-spotlight::before{
-  content: ""; position: absolute; inset: -10% -5% auto -5%; height: 60%;
-  background: radial-gradient(600px 300px at 50% 0%, rgba(0,194,168,.35), transparent 70%);
-  pointer-events: none; filter: blur(12px);
-}
-
-/* Hero CSS animations */
-@keyframes fadeUp {
-  0% { opacity: 0; transform: translateY(12px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-.hero-title { animation: fadeUp .35s ease-out both; animation-delay: .05s; }
-.hero-sub { animation: fadeUp .45s ease-out both; animation-delay: .12s; }
-
-/* AOS is imported in AOSProvider; no extra CSS needed here */
-/* --- Background global estilo “foco” --- */
-:root{
-  --bg-deep-1:#0f172a; /* slate-900 */
-  --bg-deep-2:#0b1223;
-  --bg-deep-3:#0a0f1d;
-  --bg-deep-4:#0a0a0a;
-  --spot-green: 16,185,129; /* rgb para radial */
-}
-.bg-app-gradient{
-  background: radial-gradient(120% 120% at 50% 20%, var(--bg-deep-1) 0%, var(--bg-deep-2) 40%, var(--bg-deep-3) 65%, var(--bg-deep-4) 100%);
-}
-.bg-spotlight{
-  background: radial-gradient(closest-side, rgba(var(--spot-green),0.35), rgba(var(--spot-green),0.18) 40%, rgba(var(--spot-green),0.0) 70%);
-  filter: blur(40px);
-}
-/* Respeto a usuarios con reducción de movimiento: no animar el fondo */
-@media (prefers-reduced-motion: reduce){
-  .bg-spotlight{ filter: blur(40px); }
-}
-
-/* Unificar fondo: secciones transparentes */
-section, .section, .band, .panel, .cta, .hero {
+/* Anular el gradiente spotlight antiguo si queda residual — ya removimos el componente,
+   pero las clases pueden aparecer inline en otras páginas */
+.hero-gradient, .hero-bg, .hero-spotlight, .bg-app-gradient, .bg-spotlight {
   background: transparent !important;
-  box-shadow: none !important;
-  border: 0 !important;
+  filter: none !important;
 }
-
-/* Si usábamos divisores por utility */
-.divide-y > * + * { border-top-width: 0 !important; }
-.border-t, .border-b, .ring-t, .ring-b { border: 0 !important; }
-
-/* Neutralizar pseudos decorativos que pintan líneas/bandas */
-.section:before, .section:after,
-.band:before, .band:after,
-.cta:before, .cta:after,
-.hero:before, .hero:after,
-section:before, section:after {
-  content: none !important;
-  background: transparent !important;
-  border: 0 !important;
-  box-shadow: none !important;
-}
+.hero-spotlight::before { content: none !important; }

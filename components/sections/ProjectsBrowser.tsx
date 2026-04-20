@@ -77,11 +77,11 @@ export default function ProjectsBrowser({ projects }: { projects: Project[] }) {
             value={q}
             onChange={(e)=>handleSearch(e.target.value)}
             placeholder="Buscar proyectos..."
-            className="w-full rounded-xl bg-white/5 border border-white/10 px-3 py-2 outline-none"
+            className="w-full bg-transparent border border-rule text-ink placeholder:text-muted focus:outline-none focus:border-ink font-mono px-3 py-2"
           />
         </div>
       </div>
-      <div className="text-sm text-gray-400 mb-2">{list.length} proyecto(s)</div>
+      <div className="text-sm text-muted mb-2 font-mono">{list.length} proyecto(s)</div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
         {list.map((p, index) => (
           <div data-aos="zoom-in-up" data-aos-delay={100 * ((index % 6) + 1)} key={p.slug}>

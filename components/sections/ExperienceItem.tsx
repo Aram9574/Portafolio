@@ -20,17 +20,17 @@ const ICONS = {
 export default function ExperienceItem({ icon = 'hospital', title, context, bullets = [], metrics = [], ctaHref, ctaText }: Item) {
   const Icon = ICONS[icon];
   return (
-    <article className="rounded-2xl border border-white/10 bg-white/5 p-6 hover:border-emerald-400/40 transition">
+    <article className="border border-rule bg-paper p-6 hover:bg-bone transition">
       <div className="flex items-start gap-4">
-        <div className="shrink-0 rounded-xl bg-emerald-400/10 p-3">
+        <div className="shrink-0 border border-rule bg-bone p-3">
           <Icon className="w-6 h-6 text-emerald-400" />
         </div>
         <div className="grow">
-          <h3 className="text-lg font-semibold">{title}</h3>
-          <p className="text-sm text-gray-300 mt-1">{context}</p>
+          <h3 className="font-display text-lg text-ink">{title}</h3>
+          <p className="text-sm text-ink-2 mt-1">{context}</p>
 
           {bullets.length > 0 && (
-            <ul className="mt-3 space-y-1 text-sm text-gray-300 list-disc pl-5">
+            <ul className="mt-3 space-y-1 text-sm text-ink-2 list-disc pl-5">
               {bullets.map((b, i) => (<li key={i}>{b}</li>))}
             </ul>
           )}
@@ -45,7 +45,7 @@ export default function ExperienceItem({ icon = 'hospital', title, context, bull
             <div className="mt-4">
               <a
                 href={ctaHref}
-                className="inline-flex items-center gap-1 rounded-lg border border-emerald-400/30 bg-emerald-400/10 px-3 py-2 text-sm hover:border-emerald-400/60 transition"
+                className="ed-link inline-flex items-center gap-1 text-sm"
                 rel="noopener noreferrer"
               >
                 {ctaText || 'Ver caso'}
@@ -58,4 +58,3 @@ export default function ExperienceItem({ icon = 'hospital', title, context, bull
     </article>
   );
 }
-

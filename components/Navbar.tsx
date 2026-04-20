@@ -12,17 +12,17 @@ export function Navbar() {
     return () => { document.body.style.overflow = '' }
   }, [open])
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 border-b border-white/10 bg-[rgba(11,15,20,0.65)] backdrop-blur-md">
+    <header className="fixed top-0 left-0 right-0 z-40 border-b border-ink bg-bone">
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="font-semibold tracking-tight text-white text-sm md:text-base">
-          Aram Zakzuk
+        <Link href="/" className="font-display text-lg tracking-tight text-ink italic">
+          Aram Zakzuk<span className="not-italic font-mono text-[0.6rem] tracking-widest uppercase ml-2 text-muted">MD · AI</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-6 text-sm text-muted">
-          <Link href="/#home" className="hover:text-white transition-colors">Inicio</Link>
-          <Link href="/sobre-mi" className="hover:text-white transition-colors">Sobre mí</Link>
-          <Link href="/proyectos" className="hover:text-white transition-colors">Proyectos</Link>
-          <Link href="/publicaciones" className="hover:text-white transition-colors">Publicaciones</Link>
-          <Link href="/contacto" className="hover:text-white transition-colors">Contacto</Link>
+        <nav className="hidden md:flex items-center gap-8 font-mono text-[0.72rem] tracking-widest uppercase text-ink">
+          <Link href="/#home" className="hover:text-muted transition-colors">Inicio</Link>
+          <Link href="/sobre-mi" className="hover:text-muted transition-colors">Perfil</Link>
+          <Link href="/proyectos" className="hover:text-muted transition-colors">Proyectos</Link>
+          <Link href="/publicaciones" className="hover:text-muted transition-colors">Publicaciones</Link>
+          <Link href="/contacto" className="hover:text-muted transition-colors">Contacto</Link>
         </nav>
         <div className="hidden md:flex items-center gap-4">
           <a
@@ -30,23 +30,23 @@ export function Navbar() {
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
-            className="text-muted hover:text-white transition-colors"
+            className="text-ink hover:text-muted transition-colors"
           >
-            <Github className="w-5 h-5" />
+            <Github className="w-4 h-4" />
           </a>
           <a
             href={SOCIAL.linkedin}
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
-            className="text-muted hover:text-white transition-colors"
+            className="text-ink hover:text-muted transition-colors"
           >
-            <Linkedin className="w-5 h-5" />
+            <Linkedin className="w-4 h-4" />
           </a>
 
         </div>
         <button
-          className="md:hidden inline-flex items-center justify-center rounded-lg border border-white/10 bg-white/5 p-2 text-white/80"
+          className="md:hidden inline-flex items-center justify-center border border-ink p-2 text-ink bg-bone"
           aria-label="Abrir menú"
           aria-expanded={open}
           aria-controls="mobile-menu"
@@ -57,23 +57,22 @@ export function Navbar() {
       </div>
       {open && (
         <div className="md:hidden" id="mobile-menu">
-          <div className="absolute inset-0 top-16 bg-black/70 backdrop-blur-md" onClick={() => setOpen(false)} />
-          <div className="absolute left-0 right-0 top-16 mx-4 rounded-2xl border border-white/20 bg-[rgba(15,23,42,0.95)] shadow-xl p-4">
-            <nav className="grid gap-2 text-sm">
-              <Link href="/#home" className="px-3 py-2 rounded-lg hover:bg-white/5" onClick={() => setOpen(false)}>Inicio</Link>
-              <Link href="/sobre-mi" className="px-3 py-2 rounded-lg hover:bg-white/5" onClick={() => setOpen(false)}>Sobre mí</Link>
-              <Link href="/proyectos" className="px-3 py-2 rounded-lg hover:bg-white/5" onClick={() => setOpen(false)}>Proyectos</Link>
-              <Link href="/publicaciones" className="px-3 py-2 rounded-lg hover:bg-white/5" onClick={() => setOpen(false)}>Publicaciones</Link>
-              <Link href="/contacto" className="px-3 py-2 rounded-lg hover:bg-white/5" onClick={() => setOpen(false)}>Contacto</Link>
+          <div className="absolute inset-0 top-16 bg-ink/40" onClick={() => setOpen(false)} />
+          <div className="absolute left-0 right-0 top-16 bg-bone border-y border-ink p-6">
+            <nav className="grid gap-1 font-display text-3xl">
+              <Link href="/#home" className="py-2 border-b border-ink hover:italic" onClick={() => setOpen(false)}>Inicio</Link>
+              <Link href="/sobre-mi" className="py-2 border-b border-ink hover:italic" onClick={() => setOpen(false)}>Perfil</Link>
+              <Link href="/proyectos" className="py-2 border-b border-ink hover:italic" onClick={() => setOpen(false)}>Proyectos</Link>
+              <Link href="/publicaciones" className="py-2 border-b border-ink hover:italic" onClick={() => setOpen(false)}>Publicaciones</Link>
+              <Link href="/contacto" className="py-2 hover:italic" onClick={() => setOpen(false)}>Contacto</Link>
             </nav>
-            <div className="mt-3 flex items-center gap-4 px-3">
-              <a href={SOCIAL.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="text-muted hover:text-white">
+            <div className="mt-6 flex items-center gap-4">
+              <a href={SOCIAL.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="text-ink hover:text-muted">
                 <Github className="w-5 h-5" aria-hidden="true" />
               </a>
-              <a href={SOCIAL.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-muted hover:text-white">
+              <a href={SOCIAL.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-ink hover:text-muted">
                 <Linkedin className="w-5 h-5" aria-hidden="true" />
               </a>
-
             </div>
           </div>
         </div>
