@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import Section from '@/components/ui/Section';
 import { Download, ShieldCheck, Mail, CheckCircle2, Loader2 } from 'lucide-react';
 
 export default function LeadMagnet() {
@@ -33,104 +32,96 @@ export default function LeadMagnet() {
   };
 
   return (
-    <Section id="lead-magnet">
-      <div 
-        className="rounded-2xl border border-emerald-400/20 bg-gradient-to-br from-emerald-400/5 to-black/40 overflow-hidden"
-        data-aos="fade-up"
-      >
-        <div className="grid md:grid-cols-2 gap-8 p-8 md:p-12 items-center">
-          
-          <div data-aos="fade-right" data-aos-delay="100">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-400/10 text-emerald-400 text-xs font-semibold mb-6">
-              <ShieldCheck className="w-4 h-4" />
-              Recurso Gratuito para CTOs y Directores Médicos
-            </div>
-            
-            <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
-              Checklist de Despliegue Seguro de IA en Entornos Clínicos
-            </h2>
-            <p className="text-gray-300 text-sm md:text-base mb-6">
-              Asegurar la viabilidad técnica y legal de un modelo en un hospital no es opcional. Descarga mi guía de un folio con el protocolo que utilizo para validar:
-            </p>
-            
-            <ul className="space-y-3 mb-8">
-              <li className="flex items-start text-sm text-gray-300">
-                <CheckCircle2 className="w-5 h-5 text-emerald-400 mr-3 shrink-0" />
-                Interoperabilidad obligatoria (HL7/FHIR v4)
-              </li>
-              <li className="flex items-start text-sm text-gray-300">
-                <CheckCircle2 className="w-5 h-5 text-emerald-400 mr-3 shrink-0" />
-                Restricciones clave del EU AI Act & GDPR Sanitario
-              </li>
-              <li className="flex items-start text-sm text-gray-300">
-                <CheckCircle2 className="w-5 h-5 text-emerald-400 mr-3 shrink-0" />
-                Defensibilidad estadística y médica del modelo (XAI)
-              </li>
-            </ul>
+    <section id="lead-magnet" className="py-24 rule-b">
+      <div className="container">
+        <div className="grid grid-cols-12 gap-y-10 md:gap-x-8">
+          <div className="col-span-12 md:col-span-3">
+            <div className="section-index">№ 08 — Recurso</div>
           </div>
+          <div className="col-span-12 md:col-span-9 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16">
 
-          <div className="relative" data-aos="fade-left" data-aos-delay="200">
-            <div className="absolute inset-0 bg-emerald-400/10 blur-2xl rounded-full" />
-            <div className="relative rounded-2xl border border-white/10 bg-black/50 p-6 backdrop-blur-sm">
-              {status === 'success' ? (
-                <div className="text-center py-8">
-                  <div className="w-16 h-16 bg-emerald-400/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <CheckCircle2 className="w-8 h-8 text-emerald-400" />
-                  </div>
-                  <h3 className="text-lg font-bold text-white mb-2">¡Enviado a tu bandeja!</h3>
-                  <p className="text-sm text-gray-400">
-                    Revisa tu correo. Si no lo ves, echa un vistazo a la carpeta de spam.
-                  </p>
-                </div>
-              ) : (
-                <>
-                  <h3 className="font-semibold text-white mb-2">¿A dónde te la envío?</h3>
-                  <p className="text-xs text-gray-400 mb-6">Únete a otros líderes técnicos de HealthTech. Cero spam, solo ingeniería útil.</p>
-                  
-                  <form onSubmit={handleSubmit} className="space-y-4">
-                    <div className="relative">
-                      <Mail className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-500" />
-                      <input
-                        type="email"
-                        required
-                        placeholder="tu@email.com"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        className="w-full pl-10 pr-4 py-3 bg-white/5 border border-white/10 rounded-lg focus:border-emerald-400 focus:outline-none focus:ring-1 focus:ring-emerald-400 text-white placeholder:text-gray-600 transition"
-                      />
-                    </div>
-                    
-                    <button
-                      type="submit"
-                      disabled={status === 'loading'}
-                      className="w-full flex items-center justify-center gap-2 py-3 bg-emerald-400 text-black font-bold rounded-lg hover:bg-emerald-300 transition disabled:opacity-50 disabled:cursor-not-allowed group"
-                    >
-                      {status === 'loading' ? (
-                        <>
-                          <Loader2 className="w-5 h-5 animate-spin" />
-                          Procesando...
-                        </>
-                      ) : (
-                        <>
-                          <Download className="w-5 h-5 group-hover:-translate-y-0.5 transition" />
-                          Descargar Documento
-                        </>
-                      )}
-                    </button>
-                    
-                    {status === 'error' && (
-                      <p className="text-xs text-red-400 text-center mt-2">
-                        Hubo un error de conexión. Por favor intenta de nuevo.
-                      </p>
-                    )}
-                  </form>
-                </>
-              )}
+            <div data-aos="fade-right">
+              <div className="eyebrow mb-6 flex items-center gap-2">
+                <ShieldCheck className="w-3 h-3" aria-hidden /> Gratis · CTOs y Dir. Médicos
+              </div>
+              <h2 className="display-l mb-6">
+                Checklist de Despliegue Seguro de IA <span className="italic">en entornos clínicos.</span>
+              </h2>
+              <p className="lead mb-8">
+                El 80% de los proyectos de IA clínica fracasan en implementación, no en desarrollo. Esta guía condensa el protocolo que uso para validar viabilidad técnica y regulatoria antes de desplegar.
+              </p>
+              <ul className="space-y-4 border-t border-[var(--rule)] pt-6">
+                <li className="flex items-start gap-4">
+                  <span className="font-mono text-xs text-[var(--muted)] pt-1">01</span>
+                  <span className="text-[var(--ink-2)]">Interoperabilidad obligatoria <span className="font-mono text-sm">(HL7/FHIR v4)</span></span>
+                </li>
+                <li className="flex items-start gap-4 border-t border-[var(--rule)] pt-4">
+                  <span className="font-mono text-xs text-[var(--muted)] pt-1">02</span>
+                  <span className="text-[var(--ink-2)]">Restricciones clave del <span className="font-mono text-sm">EU AI Act & GDPR</span> Sanitario</span>
+                </li>
+                <li className="flex items-start gap-4 border-t border-[var(--rule)] pt-4">
+                  <span className="font-mono text-xs text-[var(--muted)] pt-1">03</span>
+                  <span className="text-[var(--ink-2)]">Defensibilidad estadística y médica del modelo <span className="font-mono text-sm">(XAI)</span></span>
+                </li>
+              </ul>
             </div>
+
+            <div className="lg:pt-12" data-aos="fade-left" data-aos-delay="200">
+              <div className="border border-[var(--ink)] bg-[var(--paper)] p-8">
+                {status === 'success' ? (
+                  <div>
+                    <CheckCircle2 className="w-10 h-10 text-[var(--ink)] mb-4" />
+                    <h3 className="display-m mb-3">Enviado.</h3>
+                    <p className="caption normal-case tracking-normal" style={{fontSize: '0.9rem'}}>
+                      Revisa tu correo. Si no lo ves, echa un vistazo a la carpeta de spam.
+                    </p>
+                  </div>
+                ) : (
+                  <>
+                    <div className="eyebrow mb-2">¿A dónde te lo envío?</div>
+                    <p className="caption normal-case tracking-normal mb-6" style={{fontSize: '0.85rem'}}>
+                      Únete a otros líderes técnicos de HealthTech. Cero spam, solo ingeniería útil.
+                    </p>
+
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                      <div className="relative">
+                        <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted)]" />
+                        <input
+                          type="email"
+                          required
+                          placeholder="tu@email.com"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
+                          className="w-full pl-12 pr-4 py-3 bg-transparent border border-[var(--ink)] text-[var(--ink)] placeholder:text-[var(--muted)] focus:outline-none font-mono text-sm h-[52px]"
+                        />
+                      </div>
+
+                      <button
+                        type="submit"
+                        disabled={status === 'loading'}
+                        className="btn-ink w-full justify-center h-[52px] disabled:opacity-50"
+                      >
+                        {status === 'loading' ? (
+                          <Loader2 className="w-5 h-5 animate-spin" />
+                        ) : (
+                          <><Download className="w-4 h-4" /> Descargar documento</>
+                        )}
+                      </button>
+
+                      {status === 'error' && (
+                        <p className="text-sm text-[var(--danger)] font-mono text-center">
+                          Error de conexión. Intenta de nuevo.
+                        </p>
+                      )}
+                    </form>
+                  </>
+                )}
+              </div>
+            </div>
+
           </div>
-          
         </div>
       </div>
-    </Section>
+    </section>
   );
 }

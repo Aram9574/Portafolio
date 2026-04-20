@@ -8,12 +8,11 @@ type MetricProps = {
 export default function Metric({ value, label, className }: MetricProps) {
   return (
     <div className={cn(
-      'rounded-xl border border-white/10 bg-white/5 px-4 py-3',
-      'flex items-baseline gap-2',
+      'border border-rule bg-paper px-4 py-3 flex flex-col gap-1',
       className
     )}>
-      <span className="text-emerald-400 text-xl font-semibold">{value}</span>
-      <span className="text-sm text-gray-300">{label}</span>
+      <span className="font-display text-2xl leading-none text-ink" style={{ letterSpacing: '-0.02em' }}>{value}</span>
+      <span className="text-[0.65rem] uppercase tracking-widest text-muted font-mono">{label}</span>
     </div>
   );
 }

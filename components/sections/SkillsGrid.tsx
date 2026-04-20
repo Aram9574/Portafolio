@@ -11,7 +11,7 @@ export default function SkillsGrid() {
       <div className="grid md:grid-cols-2 gap-6">
         {skills.map((group) => (
           <div key={group.title}>
-            <div className="text-sm text-muted-foreground mb-2">{group.title}</div>
+            <div className="eyebrow mb-2">{group.title}</div>
             <div
               className={cn(
                 'flex flex-wrap gap-2 overflow-hidden transition-all',
@@ -19,7 +19,7 @@ export default function SkillsGrid() {
               )}
             >
               {group.items.map((item) => (
-                <span key={item} className="px-3 py-1 rounded-full bg-white/5 border border-white/10 text-sm text-muted-foreground">+ {item}</span>
+                <span key={item} className="chip-ed text-sm">+ {item}</span>
               ))}
             </div>
           </div>
@@ -30,7 +30,7 @@ export default function SkillsGrid() {
           type="button"
           aria-expanded={expanded}
           onClick={() => setExpanded((v) => !v)}
-          className="px-5 py-2 rounded-full bg-emerald-500/90 text-black font-medium hover:brightness-110 transition"
+          className="btn-ink"
         >
           {expanded ? 'Mostrar menos' : 'Mostrar más'}
         </button>

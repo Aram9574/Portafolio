@@ -81,7 +81,7 @@ export function ContactForm() {
   }
   return (
     <form className="card p-6" onSubmit={onSubmit} noValidate>
-      <h2 className="text-white font-semibold">Escríbeme</h2>
+      <h2 className="text-ink font-semibold">Escríbeme</h2>
       {/* Banner de estado */}
       {(state === 'sent' || state === 'error') && (
         <div
@@ -89,7 +89,7 @@ export function ContactForm() {
           tabIndex={-1}
           role="status"
           aria-live="polite"
-          className={`mt-4 rounded-lg px-3 py-2 text-sm ${state==='sent' ? 'bg-emerald-500/10 text-emerald-300 border border-emerald-500/30' : 'bg-red-500/10 text-red-300 border border-red-500/30'}`}
+          className={`mt-4 px-3 py-2 text-sm border ${state==='sent' ? 'bg-accent text-ink border-ink' : 'bg-paper text-danger border-danger'}`}
         >
           {message}
         </div>
@@ -99,39 +99,39 @@ export function ContactForm() {
         <input type="text" name="website" autoComplete="off" tabIndex={-1} className="hidden" aria-hidden="true" />
 
         <label className="text-sm">
-          <span className="block text-muted mb-1">Nombre</span>
+          <span className="block text-muted mb-1 font-mono eyebrow">Nombre</span>
           <input
             name="nombre"
             aria-invalid={Boolean(errors.nombre)}
             aria-describedby={errors.nombre ? 'err-nombre' : undefined}
             onBlur={(e)=>{ if (!e.currentTarget.value.trim()) setErrors(prev=>({ ...prev, nombre: 'Tu nombre es requerido.' })); else setErrors(prev=>({ ...prev, nombre: '' })) }}
-            className={`w-full rounded-xl bg-black/20 border px-3 py-2 outline-none focus:ring-2 focus:ring-[rgba(0,194,168,0.4)] ${errors.nombre ? 'border-red-500/50' : 'border-white/10'}`}
+            className={`w-full bg-transparent border text-ink placeholder:text-muted focus:outline-none focus:border-ink font-mono px-3 py-2 ${errors.nombre ? 'border-danger' : 'border-rule'}`}
           />
-          {errors.nombre && <div id="err-nombre" className="mt-1 text-xs text-red-300">{errors.nombre}</div>}
+          {errors.nombre && <div id="err-nombre" className="mt-1 text-xs text-danger">{errors.nombre}</div>}
         </label>
         <label className="text-sm">
-          <span className="block text-muted mb-1">Email</span>
+          <span className="block text-muted mb-1 font-mono eyebrow">Email</span>
           <input
             type="email"
             name="email"
             aria-invalid={Boolean(errors.email)}
             aria-describedby={errors.email ? 'err-email' : undefined}
             onBlur={(e)=>{ const v=e.currentTarget.value.trim(); if (!v) setErrors(p=>({ ...p, email: 'El email es requerido.' })); else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)) setErrors(p=>({ ...p, email: 'Introduce un email válido.' })); else setErrors(p=>({ ...p, email: '' })) }}
-            className={`w-full rounded-xl bg-black/20 border px-3 py-2 outline-none focus:ring-2 focus:ring-[rgba(0,194,168,0.4)] ${errors.email ? 'border-red-500/50' : 'border-white/10'}`}
+            className={`w-full bg-transparent border text-ink placeholder:text-muted focus:outline-none focus:border-ink font-mono px-3 py-2 ${errors.email ? 'border-danger' : 'border-rule'}`}
           />
-          {errors.email && <div id="err-email" className="mt-1 text-xs text-red-300">{errors.email}</div>}
+          {errors.email && <div id="err-email" className="mt-1 text-xs text-danger">{errors.email}</div>}
         </label>
         <label className="text-sm">
-          <span className="block text-muted mb-1">Mensaje</span>
+          <span className="block text-muted mb-1 font-mono eyebrow">Mensaje</span>
           <textarea
             name="mensaje"
             rows={5}
             aria-invalid={Boolean(errors.mensaje)}
             aria-describedby={errors.mensaje ? 'err-mensaje' : undefined}
             onBlur={(e)=>{ if (!e.currentTarget.value.trim()) setErrors(prev=>({ ...prev, mensaje: 'Escribe un mensaje.' })); else setErrors(prev=>({ ...prev, mensaje: '' })) }}
-            className={`w-full rounded-xl bg-black/20 border px-3 py-2 outline-none focus:ring-2 focus:ring-[rgba(0,194,168,0.4)] ${errors.mensaje ? 'border-red-500/50' : 'border-white/10'}`}
+            className={`w-full bg-transparent border text-ink placeholder:text-muted focus:outline-none focus:border-ink font-mono px-3 py-2 ${errors.mensaje ? 'border-danger' : 'border-rule'}`}
           />
-          {errors.mensaje && <div id="err-mensaje" className="mt-1 text-xs text-red-300">{errors.mensaje}</div>}
+          {errors.mensaje && <div id="err-mensaje" className="mt-1 text-xs text-danger">{errors.mensaje}</div>}
         </label>
         <label className="flex items-center gap-2 text-xs text-muted">
           <input
@@ -146,10 +146,10 @@ export function ContactForm() {
           />
           <span>
             Acepto el tratamiento de mis datos según la
-            {' '}<a className="underline hover:text-white" href="/legal/privacidad" target="_blank" rel="noreferrer">política de privacidad</a>.
+            {' '}<a className="ed-link" href="/legal/privacidad" target="_blank" rel="noreferrer">política de privacidad</a>.
           </span>
         </label>
-        {errors.privacidad && <div className="-mt-2 text-xs text-red-300">{errors.privacidad}</div>}
+        {errors.privacidad && <div className="-mt-2 text-xs text-danger">{errors.privacidad}</div>}
         {/* Consentimiento opcional de comunicaciones (no requerido) */}
         <label className="flex items-center gap-2 text-xs text-muted">
           <input
@@ -161,7 +161,7 @@ export function ContactForm() {
             Quiero recibir recursos y novedades puntuales por email (opcional).
           </span>
         </label>
-        <button disabled={state==='sending'} className="inline-flex items-center px-5 py-3 rounded-xl bg-teal-500 text-slate-900 font-semibold shadow hover:bg-teal-400 transition disabled:opacity-60">
+        <button disabled={state==='sending'} className="btn-ink inline-flex items-center disabled:opacity-60">
           {state==='idle' && 'Enviar'}
           {state==='sending' && 'Enviando…'}
           {state==='sent' && 'Enviar otro mensaje'}

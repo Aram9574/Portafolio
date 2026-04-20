@@ -1,8 +1,12 @@
 export default function Testimonial({ quote, name, role }:{ quote:string; name:string; role:string }) {
   return (
-    <div className="h-full min-h-56 rounded-xl bg-white/5 border border-white/5 p-6 flex flex-col">
-      <p className="italic">“{quote}”</p>
-      <p className="mt-auto pt-4 text-sm text-muted-foreground">{name} — {role}</p>
-    </div>
+    <figure className="h-full flex flex-col border-t border-[var(--ink)] pt-6">
+      <blockquote className="font-display text-xl md:text-2xl leading-snug italic text-[var(--ink)]" style={{letterSpacing: '-0.01em'}}>
+        &ldquo;{quote}&rdquo;
+      </blockquote>
+      <figcaption className="mt-auto pt-6 font-mono text-xs uppercase tracking-widest text-[var(--muted)]">
+        {name} <span className="text-[var(--ink-2)]">/</span> {role}
+      </figcaption>
+    </figure>
   );
 }

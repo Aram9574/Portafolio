@@ -2,116 +2,145 @@ import Section from '@/components/ui/Section';
 import { Card } from '@/components/ui/Card';
 import Metric from '@/components/ui/Metric';
 import Testimonial from '@/components/ui/Testimonial';
-import ProjectCard from '@/components/sections/ProjectCard';
 import ProjectBento from '@/components/sections/ProjectBento';
-import LeadMagnet from '@/components/sections/LeadMagnet';
+import Newsletter from '@/components/sections/Newsletter';
 import { projects } from '@/lib/data/projects';
 import { services } from '@/lib/data/services';
 import { publications } from '@/lib/data/publications';
 import { testimonials } from '@/lib/data/testimonials';
-import { Network, Settings, HeartPulse, Server, Activity, Brain, FileText, TrendingDown } from 'lucide-react';
+import { Network, Settings, Server, Brain, Stethoscope, ShieldCheck, LineChart, Code2, Database, Cpu, Activity, Workflow } from 'lucide-react';
 
 export default function HomePage() {
   const destacados = projects.slice(0,3);
   return (
     <>
-      <section id="home" className="pt-32 pb-24 text-center">
-        <div className="container mx-auto px-4">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6" data-aos="fade-up">
-            Médico · Clinical AI Specialist · HealthTech
-          </h1>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto mb-8" data-aos="fade-up" data-aos-delay="100">
-            Criterio clínico real combinado con capacidad técnica en Machine Learning, NLP clínico e interoperabilidad sanitaria (FHIR · HL7 · SNOMED-CT). Diseño, valido e implemento soluciones de Clinical AI y Healthcare Data Analytics que funcionan en entornos clínicos reales.
-          </p>
-          <div className="flex justify-center flex-wrap gap-4 mb-10" data-aos="fade-up" data-aos-delay="200">
-            <a href="/contacto" className="px-6 py-3 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition">
-              Contactar
-            </a>
-            <a href="/cv/CV_Aram_Zakzuk.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-lg border border-emerald-400/50 text-emerald-400 hover:border-emerald-400 transition">
-              Ver CV
-            </a>
-            <a href="#proyectos" className="px-6 py-3 rounded-lg border border-white/20 text-white hover:bg-white/5 transition">
-              Ver proyectos
-            </a>
-          </div>
-          <div className="flex justify-center flex-wrap gap-2 text-sm mt-6">
-            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full border border-white/10 bg-white/5 hover:border-emerald-400/50 hover:text-emerald-400 hover:-translate-y-0.5 transition cursor-default" data-aos="zoom-in" data-aos-delay="300">
-              <Network className="w-4 h-4 text-emerald-400" aria-hidden="true" />
-              HL7/FHIR
-            </span>
-            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full border border-white/10 bg-white/5 hover:border-emerald-400/50 hover:text-emerald-400 hover:-translate-y-0.5 transition cursor-default" data-aos="zoom-in" data-aos-delay="400">
-              <Settings className="w-4 h-4 text-emerald-400" aria-hidden="true" />
-              MLOps
-            </span>
-            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full border border-white/10 bg-white/5 hover:border-emerald-400/50 hover:text-emerald-400 hover:-translate-y-0.5 transition cursor-default" data-aos="zoom-in" data-aos-delay="500">
-              <HeartPulse className="w-4 h-4 text-emerald-400" aria-hidden="true" />
-              Medicina Preventiva
-            </span>
-            <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full border border-white/10 bg-white/5 hover:border-emerald-400/50 hover:text-emerald-400 hover:-translate-y-0.5 transition cursor-default" data-aos="zoom-in" data-aos-delay="600">
-              <Server className="w-4 h-4 text-emerald-400" aria-hidden="true" />
-              Cloud y datos clínicos
-            </span>
+      {/* HERO — asimétrico, editorial, col-span 5/7 */}
+      <section id="home" className="pt-20 pb-28 rule-b">
+        <div className="container">
+          <div className="grid grid-cols-12 gap-y-10 md:gap-x-8 items-end">
+
+            {/* Columna izquierda: metadatos editoriales */}
+            <aside className="col-span-12 md:col-span-4 lg:col-span-3 space-y-6 md:border-r md:border-ink md:pr-8 md:self-stretch md:pb-4">
+              <div className="eyebrow">№ 01 / Portafolio · 2026</div>
+              <div className="caption leading-relaxed">
+                Madrid · Europa<br />
+                Consulta disponible Q2 2026
+              </div>
+              <div className="flex flex-col gap-3 pt-2">
+                <a href="/contacto" className="btn-ink">Contactar →</a>
+                <a href="/cv/CV_Aram_Zakzuk.pdf" target="_blank" rel="noopener noreferrer" className="btn-ghost">Descargar CV</a>
+              </div>
+            </aside>
+
+            {/* Columna derecha: título display */}
+            <div className="col-span-12 md:col-span-8 lg:col-span-9">
+              <h1 className="display-xl word-reveal">
+                <span style={{ animationDelay: '0ms' }}>Clinical</span>{' '}
+                <span style={{ animationDelay: '100ms' }}>
+                  <span className="hl-accent">AI</span>
+                </span>
+                <br />
+                <span style={{ animationDelay: '200ms' }}>que sobrevive</span>
+                <br />
+                <span style={{ animationDelay: '300ms' }} className="italic">al hospital</span>{' '}
+                <span style={{ animationDelay: '400ms' }}>real.</span>
+              </h1>
+            </div>
+
+            {/* Pie: lead + chips sobre regla */}
+            <div className="col-span-12 pt-10 md:pt-16 rule-t grid grid-cols-12 gap-y-8 md:gap-x-8">
+              <p className="col-span-12 md:col-span-7 lead" data-aos="fade-up">
+                Médico con 6,5 años de práctica clínica real + Clinical AI Specialist. Diseño CDSS y Software as a Medical Device (SaMD) bajo <span className="font-mono text-sm">EU AI Act · MDR · RGPD · EHDS</span>, con interoperabilidad HL7 FHIR y explicabilidad XAI/SHAP. El perfil que el ecosistema HealthTech europeo busca y rara vez encuentra.
+              </p>
+              <div className="col-span-12 md:col-span-5 md:border-l md:border-ink md:pl-8 flex flex-wrap gap-2 content-start">
+                <span className="chip-ed"><Stethoscope aria-hidden /> Médico · 6,5a</span>
+                <span className="chip-ed"><Brain aria-hidden /> CDSS</span>
+                <span className="chip-ed"><Settings aria-hidden /> SaMD</span>
+                <span className="chip-ed"><Server aria-hidden /> EU AI Act</span>
+                <span className="chip-ed"><ShieldCheck aria-hidden /> MDR · ISO 13485</span>
+                <span className="chip-ed"><Network aria-hidden /> HL7 FHIR</span>
+                <span className="chip-ed"><Database aria-hidden /> SNOMED-CT · LOINC</span>
+                <span className="chip-ed"><Cpu aria-hidden /> Machine Learning</span>
+                <span className="chip-ed"><LineChart aria-hidden /> XAI / SHAP</span>
+                <span className="chip-ed"><Code2 aria-hidden /> Python</span>
+                <span className="chip-ed"><Activity aria-hidden /> NLP clínico</span>
+                <span className="chip-ed"><Workflow aria-hidden /> Azure</span>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>
 
-      <Section id="proyectos" title="Proyectos destacados" subtitle="Casos reales. De la pregunta clínica a la solución técnica.">
+      <Section id="proyectos" index="№ 04 — Proyectos" title="Casos de estudio seleccionados" subtitle="De la pregunta clínica a la solución técnica. Cada proyecto documenta un hospital, un dataset, una métrica y una decisión regulatoria.">
         <ProjectBento projects={destacados} />
-        
-        <div className="mt-8 text-center" data-aos="fade-in" data-aos-delay="400">
-          <a href="/proyectos" className="text-emerald-400 hover:underline">Ver todos los proyectos →</a>
+
+        <div className="mt-12">
+          <a href="/proyectos" className="ed-link font-mono text-sm uppercase tracking-widest">Índice completo de proyectos →</a>
         </div>
       </Section>
 
-      {/* Sobre (resumen clínico-tecnológico) fusionado con propuesta de valor */}
-      <section id="about" className="py-20 bg-white/[0.02] border-y border-white/5">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold mb-6" data-aos="fade-up">Un perfil clínico con visión tecnológica</h2>
-            <p className="text-gray-300 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
-              Ejerzo la medicina y construyo software. Trabajo en la intersección exacta para traducir los registros clínicos en sistemas de decisión. Reduzco la latencia, el coste y el error humano.
-            </p>
-          </div>
-
-          <div className="grid gap-6 sm:grid-cols-2 md:grid-cols-3 mb-16 text-center">
-            <div className="rounded-xl border border-white/10 bg-white/5 p-6 hover:border-emerald-400/40 transition" data-aos="fade-up" data-aos-delay="200">
-              <Brain className="w-6 h-6 text-emerald-400 mx-auto mb-3" aria-hidden="true" />
-              <div className="text-2xl font-bold text-emerald-400 mb-2">+10</div>
-              <p className="text-sm text-gray-300">Modelos diseñados para problemas clínicos reales</p>
+      {/* SOBRE — editorial con métricas display grandes */}
+      <section id="about" className="py-24 rule-b">
+        <div className="container">
+          <div className="grid grid-cols-12 gap-y-12 md:gap-x-8 mb-20">
+            <div className="col-span-12 md:col-span-3">
+              <div className="section-index">№ 02 — Perfil</div>
             </div>
-            <div className="rounded-xl border border-white/10 bg-white/5 p-6 hover:border-emerald-400/40 transition" data-aos="fade-up" data-aos-delay="300">
-              <Network className="w-6 h-6 text-emerald-400 mx-auto mb-3" aria-hidden="true" />
-              <div className="text-xl font-bold text-emerald-400 mb-2">HL7/FHIR</div>
-              <p className="text-sm text-gray-300">Integración aplicada en ERP hospitalario</p>
-            </div>
-            <div className="rounded-xl border border-white/10 bg-white/5 p-6 hover:border-emerald-400/40 transition" data-aos="fade-up" data-aos-delay="400">
-              <FileText className="w-6 h-6 text-emerald-400 mx-auto mb-3" aria-hidden="true" />
-              <div className="text-2xl font-bold text-emerald-400 mb-2">+5</div>
-              <p className="text-sm text-gray-300">Aportes en investigación médica e IA</p>
+            <div className="col-span-12 md:col-span-9">
+              <h2 className="display-l mb-6">Ejerzo la medicina.<br /><span className="italic">Construyo</span> software.</h2>
+              <p className="lead">
+                Trabajo en la intersección exacta para traducir registros clínicos en sistemas de decisión. Reduzco latencia, coste y error humano — con responsabilidad regulatoria.
+              </p>
             </div>
           </div>
 
-          <h3 className="text-2xl font-bold mb-8 text-center" data-aos="fade-up">El valor diferencial</h3>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
-            <div className="p-6 rounded-xl border border-white/10 bg-black/20" data-aos="zoom-in" data-aos-delay="100">
-              <Activity className="w-6 h-6 text-emerald-400 mb-3" aria-hidden="true" />
-              <h4 className="font-bold text-white mb-2">Criterio clínico para validar IA</h4>
-              <p className="text-sm text-gray-400">Construyo arquitectura respaldada por precisión estadística y lógica médica irrefutable tras 6 años de práctica real.</p>
+          {/* Métricas display: tipografía XXL, tabular, asimétrica */}
+          <div className="grid grid-cols-12 gap-y-12 md:gap-x-8 mb-24">
+            <div className="col-span-12 md:col-span-5 md:col-start-1 border-t border-ink pt-6">
+              <div className="eyebrow mb-4">CDSS en producción</div>
+              <div className="metric-numeral font-display">0.942</div>
+              <p className="caption mt-3">AUC-ROC en estratificación de riesgo diabético (TFM · 253K registros CDC · XAI/SHAP).</p>
             </div>
-            <div className="p-6 rounded-xl border border-white/10 bg-black/20" data-aos="zoom-in" data-aos-delay="200">
-              <Settings className="w-6 h-6 text-emerald-400 mb-3" aria-hidden="true" />
-              <h4 className="font-bold text-white mb-2">Pipeline técnico completo</h4>
-              <p className="text-sm text-gray-400">Desde la extracción de datos hasta el modelo desplegado: Python, ML, NLP, XAI/SHAP.</p>
+            <div className="col-span-12 md:col-span-4 md:col-start-7 border-t border-ink pt-6">
+              <div className="eyebrow mb-4">Práctica clínica</div>
+              <div className="metric-numeral font-display">6,5<span className="text-muted">a</span></div>
+              <p className="caption mt-3">En urgencias, medicina interna y atención primaria (Méderi · 2018–2024).</p>
             </div>
-            <div className="p-6 rounded-xl border border-white/10 bg-black/20" data-aos="zoom-in" data-aos-delay="300">
-              <Network className="w-6 h-6 text-emerald-400 mb-3" aria-hidden="true" />
-              <h4 className="font-bold text-white mb-2">Interoperabilidad en producción</h4>
-              <p className="text-sm text-gray-400">Implemento estándares HL7 y FHIR conectando hardware y software bajo presiones hospitalarias y operativas.</p>
+            <div className="col-span-12 md:col-span-5 md:col-start-3 border-t border-ink pt-6">
+              <div className="eyebrow mb-4">Regulación</div>
+              <div className="metric-numeral font-display italic">EU AI Act</div>
+              <p className="caption mt-3">RGPD · EHDS · MDR · ISO 13485 · SaMD · Marcado CE como restricciones de diseño.</p>
             </div>
-            <div className="p-6 rounded-xl border border-white/10 bg-black/20" data-aos="zoom-in" data-aos-delay="400">
-              <FileText className="w-6 h-6 text-emerald-400 mb-3" aria-hidden="true" />
-              <h4 className="font-bold text-white mb-2">Marco regulatorio europeo</h4>
-              <p className="text-sm text-gray-400">RGPD, EU AI Act, EHDS. Aplicados no como checklist legal, sino como restricciones de diseño desde el día 1.</p>
+          </div>
+
+          {/* Valor diferencial — cuatro columnas con regla superior, sin cards */}
+          <div className="grid grid-cols-12 gap-y-12 md:gap-x-8">
+            <div className="col-span-12 md:col-span-4">
+              <div className="section-index">№ 03 — Tesis</div>
+              <h3 className="display-m mt-4">El valor<br /> diferencial.</h3>
+            </div>
+            <div className="col-span-12 md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+              <div className="border-t border-ink pt-5">
+                <div className="eyebrow mb-3">01 · Criterio</div>
+                <h4 className="display-m text-xl mb-2">Criterio clínico para validar IA</h4>
+                <p className="caption leading-relaxed normal-case tracking-normal" style={{fontSize: '0.875rem'}}>Arquitectura respaldada por precisión estadística y lógica médica irrefutable tras 6 años de práctica real.</p>
+              </div>
+              <div className="border-t border-ink pt-5">
+                <div className="eyebrow mb-3">02 · Pipeline</div>
+                <h4 className="display-m text-xl mb-2">Pipeline técnico completo</h4>
+                <p className="caption leading-relaxed normal-case tracking-normal" style={{fontSize: '0.875rem'}}>Desde extracción de datos hasta modelo desplegado. Python · ML · NLP · XAI/SHAP.</p>
+              </div>
+              <div className="border-t border-ink pt-5">
+                <div className="eyebrow mb-3">03 · Producción</div>
+                <h4 className="display-m text-xl mb-2">Interoperabilidad real</h4>
+                <p className="caption leading-relaxed normal-case tracking-normal" style={{fontSize: '0.875rem'}}>Estándares HL7 y FHIR conectando hardware y software bajo presión hospitalaria real.</p>
+              </div>
+              <div className="border-t border-ink pt-5">
+                <div className="eyebrow mb-3">04 · Regulación</div>
+                <h4 className="display-m text-xl mb-2">Marco regulatorio europeo</h4>
+                <p className="caption leading-relaxed normal-case tracking-normal" style={{fontSize: '0.875rem'}}>RGPD · EU AI Act · EHDS. Restricciones de diseño desde el día 1, no checklist legal.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -119,7 +148,7 @@ export default function HomePage() {
 
       
 
-      <Section id="publicaciones" title="Publicaciones y divulgación">
+      <Section id="publicaciones" index="№ 05 — Publicaciones" title="Publicaciones y divulgación">
         <div className="grid md:grid-cols-3 gap-6">
           {publications.slice(0,3).map((p, i) => (
             <div data-aos="fade-up" data-aos-delay={100 * (i + 1)} key={p.id}>
@@ -133,18 +162,18 @@ export default function HomePage() {
                     ))}
                   </div>
                 )}
-                <a href={p.link} className="mt-3 inline-block text-emerald-400 hover:underline">Ver →</a>
+                <a href={p.link} className="mt-3 inline-block ed-link font-mono text-xs uppercase tracking-widest">Leer →</a>
               </Card>
             </div>
           ))}
         </div>
         <div className="mt-8" data-aos="fade-in" data-aos-delay="400">
-          <a href="/publicaciones" className="text-emerald-400 hover:underline">Ver todas →</a>
+          <a href="/publicaciones" className="ed-link font-mono text-sm uppercase tracking-widest">Archivo completo →</a>
         </div>
       </Section>
 
       {testimonials && testimonials.length > 0 && (
-        <Section id="testimonios" title="Testimonios">
+        <Section id="testimonios" index="№ 06 — Testimonios" title="Voces">
           <div className="grid md:grid-cols-2 gap-6">
             {testimonials.map((t, index) => (
               <div data-aos="zoom-in-up" data-aos-delay={150 * (index + 1)} key={t.name + index}>
@@ -155,15 +184,31 @@ export default function HomePage() {
         </Section>
       )}
 
-      <LeadMagnet />
+      <Newsletter />
 
       
-      <Section id="cta" title="¿Hablamos de una oportunidad?" subtitle="">
-        <div className="flex gap-3 justify-center" data-aos="fade-up" data-aos-anchor-placement="bottom-bottom">
-          <a href="/contacto" className="px-6 py-3 rounded-lg bg-emerald-400 text-black font-semibold hover:bg-emerald-300 transition hover:-translate-y-1">Contactar</a>
-          <a href="/cv/CV_Aram_Zakzuk.pdf" target="_blank" rel="noopener noreferrer" className="px-6 py-3 rounded-lg border border-emerald-400/50 text-emerald-400 hover:border-emerald-400 transition hover:-translate-y-1 hover:bg-emerald-400/10">Ver CV</a>
+      {/* CTA final — asimétrico, sin card */}
+      <section id="cta" className="py-28">
+        <div className="container">
+          <div className="grid grid-cols-12 gap-y-10 md:gap-x-8 items-end">
+            <div className="col-span-12 md:col-span-3">
+              <div className="section-index">№ 07 — Contacto</div>
+            </div>
+            <div className="col-span-12 md:col-span-9">
+              <h2 className="display-xl">
+                ¿Necesitas <span className="italic"><span className="hl-accent">Clinical AI</span></span><br />con criterio médico real?
+              </h2>
+              <p className="lead mt-6 max-w-2xl">
+                Líderes de innovación, CEOs HealthTech y equipos de Medical Affairs: reserva 15 minutos para revisar el caso de uso, el dato y el encaje regulatorio.
+              </p>
+              <div className="mt-10 flex flex-wrap gap-4">
+                <a href="/contacto#agenda" className="btn-ink">Reservar llamada de 15 min →</a>
+                <a href="/cv/CV_Aram_Zakzuk.pdf" target="_blank" rel="noopener noreferrer" className="btn-ghost">Descargar CV · PDF</a>
+              </div>
+            </div>
+          </div>
         </div>
-      </Section>
+      </section>
     </>
   );
 }

@@ -7,7 +7,7 @@ export default function ProjectFilters({ tags, active, onChange }:{
       {['All', ...tags].map(t => (
         <button key={t}
           onClick={()=>onChange(t)}
-          className={`px-3 py-1 rounded-full text-sm border ${active===t ? 'border-emerald-400 text-emerald-300' : 'border-white/10 text-muted-foreground hover:text-white'} bg-white/5`}>
+          className={`px-3 py-1 text-sm border font-mono transition-colors ${active===t ? 'border-ink bg-ink text-bone' : 'border-rule text-ink-2 bg-paper hover:text-ink hover:border-ink'}`}>
           {t === 'All' ? 'Todos' : t}
         </button>
       ))}

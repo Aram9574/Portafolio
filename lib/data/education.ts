@@ -18,37 +18,46 @@ export type CertificationItem = {
 
 export const education: EducationItem[] = [
   {
-    title: 'Máster en Inteligencia Artificial Aplicada a la Sanidad',
+    title: 'Máster en Aplicaciones de IA en Sanidad',
     org: 'Centro Europeo de Másters y Posgrados',
     location: 'Madrid, España',
+    start: 'febrero 2025',
+    end: 'marzo 2026',
+    status: 'en-curso',
     highlights: [
-      'Aplicación de modelos de Machine Learning, NLP y Deep Learning para la optimización de procesos clínicos y gestión hospitalaria.'
+      'Modelos de Machine Learning, NLP y Deep Learning aplicados a la optimización clínica y gestión hospitalaria.'
     ]
   },
   {
     title: 'Máster en Salud Digital/eHealth',
     org: 'Universidad Europea',
     location: 'Madrid, España',
+    start: 'octubre 2025',
+    end: 'octubre 2026',
+    status: 'en-curso',
     highlights: [
-      'Transformación digital sanitaria e interoperabilidad clínica (HL7, FHIR, SNOMED CT) con enfoque en datos, gestión y sistemas inteligentes.'
+      'Transformación digital sanitaria e interoperabilidad clínica (HL7, FHIR, SNOMED CT) con enfoque en EHDS y sistemas inteligentes.'
+    ]
+  },
+  {
+    title: 'Especialización en IA aplicada a la Sanidad',
+    org: 'Stanford University',
+    location: 'Online',
+    start: 'febrero 2025',
+    end: 'julio 2025',
+    highlights: [
+      'Machine Learning y Deep Learning aplicados a datos clínicos, diagnóstico asistido y ética en IA médica.'
     ]
   },
   {
     title: 'Médico',
     org: 'Universidad del Rosario',
     location: 'Bogotá, Colombia',
+    start: '2018',
+    end: '2024',
     highlights: [
-      'Profundización en medicina familiar y preventiva · enfoque comunitario y promoción de la salud pública'
+      'Práctica clínica hospitalaria continua desde el 4º año · Enfoque en Medicina Interna y Urgencias.'
     ]
-  },
-  {
-    title: 'Especialización en IA aplicada a la Sanidad',
-    org: 'Stanford University Online',
-    location: 'Bogotá, Colombia',
-    highlights: [
-      'Machine Learning y Deep Learning aplicados a datos clínicos · diagnóstico asistido · salud preventiva y ética en IA médica'
-    ]
-    
   }
 ];
 
