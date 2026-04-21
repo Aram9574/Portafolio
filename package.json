@@ -10,7 +10,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "blog:generate": "node scripts/generate-weekly-post.mjs",
+    "blog:dry": "node scripts/generate-weekly-post.mjs --dry-run"
   },
   "dependencies": {
     "aos": "^2.3.4",

@@ -7,8 +7,14 @@ import ReactMarkdown from 'react-markdown'
 
 type Props = { params: { slug: string } }
 
+// Nota: el slug 'prediccion-ocupacion-hospitalaria' tiene ruta estática propia
+// en app/proyectos/prediccion-ocupacion-hospitalaria/page.tsx (case study editorial).
+const STATIC_OVERRIDES = new Set(['prediccion-ocupacion-hospitalaria'])
+
 export function generateStaticParams() {
-  return projects.map(p => ({ slug: p.slug }))
+  return projects
+    .filter(p => !STATIC_OVERRIDES.has(p.slug))
+    .map(p => ({ slug: p.slug }))
 }
 
 export async function generateMetadata({ params }: Props) {
@@ -23,6 +29,7 @@ export async function generateMetadata({ params }: Props) {
 export const dynamicParams = false
 
 export default async function ProjectDetailPage({ params }: Props) {
+  if (STATIC_OVERRIDES.has(params.slug)) return notFound()
   const project = projects.find(p => p.slug === params.slug)
   if (!project) return notFound()
 

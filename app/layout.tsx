@@ -14,28 +14,48 @@ import { SOCIAL } from '@/lib/site'
 export const metadata: Metadata = {
   metadataBase: new URL('https://alejandrozakzuk.com'),
   title: {
-    default: 'Aram Zakzuk · Clinical AI Specialist · CDSS · SaMD · EU AI Act',
+    default: 'Aram Zakzuk · Médico · Salud Digital · IA aplicada a Sanidad',
     template: '%s · Aram Zakzuk'
   },
-  description: 'Médico con 6,5 años de práctica clínica + Clinical AI Specialist. Diseño CDSS y Software as a Medical Device (SaMD) bajo EU AI Act · MDR · RGPD · EHDS · HL7 FHIR. Madrid y Europa.',
-  keywords: ['Clinical AI', 'CDSS', 'Clinical Decision Support Systems', 'SaMD', 'EU AI Act', 'MDR', 'HL7 FHIR', 'SNOMED-CT', 'HealthTech', 'Medical Affairs', 'XAI SHAP', 'Madrid'],
+  description: 'Médico (Universidad del Rosario, 6,5 años hospital) + Máster en Salud Digital (Universidad Europea) + Máster en IA aplicada a Sanidad (CEMP). Asesoramiento estratégico para la transformación digital del sistema sanitario: licitaciones públicas, EHDS, Medical Affairs y despliegue de IA clínica.',
+  keywords: [
+    'Salud Digital',
+    'eHealth',
+    'Transformación Digital Sanitaria',
+    'Consultoría HealthTech',
+    'EHDS',
+    'Espacio Europeo de Datos Sanitarios',
+    'Licitaciones públicas sanidad',
+    'Ministerio de Sanidad',
+    'Medical Affairs',
+    'IA aplicada a Sanidad',
+    'Clinical AI',
+    'Clinical Decision Support Systems',
+    'CDSS',
+    'SaMD',
+    'EU AI Act',
+    'MDR',
+    'HL7 FHIR',
+    'SNOMED-CT',
+    'Madrid'
+  ],
   openGraph: {
     type: 'website',
     locale: 'es_ES',
     url: 'https://alejandrozakzuk.com',
-    siteName: 'Aram Zakzuk | AI in Healthcare',
-    title: 'Aram Zakzuk · Clinical AI Specialist · CDSS · SaMD · EU AI Act',
-    description: 'Médico con 6,5 años de práctica clínica + Clinical AI Specialist. Diseño CDSS y SaMD bajo EU AI Act · MDR · RGPD · EHDS · HL7 FHIR.',
+    siteName: 'Aram Zakzuk · Médico · Salud Digital · IA en Sanidad',
+    title: 'Aram Zakzuk · Médico · Salud Digital · IA aplicada a Sanidad',
+    description: 'Un perfil, tres capas: Medicina, Máster en Salud Digital y Máster en IA aplicada a Sanidad. Asesoramiento estratégico para hospitales, consultoras y administración pública.',
     images: [{ url: '/og-default.png', width: 1200, height: 630 }]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Aram Zakzuk · Clinical AI Specialist · CDSS · SaMD · EU AI Act',
-    description: 'Médico con 6,5 años de práctica clínica + Clinical AI Specialist. Diseño CDSS y SaMD bajo EU AI Act · MDR · RGPD · EHDS · HL7 FHIR.',
+    title: 'Aram Zakzuk · Médico · Salud Digital · IA aplicada a Sanidad',
+    description: 'Medicina + Salud Digital + IA en Sanidad. Estrategia, licitaciones públicas, EHDS y Medical Affairs.',
     images: ['/og-default.png']
   },
   authors: [{ name: 'Aram Zakzuk', url: 'https://alejandrozakzuk.com' }],
-  category: 'technology'
+  category: 'healthcare'
 }
 
 const fraunces = Fraunces({
@@ -81,17 +101,37 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               '@type': ['Person', 'Physician'],
               name: 'Aram Zakzuk',
               honorificPrefix: 'Dr.',
-              jobTitle: 'Clinical AI Specialist · Médico · Consultor HealthTech',
-              description: 'Médico experto en analítica de datos e inteligencia artificial clínica. Desarrollador especializado en aplicaciones SaaS para el sector salud con Next.js y ecosistemas de interoperabilidad HL7/FHIR.',
+              jobTitle: 'Médico · Consultor en Salud Digital · Especialista en IA aplicada a Sanidad',
+              description: 'Médico con doble máster (Salud Digital / eHealth por Universidad Europea e IA aplicada a Sanidad por CEMP). Asesoramiento estratégico a hospitales, consultoras y administración pública en transformación digital sanitaria, licitaciones, EHDS y despliegue de IA clínica.',
               address: { '@type': 'PostalAddress', addressLocality: 'Madrid', addressCountry: 'ES' },
               url: 'https://alejandrozakzuk.com',
               image: 'https://alejandrozakzuk.com/og-default.png',
               sameAs: [SOCIAL.linkedin, SOCIAL.github],
-              alumniOf: {
-                '@type': 'MedicalOrganization',
-                name: 'Hospital Universitario'
-              },
-              knowsAbout: ['Internal Medicine', 'HL7 FHIR', 'Machine Learning', 'Next.js', 'Python', 'Natural Language Processing', 'Data Science', 'Generative AI in Healthcare']
+              alumniOf: [
+                { '@type': 'CollegeOrUniversity', name: 'Universidad del Rosario' },
+                { '@type': 'CollegeOrUniversity', name: 'Universidad Europea de Madrid' },
+                { '@type': 'CollegeOrUniversity', name: 'Centro Europeo de Másters y Posgrados (CEMP)' },
+                { '@type': 'CollegeOrUniversity', name: 'Stanford University' }
+              ],
+              knowsAbout: [
+                'Medicina Interna',
+                'Atención Primaria',
+                'Urgencias',
+                'Salud Digital',
+                'eHealth',
+                'Transformación Digital Sanitaria',
+                'EHDS',
+                'Licitaciones públicas en sanidad',
+                'Medical Affairs',
+                'Clinical Decision Support Systems',
+                'Machine Learning aplicado a medicina',
+                'Healthcare Data Analytics',
+                'EU AI Act',
+                'MDR',
+                'SaMD',
+                'HL7 FHIR',
+                'SNOMED-CT'
+              ]
             })
           }}
         />

@@ -23,7 +23,10 @@ export function Footer() {
           <ul className="space-y-2 text-sm text-ink-2">
             <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/sobre-mi">Sobre mí</Link></li>
             <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/proyectos">Proyectos</Link></li>
-            <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/publicaciones">Publicaciones</Link></li>
+            <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/publicaciones">Insights</Link></li>
+            <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/blog">Blog</Link></li>
+            <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/credenciales">Credenciales</Link></li>
+            <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/trabajemos-juntos">Trabajemos juntos</Link></li>
             <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/contacto">Contacto</Link></li>
           </ul>
         </div>

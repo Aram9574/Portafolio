@@ -10,15 +10,50 @@ const TABS = [
   { key: 'Charla', label: 'Charlas' },
 ]
 
+const TOPICS = [
+  'CDSS',
+  'EU AI Act',
+  'Salud Digital',
+  'HealthTech',
+  'Clinical AI',
+  'Implementación',
+  'Mercado',
+  'Carrera',
+]
+
 export default function PublicationsBrowser({ publications }:{ publications: Pub[] }) {
   const [tab, setTab] = useState<string>('All')
   const [q, setQ] = useState('')
+  const [activeTopics, setActiveTopics] = useState<string[]>([])
+
+  const toggleTopic = (topic: string) => {
+    setActiveTopics((prev) =>
+      prev.includes(topic) ? prev.filter((t) => t !== topic) : [...prev, topic]
+    )
+  }
 
   const list = useMemo(() => {
-    return publications.filter(p => (tab==='All' || p.type===tab) && (
-      p.title.toLowerCase().includes(q.toLowerCase()) || (Array.isArray(p.tags) && p.tags.join(' ').toLowerCase().includes(q.toLowerCase()))
-    ))
-  }, [tab, q, publications])
+    const query = q.toLowerCase()
+    return publications.filter((p) => {
+      if (tab !== 'All' && p.type !== tab) return false
+
+      if (activeTopics.length > 0) {
+        const pubTags = (p.tags ?? []).map((t) => t.toLowerCase())
+        const matchesTopic = activeTopics.some((topic) =>
+          pubTags.includes(topic.toLowerCase())
+        )
+        if (!matchesTopic) return false
+      }
+
+      if (query) {
+        const inTitle = p.title.toLowerCase().includes(query)
+        const inTags = Array.isArray(p.tags) && p.tags.join(' ').toLowerCase().includes(query)
+        if (!inTitle && !inTags) return false
+      }
+
+      return true
+    })
+  }, [tab, q, activeTopics, publications])
 
   return (
     <>
@@ -32,6 +67,40 @@ export default function PublicationsBrowser({ publications }:{ publications: Pub
         </div>
         <input value={q} onChange={e=>setQ(e.target.value)} placeholder="Buscar..." className="ml-auto w-full md:w-64 bg-transparent border border-rule text-ink placeholder:text-muted focus:outline-none focus:border-ink font-mono px-3 py-2" />
       </div>
+
+      <div className="mb-8 border-t border-rule pt-4 flex flex-wrap items-center gap-y-3 gap-x-4">
+        <div className="eyebrow shrink-0">Tópicos</div>
+        <div className="flex flex-wrap gap-2">
+          {TOPICS.map((topic) => {
+            const active = activeTopics.includes(topic)
+            return (
+              <button
+                key={topic}
+                type="button"
+                onClick={() => toggleTopic(topic)}
+                aria-pressed={active}
+                className={`px-3 py-1.5 text-xs font-mono uppercase tracking-widest border transition-colors ${
+                  active
+                    ? 'border-ink bg-ink text-bone'
+                    : 'border-rule text-ink-2 bg-paper hover:text-ink hover:border-ink'
+                }`}
+              >
+                {topic}
+              </button>
+            )
+          })}
+          {activeTopics.length > 0 && (
+            <button
+              type="button"
+              onClick={() => setActiveTopics([])}
+              className="px-3 py-1.5 text-xs font-mono uppercase tracking-widest text-muted hover:text-ink transition-colors"
+            >
+              Limpiar ×
+            </button>
+          )}
+        </div>
+      </div>
+
       <div className="grid md:grid-cols-3 gap-6">
         {list.map(p => (
           <Card key={p.id}>
@@ -51,4 +120,3 @@ export default function PublicationsBrowser({ publications }:{ publications: Pub
     </>
   )
 }
-

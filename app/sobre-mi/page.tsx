@@ -8,6 +8,7 @@ import { Card } from '@/components/ui/Card'
 import { Globe, Code, Database, Layout, MessageSquare, Shield } from 'lucide-react'
 import EducationSection from '@/components/sections/EducationSection'
 import ExperienceItem from '@/components/sections/ExperienceItem'
+import CVDownloader from '@/components/ui/CVDownloader'
 import { Brain, Network, Microscope } from 'lucide-react'
 
 import Image from 'next/image'
@@ -33,15 +34,22 @@ export default function SobreMiPage() {
           <div className="md:col-span-2" data-aos="fade-left">
             <h1 className="font-display text-4xl md:text-5xl text-ink mb-6">Sobre mí</h1>
             <p className="text-ink-2 md:text-lg leading-relaxed">
-              Médico con 6,5 años de práctica clínica continua en Méderi (Colombia · 2018–2024) — urgencias, medicina interna y atención primaria. Más de 40 pacientes por turno.
+              Un perfil, tres capas: <strong className="text-ink">Médico</strong> (Universidad del Rosario), <strong className="text-ink">Máster en Salud Digital / eHealth</strong> (Universidad Europea) y <strong className="text-ink">Máster en IA aplicada a Sanidad</strong> (CEMP), complementado con la especialización en AI in Healthcare de Stanford.
               <br /><br />
-              Hoy diseño CDSS y Software as a Medical Device (SaMD) bajo EU AI Act, MDR, RGPD y EHDS, con interoperabilidad HL7 FHIR · SNOMED-CT · LOINC y explicabilidad XAI/SHAP. Modelos desplegados con resultados verificables: AUC-ROC 0,942 sobre 253.680 registros reales del CDC.
+              6,5 años de práctica clínica continua en Méderi (Colombia · 2018–2024) — urgencias, medicina interna y atención primaria, más de 40 pacientes por turno — sustentan el criterio médico que aporto a la capa estratégica y técnica.
               <br /><br />
-              Consulta disponible para HealthTech, MedTech y equipos de Medical Affairs. Madrid presencial · Europa remoto.
+              Asesoro a hospitales, consultoras (Crowe, Deloitte, Accenture y similares), aseguradoras y administración pública en la transformación digital del sistema sanitario: estrategia de Salud Digital, licitaciones del Ministerio y fondos europeos, EHDS, Medical Affairs y despliegue de IA clínica con criterio médico real.
+              <br /><br />
+              Madrid · España.
             </p>
-            <div className="mt-6 flex flex-wrap gap-3" data-aos="fade-up" data-aos-delay="200">
-              <a href="/contacto" className="btn-ink">Contactar</a>
-              <a href="/cv/CV_Aram_Zakzuk.pdf" target="_blank" rel="noopener noreferrer" className="btn-ghost">Ver CV</a>
+            <div className="mt-6 flex flex-col gap-5" data-aos="fade-up" data-aos-delay="200">
+              <div className="flex flex-wrap gap-3">
+                <a href="/contacto" className="btn-ink">Contactar</a>
+              </div>
+              <div>
+                <div className="eyebrow mb-3">Descargar CV · tres versiones</div>
+                <CVDownloader />
+              </div>
             </div>
           </div>
         </div>
@@ -98,43 +106,43 @@ export default function SobreMiPage() {
             <div className="w-12 h-12 mb-4 border border-rule bg-bone flex items-center justify-center">
               <Globe className="text-emerald-400 w-6 h-6" aria-hidden="true" />
             </div>
-            <h3 className="font-display text-xl text-ink mb-2">Criterio clínico real</h3>
-            <p className="text-ink-2 text-sm">6,5 años de práctica en urgencias, medicina interna y atención primaria. Los modelos se diseñan desde el flujo clínico, no desde el dataset.</p>
+            <h3 className="font-display text-xl text-ink mb-2">Criterio médico ejecutivo</h3>
+            <p className="text-ink-2 text-sm">6,5 años de práctica en urgencias, medicina interna y atención primaria. El criterio clínico real traducido a dirección, comité médico y comprador público.</p>
           </Card>
           <Card className="p-6" data-aos="fade-up" data-aos-delay="150">
             <div className="w-12 h-12 mb-4 border border-rule bg-bone flex items-center justify-center">
-              <Code className="text-emerald-400 w-6 h-6" aria-hidden="true" />
+              <Layout className="text-emerald-400 w-6 h-6" aria-hidden="true" />
             </div>
-            <h3 className="font-display text-xl text-ink mb-2">Pipelines de CDSS</h3>
-            <p className="text-ink-2 text-sm">Desarrollo end-to-end de CDSS con Python, Scikit-learn y XAI/SHAP. Desde la pregunta clínica hasta el modelo desplegado en Hugging Face.</p>
+            <h3 className="font-display text-xl text-ink mb-2">Visión de Salud Digital</h3>
+            <p className="text-ink-2 text-sm">Transformación digital sanitaria, gestión de proyectos y EHDS. Roadmap clínico-tecnológico para hospitales, aseguradoras y administración pública.</p>
           </Card>
           <Card className="p-6" data-aos="fade-up" data-aos-delay="200">
-            <div className="w-12 h-12 mb-4 border border-rule bg-bone flex items-center justify-center">
-              <Database className="text-emerald-400 w-6 h-6" aria-hidden="true" />
-            </div>
-            <h3 className="font-display text-xl text-ink mb-2">Interoperabilidad HL7 FHIR</h3>
-            <p className="text-ink-2 text-sm">HL7 FHIR R4 con mapeo SNOMED-CT y LOINC. Certificado SNOMED International (2025).</p>
-          </Card>
-          <Card className="p-6" data-aos="fade-up" data-aos-delay="250">
             <div className="w-12 h-12 mb-4 border border-rule bg-bone flex items-center justify-center">
               <Shield className="text-emerald-400 w-6 h-6" aria-hidden="true" />
             </div>
             <h3 className="font-display text-xl text-ink mb-2">Regulación europea</h3>
-            <p className="text-ink-2 text-sm">EU AI Act · MDR · ISO 13485 · SaMD · Marcado CE · RGPD · EHDS como restricciones de diseño desde el día uno.</p>
+            <p className="text-ink-2 text-sm">EU AI Act · MDR · ISO 13485 · SaMD · Marcado CE · RGPD · EHDS como restricciones de diseño desde el día uno, no checklist legal.</p>
+          </Card>
+          <Card className="p-6" data-aos="fade-up" data-aos-delay="250">
+            <div className="w-12 h-12 mb-4 border border-rule bg-bone flex items-center justify-center">
+              <Database className="text-emerald-400 w-6 h-6" aria-hidden="true" />
+            </div>
+            <h3 className="font-display text-xl text-ink mb-2">Interoperabilidad y datos</h3>
+            <p className="text-ink-2 text-sm">HL7 FHIR R4, SNOMED-CT, LOINC y preparación EHDS. Certificado SNOMED International (2025) y Azure Data Fundamentals.</p>
           </Card>
           <Card className="p-6" data-aos="fade-up" data-aos-delay="300">
             <div className="w-12 h-12 mb-4 border border-rule bg-bone flex items-center justify-center">
               <MessageSquare className="text-emerald-400 w-6 h-6" aria-hidden="true" />
             </div>
-            <h3 className="font-display text-xl text-ink mb-2">Traducción clínico-técnica</h3>
-            <p className="text-ink-2 text-sm">Puente entre equipos clínicos y técnicos. Explicabilidad XAI/SHAP traducida al criterio del facultativo que la va a usar.</p>
+            <h3 className="font-display text-xl text-ink mb-2">Licitaciones y fondos europeos</h3>
+            <p className="text-ink-2 text-sm">Memoria técnica, arquitectura de cumplimiento y encaje clínico para licitaciones del Ministerio, CCAA, EHDS, Horizonte Europa y Recovery.</p>
           </Card>
           <Card className="p-6" data-aos="fade-up" data-aos-delay="350">
             <div className="w-12 h-12 mb-4 border border-rule bg-bone flex items-center justify-center">
-              <Layout className="text-emerald-400 w-6 h-6" aria-hidden="true" />
+              <Code className="text-emerald-400 w-6 h-6" aria-hidden="true" />
             </div>
-            <h3 className="font-display text-xl text-ink mb-2">Cloud clínico y despliegue</h3>
-            <p className="text-ink-2 text-sm">Microsoft Azure (Azure Data Fundamentals), FastAPI, Streamlit, Docker, Hugging Face Spaces para CDSS interactivos.</p>
+            <h3 className="font-display text-xl text-ink mb-2">IA aplicada con rigor</h3>
+            <p className="text-ink-2 text-sm">CDSS, XAI/SHAP, Machine Learning y NLP clínico como capa de ejecución técnica — no como producto. El código respalda la decisión estratégica.</p>
           </Card>
         </div>
       </Section>
@@ -200,8 +208,9 @@ export default function SobreMiPage() {
           <h2 className="font-display text-3xl md:text-4xl text-ink tracking-tight mb-4">¿Integrar IA clínica con criterio médico real?</h2>
           <p className="text-muted mb-8">Revisamos el caso de uso, el dato disponible y el encaje bajo EU AI Act en 15 minutos.</p>
         </div>
-        <div className="flex gap-3 justify-center" data-aos="fade-up" data-aos-delay="100">
+        <div className="flex flex-wrap gap-3 justify-center" data-aos="fade-up" data-aos-delay="100">
           <a href="/contacto#agenda" className="btn-ink">Reservar llamada</a>
+          <a href="/trabajemos-juntos" className="btn-ghost">Ver cómo trabajamos juntos</a>
           <a href="/cv/CV_Aram_Zakzuk.pdf" target="_blank" rel="noopener noreferrer" className="btn-ghost">Ver CV</a>
         </div>
       </Section>
