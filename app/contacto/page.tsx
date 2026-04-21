@@ -8,9 +8,9 @@ import CopyButton from '@/components/ui/CopyButton'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: 'Contacto',
+  title: 'Reserva 15 min con Clinical AI Consultant · Aram Zakzuk',
   description:
-    'Reserva una llamada de 15 minutos con Aram Zakzuk, MD — Healthcare & Clinical AI Consultant. Para hospitales, consultoras (Crowe, Deloitte, Accenture, Minsait) y HealthTech en Madrid y Europa. Respuesta en 24 h laborables.',
+    'Valida encaje clínico y regulatorio de tu proyecto IA en 15 minutos sin coste. Respuesta en 24 h laborables. Hospitales, consultoras y HealthTech.',
   alternates: { canonical: '/contacto' },
   openGraph: {
     type: 'website',

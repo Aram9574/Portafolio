@@ -1,9 +1,9 @@
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Sobre mí · Aram Zakzuk, MD',
+  title: '¿Quién es Aram Zakzuk, MD? · Consultor Clinical AI Madrid',
   description:
-    'Médico con 6 años de práctica clínica real y doble formación avanzada en IA aplicada a medicina y Salud Digital. Healthcare & Clinical AI Consultant para organizaciones sanitarias, consultoras y HealthTech en Madrid y Europa.',
+    '¿Qué perfil necesita tu proyecto de IA clínica? Médico con 6 años en urgencias + doble máster en IA y Salud Digital + base regulatoria europea. Madrid.',
   alternates: { canonical: '/sobre-mi' },
   openGraph: {
     type: 'profile',

@@ -4,6 +4,7 @@ import Section from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
 import ScrubbedMetric from '@/components/ui/ScrubbedMetric'
 import ChartreuseRule from '@/components/ui/ChartreuseRule'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'Predicción de ocupación hospitalaria mediante IA · Case Study',
@@ -29,7 +30,7 @@ export const metadata: Metadata = {
     description:
       'Cómo se diseñó un modelo de demanda de camas con variables clínicas y operativas, con reducción estimada de varianza del 30-40% sobre baseline naive.',
     url: 'https://alejandrozakzuk.com/proyectos/prediccion-ocupacion-hospitalaria',
-    images: [{ url: '/images/projects/longitud-estancia-ml.jpg', width: 1200, height: 630 }]
+    images: [{ url: 'https://alejandrozakzuk.com/proyectos/prediccion-ocupacion-hospitalaria/opengraph-image.png', width: 1200, height: 630, alt: 'Predicción de ocupación hospitalaria — Aram Zakzuk' }]
   }
 }
 
@@ -47,6 +48,12 @@ export default function CaseStudyOcupacionHospitalaria() {
             <div className="eyebrow">№ 02 · Case Study · Operaciones hospitalarias</div>
           </div>
           <div className="col-span-12 md:col-span-9">
+            <Breadcrumbs
+              items={[
+                { name: 'Proyectos', url: 'https://alejandrozakzuk.com/proyectos' },
+                { name: 'Ocupación hospitalaria', url: 'https://alejandrozakzuk.com/proyectos/prediccion-ocupacion-hospitalaria' },
+              ]}
+            />
             <h1 className="display-xl" data-aos="fade-up">
               Predecir camas hospitalarias con criterio clínico-operativo
             </h1>
@@ -458,7 +465,12 @@ export default function CaseStudyOcupacionHospitalaria() {
               { '@type': 'Thing', name: 'Predictive Analytics in Healthcare' },
               { '@type': 'Thing', name: 'HL7 FHIR R4' }
             ],
-            image: 'https://alejandrozakzuk.com/images/projects/longitud-estancia-ml.jpg',
+            image: {
+              '@type': 'ImageObject',
+              url: 'https://alejandrozakzuk.com/proyectos/prediccion-ocupacion-hospitalaria/opengraph-image.png',
+              width: 1200,
+              height: 630,
+            },
             mainEntityOfPage: {
               '@type': 'WebPage',
               '@id': 'https://alejandrozakzuk.com/proyectos/prediccion-ocupacion-hospitalaria'

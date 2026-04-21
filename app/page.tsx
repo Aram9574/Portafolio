@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Section from '@/components/ui/Section';
 import { Card } from '@/components/ui/Card';
 import Metric from '@/components/ui/Metric';
@@ -14,6 +15,17 @@ import { blogPosts } from '@/lib/data/blog';
 import { SOCIAL } from '@/lib/site';
 import { Network, Server, Brain, Stethoscope, ShieldCheck, LineChart, Cpu, Workflow, HeartPulse, BadgeCheck } from 'lucide-react';
 import ChartreuseRule from '@/components/ui/ChartreuseRule';
+
+export const metadata: Metadata = {
+  alternates: {
+    canonical: 'https://alejandrozakzuk.com',
+    languages: {
+      'es-ES': 'https://alejandrozakzuk.com',
+      en: 'https://alejandrozakzuk.com/en',
+      'x-default': 'https://alejandrozakzuk.com'
+    }
+  }
+};
 
 export default function HomePage() {
   const destacados = projects.slice(0,3);

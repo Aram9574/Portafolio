@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Section from '@/components/ui/Section'
 import ScrubbedMetric from '@/components/ui/ScrubbedMetric'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'GeriCare — Prototipo ERP con HL7/FHIR R4 · Case Study',
@@ -43,6 +44,12 @@ export default function CaseStudyGeriCare() {
             <div className="eyebrow">№ 04 · Case Study · Interoperabilidad</div>
           </div>
           <div className="col-span-12 md:col-span-9">
+            <Breadcrumbs
+              items={[
+                { name: 'Proyectos', url: 'https://alejandrozakzuk.com/proyectos' },
+                { name: 'GeriCare · Prototipo FHIR', url: 'https://alejandrozakzuk.com/proyectos/erp-geriatrico-fhir' },
+              ]}
+            />
             <h1 className="display-xl" data-aos="fade-up">
               GeriCare — un prototipo FHIR para centros geriátricos
             </h1>
@@ -301,6 +308,12 @@ export default function CaseStudyGeriCare() {
             mainEntityOfPage: {
               '@type': 'WebPage',
               '@id': 'https://alejandrozakzuk.com/proyectos/erp-geriatrico-fhir'
+            },
+            image: {
+              '@type': 'ImageObject',
+              url: 'https://alejandrozakzuk.com/proyectos/erp-geriatrico-fhir/opengraph-image.png',
+              width: 1200,
+              height: 630,
             },
             proficiencyLevel: 'Expert'
           })

@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { blogPosts } from '@/lib/data/blog';
 
 export const metadata: Metadata = {
-  title: 'Blog · Salud Digital, EHDS, EU AI Act y Clinical AI',
+  title: '¿EHDS, EU AI Act, CDSS? · Blog Clinical AI · Aram Zakzuk',
   description:
-    'Análisis ejecutivo y técnico sobre EHDS, EU AI Act, CDSS y transformación digital sanitaria. Escrito para directores de innovación hospitalaria, partners de consultoras y equipos de Medical Affairs.',
+    '¿Cómo se traduce el EU AI Act al hospital? ¿Qué exige EHDS en 2026? Análisis largo sin relleno, escrito por un médico con doble máster. Publicación semanal.',
   alternates: {
     canonical: '/blog',
     types: { 'application/rss+xml': '/blog/rss.xml' },

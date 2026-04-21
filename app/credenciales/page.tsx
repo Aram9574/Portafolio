@@ -4,9 +4,9 @@ import CertificationBadge from '@/components/sections/CertificationBadge';
 import { certifications, type CertificationItem } from '@/lib/data/education';
 
 export const metadata: Metadata = {
-  title: 'Credenciales y certificaciones',
+  title: 'Stanford · SNOMED · Microsoft · SEIS · Credenciales MD',
   description:
-    'Formación continua verificable de Aram Zakzuk, MD: Stanford AI in Healthcare Specialization (ID JPA2O5IFFDNP), SNOMED International, Microsoft Azure DP-900, Comunidad de Madrid, SEIS Inforsalud, DELF B1, TOEFL iBT y ACLS/BLS.',
+    'Stanford AI in Healthcare Specialization, SNOMED International, Microsoft Azure DP-900, SEIS Inforsalud, DELF B1, TOEFL iBT y ACLS/BLS. Verificables.',
   alternates: { canonical: '/credenciales' },
   openGraph: {
     type: 'website',

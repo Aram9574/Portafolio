@@ -4,9 +4,9 @@ import { Building2, Briefcase, Landmark, Zap } from 'lucide-react'
 import { SOCIAL } from '@/lib/site'
 
 export const metadata: Metadata = {
-  title: 'Trabajemos juntos · Aram Zakzuk',
+  title: 'Contratar asesor Clinical AI · Formatos y tarifas · Madrid',
   description:
-    'Cuatro caminos de entrada para trabajar con Aram Zakzuk: hospitales y aseguradoras, consultoras (Crowe, Deloitte, Accenture), administración pública y CCAA, HealthTech / MedTech / Farma.',
+    'Cuatro formatos de advisory Clinical AI según tu organización: hospital, consultora, admin pública o HealthTech. Discovery de 15 min sin coste.',
   alternates: { canonical: '/trabajemos-juntos' },
 }
 

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Section from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
 import ScrubbedMetric from '@/components/ui/ScrubbedMetric'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'ClinAI Classifier — Clasificador EU AI Act · Case Study',
@@ -45,6 +46,12 @@ export default function CaseStudyClinAIClassifier() {
             <div className="eyebrow">№ 01 · Case Study · Regulación IA sanitaria</div>
           </div>
           <div className="col-span-12 md:col-span-9">
+            <Breadcrumbs
+              items={[
+                { name: 'Proyectos', url: 'https://alejandrozakzuk.com/proyectos' },
+                { name: 'ClinAI Classifier', url: 'https://alejandrozakzuk.com/proyectos/clinai-classifier' },
+              ]}
+            />
             <h1 className="display-xl" data-aos="fade-up">
               El clasificador EU AI Act que nadie había escrito
             </h1>
@@ -396,6 +403,12 @@ export default function CaseStudyClinAIClassifier() {
             mainEntityOfPage: {
               '@type': 'WebPage',
               '@id': 'https://alejandrozakzuk.com/proyectos/clinai-classifier'
+            },
+            image: {
+              '@type': 'ImageObject',
+              url: 'https://alejandrozakzuk.com/proyectos/clinai-classifier/opengraph-image.png',
+              width: 1200,
+              height: 630,
             },
             proficiencyLevel: 'Expert'
           })

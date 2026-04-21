@@ -6,6 +6,8 @@ import { blogPosts, getBlogPost } from '@/lib/data/blog';
 import PostEHDS from '@/components/blog/PostEHDS';
 import PostEUAIAct from '@/components/blog/PostEUAIAct';
 import PostConsultoras from '@/components/blog/PostConsultoras';
+import RelatedPosts from '@/components/blog/RelatedPosts';
+import Breadcrumbs from '@/components/Breadcrumbs';
 
 type Props = { params: { slug: string } };
 
@@ -89,6 +91,12 @@ export default function BlogPostPage({ params }: Props) {
                 </Link>
               </div>
               <div className="col-span-12 md:col-span-9">
+                <Breadcrumbs
+                  items={[
+                    { name: 'Blog', url: `${BASE_URL}/blog` },
+                    { name: post.title, url: `${BASE_URL}/blog/${post.slug}` },
+                  ]}
+                />
                 <h1 className="display-xl">{post.title}</h1>
                 <p className="lead mt-8 max-w-3xl">{post.description}</p>
                 <div className="mt-8 flex flex-wrap gap-2">
@@ -144,6 +152,8 @@ export default function BlogPostPage({ params }: Props) {
         </section>
       </article>
 
+      <RelatedPosts currentSlug={post.slug} currentTags={post.tags} />
+
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{
@@ -165,7 +175,12 @@ export default function BlogPostPage({ params }: Props) {
               '@type': 'Person',
               '@id': `${BASE_URL}/#person`,
             },
-            image: `${BASE_URL}/og-default.png`,
+            image: {
+              '@type': 'ImageObject',
+              url: `${BASE_URL}/blog/${post.slug}/opengraph-image.png`,
+              width: 1200,
+              height: 630,
+            },
             keywords: post.tags,
           }),
         }}

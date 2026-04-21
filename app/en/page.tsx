@@ -5,14 +5,15 @@ import Section from '@/components/ui/Section'
 const BASE = 'https://alejandrozakzuk.com'
 
 export const metadata: Metadata = {
-  title: 'Aram Zakzuk, MD · Healthcare & Clinical AI Consultant · Madrid',
+  title: 'MD + 2 MSc + Stanford AI · Clinical AI Consultant · Madrid',
   description:
-    'Medical doctor with 6 years of real clinical practice and dual master in AI applied to Healthcare and Digital Health. Independent consultant for healthcare organizations, consulting firms and HealthTech companies on Clinical AI evaluation, EU regulatory strategy (EU AI Act, MDR, SaMD) and clinical adoption.',
+    '6 years of clinical practice, dual MSc in AI for Healthcare and Digital Health, plus Stanford AI in Healthcare. Advisor on EU AI Act, MDR and SaMD.',
   alternates: {
     canonical: `${BASE}/en`,
     languages: {
       'es-ES': BASE,
-      'en': `${BASE}/en`,
+      en: `${BASE}/en`,
+      'x-default': BASE,
     },
   },
   openGraph: {

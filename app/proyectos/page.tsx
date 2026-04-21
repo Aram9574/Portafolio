@@ -5,9 +5,9 @@ import ProjectsBrowser from '@/components/sections/ProjectsBrowser'
 import { projects } from '@/lib/data/projects'
 
 export const metadata: Metadata = {
-  title: 'Proyectos que fundamentan el criterio · IA clínica, EU AI Act, FHIR',
+  title: 'Proyectos IA clínica · CDSS AUC 0.942 · 253K registros',
   description:
-    'Validación técnica propia: ClinAI Classifier (EU AI Act), CDSS de riesgo diabético con AUC-ROC 0.942, modelo de ocupación hospitalaria y prototipo FHIR. Proyectos que sustentan el criterio consultor de Aram Zakzuk, MD.',
+    'CDSS diabetes AUC-ROC 0.942 sobre 253.680 registros CDC BRFSS, ClinAI Classifier alineado con EU AI Act y prototipo HL7 FHIR. Aram Zakzuk, MD.',
   alternates: { canonical: '/proyectos' },
   openGraph: {
     type: 'website',

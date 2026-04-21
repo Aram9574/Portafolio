@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Section from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
 import ScrubbedMetric from '@/components/ui/ScrubbedMetric'
+import Breadcrumbs from '@/components/Breadcrumbs'
 
 export const metadata: Metadata = {
   title: 'CDSS estratificación de riesgo diabético (TFM) · Case Study',
@@ -45,6 +46,12 @@ export default function CaseStudyCDSSDiabetes() {
             <div className="eyebrow">№ 02 · Case Study · CDSS clínico</div>
           </div>
           <div className="col-span-12 md:col-span-9">
+            <Breadcrumbs
+              items={[
+                { name: 'Proyectos', url: 'https://alejandrozakzuk.com/proyectos' },
+                { name: 'CDSS riesgo diabético', url: 'https://alejandrozakzuk.com/proyectos/tfm-deteccion-metabolica' },
+              ]}
+            />
             <h1 className="display-xl" data-aos="fade-up">
               Un CDSS de riesgo diabético con explicabilidad clínica
             </h1>
@@ -380,6 +387,12 @@ export default function CaseStudyCDSSDiabetes() {
             mainEntityOfPage: {
               '@type': 'WebPage',
               '@id': 'https://alejandrozakzuk.com/proyectos/tfm-deteccion-metabolica'
+            },
+            image: {
+              '@type': 'ImageObject',
+              url: 'https://alejandrozakzuk.com/proyectos/tfm-deteccion-metabolica/opengraph-image.png',
+              width: 1200,
+              height: 630,
             },
             proficiencyLevel: 'Expert'
           })

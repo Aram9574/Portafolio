@@ -1,5 +1,6 @@
 import Section from '@/components/ui/Section'
 import LeadMagnet from '@/components/sections/LeadMagnet'
+import Breadcrumbs from '@/components/Breadcrumbs'
 import Link from 'next/link'
 import { CheckCircle2, Server, Shield, Stethoscope } from 'lucide-react'
 
@@ -71,6 +72,12 @@ export default function SolucionesPorEspecialidad({
             <div className="eyebrow">Consultoría · {data.nombre}</div>
           </div>
           <div className="col-span-12 md:col-span-9">
+            <Breadcrumbs
+              items={[
+                { name: 'Soluciones', url: 'https://alejandrozakzuk.com/trabajemos-juntos' },
+                { name: `IA clínica en ${data.nombre}`, url: `https://alejandrozakzuk.com/soluciones/${data.slug}` },
+              ]}
+            />
             <h1 className="display-xl text-ink mb-6">
               IA clínica en <span className="hl-accent">{data.nombre}</span>
             </h1>
