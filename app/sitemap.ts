@@ -16,7 +16,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog`,             lastModified: now, changeFrequency: 'weekly',  priority: 0.7 },
     { url: `${base}/contacto`,         lastModified: now, changeFrequency: 'yearly',  priority: 0.6 },
     { url: `${base}/habilidades`,      lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
-    { url: `${base}/experiencia`,      lastModified: now, changeFrequency: 'monthly', priority: 0.5 }
+    { url: `${base}/experiencia`,      lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
+    { url: `${base}/soluciones/radiologia`,  lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/soluciones/cardiologia`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/soluciones/oncologia`,   lastModified: now, changeFrequency: 'monthly', priority: 0.4 }
   ]
 
   const projectRoutes: MetadataRoute.Sitemap = projects.map(p => ({

@@ -7,9 +7,13 @@ import ReactMarkdown from 'react-markdown'
 
 type Props = { params: { slug: string } }
 
-// Nota: el slug 'prediccion-ocupacion-hospitalaria' tiene ruta estática propia
-// en app/proyectos/prediccion-ocupacion-hospitalaria/page.tsx (case study editorial).
-const STATIC_OVERRIDES = new Set(['prediccion-ocupacion-hospitalaria'])
+// Estos slugs tienen rutas estáticas propias con case studies editoriales dedicados.
+const STATIC_OVERRIDES = new Set([
+  'prediccion-ocupacion-hospitalaria',
+  'clinai-classifier',
+  'tfm-deteccion-metabolica',
+  'erp-geriatrico-fhir'
+])
 
 export function generateStaticParams() {
   return projects
@@ -63,11 +67,6 @@ export default async function ProjectDetailPage({ params }: Props) {
         <div className="mt-3 flex flex-wrap gap-2" data-aos="fade-up" data-aos-delay="100">
           {project.tags.map((s) => <span key={s} className="chip-ed">{s}</span>)}
         </div>
-        {project.cover && (
-          <div className="mt-6 relative w-full aspect-[16/9] border border-rule overflow-hidden" data-aos="zoom-in" data-aos-delay="200">
-            <Image src={project.cover} alt={project.title} fill className="object-cover" />
-          </div>
-        )}
       </Section>
 
       <Section id="detalle" className="pt-0">

@@ -11,7 +11,7 @@ export type Project = {
   nextSteps?:string;
   tipo?: 'estrella' | 'academico';
   tags:string[];
-  cover:string;
+  cover?:string;
   links?:{demo?:string; repo?:string};
 };
 
@@ -26,7 +26,6 @@ export const projects: Project[] = [
     regulatory: 'Cubre EU AI Act (Reglamento 2024/1689) · Anexo III · Artículo 5 · SaMD · MDR.',
     tipo: 'estrella',
     tags: ['Python', 'FastAPI', 'Streamlit', 'Claude API', 'WeasyPrint', 'Docker', 'EU AI Act'],
-    cover: '/images/projects/framingham.jpg',
     links: {
       demo: 'https://huggingface.co/spaces/aram1585/clinai-classifier',
       repo: 'https://github.com/aramzakzuk/clinai-classifier'
@@ -42,7 +41,6 @@ export const projects: Project[] = [
     regulatory: 'Diseño bajo RGPD + EU AI Act + EHDS como restricciones desde el día uno, no checklist legal a posteriori.',
     tipo: 'estrella',
     tags: ['Random Forest', 'XAI/SHAP', 'Python', 'Scikit-learn', 'Hugging Face', 'EU AI Act'],
-    cover: '/images/projects/breast-cancer.jpg',
     links: {
       repo: 'https://github.com/Aram9574/diabetes-brfss-cdss',
       demo: 'https://huggingface.co/spaces/aram1585/diabetes-brfss-cdss'
@@ -56,8 +54,7 @@ export const projects: Project[] = [
     solution: 'Modelo predictivo de demanda de camas construido sobre históricos de ocupación, ingresos, altas, estancia media e índices de urgencias. Variables clínicas y operativas combinadas.',
     impact: 'Reducción estimada de varianza en planificación de recursos del 30–40% sobre baseline naive, aplicable a gestión anticipada de capacidad asistencial.',
     tipo: 'estrella',
-    tags: ['Python', 'Time Series', 'Healthcare Data Analytics', 'Hospital Operations'],
-    cover: '/images/projects/longitud-estancia-ml.jpg'
+    tags: ['Python', 'Time Series', 'Healthcare Data Analytics', 'Hospital Operations']
   },
   {
     slug: 'erp-geriatrico-fhir',
@@ -68,7 +65,6 @@ export const projects: Project[] = [
     impact: 'Prototipo de demostración técnica sobre estándares FHIR. No desplegado en producción ni validado en entornos clínicos reales.',
     tipo: 'academico',
     tags: ['Python', 'Django', 'PostgreSQL', 'HL7/FHIR R4', 'Prototipo'],
-    cover: '/images/projects/erp-geriatrico-fhir.jpg',
     links: { repo: 'https://github.com/Aram9574/GeriCare' }
   }
 ];

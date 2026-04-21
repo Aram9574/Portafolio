@@ -8,7 +8,7 @@ export function Footer() {
   const year = 2026
   return (
     <footer className="mt-20 border-t border-ink bg-paper">
-      <div className="container grid grid-cols-1 md:grid-cols-3 gap-10 py-12">
+      <div className="container grid grid-cols-1 md:grid-cols-4 gap-10 py-12">
         <div>
           <h4 className="text-ink font-semibold mb-3">Contacto</h4>
           <ul className="space-y-2 text-sm text-ink-2">
@@ -16,18 +16,29 @@ export function Footer() {
             <li><a className="hover:text-ink underline-offset-4 hover:underline" href={`mailto:${SOCIAL.email}`}>{SOCIAL.email}</a></li>
             <li><a className="hover:text-ink underline-offset-4 hover:underline" href={SOCIAL.linkedin} target="_blank" rel="noreferrer">LinkedIn</a></li>
             <li><a className="hover:text-ink underline-offset-4 hover:underline" href={SOCIAL.github} target="_blank" rel="noreferrer">GitHub</a></li>
+            <li><a className="hover:text-ink underline-offset-4 hover:underline" href="https://huggingface.co/aram1585" target="_blank" rel="noreferrer">Hugging Face</a></li>
           </ul>
         </div>
         <div>
-          <h4 className="text-ink font-semibold mb-3">Enlaces rápidos</h4>
+          <h4 className="text-ink font-semibold mb-3">Navegación</h4>
           <ul className="space-y-2 text-sm text-ink-2">
-            <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/sobre-mi">Sobre mí</Link></li>
+            <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/sobre-mi">Perfil</Link></li>
             <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/proyectos">Proyectos</Link></li>
             <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/publicaciones">Insights</Link></li>
             <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/blog">Blog</Link></li>
             <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/credenciales">Credenciales</Link></li>
             <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/trabajemos-juntos">Trabajemos juntos</Link></li>
             <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/contacto">Contacto</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h4 className="text-ink font-semibold mb-3">Perfil y especialidades</h4>
+          <ul className="space-y-2 text-sm text-ink-2">
+            <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/experiencia">Experiencia</Link></li>
+            <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/habilidades">Habilidades</Link></li>
+            <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/soluciones/radiologia">IA en Radiología</Link></li>
+            <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/soluciones/cardiologia">IA en Cardiología</Link></li>
+            <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/soluciones/oncologia">IA en Oncología</Link></li>
           </ul>
         </div>
         <div>

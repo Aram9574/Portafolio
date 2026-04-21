@@ -296,12 +296,20 @@ export default function HomePage() {
                 Hospitales, consultoras (Crowe, Deloitte, Accenture, Minsait), aseguradoras y administración pública: 15 minutos para revisar contexto, objetivo estratégico y encaje clínico-regulatorio.
               </p>
               <div className="mt-10 flex flex-col gap-6">
-                <div className="flex flex-wrap gap-4">
+                <div className="flex flex-wrap gap-4 items-center">
                   <a href="/contacto#agenda" className="btn-ink">Reservar llamada de 15 min →</a>
+                  <a
+                    href="https://calendly.com/zakzukaram"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ed-link font-mono text-xs uppercase tracking-widest"
+                  >
+                    o reservar directo en Calendly →
+                  </a>
                   <a href="/trabajemos-juntos" className="btn-ghost">Ver cómo trabajamos juntos</a>
                 </div>
                 <div>
-                  <div className="eyebrow mb-3">Descargar CV</div>
+                  <div className="eyebrow mb-3">Descargar documentos</div>
                   <CVDownloader variant="compact" />
                 </div>
               </div>
