@@ -339,6 +339,294 @@
       "published": true,
       "publishedSlug": "pliegos-tecnicos-ia-sanidad-como-escribirlos",
       "publishedDate": "2026-04-21"
+    },
+    {
+      "id": "roi-ia-hospitalaria-calculo",
+      "title": "Cómo se calcula el ROI real de un proyecto de IA en un hospital",
+      "angle": "Framework de cálculo con costes directos (licencia, integración, validación), costes ocultos (tiempo clínico en diseño, gestión del cambio) y beneficios medibles (ahorro operativo, reducción de eventos, mejora de flujo). Diferencia entre ROI teórico de proveedor y ROI real sostenible.",
+      "audience": "Directores gerentes, CFOs hospitalarios, partners consultoras",
+      "tags": [
+        "ROI",
+        "Business case",
+        "IA sanitaria"
+      ],
+      "published": false
+    },
+    {
+      "id": "etica-ia-clinica-mas-alla-compliance",
+      "title": "Ética en IA clínica: por qué cumplir EU AI Act no es suficiente",
+      "angle": "Compliance regulatorio vs. ética aplicada. Casos donde un modelo cumple la ley pero falla éticamente: sesgos por subgrupo tolerados, explicaciones opacas defendibles legalmente, consentimiento por defecto. Qué comité de ética debería existir en cada hospital con IA.",
+      "audience": "Comités de ética hospitalarios, dirección médica, Medical Affairs",
+      "tags": [
+        "Ética IA",
+        "EU AI Act",
+        "Clinical AI"
+      ],
+      "published": false
+    },
+    {
+      "id": "radiologia-ia-estado-2026",
+      "title": "IA en radiología 2026: qué productos con CE funcionan, cuáles son marketing",
+      "angle": "Mapa de soluciones radiológicas con marcado CE real (detección de nódulos, hemorragias, fracturas, priorización de worklist). Cuáles tienen RWE publicado, cuáles están en piloto permanente, cuáles son vaporware con logos europeos.",
+      "audience": "Jefes de radiología, directores de innovación, compradores hospitalarios",
+      "tags": [
+        "Radiología",
+        "IA sanitaria",
+        "Marcado CE"
+      ],
+      "published": false
+    },
+    {
+      "id": "gestion-cambio-implantacion-cdss",
+      "title": "Gestión del cambio clínico al implantar un CDSS: las 5 resistencias que no se vencen con un manual",
+      "angle": "La resistencia del clínico experimentado, la del jefe de servicio, la del residente, la del enfermero, la del comité. Cómo se aborda cada una con evidencia de pilotos reales. Por qué la formación técnica no resuelve nada si no hay liderazgo clínico.",
+      "audience": "CMO, jefes de servicio, directores de innovación, consultoras",
+      "tags": [
+        "Gestión del cambio",
+        "Implementación",
+        "CDSS"
+      ],
+      "published": false
+    },
+    {
+      "id": "comprador-hospitalario-que-exigir-proveedor-ia",
+      "title": "Las 10 preguntas que todo comprador hospitalario debería exigir a un proveedor de IA",
+      "angle": "Checklist para contratación. Validación externa, gestión de drift, política de incidentes, SLA clínico, plan de descontinuación, auditoría regulatoria, cadena de suministro de datos. Diferencia entre SLA técnico y SLA clínico.",
+      "audience": "Compras hospitalarias, directores de innovación, consultoras",
+      "tags": [
+        "Contratación",
+        "Compra pública",
+        "Implementación"
+      ],
+      "published": false
+    },
+    {
+      "id": "atencion-primaria-ia-oportunidad-olvidada",
+      "title": "Atención primaria: la oportunidad de IA clínica que todos están ignorando",
+      "angle": "Los grandes presupuestos de IA van a hospitales terciarios. Pero el volumen, el impacto poblacional y el retorno a largo plazo están en primaria. Casos de uso viables con bajo coste: triaje, cribado, adherencia, prevención. Por qué los CAP no están en los roadmap.",
+      "audience": "Gerencias de atención primaria, CCAA, directores de sistemas sanitarios",
+      "tags": [
+        "Atención primaria",
+        "Clinical AI",
+        "Salud Digital"
+      ],
+      "published": false
+    },
+    {
+      "id": "fhir-vs-openmrs-vs-hl7v2-comparativa",
+      "title": "FHIR vs HL7v2 vs proprietary: qué estándar usar en cada capa de un hospital",
+      "angle": "Todavía hay hospitales con HL7v2, otros con mensajería propietaria y algunos en FHIR nativo. Guía pragmática: qué migrar, qué mantener, qué wrap con API gateway. Dónde invertir para EHDS sin reescribir todo.",
+      "audience": "Arquitectos de integración, CIOs hospitalarios, consultoras técnicas",
+      "tags": [
+        "HL7 FHIR",
+        "Interoperabilidad",
+        "Arquitectura"
+      ],
+      "published": false
+    },
+    {
+      "id": "medicina-precision-ia-genomica",
+      "title": "Medicina de precisión con IA: qué se puede hacer hoy en un hospital español",
+      "angle": "Entre el paper de Nature y el comité de tumores real, qué herramientas de medicina de precisión con componente IA están listas para producción. Farmacogenética, soporte a decisión en oncología, scoring de riesgo poligénico. Qué pide cada hospital y qué paga.",
+      "audience": "Oncólogos, genetistas clínicos, directores de innovación",
+      "tags": [
+        "Medicina de precisión",
+        "Genómica",
+        "Clinical AI"
+      ],
+      "published": false
+    },
+    {
+      "id": "startups-healthtech-espana-landscape",
+      "title": "Landscape de HealthTech en España 2026: quién está vendiendo qué a quién",
+      "angle": "Mapa de startups por vertical (diagnóstico, operaciones, adherencia, salud mental). Cuáles han cerrado contratos con SNS, cuáles viven de pilotos, cuáles ya tienen CE. Patrones comunes en las que escalan y en las que se quedan.",
+      "audience": "Inversores HealthTech, founders, consultoras en sector",
+      "tags": [
+        "HealthTech",
+        "Mercado",
+        "España"
+      ],
+      "published": false
+    },
+    {
+      "id": "validacion-externa-cdss-como-montar-estudio",
+      "title": "Cómo montar un estudio de validación externa para un CDSS sin quebrar",
+      "angle": "Diseño observacional, elección de endpoints clínicos vs. endpoints de modelo, tamaño muestral realista, cohorte control, manejo de consentimiento, coste típico. Qué se acepta en revista médica y qué exige el notified body.",
+      "audience": "Medical Affairs, investigadores clínicos, founders HealthTech",
+      "tags": [
+        "Validación clínica",
+        "CDSS",
+        "Medical Affairs"
+      ],
+      "published": false
+    },
+    {
+      "id": "telemedicina-europa-post-pandemia",
+      "title": "Telemedicina en Europa después de la pandemia: qué ha quedado y qué ha caído",
+      "angle": "De la euforia 2020 al equilibrio 2026. Qué modelos (asíncrono, monitorización remota, hospital en casa) han demostrado sostenibilidad. Estado regulatorio por país, reembolso público, integración con HIS. Papel de la IA como filtro de triaje.",
+      "audience": "Directores de estrategia, consultoras, HealthTech, aseguradoras",
+      "tags": [
+        "Telemedicina",
+        "Salud Digital",
+        "Europa"
+      ],
+      "published": false
+    },
+    {
+      "id": "llm-resumen-clinico-ambient-scribe",
+      "title": "Ambient scribe en clínica: el caso de uso más caliente de LLMs y lo que esconde",
+      "angle": "Transcripción y estructuración automática de consulta con LLMs. Qué soluciones existen, calidad real de la salida, riesgos clínicos (omisiones, invenciones), encaje regulatorio, integración con HCE. Por qué algunos hospitales están retirando pilotos.",
+      "audience": "CMOs, CIOs, directores de innovación, Medical Affairs",
+      "tags": [
+        "LLM",
+        "Ambient scribe",
+        "Clinical AI"
+      ],
+      "published": false
+    },
+    {
+      "id": "seguridad-paciente-ia-incidentes",
+      "title": "Seguridad del paciente con IA en producción: los 5 tipos de incidente que ya están pasando",
+      "angle": "Drift silencioso, recomendación sesgada por subgrupo, false positive que genera cascada de pruebas, recomendación desactualizada por cambio de guía clínica, override sistemático. Cómo se detecta cada uno antes de que alguien se haga daño.",
+      "audience": "Responsables de seguridad del paciente, CMOs, risk officers",
+      "tags": [
+        "Seguridad del paciente",
+        "Clinical AI",
+        "Monitoring"
+      ],
+      "published": false
+    },
+    {
+      "id": "mlops-clinico-diferencia",
+      "title": "MLOps clínico: por qué los pipelines estándar de ML no sirven en sanidad",
+      "angle": "Gestión de drift en sanidad, control de cambios bajo MDR, CI/CD con requisitos de reentrenamiento regulados, observabilidad clínica, human-in-the-loop estructurado. Diferencia con MLOps general.",
+      "audience": "Data scientists clínicos, MLOps, arquitectos IA sanitaria",
+      "tags": [
+        "MLOps",
+        "Clinical AI",
+        "MDR"
+      ],
+      "published": false
+    },
+    {
+      "id": "consentimiento-granular-ehds-como-implementar",
+      "title": "Consentimiento granular bajo EHDS: cómo se implementa sin colapsar al clínico",
+      "angle": "Modelos de consentimiento (opt-in, opt-out, granular por finalidad), UX clínica de la captura, integración con HIS, gobernanza de revocación, trazabilidad auditable. Ejemplos de países nórdicos y qué copiar.",
+      "audience": "DPOs hospitalarios, CIOs, directores de innovación",
+      "tags": [
+        "EHDS",
+        "Consentimiento",
+        "RGPD"
+      ],
+      "published": false
+    },
+    {
+      "id": "perfiles-equipo-proyecto-ia-hospital",
+      "title": "Los 7 perfiles que todo proyecto de IA hospitalaria necesita (y casi nunca tiene todos)",
+      "angle": "Sponsor clínico, product lead, data scientist clínico, ML engineer, regulatorio, DPO embedded, gestor del cambio. Qué hace cada uno, qué se rompe cuando falta, cómo se combinan en equipos pequeños.",
+      "audience": "Directores de innovación, gerentes de proyecto, partners consultoras",
+      "tags": [
+        "Equipos",
+        "Implementación",
+        "Gestión de proyectos"
+      ],
+      "published": false
+    },
+    {
+      "id": "europa-vs-usa-clinical-ai-regulacion",
+      "title": "Regulación de IA clínica: Europa vs Estados Unidos, quién va delante",
+      "angle": "FDA con De Novo y 510(k) AI/ML-based SaMD action plan vs EU AI Act + MDR. Velocidad de aprobación, exigencia de RWE, control post-market. Qué significa para founders que quieren escalar a ambos lados del Atlántico.",
+      "audience": "Founders HealthTech, regulatorio, inversores internacionales",
+      "tags": [
+        "EU AI Act",
+        "FDA",
+        "Regulación"
+      ],
+      "published": false
+    },
+    {
+      "id": "farmacia-hospitalaria-ia-aplicaciones",
+      "title": "IA en farmacia hospitalaria: el vertical infravalorado con más ROI demostrable",
+      "angle": "Predicción de demanda, detección de interacciones, conciliación farmacoterapéutica, dosificación personalizada, gestión de stock. Por qué farmacia es donde más fácil es demostrar valor económico y clínico combinados.",
+      "audience": "Jefes de farmacia hospitalaria, CFOs, consultoras en operaciones",
+      "tags": [
+        "Farmacia hospitalaria",
+        "IA sanitaria",
+        "ROI"
+      ],
+      "published": false
+    },
+    {
+      "id": "biomarcadores-digitales-evidencia",
+      "title": "Biomarcadores digitales: qué ha madurado y qué sigue siendo promesa",
+      "angle": "Wearables cardíacos, sensores respiratorios, análisis de voz para neurodegeneración, patrones de movilidad. Cuáles tienen evidencia publicada y encaje regulatorio, cuáles son demo perpetua. Implicaciones para ensayos clínicos y práctica rutinaria.",
+      "audience": "Medical Affairs, investigadores clínicos, founders HealthTech",
+      "tags": [
+        "Biomarcadores digitales",
+        "Wearables",
+        "Real-World Evidence"
+      ],
+      "published": false
+    },
+    {
+      "id": "auditorias-ia-clinica-como-hacerlas",
+      "title": "Auditorías de sistemas de IA clínica: qué mirar cada 6 meses",
+      "angle": "Drift estadístico, drift clínico, tasa de uso real, rate de overrides, análisis de incidentes, revisión de actualizaciones del modelo, comprobación de cumplimiento post-market. Checklist trimestral y anual, roles responsables.",
+      "audience": "Responsables de calidad, Medical Affairs, directores de innovación",
+      "tags": [
+        "Auditoría",
+        "Monitoring",
+        "Post-market"
+      ],
+      "published": false
+    },
+    {
+      "id": "ensayos-clinicos-descentralizados-ia",
+      "title": "Ensayos clínicos descentralizados con componente IA: oportunidad real o marketing",
+      "angle": "DCT con tecnología remota, reclutamiento asistido por IA, adherencia monitorizada, endpoints digitales. Qué exige EMA, cómo se construye la evidencia, qué diferencia a un DCT sólido de un DCT de marketing.",
+      "audience": "Medical Affairs farma, CROs, investigadores clínicos",
+      "tags": [
+        "Ensayos clínicos",
+        "DCT",
+        "Clinical AI"
+      ],
+      "published": false
+    },
+    {
+      "id": "clinical-ai-especialidad-primer-caso",
+      "title": "Primer caso de uso de IA clínica: cómo se elige sin cagarla",
+      "angle": "Criterios: volumen de decisión repetitiva, métrica clínica clara, disponibilidad de datos, riesgo clínico acotado, facilidad de rollback. Ejemplos buenos (priorización urgencias, no-show primaria) y malos (diagnóstico autónomo, primera línea oncológica).",
+      "audience": "Directores de innovación, CMOs, jefes de servicio, consultoras",
+      "tags": [
+        "Casos de uso",
+        "Clinical AI",
+        "Implementación"
+      ],
+      "published": false
+    },
+    {
+      "id": "paciente-digital-literacy-ia",
+      "title": "Literacy digital del paciente: la variable que todos los proyectos de IA pasan por alto",
+      "angle": "El mejor CDSS con acceso del paciente no vale si el paciente no sabe leer su informe digital. Estrategias de diseño inclusivo, materiales educativos, apoyo humano integrado. Implicaciones para EHDS y portales de paciente.",
+      "audience": "Directores de experiencia del paciente, UX clínica, Salud Digital",
+      "tags": [
+        "Experiencia del paciente",
+        "UX clínica",
+        "EHDS"
+      ],
+      "published": false
+    },
+    {
+      "id": "sindicatos-medicos-ia-posicion",
+      "title": "Qué dicen los sindicatos médicos sobre la IA: la conversación que las consultoras ignoran",
+      "angle": "Posiciones de OMC, SEMG, SEMI y equivalentes europeos sobre IA clínica. Preocupaciones reales (responsabilidad médica, autonomía clínica, formación, carga adicional). Cómo se alinea un proyecto desde el día uno para tener apoyo sindical.",
+      "audience": "Directores de RRHH clínicos, CMOs, consultoras, admin pública",
+      "tags": [
+        "Sindicatos médicos",
+        "Clinical AI",
+        "Gestión del cambio"
+      ],
+      "published": false
     }
   ]
 }
