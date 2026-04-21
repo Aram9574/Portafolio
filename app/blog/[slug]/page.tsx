@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const post = getBlogPost(params.slug);
   if (!post) return {};
   const url = `${BASE_URL}/blog/${post.slug}`;
+  const ogUrl = `${BASE_URL}/blog/${post.slug}/opengraph-image.png`;
   return {
     title: post.title,
     description: post.description,
@@ -40,13 +41,13 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       publishedTime: post.date,
       authors: [post.author.name],
       tags: post.tags,
-      images: [{ url: '/og-default.png', width: 1200, height: 630 }],
+      images: [{ url: ogUrl, width: 1200, height: 630, alt: post.title }],
     },
     twitter: {
       card: 'summary_large_image',
       title: post.title,
       description: post.description,
-      images: ['/og-default.png'],
+      images: [ogUrl],
     },
   };
 }

@@ -13,7 +13,13 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://alejandrozakzuk.com'),
   alternates: {
     canonical: 'https://alejandrozakzuk.com',
-    languages: { 'es-ES': 'https://alejandrozakzuk.com' }
+    languages: {
+      'es-ES': 'https://alejandrozakzuk.com',
+      'en': 'https://alejandrozakzuk.com/en'
+    },
+    types: {
+      'application/rss+xml': 'https://alejandrozakzuk.com/blog/rss.xml'
+    }
   },
   title: {
     default: 'Aram Zakzuk, MD · Healthcare & Clinical AI Consultant · Madrid',

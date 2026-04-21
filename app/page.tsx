@@ -224,8 +224,20 @@ export default function HomePage() {
       </Section>
 
       <Section id="blog" index="№ 06 — Blog" title="Notas editoriales" subtitle="Análisis ejecutivo y técnico sobre EHDS, EU AI Act, CDSS y transformación digital sanitaria. Publicación nueva cada lunes.">
+        {(() => {
+          const FEATURED_SLUGS = [
+            'como-preparar-centro-sanitario-ehds',
+            'eu-ai-act-clasificacion-cdss-5-pasos',
+            'lo-que-consultoras-deben-preguntar-ia-clinica',
+            'cdss-metricas-que-importan',
+          ];
+          const featured = FEATURED_SLUGS
+            .map((s) => blogPosts.find((p) => p.slug === s))
+            .filter((p): p is NonNullable<typeof p> => Boolean(p));
+          const list = featured.length === 4 ? featured : blogPosts.slice(0, 4);
+          return (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-0 border-t-2 border-ink">
-          {blogPosts.slice(0, 4).map((post, i) => (
+          {list.map((post, i) => (
             <article
               key={post.slug}
               data-aos="fade-up"
@@ -256,6 +268,8 @@ export default function HomePage() {
             </article>
           ))}
         </div>
+          );
+        })()}
         <div className="mt-10 flex flex-wrap items-center gap-6">
           <a href="/blog" className="btn-ink">Ver todos los artículos →</a>
           {blogPosts.length > 4 && (

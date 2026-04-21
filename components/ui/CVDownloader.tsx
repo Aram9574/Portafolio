@@ -1,4 +1,7 @@
+'use client';
+
 import { FileDown, FileText } from 'lucide-react';
+import { analyticsEvents } from '@/lib/analytics';
 
 type Variant = 'stacked' | 'compact';
 
@@ -39,6 +42,7 @@ export default function CVDownloader({ variant = 'stacked' }: { variant?: Varian
               rel={opt.external ? 'noopener noreferrer' : undefined}
               className="btn-ghost"
               aria-label={opt.label}
+              onClick={() => analyticsEvents.downloadCV(opt.label)}
             >
               <Icon className="w-4 h-4" aria-hidden />
               {opt.label}
@@ -61,6 +65,7 @@ export default function CVDownloader({ variant = 'stacked' }: { variant?: Varian
               rel={opt.external ? 'noopener noreferrer' : undefined}
               className="btn-ghost justify-center"
               aria-label={opt.label}
+              onClick={() => analyticsEvents.downloadCV(opt.label)}
             >
               <Icon className="w-4 h-4" aria-hidden />
               {opt.label}

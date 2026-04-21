@@ -3,6 +3,7 @@ import Link from 'next/link'
 import { useState } from 'react'
 import { SOCIAL } from '@/lib/site'
 import { Send, Loader2, CheckCircle2 } from 'lucide-react'
+import { analyticsEvents } from '@/lib/analytics'
 
 export function Footer() {
   const year = 2026
@@ -51,6 +52,8 @@ export function Footer() {
       </div>
       <div className="border-t border-ink/20 py-8">
         <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-xs text-ink-2 mb-4 font-medium uppercase tracking-wider">
+          <li><Link className="hover:text-ink transition" href="/en">English</Link></li>
+          <li><a className="hover:text-ink transition" href="/blog/rss.xml">RSS</a></li>
           <li><Link className="hover:text-ink transition" href="/legal/privacidad">Privacidad</Link></li>
           <li><Link className="hover:text-ink transition" href="/legal/cookies">Cookies</Link></li>
           <li><Link className="hover:text-ink transition" href="/legal/aviso-legal">Aviso Legal</Link></li>
@@ -81,6 +84,7 @@ function FooterNewsletterForm() {
       if (res.ok) {
         setStatus('success')
         setEmail('')
+        analyticsEvents.newsletterSubscribe('Footer')
       } else {
         setStatus('error')
       }

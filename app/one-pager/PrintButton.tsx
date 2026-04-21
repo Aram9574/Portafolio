@@ -1,10 +1,15 @@
 'use client'
 
+import { analyticsEvents } from '@/lib/analytics'
+
 export default function PrintButton() {
   return (
     <div className="no-print mt-10 pt-6 border-t border-[#111110]/20 flex flex-wrap items-center gap-4">
       <button
-        onClick={() => window.print()}
+        onClick={() => {
+          analyticsEvents.printOnePager()
+          window.print()
+        }}
         className="btn-ink cursor-pointer"
         type="button"
       >
