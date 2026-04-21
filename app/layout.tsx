@@ -5,9 +5,7 @@ import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { CookieBanner } from '@/components/CookieBanner'
 import { AOSProvider } from '@/components/AOSProvider'
-import CustomCursor from '@/components/ui/CustomCursor'
 import ClinicalTicker from '@/components/layout/ClinicalTicker'
-import { SmoothScrollProvider } from '@/components/providers/SmoothScrollProvider'
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
 import { SOCIAL } from '@/lib/site'
 
@@ -84,15 +82,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es" data-theme="ink" className={`${fraunces.variable} ${plex.variable} ${mono.variable}`}>
       <body className="relative min-h-screen antialiased flex flex-col">
         <GoogleAnalytics />
-        <CustomCursor />
-        <SmoothScrollProvider>
-          <AOSProvider />
-          <Navbar />
-          <ClinicalTicker />
-          <main className="flex-1 pt-[calc(4rem+2rem)]">{children}</main>
-          <Footer />
-          <CookieBanner />
-        </SmoothScrollProvider>
+        <AOSProvider />
+        <Navbar />
+        <ClinicalTicker />
+        <main className="flex-1 pt-[calc(4rem+2rem)]">{children}</main>
+        <Footer />
+        <CookieBanner />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
