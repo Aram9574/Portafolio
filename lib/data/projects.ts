@@ -28,7 +28,8 @@ export const projects: Project[] = [
     tags: ['Python', 'FastAPI', 'Streamlit', 'Claude API', 'WeasyPrint', 'Docker', 'EU AI Act'],
     cover: '/images/projects/framingham.jpg',
     links: {
-      demo: 'https://huggingface.co/spaces/aram1585/clinai-classifier'
+      demo: 'https://huggingface.co/spaces/aram1585/clinai-classifier',
+      repo: 'https://github.com/aramzakzuk/clinai-classifier'
     }
   },
   {
@@ -57,18 +58,6 @@ export const projects: Project[] = [
     tipo: 'estrella',
     tags: ['Python', 'Time Series', 'Healthcare Data Analytics', 'Hospital Operations'],
     cover: '/images/projects/longitud-estancia-ml.jpg'
-  },
-  {
-    slug: 'clinote-saas',
-    title: 'Clinote — Prototipo NLP clínico',
-    shortDescription: 'Prototipo de plataforma SaaS para extracción de entidades biomédicas desde texto libre de historia clínica. Proyecto personal de exploración técnica.',
-    context: 'Explorar la extracción automatizada de diagnósticos y tratamientos desde texto libre de historia clínica para reducir carga administrativa.',
-    solution: 'Prototipo en Next.js/Supabase con motor NLP basado en LLMs para reconocimiento de entidades (NER) y mapeo semántico. No desplegado en producción.',
-    impact: 'Prototipo funcional de exploración. No validado clínicamente ni desplegado en entornos reales.',
-    tipo: 'academico',
-    tags: ['TypeScript', 'Next.js', 'NLP', 'Supabase', 'Prototipo'],
-    cover: '/images/projects/nlp-eventos-adversos.jpg',
-    links: { repo: 'https://github.com/Aram9574/Clinote' }
   },
   {
     slug: 'erp-geriatrico-fhir',

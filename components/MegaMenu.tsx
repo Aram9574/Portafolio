@@ -38,7 +38,7 @@ export function MegaMenu({ section }: { section: 'sobre' | 'proyectos' }) {
         <div>
           <p className="text-ink font-medium mb-2">ERP/Apps</p>
           <ul className="space-y-2 text-sm text-muted">
-            <li><Link className="hover:text-ink" href="/proyectos/gericare-erp">GeriCare (Django/DRF)</Link></li>
+            <li><Link className="hover:text-ink" href="/proyectos/erp-geriatrico-fhir">GeriCare — Prototipo FHIR</Link></li>
             <li><Link className="hover:text-ink" href="/proyectos/automatizaciones-ia">Automatizaciones IA</Link></li>
           </ul>
         </div>

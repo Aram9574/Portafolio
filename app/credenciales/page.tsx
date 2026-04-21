@@ -65,9 +65,12 @@ export default function CredencialesPage() {
         title="Credenciales y certificaciones"
         subtitle="Formación continua verificable. Cada credencial enlaza a su registro oficial cuando existe, para que cualquier comité, comprador público o equipo técnico pueda contrastarla en su fuente."
       >
-        <p className="text-sm text-ink-2 max-w-2xl">
-          Stanford University · SNOMED International · Microsoft · Comunidad de Madrid · SEIS · American Heart Association · Ministère de l&apos;Éducation nationale · TOEFL / ETS.
-        </p>
+        <div className="border border-rule bg-paper px-5 py-4 max-w-3xl">
+          <div className="eyebrow mb-2">Instituciones emisoras</div>
+          <p className="text-sm text-ink-2 leading-relaxed">
+            Stanford University · SNOMED International · Microsoft · Comunidad de Madrid · SEIS · American Heart Association · Ministère de l&apos;Éducation nationale · TOEFL / ETS.
+          </p>
+        </div>
       </Section>
 
       {GROUPS.map(group => {
@@ -81,7 +84,7 @@ export default function CredencialesPage() {
             title={group.title}
             subtitle={group.description}
           >
-            <div className="flex flex-wrap gap-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
               {items.map(cert => (
                 <CertificationBadge
                   key={`${cert.issuer}-${cert.title}`}

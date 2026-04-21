@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'Sobre mí · Clinical AI Specialist',
-  description: 'Médico con 6,5 años de práctica clínica en Méderi (Colombia) + Clinical AI Specialist. CDSS, SaMD, EU AI Act, HL7 FHIR, XAI/SHAP. Másters en IA aplicada a Sanidad (CEMP) y Salud Digital (Universidad Europea).'
+  title: 'Sobre mí · Aram Zakzuk, MD',
+  description: 'Médico con 6 años de práctica clínica real y doble formación avanzada en IA aplicada a medicina y Salud Digital. Asesoramiento a organizaciones sanitarias, consultoras y HealthTech en la intersección entre criterio clínico, estrategia digital y marco regulatorio europeo.'
 }
 
 import Section from '@/components/ui/Section'
@@ -13,9 +13,73 @@ import { Brain, Network, Microscope } from 'lucide-react'
 
 import Image from 'next/image'
 
+const aboutSchema = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'AboutPage',
+      '@id': 'https://alejandrozakzuk.com/sobre-mi#aboutpage',
+      url: 'https://alejandrozakzuk.com/sobre-mi',
+      name: 'Sobre mí · Aram Zakzuk, MD',
+      about: { '@id': 'https://alejandrozakzuk.com/#person' },
+      inLanguage: 'es-ES'
+    },
+    {
+      '@type': 'FAQPage',
+      '@id': 'https://alejandrozakzuk.com/sobre-mi#faq',
+      mainEntity: [
+        {
+          '@type': 'Question',
+          name: '¿Quién es Aram Zakzuk?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Aram Zakzuk es médico con 6 años de práctica clínica en Méderi (Colombia) y Healthcare & Clinical AI Consultant basado en Madrid. Cuenta con Máster en IA aplicada a Sanidad (CEMP), Máster en Salud Digital / eHealth (Universidad Europea) y especialización en AI in Healthcare por Stanford University.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: '¿Qué servicios ofrece como consultor en IA clínica?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Evaluación y estrategia de adopción de soluciones Clinical AI, asesoramiento regulatorio EU AI Act, MDR y SaMD, análisis de viabilidad clínica de CDSS, Healthcare Data Analytics e interoperabilidad sanitaria (HL7 FHIR, SNOMED-CT, EHDS), y traducción entre criterio médico y equipos técnicos en proyectos HealthTech y MedTech.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: '¿Es desarrollador de software o data scientist?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'No. Aram Zakzuk es consultor. Su capacidad técnica en Machine Learning clínico, XAI/SHAP y EU AI Act fundamenta su criterio como asesor, no constituye su oferta de servicio. Los proyectos técnicos propios (CDSS diabético con AUC-ROC 0.942, ClinAI Classifier, análisis CDC BRFSS) son validación de criterio, no producto comercial.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: '¿Qué es el EU AI Act y a qué sistemas sanitarios aplica?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'El EU AI Act (Reglamento 2024/1689) es la regulación europea de Inteligencia Artificial. Clasifica los sistemas de IA en cuatro niveles de riesgo (prohibido, alto, limitado, mínimo). La mayoría de sistemas de IA sanitarios caen en Anexo III como alto riesgo, requiriendo gestión de riesgos, documentación técnica, gobernanza de datos y supervisión humana. Se combina con MDR y SaMD cuando el sistema tiene finalidad médica.'
+          }
+        },
+        {
+          '@type': 'Question',
+          name: '¿A qué organizaciones asesora?',
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: 'Organizaciones sanitarias (hospitales, aseguradoras, administración pública), consultoras tipo Crowe, Deloitte, Accenture y Minsait, y empresas HealthTech, MedTech y Life Sciences que necesiten criterio clínico y regulatorio europeo en proyectos de IA en salud.'
+          }
+        }
+      ]
+    }
+  ]
+}
+
 export default function SobreMiPage() {
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aboutSchema) }}
+      />
       {/* Hero sobre mí */}
       <Section id="sobre-mi-hero" className="pt-24">
         <div className="grid md:grid-cols-3 items-center gap-20">
@@ -23,7 +87,7 @@ export default function SobreMiPage() {
             <div className="w-[21rem] h-[21rem] md:w-96 md:h-96 border border-rule bg-paper overflow-hidden relative">
               <Image
                 src="/images/profile-2026.png"
-                alt="Aram Zakzuk · Clinical AI Specialist"
+                alt="Aram Zakzuk, MD · Healthcare & Clinical AI Consultant"
                 fill
                 sizes="(min-width: 768px) 384px, 100vw"
                 className="object-cover"
@@ -32,15 +96,9 @@ export default function SobreMiPage() {
             </div>
           </div>
           <div className="md:col-span-2" data-aos="fade-left">
-            <h1 className="font-display text-4xl md:text-5xl text-ink mb-6">Sobre mí</h1>
+            <h1 className="font-display text-4xl md:text-5xl text-ink mb-6">Un perfil. Tres capas.</h1>
             <p className="text-ink-2 md:text-lg leading-relaxed">
-              Un perfil, tres capas: <strong className="text-ink">Médico</strong> (Universidad del Rosario), <strong className="text-ink">Máster en Salud Digital / eHealth</strong> (Universidad Europea) y <strong className="text-ink">Máster en IA aplicada a Sanidad</strong> (CEMP), complementado con la especialización en AI in Healthcare de Stanford.
-              <br /><br />
-              6,5 años de práctica clínica continua en Méderi (Colombia · 2018–2024) — urgencias, medicina interna y atención primaria, más de 40 pacientes por turno — sustentan el criterio médico que aporto a la capa estratégica y técnica.
-              <br /><br />
-              Asesoro a hospitales, consultoras (Crowe, Deloitte, Accenture y similares), aseguradoras y administración pública en la transformación digital del sistema sanitario: estrategia de Salud Digital, licitaciones del Ministerio y fondos europeos, EHDS, Medical Affairs y despliegue de IA clínica con criterio médico real.
-              <br /><br />
-              Madrid · España.
+              Médico con 6 años de práctica clínica real y doble formación avanzada en IA aplicada a medicina y Salud Digital. El perfil que las organizaciones sanitarias y las consultoras buscan cuando necesitan que alguien entienda el problema antes de proponer la solución.
             </p>
             <div className="mt-6 flex flex-col gap-5" data-aos="fade-up" data-aos-delay="200">
               <div className="flex flex-wrap gap-3">
@@ -57,23 +115,75 @@ export default function SobreMiPage() {
 
 
 
+      {/* Lo que aporto · Dónde aporto valor · Sectores */}
+      <Section id="aporte">
+        <div className="grid grid-cols-12 gap-y-12 md:gap-x-8">
+          <div className="col-span-12 md:col-span-3">
+            <div className="section-index">№ 02 — Aporte</div>
+          </div>
+          <div className="col-span-12 md:col-span-9">
+            <div className="eyebrow mb-4">Lo que aporto</div>
+            <p className="lead">
+              Criterio clínico real para evaluar, cuestionar e implementar soluciones de IA en salud. La capacidad de sentarme con un equipo de ingenieros y entender lo que construyen. La capacidad de sentarme con un comité médico y explicarles por qué no funciona. Y el conocimiento del marco regulatorio europeo para que las decisiones sean sostenibles.
+            </p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-12 gap-y-10 md:gap-x-8 mt-20">
+          <div className="col-span-12 md:col-span-3">
+            <div className="section-index">№ 03 — Dónde aporto valor</div>
+          </div>
+          <div className="col-span-12 md:col-span-9 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
+            <div className="border-t border-ink pt-5">
+              <div className="eyebrow mb-3">01</div>
+              <h3 className="font-display text-xl text-ink mb-2">Evaluación y estrategia de adopción de Clinical AI</h3>
+              <p className="text-ink-2 text-sm leading-relaxed">Auditoría de soluciones de IA clínica, análisis de encaje asistencial y diseño de estrategia de adopción en entornos hospitalarios reales.</p>
+            </div>
+            <div className="border-t border-ink pt-5">
+              <div className="eyebrow mb-3">02</div>
+              <h3 className="font-display text-xl text-ink mb-2">Asesoramiento regulatorio EU AI Act · MDR · SaMD</h3>
+              <p className="text-ink-2 text-sm leading-relaxed">Clasificación bajo el Reglamento 2024/1689, análisis de conformidad y hoja de ruta de cumplimiento para proyectos HealthTech y MedTech.</p>
+            </div>
+            <div className="border-t border-ink pt-5">
+              <div className="eyebrow mb-3">03</div>
+              <h3 className="font-display text-xl text-ink mb-2">Viabilidad clínica de CDSS, datos e interoperabilidad</h3>
+              <p className="text-ink-2 text-sm leading-relaxed">Análisis clínico de Clinical Decision Support Systems, Healthcare Data Analytics e interoperabilidad sanitaria (HL7 FHIR · SNOMED-CT · EHDS).</p>
+            </div>
+            <div className="border-t border-ink pt-5">
+              <div className="eyebrow mb-3">04</div>
+              <h3 className="font-display text-xl text-ink mb-2">Traducción clínica–técnica en transformación digital</h3>
+              <p className="text-ink-2 text-sm leading-relaxed">Puente entre criterio médico y equipos técnicos en proyectos de transformación digital sanitaria, comités de dirección y licitaciones públicas.</p>
+            </div>
+          </div>
+        </div>
+
+        <div className="mt-20 border-t border-rule pt-6 flex flex-wrap items-start gap-y-4 gap-x-6">
+          <div className="eyebrow shrink-0">Sectores</div>
+          <div className="flex flex-wrap gap-2">
+            {['HealthTech','MedTech','Life Sciences','Salud Digital','Digital Health','Industria Farmacéutica','Medical Device'].map((s) => (
+              <span key={s} className="chip-ed">{s}</span>
+            ))}
+          </div>
+        </div>
+      </Section>
+
       {/* Experiencia destacada */}
       <Section id="experiencia-destacada" title="Experiencia">
         <div className="space-y-8">
           <ExperienceItem
             icon="lab"
-            title="Clinical AI Consultant & Developer · Autónomo"
-            context="Enero 2025 - Presente · HealthTech · Remoto"
+            title="Healthcare & Clinical AI Consultant · Autónomo"
+            context="Enero 2025 - Presente · Madrid · Remoto e híbrido"
             bullets={[
-              'CDSS estratificación de riesgo diabético (TFM): Random Forest · AUC-ROC 0.942 · XAI/SHAP · desplegado en Hugging Face · RGPD + EU AI Act + EHDS.',
-              'Clasificación multiclase de riesgo metabólico sobre 253.680 registros reales del CDC BRFSS con análisis de equidad por subgrupos demográficos.',
-              'ClinAI Classifier: herramienta open source que clasifica sistemas de IA sanitarios bajo el EU AI Act (demo en Hugging Face).',
-              'Stack: Python · Scikit-learn · XAI/SHAP · NLP clínico · SQL · Azure · Streamlit · FastAPI.'
+              'Asesoramiento a consultoras y HealthTech en evaluación de soluciones Clinical AI: encaje clínico, riesgo regulatorio y estrategia de adopción en entornos asistenciales reales.',
+              'Clasificación regulatoria bajo EU AI Act (Reglamento 2024/1689), MDR y SaMD. Análisis de conformidad y requisitos priorizados para equipos de producto.',
+              'Análisis de viabilidad clínica de CDSS, Healthcare Data Analytics e interoperabilidad sanitaria (HL7 FHIR · SNOMED-CT · EHDS).',
+              'Proyectos propios que fundamentan el criterio: CDSS de riesgo diabético (AUC-ROC 0.942), ClinAI Classifier (open source) y clasificación multiclase sobre 253.680 registros del CDC BRFSS.'
             ]}
             metrics={[
-              { value: '0.942', label: 'AUC-ROC' },
-              { value: 'EU AI Act', label: 'Compliance' },
-              { value: '253K', label: 'Registros CDC' }
+              { value: '6 años', label: 'clínica real' },
+              { value: '2 MSc', label: 'IA + Salud Digital' },
+              { value: 'EU AI Act', label: 'regulación' }
             ]}
           />
 
@@ -88,7 +198,7 @@ export default function SobreMiPage() {
               'Exposición directa a los puntos de fallo del sistema sanitario real: fragmentación de datos, ausencia de interoperabilidad y toma de decisiones sin CDSS operativos.'
             ]}
             metrics={[
-              { value: '6.5 años', label: 'Experiencia' },
+              { value: '6 años', label: 'Experiencia' },
               { value: '40+', label: 'Pacientes/turno' },
               { value: 'MI · URG · AP', label: 'Servicios' }
             ]}
@@ -99,50 +209,36 @@ export default function SobreMiPage() {
         <EducationSection />
       </div>
 
-      {/* Fortalezas */}
+      {/* Fortalezas — cuatro ejes, alineados con el perfil consultor */}
       <Section id="fortalezas" title="Fortalezas">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card className="p-6" data-aos="fade-up" data-aos-delay="100">
             <div className="w-12 h-12 mb-4 border border-rule bg-bone flex items-center justify-center">
               <Globe className="text-emerald-400 w-6 h-6" aria-hidden="true" />
             </div>
-            <h3 className="font-display text-xl text-ink mb-2">Criterio médico ejecutivo</h3>
-            <p className="text-ink-2 text-sm">6,5 años de práctica en urgencias, medicina interna y atención primaria. El criterio clínico real traducido a dirección, comité médico y comprador público.</p>
+            <h3 className="font-display text-xl text-ink mb-2">Criterio clínico real</h3>
+            <p className="text-ink-2 text-sm">Seis años en urgencias, medicina interna y atención primaria. El criterio que permite cuestionar una solución de IA antes de implementarla, no después.</p>
           </Card>
           <Card className="p-6" data-aos="fade-up" data-aos-delay="150">
             <div className="w-12 h-12 mb-4 border border-rule bg-bone flex items-center justify-center">
-              <Layout className="text-emerald-400 w-6 h-6" aria-hidden="true" />
+              <Shield className="text-emerald-400 w-6 h-6" aria-hidden="true" />
             </div>
-            <h3 className="font-display text-xl text-ink mb-2">Visión de Salud Digital</h3>
-            <p className="text-ink-2 text-sm">Transformación digital sanitaria, gestión de proyectos y EHDS. Roadmap clínico-tecnológico para hospitales, aseguradoras y administración pública.</p>
+            <h3 className="font-display text-xl text-ink mb-2">Marco regulatorio europeo</h3>
+            <p className="text-ink-2 text-sm">EU AI Act, MDR, SaMD, ISO 13485, RGPD y EHDS. Clasificación y análisis de conformidad para que las decisiones sean sostenibles, no solo cumplibles.</p>
           </Card>
           <Card className="p-6" data-aos="fade-up" data-aos-delay="200">
             <div className="w-12 h-12 mb-4 border border-rule bg-bone flex items-center justify-center">
-              <Shield className="text-emerald-400 w-6 h-6" aria-hidden="true" />
+              <Layout className="text-emerald-400 w-6 h-6" aria-hidden="true" />
             </div>
-            <h3 className="font-display text-xl text-ink mb-2">Regulación europea</h3>
-            <p className="text-ink-2 text-sm">EU AI Act · MDR · ISO 13485 · SaMD · Marcado CE · RGPD · EHDS como restricciones de diseño desde el día uno, no checklist legal.</p>
+            <h3 className="font-display text-xl text-ink mb-2">Estrategia de adopción clínica</h3>
+            <p className="text-ink-2 text-sm">Identificación de puntos de fallo en la implementación, rediseño de flujos asistenciales y gestión del cambio donde el comité médico toma la decisión.</p>
           </Card>
           <Card className="p-6" data-aos="fade-up" data-aos-delay="250">
             <div className="w-12 h-12 mb-4 border border-rule bg-bone flex items-center justify-center">
-              <Database className="text-emerald-400 w-6 h-6" aria-hidden="true" />
-            </div>
-            <h3 className="font-display text-xl text-ink mb-2">Interoperabilidad y datos</h3>
-            <p className="text-ink-2 text-sm">HL7 FHIR R4, SNOMED-CT, LOINC y preparación EHDS. Certificado SNOMED International (2025) y Azure Data Fundamentals.</p>
-          </Card>
-          <Card className="p-6" data-aos="fade-up" data-aos-delay="300">
-            <div className="w-12 h-12 mb-4 border border-rule bg-bone flex items-center justify-center">
               <MessageSquare className="text-emerald-400 w-6 h-6" aria-hidden="true" />
             </div>
-            <h3 className="font-display text-xl text-ink mb-2">Licitaciones y fondos europeos</h3>
-            <p className="text-ink-2 text-sm">Memoria técnica, arquitectura de cumplimiento y encaje clínico para licitaciones del Ministerio, CCAA, EHDS, Horizonte Europa y Recovery.</p>
-          </Card>
-          <Card className="p-6" data-aos="fade-up" data-aos-delay="350">
-            <div className="w-12 h-12 mb-4 border border-rule bg-bone flex items-center justify-center">
-              <Code className="text-emerald-400 w-6 h-6" aria-hidden="true" />
-            </div>
-            <h3 className="font-display text-xl text-ink mb-2">IA aplicada con rigor</h3>
-            <p className="text-ink-2 text-sm">CDSS, XAI/SHAP, Machine Learning y NLP clínico como capa de ejecución técnica — no como producto. El código respalda la decisión estratégica.</p>
+            <h3 className="font-display text-xl text-ink mb-2">Traducción clínica–técnica</h3>
+            <p className="text-ink-2 text-sm">El puente entre ingenieros, comité médico y comprador público. La misma conversación en tres idiomas distintos, sin perder rigor en ninguno.</p>
           </Card>
         </div>
       </Section>

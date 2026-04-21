@@ -52,14 +52,19 @@ export default function HomePage() {
 
             {/* Pie: lead + chips sobre regla */}
             <div className="col-span-12 pt-10 md:pt-16 rule-t grid grid-cols-12 gap-y-8 md:gap-x-8">
-              <p className="col-span-12 md:col-span-7 lead" data-aos="fade-up">
-                Médico (Universidad del Rosario, 6,5 años hospital) + Máster en Salud Digital / eHealth (Universidad Europea) + Máster en IA aplicada a Sanidad (CEMP). Asesoramiento estratégico para la transformación digital del sistema sanitario: licitaciones públicas, EHDS, Medical Affairs y despliegue de IA clínica con criterio médico real.
-              </p>
+              <div className="col-span-12 md:col-span-7 space-y-4" data-aos="fade-up">
+                <p className="lead">
+                  Médico (Universidad del Rosario, 6 años hospital) + Máster en IA aplicada a Sanidad (CEMP) + Máster en Salud Digital / eHealth (Universidad Europea). Healthcare & Clinical AI Consultant para organizaciones sanitarias, consultoras y HealthTech en Madrid y Europa.
+                </p>
+                <p className="caption normal-case tracking-normal leading-relaxed italic" style={{ fontSize: '0.95rem' }}>
+                  El perfil que las organizaciones sanitarias y las consultoras buscan cuando necesitan que alguien entienda el problema antes de proponer la solución.
+                </p>
+              </div>
               <div className="col-span-12 md:col-span-5 md:border-l md:border-ink md:pl-8 flex flex-col gap-5 content-start">
                 <div>
                   <div className="eyebrow mb-2">Medicina</div>
                   <div className="flex flex-wrap gap-2">
-                    <span className="chip-ed"><Stethoscope aria-hidden /> Médico · 6,5a</span>
+                    <span className="chip-ed"><Stethoscope aria-hidden /> Médico · 6a</span>
                     <span className="chip-ed"><HeartPulse aria-hidden /> MI · URG · AP</span>
                   </div>
                 </div>
@@ -117,7 +122,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <Section id="proyectos" index="№ 04 — Proyectos" title="Casos de estudio seleccionados" subtitle="De la pregunta clínica a la solución técnica. Cada proyecto documenta un hospital, un dataset, una métrica y una decisión regulatoria.">
+      <Section id="proyectos" index="№ 04 — Proyectos" title="Proyectos que fundamentan el criterio" subtitle="Validación técnica propia. El criterio consultor no se improvisa: se construye con datos reales, métricas verificables y cumplimiento regulatorio desde el día uno.">
         <ProjectBento projects={destacados} />
 
         <div className="mt-12">
@@ -144,7 +149,7 @@ export default function HomePage() {
           <div className="grid grid-cols-12 gap-y-12 md:gap-x-8 mb-24">
             <div className="col-span-12 md:col-span-4 border-t border-ink pt-6">
               <div className="eyebrow mb-4">Medicina</div>
-              <div className="metric-numeral font-display">6,5<span className="text-muted">a</span></div>
+              <div className="metric-numeral font-display">6<span className="text-muted">a</span></div>
               <p className="caption mt-3">Práctica clínica continua en urgencias, medicina interna y atención primaria (Méderi · 2018–2024).</p>
             </div>
             <div className="col-span-12 md:col-span-4 border-t border-ink pt-6">
@@ -169,7 +174,7 @@ export default function HomePage() {
               <div className="border-t border-ink pt-5">
                 <div className="eyebrow mb-3">01 · Criterio</div>
                 <h4 className="display-m text-xl mb-2">Criterio médico ejecutivo</h4>
-                <p className="caption leading-relaxed normal-case tracking-normal" style={{fontSize: '0.875rem'}}>6,5 años en el sistema asistencial real. Entiendo el flujo clínico desde dentro y lo traduzco a dirección, comité médico y comprador público.</p>
+                <p className="caption leading-relaxed normal-case tracking-normal" style={{fontSize: '0.875rem'}}>6 años en el sistema asistencial real. Entiendo el flujo clínico desde dentro y lo traduzco a dirección, comité médico y comprador público.</p>
               </div>
               <div className="border-t border-ink pt-5">
                 <div className="eyebrow mb-3">02 · Estrategia</div>
@@ -261,10 +266,10 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {testimonials && testimonials.length > 0 && (
+      {testimonials && testimonials.slice(1).length > 0 && (
         <Section id="testimonios" index="№ 07 — Testimonios" title="Voces">
           <div className="grid md:grid-cols-2 gap-6">
-            {testimonials.map((t, index) => (
+            {testimonials.slice(1).map((t, index) => (
               <div data-aos="zoom-in-up" data-aos-delay={150 * (index + 1)} key={t.name + index}>
                 <Testimonial quote={t.quote} name={t.name} role={t.role} />
               </div>
@@ -288,7 +293,7 @@ export default function HomePage() {
                 ¿Transformas el <span className="italic"><span className="hl-accent">sistema sanitario</span></span>?<br />Hablemos.
               </h2>
               <p className="lead mt-6 max-w-2xl">
-                Hospitales, consultoras (Crowe, Deloitte, Accenture), aseguradoras y administración pública: 15 minutos para revisar contexto, objetivo estratégico y encaje clínico-regulatorio.
+                Hospitales, consultoras (Crowe, Deloitte, Accenture, Minsait), aseguradoras y administración pública: 15 minutos para revisar contexto, objetivo estratégico y encaje clínico-regulatorio.
               </p>
               <div className="mt-10 flex flex-col gap-6">
                 <div className="flex flex-wrap gap-4">

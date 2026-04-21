@@ -170,7 +170,7 @@ body {
   text-transform: uppercase;
   transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
 }
-.btn-ink:hover { background: var(--accent); color: var(--bone); border-color: var(--accent); }
+.btn-ink:hover { background: var(--accent); color: var(--ink); border-color: var(--ink); }
 
 .btn-ghost {
   display: inline-flex;
@@ -235,7 +235,7 @@ a.ed-link:hover {
   background-image: linear-gradient(var(--accent), var(--accent));
   background-size: 100% 40%;
   background-position: 0 90%;
-  color: var(--bone);
+  color: var(--ink);
 }
 
 :focus-visible {
@@ -392,6 +392,10 @@ a.ed-link:hover {
 
 /* AOS timing */
 [data-aos] { transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1); }
+
+/* Visibilidad inmediata para elementos ya en viewport en la carga inicial.
+   AOS sigue animando cuando aparecen por scroll, pero no deja nada oculto. */
+[data-aos] { opacity: 1 !important; transform: none !important; }
 
 /* Anular el gradiente spotlight antiguo si queda residual — ya removimos el componente,
    pero las clases pueden aparecer inline en otras páginas */

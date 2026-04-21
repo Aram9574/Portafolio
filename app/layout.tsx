@@ -11,11 +11,15 @@ import { SOCIAL } from '@/lib/site'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://alejandrozakzuk.com'),
-  title: {
-    default: 'Aram Zakzuk · Médico · Salud Digital · IA aplicada a Sanidad',
-    template: '%s · Aram Zakzuk'
+  alternates: {
+    canonical: 'https://alejandrozakzuk.com',
+    languages: { 'es-ES': 'https://alejandrozakzuk.com' }
   },
-  description: 'Médico (Universidad del Rosario, 6,5 años hospital) + Máster en Salud Digital (Universidad Europea) + Máster en IA aplicada a Sanidad (CEMP). Asesoramiento estratégico para la transformación digital del sistema sanitario: licitaciones públicas, EHDS, Medical Affairs y despliegue de IA clínica.',
+  title: {
+    default: 'Aram Zakzuk, MD · Healthcare & Clinical AI Consultant · Madrid',
+    template: '%s · Aram Zakzuk, MD'
+  },
+  description: 'Healthcare & Clinical AI Consultant en Madrid. Médico con 6 años de práctica clínica + Máster en IA aplicada a Sanidad (CEMP) + Máster en Salud Digital (Universidad Europea). Evaluación de soluciones Clinical AI, asesoramiento regulatorio EU AI Act / MDR / SaMD y estrategia de adopción para consultoras y HealthTech.',
   keywords: [
     'Salud Digital',
     'eHealth',
@@ -42,14 +46,14 @@ export const metadata: Metadata = {
     locale: 'es_ES',
     url: 'https://alejandrozakzuk.com',
     siteName: 'Aram Zakzuk · Médico · Salud Digital · IA en Sanidad',
-    title: 'Aram Zakzuk · Médico · Salud Digital · IA aplicada a Sanidad',
-    description: 'Un perfil, tres capas: Medicina, Máster en Salud Digital y Máster en IA aplicada a Sanidad. Asesoramiento estratégico para hospitales, consultoras y administración pública.',
+    title: 'Aram Zakzuk, MD · Healthcare & Clinical AI Consultant',
+    description: 'Médico con 6 años de práctica clínica + doble máster en IA aplicada a Sanidad y Salud Digital. Evaluación regulatoria EU AI Act, estrategia de adopción Clinical AI y traducción clínica–técnica para consultoras y HealthTech.',
     images: [{ url: '/og-default.png', width: 1200, height: 630 }]
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Aram Zakzuk · Médico · Salud Digital · IA aplicada a Sanidad',
-    description: 'Medicina + Salud Digital + IA en Sanidad. Estrategia, licitaciones públicas, EHDS y Medical Affairs.',
+    title: 'Aram Zakzuk, MD · Healthcare & Clinical AI Consultant',
+    description: 'Evaluación Clinical AI, EU AI Act / MDR / SaMD y estrategia de adopción para consultoras y HealthTech. Madrid.',
     images: ['/og-default.png']
   },
   authors: [{ name: 'Aram Zakzuk', url: 'https://alejandrozakzuk.com' }],
@@ -94,38 +98,48 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': ['Person', 'Physician'],
+              '@id': 'https://alejandrozakzuk.com/#person',
               name: 'Aram Zakzuk',
               honorificPrefix: 'Dr.',
-              jobTitle: 'Médico · Consultor en Salud Digital · Especialista en IA aplicada a Sanidad',
-              description: 'Médico con doble máster (Salud Digital / eHealth por Universidad Europea e IA aplicada a Sanidad por CEMP). Asesoramiento estratégico a hospitales, consultoras y administración pública en transformación digital sanitaria, licitaciones, EHDS y despliegue de IA clínica.',
-              address: { '@type': 'PostalAddress', addressLocality: 'Madrid', addressCountry: 'ES' },
+              honorificSuffix: 'MD',
+              jobTitle: 'Healthcare & Clinical AI Consultant',
+              description: 'Médico con 6 años de práctica clínica y doble máster en IA aplicada a Sanidad (CEMP) y Salud Digital / eHealth (Universidad Europea). Consultor para organizaciones sanitarias, consultoras y HealthTech en evaluación de Clinical AI, asesoramiento regulatorio EU AI Act / MDR / SaMD y estrategia de adopción clínica.',
+              address: { '@type': 'PostalAddress', addressLocality: 'Madrid', addressRegion: 'Comunidad de Madrid', addressCountry: 'ES' },
               url: 'https://alejandrozakzuk.com',
               image: 'https://alejandrozakzuk.com/og-default.png',
-              sameAs: [SOCIAL.linkedin, SOCIAL.github],
+              email: 'mailto:zakzukaram@gmail.com',
+              sameAs: [SOCIAL.linkedin, SOCIAL.github, 'https://huggingface.co/aram1585'],
+              hasOccupation: {
+                '@type': 'Occupation',
+                name: 'Healthcare & Clinical AI Consultant',
+                occupationLocation: { '@type': 'City', name: 'Madrid' },
+                skills: 'EU AI Act, MDR, SaMD, HL7 FHIR, SNOMED-CT, EHDS, Clinical Decision Support Systems, Healthcare Data Analytics'
+              },
               alumniOf: [
-                { '@type': 'CollegeOrUniversity', name: 'Universidad del Rosario' },
-                { '@type': 'CollegeOrUniversity', name: 'Universidad Europea de Madrid' },
+                { '@type': 'CollegeOrUniversity', name: 'Universidad del Rosario', sameAs: 'https://www.urosario.edu.co/' },
                 { '@type': 'CollegeOrUniversity', name: 'Centro Europeo de Másters y Posgrados (CEMP)' },
-                { '@type': 'CollegeOrUniversity', name: 'Stanford University' }
+                { '@type': 'CollegeOrUniversity', name: 'Universidad Europea de Madrid', sameAs: 'https://universidadeuropea.com/' },
+                { '@type': 'CollegeOrUniversity', name: 'Stanford University', sameAs: 'https://www.stanford.edu/' }
+              ],
+              knowsLanguage: [
+                { '@type': 'Language', name: 'Spanish', alternateName: 'es' },
+                { '@type': 'Language', name: 'English', alternateName: 'en' },
+                { '@type': 'Language', name: 'French', alternateName: 'fr' }
               ],
               knowsAbout: [
-                'Medicina Interna',
-                'Atención Primaria',
-                'Urgencias',
-                'Salud Digital',
-                'eHealth',
-                'Transformación Digital Sanitaria',
-                'EHDS',
-                'Licitaciones públicas en sanidad',
-                'Medical Affairs',
-                'Clinical Decision Support Systems',
-                'Machine Learning aplicado a medicina',
-                'Healthcare Data Analytics',
-                'EU AI Act',
-                'MDR',
-                'SaMD',
-                'HL7 FHIR',
-                'SNOMED-CT'
+                'Clinical AI', 'Inteligencia Artificial Clínica', 'Clinical Decision Support Systems', 'CDSS',
+                'EU AI Act', 'Reglamento 2024/1689', 'Medical Device Regulation', 'MDR', 'Software as a Medical Device', 'SaMD',
+                'EHDS', 'Espacio Europeo de Datos Sanitarios', 'HL7 FHIR', 'SNOMED-CT', 'LOINC',
+                'Salud Digital', 'eHealth', 'Transformación Digital Sanitaria',
+                'Medical Affairs', 'Healthcare Data Analytics', 'Explainable AI', 'XAI', 'SHAP',
+                'Medicina Interna', 'Atención Primaria', 'Urgencias',
+                'HealthTech', 'MedTech', 'Life Sciences', 'Digital Health'
+              ],
+              makesOffer: [
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Evaluación y estrategia de adopción de Clinical AI', serviceType: 'Clinical AI Consulting' } },
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Asesoramiento regulatorio EU AI Act · MDR · SaMD', serviceType: 'Regulatory Consulting' } },
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Viabilidad clínica de CDSS, datos e interoperabilidad sanitaria', serviceType: 'Healthcare Data & Interoperability Consulting' } },
+                { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Traducción clínica–técnica en transformación digital sanitaria', serviceType: 'Healthcare Digital Transformation Advisory' } }
               ]
             })
           }}

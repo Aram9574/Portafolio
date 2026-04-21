@@ -4,7 +4,7 @@ import { Stethoscope, Layout, Brain, Network, ShieldCheck, Database } from 'luci
 
 export const metadata = {
   title: 'Habilidades · Medicina, Salud Digital e IA aplicada a Sanidad',
-  description: 'Tres capas: criterio médico (6,5 años hospital), estrategia de Salud Digital (Máster Universidad Europea) e IA aplicada a Sanidad (Máster CEMP + Stanford). EU AI Act, HL7 FHIR, EHDS.'
+  description: 'Tres capas: criterio médico (6 años hospital), estrategia de Salud Digital (Máster Universidad Europea) e IA aplicada a Sanidad (Máster CEMP + Stanford). EU AI Act, HL7 FHIR, EHDS.'
 }
 
 const SKILLS = [

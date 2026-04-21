@@ -148,26 +148,24 @@ export default function BlogPostPage({ params }: Props) {
         dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             '@context': 'https://schema.org',
-            '@type': 'Article',
+            '@type': 'BlogPosting',
             headline: post.title,
             description: post.description,
             datePublished: post.date,
             dateModified: post.date,
             inLanguage: 'es-ES',
-            url,
-            mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+            mainEntityOfPage: `${BASE_URL}/blog/${post.slug}`,
             author: {
               '@type': 'Person',
-              name: post.author.name,
-              url: post.author.url,
+              '@id': `${BASE_URL}/#person`,
+              name: 'Aram Zakzuk',
             },
             publisher: {
               '@type': 'Person',
-              name: 'Aram Zakzuk',
-              url: BASE_URL,
+              '@id': `${BASE_URL}/#person`,
             },
             image: `${BASE_URL}/og-default.png`,
-            keywords: post.tags.join(', '),
+            keywords: post.tags,
           }),
         }}
       />

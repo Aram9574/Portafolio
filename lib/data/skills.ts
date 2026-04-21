@@ -32,10 +32,10 @@ export const skills: SkillGroup[] = [
   {
     title: 'Backend, MLOps & Cloud',
     items: [
-      'Django', 'DRF', 'FastAPI (básico)', 'RESTful APIs',
+      'RESTful APIs',
       'Autenticación (JWT/OAuth)', 'PostgreSQL', 'SQLite', 'Migraciones y validación',
       'MLOps', 'Cloud Computing', 'Azure (DP-900)', 'Docker',
-      'Git/GitHub', 'GitHub Actions (CI/CD)', 'Streamlit', 'Vercel/Render', 'RGPD by design'
+      'Git/GitHub', 'Streamlit', 'RGPD by design'
     ]
   }
 ];

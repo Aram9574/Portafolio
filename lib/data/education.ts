@@ -96,6 +96,7 @@ export const certifications: CertificationItem[] = [
     issuer: 'Stanford University',
     year: 'feb 2026',
     link: 'https://www.coursera.org/account/accomplishments/specialization/JPA2O5IFFDNP',
+    credentialId: 'JPA2O5IFFDNP',
     category: 'stanford'
   },
   {

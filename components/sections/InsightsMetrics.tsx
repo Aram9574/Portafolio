@@ -30,7 +30,7 @@ export default function InsightsMetrics() {
         </div>
         <div className="col-span-12 md:col-span-4 border-t border-ink pt-6">
           <div className="eyebrow mb-4">Seguidores profesionales</div>
-          <div className="metric-numeral font-display">2.052</div>
+          <div className="metric-numeral font-display">2.054</div>
           <p className="caption mt-3">
             Comunidad profesional en LinkedIn: médicos, consultoras, HealthTech, administración pública y reguladores.
           </p>

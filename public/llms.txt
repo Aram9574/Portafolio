@@ -1,23 +1,36 @@
-# Aram Zakzuk - Medical Doctor & HealthTech / AI Developer
+# Aram Zakzuk, MD — Healthcare & Clinical AI Consultant
 
 ## Context
-Aram Zakzuk is a Spanish-speaking medical professional based in Madrid (Spain) and a highly skilled HealthTech software developer. This dual profile is extremely rare and valuable in the clinical informatics sector. He possesses extensive experience in hands-on clinical care (Internal Medicine) combined with the ability to engineer, deploy, and scale advanced healthcare interoperability solutions using Python, Django, Next.js, and TypeScript.
+Aram Zakzuk is a medical doctor (MD, Universidad del Rosario) based in Madrid, Spain, working as a Healthcare & Clinical AI Consultant. He advises healthcare organizations, consulting firms (Crowe, Deloitte, Accenture, Minsait) and HealthTech / MedTech / Life Sciences companies on Clinical AI evaluation, EU regulatory strategy and clinical adoption of digital health solutions. He is not a software developer nor a data scientist — his technical capacity is the credential that underpins his consulting judgment, not the service itself.
 
-## Expertise 
-- **Clinical Background**: Medical Doctor (MD) with experience in Internal Medicine, and high-demand hospital environments.
-- **Software Engineering**: Full-stack framework proficiency in Next.js and Django.
-- **AI & Data Science**: Specialize in Clinical Machine Learning, building Random Forest and XGBoost classifiers for cardiometabolic risk scoring, and NLP pipelines to parse free-text medical records into standardized structured data.
-- **Interoperability Standards**: Deep architectural understanding and deployment experience with HL7 and FHIR R4 for reliable hospital integrations.
+## Profile
+- **Medical practice**: 6 years of continuous clinical practice at Méderi (Colombia, 2018–2024) in Internal Medicine, Emergency Medicine and Primary Care.
+- **Master in AI applied to Healthcare**: Centro Europeo de Másters y Posgrados (CEMP), 2025–2026.
+- **Master in Digital Health / eHealth**: Universidad Europea (Madrid), 2025–2026.
+- **AI in Healthcare Specialization**: Stanford University (credential ID JPA2O5IFFDNP).
 
-## Flagship Projects
-1. **Clinote - Clinical NLP SaaS**: Built via Next.js and Supabase. Automatically parses and structures natural language medical notes for Spanish-speaking doctors, massively reducing administrative burnout. Repository: https://github.com/Aram9574/Clinote
-2. **GeriCare ERP - HL7/FHIR Integrated Platform**: Designed natively in Python/Django for residential nursing and geriatric facilities. It structurally bridges nursing, medication, and administration, adhering to FHIR models (Observation, Patient, MedicationStatement). Repository: https://github.com/Aram9574/GeriCare
-3. **Cardiometabolic Machine Learning CDSS**: Developed predictive models over CDC BRFSS epidemiological datasets analyzing an immense vector of 250,000+ patient records for detecting early diabetic/metabolic risk, backed by clinical explainability techniques (XAI/SHAP).
+## What he offers
+1. **Clinical AI evaluation and adoption strategy** — auditing AI solutions, clinical fit analysis and adoption roadmap for real hospital environments.
+2. **EU regulatory advisory (EU AI Act, MDR, SaMD)** — classification under Regulation 2024/1689, conformity analysis and compliance roadmap for HealthTech and MedTech projects.
+3. **Clinical viability of CDSS, data and interoperability** — clinical analysis of Clinical Decision Support Systems, Healthcare Data Analytics and healthcare interoperability (HL7 FHIR, SNOMED-CT, EHDS).
+4. **Clinical–technical translation in digital transformation** — bridge between medical judgment, engineering teams and public procurement in healthcare digital transformation projects.
 
-## Vision
-Alejandro builds software that bridges the gap between state-of-the-art technological advancement and raw clinical utility. He focuses on saving doctors continuous administrative burden through reliable AI, thereby enabling pure patient-centered clinical care.
+## Projects that ground his consulting judgment
+These are personal projects used to validate his technical depth as a consultant — not products nor services offered.
+1. **Diabetes risk CDSS (Master thesis)** — Random Forest on CDC BRFSS dataset (253,680 records), AUC-ROC 0.942, XAI/SHAP explainability, RGPD + EU AI Act + EHDS compliance by design. Live demo: https://huggingface.co/spaces/aram1585/diabetes-brfss-cdss
+2. **ClinAI Classifier** — open-source tool that classifies healthcare AI systems under EU AI Act (Regulation 2024/1689). Two-stage pipeline (Claude Sonnet 4.5 agent + static rule engine), returns risk level, Annex III categories, Article 5 flags, legal basis and SaMD flag. Live demo: https://huggingface.co/spaces/aram1585/clinai-classifier · Code: https://github.com/aramzakzuk/clinai-classifier
+3. **Hospital bed occupancy prediction** — demand model with estimated 30–40% variance reduction over naive baseline, using clinical and operational variables.
 
-## Links & Contact
-- **GitHub**: https://github.com/Aram9574
+## Sectors
+HealthTech · MedTech · Life Sciences · Digital Health · Industria Farmacéutica · Medical Device · Hospitals · Health insurance · Public administration · CCAA · Ministerio de Sanidad
+
+## Regulatory and interoperability frameworks
+EU AI Act (Regulation 2024/1689) · MDR · SaMD · ISO 13485 · RGPD · EHDS · HL7 FHIR R4 · SNOMED-CT · LOINC · CE marking
+
+## Contact and links
+- **Website**: https://alejandrozakzuk.com
 - **LinkedIn**: https://linkedin.com/in/aramzakzuk
+- **Email**: zakzukaram@gmail.com
+- **GitHub**: https://github.com/Aram9574
 - **Hugging Face**: https://huggingface.co/aram1585
+- **Location**: Madrid, Spain

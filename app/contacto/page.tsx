@@ -46,17 +46,16 @@ export default function ContactoPage() {
             </ul>
 
             <div className="mt-8 flex justify-center md:justify-start">
-              <Script src="https://platform.linkedin.com/badges/js/profile.js" strategy="lazyOnload" />
-              <div 
-                className="badge-base LI-profile-badge" 
-                data-locale="es_ES" 
-                data-size="medium" 
-                data-theme="light" 
-                data-type="VERTICAL" 
-                data-vanity="aramzakzuk" 
+              <div
+                className="badge-base LI-profile-badge"
+                data-locale="es_ES"
+                data-size="medium"
+                data-theme="light"
+                data-type="VERTICAL"
+                data-vanity="aramzakzuk"
                 data-version="v1"
               >
-                <a className="badge-base__link LI-simple-link" href="https://es.linkedin.com/in/aramzakzuk?trk=profile-badge">
+                <a className="badge-base__link LI-simple-link" href="https://es.linkedin.com/in/aramzakzuk?trk=profile-badge" target="_blank" rel="noreferrer">
                   Aram Zakzuk
                 </a>
               </div>
@@ -71,6 +70,13 @@ export default function ContactoPage() {
       <Section id="agenda-wrap" title="Agenda" subtitle="Reserva una breve llamada de descubrimiento. Contesta tres preguntas rápidas para llegar con contexto a los 15 minutos.">
         <PreQualifyForm />
       </Section>
+
+      <Script
+        src="https://platform.linkedin.com/badges/js/profile.js"
+        strategy="afterInteractive"
+        async
+        defer
+      />
     </>
   )
 }

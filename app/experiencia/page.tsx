@@ -4,24 +4,24 @@ import ExperienceItem from '@/components/sections/ExperienceItem'
 
 export const metadata = {
   title: 'Experiencia · Clinical AI Consultant',
-  description: '6,5 años de práctica clínica en Méderi (Colombia) + Clinical AI Consultant autónomo desde 2025. CDSS, SaMD y compliance EU AI Act con criterio médico real.'
+  description: '6 años de práctica clínica en Méderi (Colombia) + Healthcare & Clinical AI Consultant desde 2025. Evaluación Clinical AI, asesoramiento EU AI Act / MDR / SaMD y estrategia de adopción clínica.'
 }
 
 const EXPERIENCIAS = [
   {
     icon: 'heart' as const,
-    title: 'Clinical AI Consultant & Developer',
+    title: 'Healthcare & Clinical AI Consultant',
     context: 'Autónomo · HealthTech · Madrid (Remoto) · ene. 2025 – actualidad',
     bullets: [
-      'Desarrollo e implementación independiente de soluciones de IA clínica: CDSS, Healthcare Data Analytics y Software as a Medical Device (SaMD).',
-      'CDSS estratificación de riesgo diabético (TFM): Random Forest · AUC-ROC 0.942 · XAI/SHAP · desplegado en Hugging Face · RGPD + EU AI Act + EHDS.',
-      'Clasificación multiclase de riesgo metabólico sobre 253.680 registros reales (CDC BRFSS) con análisis de equidad por subgrupos demográficos.',
-      'Predicción de ocupación hospitalaria con reducción estimada de varianza del 30–40% sobre baseline naive.'
+      'Evaluación de soluciones de Clinical AI: análisis de encaje asistencial, riesgo regulatorio y viabilidad de adopción en entornos hospitalarios reales.',
+      'Asesoramiento regulatorio EU AI Act (Reglamento 2024/1689), MDR y SaMD: clasificación, análisis de conformidad y requisitos priorizados para equipos de producto y consultoras.',
+      'Análisis de viabilidad clínica de CDSS, Healthcare Data Analytics e interoperabilidad sanitaria (HL7 FHIR · SNOMED-CT · EHDS).',
+      'Traducción clínica–técnica en proyectos de transformación digital sanitaria: puente entre comités médicos, dirección y equipos técnicos.'
     ],
     metrics: [
-      { value: '0.942', label: 'AUC-ROC CDSS' },
-      { value: '253K', label: 'Registros CDC' },
-      { value: 'EU AI Act', label: 'Compliance' }
+      { value: '6 años', label: 'clínica real' },
+      { value: '2 MSc', label: 'IA + Salud Digital' },
+      { value: 'EU AI Act', label: 'regulación' }
     ]
   },
   {
@@ -35,7 +35,7 @@ const EXPERIENCIAS = [
       'Exposición directa a los puntos de fallo del sistema sanitario real: fragmentación de datos, ausencia de interoperabilidad y toma de decisiones sin CDSS operativos.'
     ],
     metrics: [
-      { value: '6.5 años', label: 'Práctica Real' },
+      { value: '6 años', label: 'Práctica Real' },
       { value: '40+', label: 'Pacientes/turno' },
       { value: 'MI · URG · AP', label: 'Servicios' }
     ]

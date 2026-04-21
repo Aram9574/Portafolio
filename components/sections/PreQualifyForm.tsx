@@ -100,8 +100,8 @@ export default function PreQualifyForm({ initialAudience }: Props) {
                   return (
                     <label
                       key={a.value}
-                      className={`flex items-center gap-3 border-2 px-4 py-3 cursor-pointer transition bg-paper ${
-                        checked ? 'border-ink' : 'border-ink/20 hover:border-ink/60'
+                      className={`flex items-center gap-3 border px-4 py-3 cursor-pointer transition ${
+                        checked ? 'border-ink bg-bone' : 'border-rule bg-paper hover:border-ink'
                       }`}
                     >
                       <input
@@ -137,7 +137,7 @@ export default function PreQualifyForm({ initialAudience }: Props) {
                 name="project"
                 value={project}
                 onChange={(e) => setProject(e.target.value as ProjectKind | '')}
-                className="w-full bg-paper border-2 border-ink text-ink text-sm px-4 py-3 focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 focus:ring-offset-paper"
+                className="w-full bg-paper border border-ink text-ink text-sm px-4 py-3 focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 focus:ring-offset-paper"
               >
                 <option value="">Selecciona una opción…</option>
                 {PROJECTS.map((p) => (
@@ -157,8 +157,8 @@ export default function PreQualifyForm({ initialAudience }: Props) {
                   return (
                     <label
                       key={t.value}
-                      className={`flex items-center gap-3 border-2 px-4 py-3 cursor-pointer transition bg-paper ${
-                        checked ? 'border-ink' : 'border-ink/20 hover:border-ink/60'
+                      className={`flex items-center gap-3 border px-4 py-3 cursor-pointer transition ${
+                        checked ? 'border-ink bg-bone' : 'border-rule bg-paper hover:border-ink'
                       }`}
                     >
                       <input

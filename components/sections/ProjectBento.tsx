@@ -1,33 +1,17 @@
 'use client';
 
-import { useRef, useState } from 'react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Github, ExternalLink } from 'lucide-react';
 
 export default function ProjectBento({ projects }: { projects: any[] }) {
-  const containerRef = useRef<HTMLDivElement>(null);
-
-  // Efecto Parallax en el contenedor completo
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["0 1", "1.2 1"]
-  });
-
-  const scale = useTransform(scrollYProgress, [0, 1], [0.95, 1]);
-  const opacity = useTransform(scrollYProgress, [0, 0.5], [0, 1]);
-
   if (!projects || projects.length < 3) return null;
 
   const [mainProject, ...sideProjects] = projects.slice(0, 3);
 
   return (
-    <motion.div 
-      ref={containerRef}
-      style={{ scale, opacity }}
-      className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-3 gap-6 pt-10"
-    >
+    <div className="max-w-6xl mx-auto w-full grid grid-cols-1 lg:grid-cols-3 gap-6 pt-10">
       {/* Caja Principal (Izquierda) */}
       <HoverCard className="lg:col-span-2 h-[450px] group">
         <Link href={`/proyectos/${mainProject.slug}`} className="absolute inset-0 z-10" data-project-card aria-label={mainProject.title} />
@@ -124,7 +108,7 @@ export default function ProjectBento({ projects }: { projects: any[] }) {
           </HoverCard>
         ))}
       </div>
-    </motion.div>
+    </div>
   );
 }
 
