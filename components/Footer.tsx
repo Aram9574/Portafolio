@@ -11,7 +11,7 @@ export function Footer() {
     <footer className="mt-20 border-t border-ink bg-paper">
       <div className="container grid grid-cols-1 md:grid-cols-4 gap-10 py-12">
         <div>
-          <h4 className="text-ink font-semibold mb-3">Contacto</h4>
+          <h2 className="text-ink font-semibold mb-3 text-base">Contacto</h2>
           <ul className="space-y-2 text-sm text-ink-2">
             <li>{SOCIAL.location}</li>
             <li><a className="hover:text-ink underline-offset-4 hover:underline" href={`mailto:${SOCIAL.email}`}>{SOCIAL.email}</a></li>
@@ -21,7 +21,7 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className="text-ink font-semibold mb-3">Navegación</h4>
+          <h2 className="text-ink font-semibold mb-3 text-base">Navegación</h2>
           <ul className="space-y-2 text-sm text-ink-2">
             <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/sobre-mi">Perfil</Link></li>
             <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/proyectos">Proyectos</Link></li>
@@ -33,7 +33,7 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className="text-ink font-semibold mb-3">Perfil y especialidades</h4>
+          <h2 className="text-ink font-semibold mb-3 text-base">Perfil y especialidades</h2>
           <ul className="space-y-2 text-sm text-ink-2">
             <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/experiencia">Experiencia</Link></li>
             <li><Link className="hover:text-ink underline-offset-4 hover:underline" href="/habilidades">Habilidades</Link></li>
@@ -43,7 +43,7 @@ export function Footer() {
           </ul>
         </div>
         <div>
-          <h4 className="text-ink font-semibold mb-3">Newsletter</h4>
+          <h2 className="text-ink font-semibold mb-3 text-base">Newsletter</h2>
           <p className="text-xs text-ink-2 mb-4 leading-relaxed">
             Insights de Clinical AI, EU AI Act y HL7 FHIR. Un mail cada 15 días.
           </p>

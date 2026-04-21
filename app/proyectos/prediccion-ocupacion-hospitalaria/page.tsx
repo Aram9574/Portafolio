@@ -437,12 +437,14 @@ export default function CaseStudyOcupacionHospitalaria() {
               'Case study sobre un modelo predictivo de demanda de camas hospitalarias con variables clínicas y operativas. Reducción estimada de varianza del 30-40% sobre baseline naive.',
             author: {
               '@type': 'Person',
+              '@id': 'https://alejandrozakzuk.com/#person',
               name: 'Aram Zakzuk',
-              jobTitle: 'Médico · Máster en IA aplicada a Sanidad',
+              jobTitle: 'Healthcare & Clinical AI Consultant',
               url: 'https://alejandrozakzuk.com'
             },
             publisher: {
               '@type': 'Person',
+              '@id': 'https://alejandrozakzuk.com/#person',
               name: 'Aram Zakzuk',
               url: 'https://alejandrozakzuk.com'
             },

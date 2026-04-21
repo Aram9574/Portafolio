@@ -159,14 +159,14 @@ export default async function ProjectDetailPage({ params }: Props) {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "SoftwareApplication",
+            "@id": `https://alejandrozakzuk.com/proyectos/${project.slug}#app`,
             "name": project.title,
             "applicationCategory": "HealthApplication",
             "operatingSystem": "Web",
             "description": project.shortDescription || project.context,
-            "creator": {
-              "@type": "Person",
-              "name": "Aram Zakzuk"
-            },
+            "inLanguage": "es-ES",
+            "creator": { "@id": "https://alejandrozakzuk.com/#person" },
+            "author": { "@id": "https://alejandrozakzuk.com/#person" },
             ...(project.cover ? { "image": `https://alejandrozakzuk.com${project.cover}` } : {}),
             ...(project.links?.repo ? { "codeRepository": project.links.repo } : {}),
             ...(project.links?.demo ? { "url": project.links.demo } : {})

@@ -111,22 +111,24 @@ export default function BlogIndexPage() {
           __html: JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'Blog',
+            '@id': 'https://alejandrozakzuk.com/blog#blog',
             name: 'Blog · Aram Zakzuk · Salud Digital e IA clínica',
             url: 'https://alejandrozakzuk.com/blog',
             description:
               'Análisis ejecutivo y técnico sobre EHDS, EU AI Act, CDSS y transformación digital sanitaria.',
-            author: {
-              '@type': 'Person',
-              name: 'Aram Zakzuk',
-              url: 'https://alejandrozakzuk.com',
-            },
+            inLanguage: 'es-ES',
+            author: { '@id': 'https://alejandrozakzuk.com/#person' },
+            publisher: { '@id': 'https://alejandrozakzuk.com/#person' },
             blogPost: blogPosts.map((p) => ({
               '@type': 'BlogPosting',
+              '@id': `https://alejandrozakzuk.com/blog/${p.slug}#post`,
               headline: p.title,
               description: p.description,
               datePublished: p.date,
               url: `https://alejandrozakzuk.com/blog/${p.slug}`,
-              author: { '@type': 'Person', name: p.author.name, url: p.author.url },
+              inLanguage: 'es-ES',
+              author: { '@id': 'https://alejandrozakzuk.com/#person' },
+              publisher: { '@id': 'https://alejandrozakzuk.com/#person' },
             })),
           }),
         }}

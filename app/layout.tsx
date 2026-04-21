@@ -77,6 +77,7 @@ export const metadata: Metadata = {
 const fraunces = Fraunces({
   subsets: ['latin'],
   display: 'swap',
+  preload: true,
   variable: '--font-display',
   axes: ['opsz', 'SOFT'],
 })
@@ -84,6 +85,7 @@ const fraunces = Fraunces({
 const plex = IBM_Plex_Sans({
   subsets: ['latin'],
   display: 'swap',
+  preload: true,
   weight: ['300', '400', '500', '600'],
   variable: '--font-body',
 })
@@ -91,6 +93,7 @@ const plex = IBM_Plex_Sans({
 const mono = JetBrains_Mono({
   subsets: ['latin'],
   display: 'swap',
+  preload: false, // ticker/labels, no crítico
   weight: ['400', '500'],
   variable: '--font-mono',
 })
