@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
 import Section from '@/components/ui/Section'
+import ScrubbedMetric from '@/components/ui/ScrubbedMetric'
 
 export const metadata: Metadata = {
   title: 'GeriCare — Prototipo ERP con HL7/FHIR R4 · Case Study',
@@ -146,6 +147,12 @@ export default function CaseStudyGeriCare() {
               asistenciales (<code className="text-ink">Encounter</code>) para registrar ingresos hospitalarios
               y altas. Suficiente para probar que el enfoque arquitectónico funciona.
             </p>
+
+            <ScrubbedMetric
+              value="4"
+              barPercent={60}
+              label="Recursos FHIR R4 modelados en el prototipo: Patient, Observation, MedicationStatement y Encounter. El subconjunto mínimo para validar la portabilidad entre sistemas sanitarios europeos."
+            />
           </div>
         </div>
       </Section>

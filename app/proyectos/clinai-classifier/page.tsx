@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Section from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
+import ScrubbedMetric from '@/components/ui/ScrubbedMetric'
 
 export const metadata: Metadata = {
   title: 'ClinAI Classifier — Clasificador EU AI Act · Case Study',
@@ -127,6 +128,12 @@ export default function CaseStudyClinAIClassifier() {
               veredicto auditable con la base legal citada artículo por artículo. Ese vacío es lo que el
               proyecto intenta cerrar.
             </p>
+
+            <ScrubbedMetric
+              value="4"
+              barPercent={75}
+              label="Niveles de riesgo bajo el EU AI Act (prohibido · alto · limitado · mínimo). Cada condición del sistema puede mover el veredicto entre ellos con consecuencias regulatorias muy distintas."
+            />
           </div>
         </div>
       </Section>

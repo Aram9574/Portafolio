@@ -35,7 +35,7 @@ export default function Image({ params }: { params: { slug: string } }) {
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-          <div style={{ display: 'flex', height: 6, width: 120, background: '#C4F542' }} />
+          <div style={{ display: 'flex', height: 6, width: 120, background: '#1F6F5C' }} />
           <div style={{ display: 'flex', fontSize: 64, lineHeight: 1.1, fontWeight: 500, letterSpacing: -1 }}>
             {title.length > 110 ? title.slice(0, 107) + '…' : title}
           </div>

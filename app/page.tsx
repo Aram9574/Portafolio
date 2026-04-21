@@ -13,6 +13,7 @@ import { testimonials } from '@/lib/data/testimonials';
 import { blogPosts } from '@/lib/data/blog';
 import { SOCIAL } from '@/lib/site';
 import { Network, Server, Brain, Stethoscope, ShieldCheck, LineChart, Cpu, Workflow, HeartPulse, BadgeCheck } from 'lucide-react';
+import ChartreuseRule from '@/components/ui/ChartreuseRule';
 
 export default function HomePage() {
   const destacados = projects.slice(0,3);
@@ -121,6 +122,8 @@ export default function HomePage() {
           </ul>
         </div>
       </section>
+
+      <div className="container"><ChartreuseRule className="my-2" /></div>
 
       <Section id="proyectos" index="№ 04 — Proyectos" title="Proyectos que fundamentan el criterio" subtitle="Validación técnica propia. El criterio consultor no se improvisa: se construye con datos reales, métricas verificables y cumplimiento regulatorio desde el día uno.">
         <ProjectBento projects={destacados} />

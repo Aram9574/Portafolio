@@ -30,7 +30,7 @@ export default function Image() {
             Aram Zakzuk, MD
           </div>
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-            <div style={{ height: 6, width: 100, background: '#C4F542' }} />
+            <div style={{ height: 6, width: 100, background: '#1F6F5C' }} />
             <div style={{ fontSize: 36, letterSpacing: -0.5 }}>
               Healthcare & Clinical AI Consultant
             </div>

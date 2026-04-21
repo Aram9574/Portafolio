@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Section from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
+import ScrubbedMetric from '@/components/ui/ScrubbedMetric'
+import ChartreuseRule from '@/components/ui/ChartreuseRule'
 
 export const metadata: Metadata = {
   title: 'Predicción de ocupación hospitalaria mediante IA · Case Study',
@@ -220,13 +222,12 @@ export default function CaseStudyOcupacionHospitalaria() {
             <div className="caption mt-4">Medido sobre dataset sintético realista</div>
           </div>
           <div className="col-span-12 md:col-span-9 space-y-6 text-ink-2">
-            <div className="border-l-4 border-ink pl-6 py-2">
-              <div className="metric-numeral">30–40%</div>
-              <p className="mt-2 text-sm text-ink">
-                Reducción estimada de varianza en planificación de recursos frente a baseline naive, medida sobre
-                ventana temporal de validación retrospectiva.
-              </p>
-            </div>
+            <ScrubbedMetric
+              value="30–40%"
+              barPercent={82}
+              animateCount={false}
+              label="Reducción estimada de varianza en planificación de recursos frente a baseline naive, medida sobre ventana temporal de validación retrospectiva."
+            />
             <p>
               En lenguaje de dirección: en un hospital mediano de 500 camas con ocupación media del 80%, esa
               reducción de varianza equivale a entre 8 y 15 camas al día de margen operativo recuperado sin

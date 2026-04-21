@@ -174,7 +174,7 @@ function HoverCard({ children, className = '' }: { children: React.ReactNode; cl
         <div
           className="pointer-events-none absolute -inset-px transition duration-300 opacity-100"
           style={{
-            background: `radial-gradient(500px circle at ${position.x}px ${position.y}px, rgba(196, 245, 66, 0.18), transparent 50%)`,
+            background: `radial-gradient(500px circle at ${position.x}px ${position.y}px, rgba(31, 111, 92, 0.15), transparent 50%)`,
           }}
         />
       )}

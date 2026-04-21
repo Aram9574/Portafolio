@@ -12,8 +12,8 @@
   --bone: #E8E2D4;         /* fondo: crema papel */
   --paper: #F0EADC;        /* superficies elevadas: crema claro */
   --rule: #1A1815;         /* reglas: tinta */
-  --accent: #C4F542;       /* lima clínico */
-  --accent-hover: #B3E833;
+  --accent: #1F6F5C;       /* verde clínico oscuro */
+  --accent-hover: #185546;
   --danger: #D63B1F;
   --muted: #6B655A;
   --muted-2: #8A8478;
@@ -170,7 +170,7 @@ body {
   text-transform: uppercase;
   transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
 }
-.btn-ink:hover { background: var(--accent); color: var(--ink); border-color: var(--ink); }
+.btn-ink:hover { background: var(--accent); color: var(--bone); border-color: var(--accent); }
 
 .btn-ghost {
   display: inline-flex;
@@ -212,9 +212,12 @@ body {
 }
 
 .hl-accent {
-  background: linear-gradient(transparent 62%, var(--accent) 62%);
-  padding: 0 0.12em;
   color: var(--ink);
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  background-size: 100% 0.14em;
+  padding-bottom: 0.04em;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
@@ -235,7 +238,7 @@ a.ed-link:hover {
   background-image: linear-gradient(var(--accent), var(--accent));
   background-size: 100% 40%;
   background-position: 0 90%;
-  color: var(--ink);
+  color: var(--bone);
 }
 
 :focus-visible {

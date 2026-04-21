@@ -35,7 +35,7 @@ export default function OnePagerPage() {
             .op-serif { font-family: 'Fraunces', 'Times New Roman', serif; }
             .op-mono { font-family: 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase; }
             .op-rule { border-top: 1px solid #111110; }
-            .op-accent { background: #C4F542; padding: 0 4px; }
+            .op-accent { background: #1F6F5C; color: #EFE8D9; padding: 1px 6px; border-radius: 2px; }
           `,
         }}
       />

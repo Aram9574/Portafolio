@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import Section from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
+import ScrubbedMetric from '@/components/ui/ScrubbedMetric'
 
 export const metadata: Metadata = {
   title: 'CDSS estratificación de riesgo diabético (TFM) · Case Study',
@@ -172,13 +173,11 @@ export default function CaseStudyCDSSDiabetes() {
             <div className="caption mt-4">AUC-ROC 0.942 sobre validación estratificada</div>
           </div>
           <div className="col-span-12 md:col-span-9 space-y-6 text-ink-2">
-            <div className="border-l-4 border-ink pl-6 py-2">
-              <div className="metric-numeral">0.942</div>
-              <p className="mt-2 text-sm text-ink">
-                AUC-ROC en validación estratificada. Se sitúa en el top 5% de modelos publicados en literatura
-                para datasets equivalentes de estratificación de riesgo diabético.
-              </p>
-            </div>
+            <ScrubbedMetric
+              value="0.942"
+              barPercent={94}
+              label="AUC-ROC en validación estratificada. Se sitúa en el top 5% de modelos publicados en literatura para datasets equivalentes de estratificación de riesgo diabético."
+            />
             <p>
               La elección de Random Forest frente a gradient boosting no es accidental. Random Forest ofrece
               mejor calibración de probabilidad en clases desbalanceadas sin postprocesado, lo que importa
