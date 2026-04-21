@@ -46,7 +46,7 @@ export function MegaMenu({ section }: { section: 'sobre' | 'proyectos' }) {
           <p className="text-ink font-medium mb-2">Más</p>
           <ul className="space-y-2 text-sm text-muted">
             <li><Link className="hover:text-ink" href="/proyectos">Ver todos los proyectos</Link></li>
-            <li><Link className="hover:text-ink" href="/publicaciones">Publicaciones</Link></li>
+            <li><Link className="hover:text-ink" href="/publicaciones">Insights</Link></li>
           </ul>
         </div>
       </div>

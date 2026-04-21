@@ -8,7 +8,7 @@ export const metadata = { title: 'Servicios', robots: 'noindex, nofollow' }
 export default function ServiciosPage() {
   return (
     <>
-      <Section id="servicios" title="Servicios" subtitle="Clinical AI y compliance EU AI Act para HealthTech, MedTech y equipos de Medical Affairs.">
+      <Section id="servicios" title="Servicios" subtitle="Estrategia de Salud Digital, licitaciones públicas, Medical Affairs y ejecución técnica en IA sanitaria. Para hospitales, consultoras, administración pública y HealthTech.">
         <div className="grid md:grid-cols-3 gap-6">
           {services.map(s => (
             <Card key={s.id}>
@@ -26,10 +26,10 @@ export default function ServiciosPage() {
       <Section id="proceso" title="Proceso en 4 pasos">
         <ol className="grid md:grid-cols-4 gap-4 text-sm text-ink-2">
           {[
-            { step: 'Brief clínico', desc: 'Problema real, flujo asistencial y métrica objetivo' },
-            { step: 'Datos y regulación', desc: 'Fuentes, calidad y restricciones (EU AI Act · RGPD · EHDS)' },
-            { step: 'Prototipo validado', desc: 'Modelo + XAI/SHAP + análisis de equidad' },
-            { step: 'Entrega auditable', desc: 'Informe ejecutivo, documentación y roadmap' }
+            { step: 'Diagnóstico estratégico', desc: 'Contexto del cliente, objetivo, stakeholders (dirección, compra pública, clínica)' },
+            { step: 'Encaje regulatorio', desc: 'EU AI Act · MDR · RGPD · EHDS como restricciones de diseño' },
+            { step: 'Roadmap y memoria técnica', desc: 'Plan ejecutable, business case y soporte en licitación si aplica' },
+            { step: 'Entrega ejecutiva', desc: 'Informe para dirección, documentación y plan de implementación' }
           ].map((p, i) => (
             <li key={p.step} className="bg-paper border border-rule p-4">
               <div className="text-ink font-medium">{i + 1}. {p.step}</div>
@@ -41,15 +41,15 @@ export default function ServiciosPage() {
 
       <Section id="faq" title="Preguntas frecuentes">
         <div className="border border-rule bg-paper p-2">
-          <FAQItem q="¿Trabajas bajo el marco regulatorio europeo?" a="Sí. EU AI Act (Reglamento 2024/1689), RGPD, EHDS, MDR, ISO 13485 y SaMD son restricciones de diseño desde el día uno, no una checklist a posteriori." />
-          <FAQItem q="¿Tienes criterio clínico real?" a="Sí. 6,5 años de práctica continua en medicina interna, urgencias y atención primaria en Méderi (Colombia, 2018–2024). Los modelos se diseñan desde el flujo clínico real." />
-          <FAQItem q="¿Puedes integrarte con nuestro HIS/ERP?" a="Sí, con HL7 FHIR R4 y terminologías SNOMED-CT / LOINC para interoperabilidad clínica." />
-          <FAQItem q="¿Los modelos son explicables?" a="Sí. XAI/SHAP para validación clínica directa por facultativos. Un score sin explicación clínica no es un CDSS usable." />
-          <FAQItem q="¿Entregas documentación auditable?" a="Sí. Informe ejecutivo, documentación técnica, análisis de equidad por subgrupos y trazabilidad regulatoria." />
+          <FAQItem q="¿Trabajas con grandes consultoras y administración pública?" a="Sí. El perfil está pensado para colaboraciones con consultoras (Crowe, Deloitte, Accenture y similares), hospitales, aseguradoras y administración pública en licitaciones y proyectos de transformación digital sanitaria." />
+          <FAQItem q="¿Qué aporta un médico con dos másters frente a un consultor o un ingeniero?" a="Criterio clínico real (6,5 años de hospital) combinado con Máster en Salud Digital (Universidad Europea) y Máster en IA aplicada a Sanidad (CEMP). Traduzco la realidad asistencial a dirección y a pliego técnico sin perder rigor en ninguna capa." />
+          <FAQItem q="¿Apoyas en licitaciones y fondos europeos?" a="Sí. Análisis de pliego, memoria técnica, arquitectura de interoperabilidad y cumplimiento regulatorio para convocatorias del Ministerio de Sanidad, CCAA, EHDS, Horizonte Europa y fondos Recovery." />
+          <FAQItem q="¿Trabajas bajo el marco regulatorio europeo?" a="Sí. EU AI Act (Reglamento 2024/1689), RGPD, EHDS, MDR, ISO 13485 y SaMD son restricciones de diseño desde el día uno." />
+          <FAQItem q="¿Haces también la parte técnica (CDSS, FHIR)?" a="Sí, pero como capa de ejecución cuando el caso de uso ya está validado estratégicamente. Python, Scikit-learn, XAI/SHAP, HL7 FHIR R4 y SNOMED-CT." />
         </div>
       </Section>
 
-      <Section id="cta" title="¿Agendamos 15 minutos?" subtitle="Revisamos el problema clínico, el dato disponible y el encaje regulatorio.">
+      <Section id="cta" title="¿Agendamos 15 minutos?" subtitle="Revisamos el contexto, el objetivo estratégico y el encaje clínico-regulatorio.">
         <a href="/contacto#agenda" className="btn-ink inline-flex">Reservar llamada →</a>
       </Section>
     </>

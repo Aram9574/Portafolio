@@ -42,3 +42,6 @@ pnpm-lock.yaml
 
 # Local Knowledge Base
 awesome-skills-repo/
+claude_tasks.lock
+.claude/scheduled_tasks.lock
+.github/workflows/weekly-blog-post.yml

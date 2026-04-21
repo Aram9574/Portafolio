@@ -2,6 +2,7 @@
 
 import { ContactForm } from '@/components/ContactForm'
 import Section from '@/components/ui/Section'
+import PreQualifyForm from '@/components/sections/PreQualifyForm'
 import { Mail, MapPin, Linkedin, Github } from 'lucide-react'
 import { SOCIAL } from '@/lib/site'
 import CopyButton from '@/components/ui/CopyButton'
@@ -10,7 +11,7 @@ import Script from 'next/script'
 export default function ContactoPage() {
   return (
     <>
-      <Section id="contacto" title="Contacto" subtitle="Clinical AI con criterio médico real. Respondo en 24 h laborables.">
+      <Section id="contacto" title="Contacto" subtitle="Asesoramiento estratégico en transformación digital sanitaria, licitaciones públicas, Medical Affairs e IA aplicada a sanidad. Respondo en 24 h laborables.">
         <div className="grid md:grid-cols-2 gap-8">
           <div className="border border-rule bg-paper p-6" data-aos="fade-right">
             <h2 className="text-ink font-semibold">Datos directos</h2>
@@ -67,17 +68,8 @@ export default function ContactoPage() {
         </div>
       </Section>
 
-      <Section id="agenda" title="Agenda" subtitle="Reserva una breve llamada de descubrimiento.">
-        <div className="border border-rule bg-paper p-2" data-aos="zoom-in" data-aos-offset="-100">
-          <div className="aspect-[16/9] w-full">
-            <iframe
-              title="Calendly"
-              src="https://calendly.com/zakzukaram"
-              className="w-full h-full border-0"
-              loading="lazy"
-            />
-          </div>
-        </div>
+      <Section id="agenda-wrap" title="Agenda" subtitle="Reserva una breve llamada de descubrimiento. Contesta tres preguntas rápidas para llegar con contexto a los 15 minutos.">
+        <PreQualifyForm />
       </Section>
     </>
   )

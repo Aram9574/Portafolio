@@ -1,22 +1,22 @@
 
 import Section from '@/components/ui/Section'
-import { Brain, Network, ShieldCheck, Database } from 'lucide-react'
+import { Stethoscope, Layout, Brain, Network, ShieldCheck, Database } from 'lucide-react'
 
 export const metadata = {
-  title: 'Habilidades Técnicas y Clínicas · Aram Zakzuk',
-  description: 'Stack tecnológico y clínico: Python para Data Science, interoperabilidad FHIR, modelos de NLP clínico y marco regulatorio europeo para IA.'
+  title: 'Habilidades · Medicina, Salud Digital e IA aplicada a Sanidad',
+  description: 'Tres capas: criterio médico (6,5 años hospital), estrategia de Salud Digital (Máster Universidad Europea) e IA aplicada a Sanidad (Máster CEMP + Stanford). EU AI Act, HL7 FHIR, EHDS.'
 }
 
 const SKILLS = [
   {
-    title: 'Clinical AI & Machine Learning',
-    icon: Brain,
-    items: ['Python', 'Scikit-learn', 'Random Forest', 'Deep Learning', 'NLP clínico', 'XAI / SHAP', 'Healthcare Data Analytics', 'CDSS']
+    title: 'Medicina y criterio clínico',
+    icon: Stethoscope,
+    items: ['Medicina Interna', 'Urgencias', 'Atención Primaria', 'Medicina Familiar y Preventiva', 'Protocolos asistenciales', 'Docencia médica', 'Seguridad del paciente']
   },
   {
-    title: 'Interoperabilidad y terminologías',
-    icon: Network,
-    items: ['HL7 FHIR R4', 'SNOMED-CT', 'LOINC', 'Integración EHR / HIS', 'EHDS']
+    title: 'Estrategia y Salud Digital',
+    icon: Layout,
+    items: ['Transformación digital sanitaria', 'EHDS', 'Gestión de proyectos sanitarios', 'Telemedicina · M-Health', 'Licitaciones públicas', 'Fondos europeos (Horizonte · Recovery)', 'Medical Affairs', 'Business case sanitario']
   },
   {
     title: 'Regulación y SaMD',
@@ -24,15 +24,25 @@ const SKILLS = [
     items: ['EU AI Act', 'MDR', 'ISO 13485', 'SaMD', 'Marcado CE', 'RGPD', 'Real-World Evidence']
   },
   {
-    title: 'Infraestructura y despliegue',
+    title: 'Interoperabilidad y terminologías',
+    icon: Network,
+    items: ['HL7 FHIR R4', 'SNOMED-CT', 'LOINC', 'Integración EHR / HIS', 'EHDS · Espacio Europeo de Datos Sanitarios']
+  },
+  {
+    title: 'IA aplicada a Sanidad',
+    icon: Brain,
+    items: ['Clinical Decision Support Systems (CDSS)', 'Machine Learning clínico', 'Deep Learning', 'NLP clínico', 'XAI / SHAP', 'Healthcare Data Analytics', 'Python · Scikit-learn']
+  },
+  {
+    title: 'Infraestructura y datos',
     icon: Database,
-    items: ['Microsoft Azure', 'SQL', 'FastAPI', 'Streamlit', 'Docker', 'Hugging Face', 'Claude API']
+    items: ['Microsoft Azure (Data Fundamentals)', 'SQL', 'FastAPI', 'Streamlit', 'Docker', 'Hugging Face', 'Claude API']
   }
 ]
 
 export default function HabilidadesPage() {
   return (
-    <Section id="habilidades" title="Habilidades" subtitle="El arsenal técnico para transformar la asistencia sanitaria.">
+    <Section id="habilidades" title="Habilidades" subtitle="Medicina, Salud Digital e IA en Sanidad. Tres capas que sustentan el asesoramiento estratégico, regulatorio y técnico en la transformación del sistema sanitario.">
       <div className="grid md:grid-cols-2 gap-6 max-w-5xl mx-auto">
         {SKILLS.map((skill, index) => (
           <div

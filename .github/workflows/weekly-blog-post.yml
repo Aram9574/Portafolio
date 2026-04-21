@@ -1,0 +1,136 @@
+name: Weekly Blog Post
+
+on:
+  schedule:
+    # Lunes 07:00 UTC (08:00 CET en invierno, 09:00 CEST en verano).
+    - cron: '0 7 * * 1'
+  workflow_dispatch:
+    inputs:
+      topic_id:
+        description: 'ID específico del tema (opcional, por defecto coge el siguiente de la cola)'
+        required: false
+        type: string
+      dry_run:
+        description: 'Generar placeholder sin llamar a la API'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate post
+        id: generate
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          ARGS=""
+          if [ -n "${{ inputs.topic_id }}" ]; then
+            ARGS="$ARGS --topic=${{ inputs.topic_id }}"
+          fi
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          set +e
+          node scripts/generate-weekly-post.mjs $ARGS
+          EXIT_CODE=$?
+          set -e
+          echo "exit_code=$EXIT_CODE" >> $GITHUB_OUTPUT
+          if [ $EXIT_CODE -eq 2 ]; then
+            echo "::warning::Cola de temas vacía. Añade temas en content/blog/_queue.json"
+            exit 0
+          fi
+          if [ $EXIT_CODE -ne 0 ]; then
+            exit $EXIT_CODE
+          fi
+
+      - name: Detect generated post
+        if: steps.generate.outputs.exit_code == '0'
+        id: detect
+        run: |
+          NEW_FILE=$(git status --porcelain content/blog/ | grep '^??' | grep -v '_queue.json' | head -1 | awk '{print $2}')
+          if [ -z "$NEW_FILE" ]; then
+            echo "No se detectó archivo nuevo. Abortando."
+            exit 1
+          fi
+          SLUG=$(basename "$NEW_FILE" .md)
+          TITLE=$(head -20 "$NEW_FILE" | grep '^title:' | head -1 | sed 's/title:\s*//' | sed 's/^"//;s/"$//')
+          echo "slug=$SLUG" >> $GITHUB_OUTPUT
+          echo "title=$TITLE" >> $GITHUB_OUTPUT
+          echo "file=$NEW_FILE" >> $GITHUB_OUTPUT
+
+      - name: Create branch and commit
+        if: steps.generate.outputs.exit_code == '0'
+        id: commit
+        env:
+          SLUG: ${{ steps.detect.outputs.slug }}
+          TITLE: ${{ steps.detect.outputs.title }}
+        run: |
+          DATE=$(date -u +%Y-%m-%d)
+          BRANCH="auto/blog-$DATE-$SLUG"
+          echo "branch=$BRANCH" >> $GITHUB_OUTPUT
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BRANCH"
+          git add content/blog/
+          git commit -m "feat(blog): $TITLE
+
+          Post generado automáticamente el $DATE.
+          Slug: $SLUG
+          Revisa el contenido antes de mergear."
+          git push origin "$BRANCH"
+
+      - name: Open PR
+        if: steps.generate.outputs.exit_code == '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: ${{ steps.commit.outputs.branch }}
+          SLUG: ${{ steps.detect.outputs.slug }}
+          TITLE: ${{ steps.detect.outputs.title }}
+        run: |
+          cat > /tmp/pr-body.md <<EOF
+          ## Post semanal generado automáticamente
+
+          **Título**: $TITLE
+          **Slug**: \`$SLUG\`
+          **URL previa**: https://alejandrozakzuk.com/blog/$SLUG
+
+          ### Qué revisar antes de mergear
+          - [ ] Tono y voz coherente con el resto del blog
+          - [ ] Referencias y datos verificables (fechas, cifras, regulaciones)
+          - [ ] Tags adecuados
+          - [ ] Meta description SEO (sub 160 caracteres)
+          - [ ] CTA final alineado con la audiencia
+
+          ### Si algo está mal
+          - Edita directamente [\`content/blog/$SLUG.md\`](../blob/$BRANCH/content/blog/$SLUG.md) en esta rama.
+          - Si el post no es publicable, cierra el PR y revierte \`published: true\` en [\`content/blog/_queue.json\`](../blob/$BRANCH/content/blog/_queue.json) para reintentarlo.
+
+          ---
+
+          _Generado con \`scripts/generate-weekly-post.mjs\`._
+          EOF
+
+          gh pr create \
+            --base main \
+            --head "$BRANCH" \
+            --title "feat(blog): $TITLE" \
+            --body-file /tmp/pr-body.md \
+            --label "blog,automated"
