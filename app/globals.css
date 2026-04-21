@@ -290,13 +290,14 @@ a.ed-link:hover {
    Reveal por palabra
    ========================================================= */
 @keyframes word-reveal {
-  0% { opacity: 0; transform: translateY(40%); font-variation-settings: "opsz" 9, "SOFT" 100; }
-  100% { opacity: 1; transform: translateY(0); font-variation-settings: "opsz" 144, "SOFT" 20; }
+  0% { opacity: 0; transform: translateY(12px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 .word-reveal > span {
   display: inline-block;
   opacity: 1;
-  animation: word-reveal 900ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  font-variation-settings: "opsz" 144, "SOFT" 20;
+  animation: word-reveal 700ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
 }
 @media (prefers-reduced-motion: reduce) {
   .word-reveal > span {
