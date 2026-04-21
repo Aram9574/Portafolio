@@ -19,6 +19,7 @@ on:
 permissions:
   contents: write
   pull-requests: write
+  issues: write
 
 jobs:
   generate:
@@ -26,14 +27,21 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
         with:
           fetch-depth: 0
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
           node-version: '20'
+
+      - name: Ensure labels exist
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh label create blog --color 0E8A16 --description "Posts del blog" 2>/dev/null || true
+          gh label create automated --color 5319E7 --description "Generado automáticamente" 2>/dev/null || true
 
       - name: Generate post
         id: generate
@@ -128,9 +136,13 @@ jobs:
           _Generado con \`scripts/generate-weekly-post.mjs\`._
           EOF
 
-          gh pr create \
+          PR_URL=$(gh pr create \
             --base main \
             --head "$BRANCH" \
             --title "feat(blog): $TITLE" \
-            --body-file /tmp/pr-body.md \
-            --label "blog,automated"
+            --body-file /tmp/pr-body.md)
+
+          echo "PR creado: $PR_URL"
+
+          PR_NUMBER=$(echo "$PR_URL" | grep -oE '[0-9]+$')
+          gh pr edit "$PR_NUMBER" --add-label "blog" --add-label "automated" || echo "::warning::No se pudieron añadir labels (no fatal)"
