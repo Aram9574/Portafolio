@@ -21,6 +21,14 @@ export const metadata: Metadata = {
       'application/rss+xml': 'https://alejandrozakzuk.com/blog/rss.xml'
     }
   },
+  icons: {
+    icon: [
+      { url: '/icon.svg', type: 'image/svg+xml' },
+      { url: '/favicon.svg', type: 'image/svg+xml' }
+    ],
+    apple: [{ url: '/apple-icon.svg', type: 'image/svg+xml' }],
+    shortcut: '/icon.svg'
+  },
   title: {
     default: 'Aram Zakzuk, MD · Healthcare & Clinical AI Consultant · Madrid',
     template: '%s · Aram Zakzuk, MD'
