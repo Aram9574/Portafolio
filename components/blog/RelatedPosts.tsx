@@ -22,7 +22,11 @@ export default function RelatedPosts({ currentSlug, currentTags }: { currentSlug
   if (related.length === 0) return null
 
   return (
-    <section aria-labelledby="related-heading" className="py-16 rule-t">
+    <section
+      aria-labelledby="related-heading"
+      className="py-16 rule-t"
+      style={{ minHeight: '28rem' }}
+    >
       <div className="container">
         <div className="grid grid-cols-12 gap-y-8 md:gap-x-8 mb-10">
           <div className="col-span-12 md:col-span-3">
