@@ -350,7 +350,9 @@
         "Business case",
         "IA sanitaria"
       ],
-      "published": false
+      "published": true,
+      "publishedSlug": "roi-ia-hospitalaria-calculo",
+      "publishedDate": "2026-04-21"
     },
     {
       "id": "etica-ia-clinica-mas-alla-compliance",
