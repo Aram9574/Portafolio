@@ -1,10 +1,26 @@
-
+import type { Metadata } from 'next'
 import Section from '@/components/ui/Section'
 import ExperienceItem from '@/components/sections/ExperienceItem'
 
-export const metadata = {
-  title: 'Experiencia · Clinical AI Consultant',
-  description: '6 años de práctica clínica en Méderi (Colombia) + Healthcare & Clinical AI Consultant desde 2025. Evaluación Clinical AI, asesoramiento EU AI Act / MDR / SaMD y estrategia de adopción clínica.'
+export const metadata: Metadata = {
+  title: 'Experiencia · Healthcare & Clinical AI Consultant',
+  description:
+    '6 años de práctica clínica en Méderi (Colombia) + Healthcare & Clinical AI Consultant autónomo desde 2025. Evaluación Clinical AI, asesoramiento EU AI Act / MDR / SaMD y estrategia de adopción clínica.',
+  alternates: { canonical: '/experiencia' },
+  openGraph: {
+    type: 'website',
+    locale: 'es_ES',
+    url: 'https://alejandrozakzuk.com/experiencia',
+    title: 'Experiencia · Aram Zakzuk, MD',
+    description:
+      'Méderi 2018–2024 (Medicina Interna, Urgencias, Atención Primaria) + consultoría independiente desde enero 2025.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Experiencia · Aram Zakzuk, MD',
+    description:
+      '6 años de clínica real + consultoría independiente en Clinical AI desde 2025.',
+  },
 }
 
 const EXPERIENCIAS = [

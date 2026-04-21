@@ -1,6 +1,24 @@
-export const metadata = {
+import type { Metadata } from 'next'
+
+export const metadata: Metadata = {
   title: 'Sobre mí · Aram Zakzuk, MD',
-  description: 'Médico con 6 años de práctica clínica real y doble formación avanzada en IA aplicada a medicina y Salud Digital. Asesoramiento a organizaciones sanitarias, consultoras y HealthTech en la intersección entre criterio clínico, estrategia digital y marco regulatorio europeo.'
+  description:
+    'Médico con 6 años de práctica clínica real y doble formación avanzada en IA aplicada a medicina y Salud Digital. Healthcare & Clinical AI Consultant para organizaciones sanitarias, consultoras y HealthTech en Madrid y Europa.',
+  alternates: { canonical: '/sobre-mi' },
+  openGraph: {
+    type: 'profile',
+    locale: 'es_ES',
+    url: 'https://alejandrozakzuk.com/sobre-mi',
+    title: 'Sobre mí · Aram Zakzuk, MD · Healthcare & Clinical AI Consultant',
+    description:
+      'El perfil que las organizaciones sanitarias y las consultoras buscan cuando necesitan que alguien entienda el problema antes de proponer la solución.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Sobre mí · Aram Zakzuk, MD',
+    description:
+      'Médico + doble máster en IA aplicada a Sanidad y Salud Digital. Consultor independiente en Madrid.',
+  },
 }
 
 import Section from '@/components/ui/Section'

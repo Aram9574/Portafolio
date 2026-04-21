@@ -1,11 +1,27 @@
+import type { Metadata } from 'next';
 import Section from '@/components/ui/Section';
 import CertificationBadge from '@/components/sections/CertificationBadge';
 import { certifications, type CertificationItem } from '@/lib/data/education';
 
-export const metadata = {
-  title: 'Credenciales y certificaciones · Aram Zakzuk',
+export const metadata: Metadata = {
+  title: 'Credenciales y certificaciones',
   description:
-    'Formación continua verificable de Aram Zakzuk: Stanford AI in Healthcare, SNOMED International, Microsoft Azure, Comunidad de Madrid, SEIS, DELF B1, TOEFL iBT y ACLS/BLS.',
+    'Formación continua verificable de Aram Zakzuk, MD: Stanford AI in Healthcare Specialization (ID JPA2O5IFFDNP), SNOMED International, Microsoft Azure DP-900, Comunidad de Madrid, SEIS Inforsalud, DELF B1, TOEFL iBT y ACLS/BLS.',
+  alternates: { canonical: '/credenciales' },
+  openGraph: {
+    type: 'website',
+    locale: 'es_ES',
+    url: 'https://alejandrozakzuk.com/credenciales',
+    title: 'Credenciales · Aram Zakzuk, MD',
+    description:
+      'Stanford · SNOMED International · Microsoft · Comunidad de Madrid · SEIS · American Heart Association · TOEFL · DELF.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Credenciales · Aram Zakzuk, MD',
+    description:
+      'Formación continua verificable. Cada credencial enlaza a su registro oficial.',
+  },
 };
 
 type Group = {

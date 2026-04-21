@@ -24,9 +24,23 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
   const project = projects.find(p => p.slug === params.slug)
   if (!project) return {}
+  const url = `https://alejandrozakzuk.com/proyectos/${project.slug}`
   return {
     title: project.title,
-    description: project.shortDescription || project.context
+    description: project.shortDescription || project.context,
+    alternates: { canonical: url },
+    openGraph: {
+      type: 'article' as const,
+      locale: 'es_ES',
+      url,
+      title: project.title,
+      description: project.shortDescription || project.context,
+    },
+    twitter: {
+      card: 'summary_large_image' as const,
+      title: project.title,
+      description: project.shortDescription || project.context,
+    },
   }
 }
 

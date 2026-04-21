@@ -6,7 +6,10 @@ export const metadata: Metadata = {
   title: 'Blog · Salud Digital, EHDS, EU AI Act y Clinical AI',
   description:
     'Análisis ejecutivo y técnico sobre EHDS, EU AI Act, CDSS y transformación digital sanitaria. Escrito para directores de innovación hospitalaria, partners de consultoras y equipos de Medical Affairs.',
-  alternates: { canonical: '/blog' },
+  alternates: {
+    canonical: '/blog',
+    types: { 'application/rss+xml': '/blog/rss.xml' },
+  },
   openGraph: {
     type: 'website',
     locale: 'es_ES',
@@ -14,14 +17,12 @@ export const metadata: Metadata = {
     title: 'Blog · Salud Digital, EHDS, EU AI Act y Clinical AI',
     description:
       'Análisis ejecutivo y técnico sobre EHDS, EU AI Act, CDSS y transformación digital sanitaria por Aram Zakzuk.',
-    images: [{ url: '/og-default.png', width: 1200, height: 630 }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Blog · Salud Digital, EHDS, EU AI Act y Clinical AI',
     description:
       'Análisis ejecutivo y técnico sobre EHDS, EU AI Act, CDSS y transformación digital sanitaria.',
-    images: ['/og-default.png'],
   },
 };
 

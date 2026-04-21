@@ -1,5 +1,4 @@
-// Per-page metadata removed to avoid client boundary conflict
-
+import type { Metadata } from 'next'
 import { ContactForm } from '@/components/ContactForm'
 import Section from '@/components/ui/Section'
 import PreQualifyForm from '@/components/sections/PreQualifyForm'
@@ -7,6 +6,27 @@ import { Mail, MapPin, Linkedin, Github } from 'lucide-react'
 import { SOCIAL } from '@/lib/site'
 import CopyButton from '@/components/ui/CopyButton'
 import Script from 'next/script'
+
+export const metadata: Metadata = {
+  title: 'Contacto',
+  description:
+    'Reserva una llamada de 15 minutos con Aram Zakzuk, MD — Healthcare & Clinical AI Consultant. Para hospitales, consultoras (Crowe, Deloitte, Accenture, Minsait) y HealthTech en Madrid y Europa. Respuesta en 24 h laborables.',
+  alternates: { canonical: '/contacto' },
+  openGraph: {
+    type: 'website',
+    locale: 'es_ES',
+    url: 'https://alejandrozakzuk.com/contacto',
+    title: 'Contacto · Aram Zakzuk, MD',
+    description:
+      'Discovery de 15 min gratuito para validar encaje. Healthcare & Clinical AI Consultant basado en Madrid.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Contacto · Aram Zakzuk, MD',
+    description:
+      'Discovery de 15 min para validar encaje. Healthcare & Clinical AI Consultant · Madrid.',
+  },
+}
 
 export default function ContactoPage() {
   return (

@@ -1,9 +1,28 @@
+import type { Metadata } from 'next'
 import Section from '@/components/ui/Section'
 import PublicationsBrowser from '@/components/sections/PublicationsBrowser'
 import InsightsMetrics from '@/components/sections/InsightsMetrics'
 import { publications } from '@/lib/data/publications'
 
-export const metadata = { title: 'Insights' }
+export const metadata: Metadata = {
+  title: 'Insights · Salud Digital, IA clínica y regulación europea',
+  description:
+    'Publicaciones en LinkedIn de Aram Zakzuk: análisis, tesis y comentario sobre EHDS, EU AI Act, CDSS, Medical Affairs y transformación digital sanitaria. 2.054+ seguidores profesionales.',
+  alternates: { canonical: '/publicaciones' },
+  openGraph: {
+    type: 'website',
+    locale: 'es_ES',
+    url: 'https://alejandrozakzuk.com/publicaciones',
+    title: 'Insights · Aram Zakzuk',
+    description:
+      'Publicaciones en LinkedIn sobre EHDS, EU AI Act, CDSS y transformación digital sanitaria.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Insights · Aram Zakzuk',
+    description: 'Publicaciones sobre EHDS, EU AI Act, CDSS y transformación digital sanitaria.',
+  },
+}
 
 const FEATURED_ID = 'post-medicos-tech-puente'
 

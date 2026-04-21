@@ -1,10 +1,26 @@
-
+import type { Metadata } from 'next'
 import Section from '@/components/ui/Section'
 import { Stethoscope, Layout, Brain, Network, ShieldCheck, Database } from 'lucide-react'
 
-export const metadata = {
-  title: 'Habilidades · Medicina, Salud Digital e IA aplicada a Sanidad',
-  description: 'Tres capas: criterio médico (6 años hospital), estrategia de Salud Digital (Máster Universidad Europea) e IA aplicada a Sanidad (Máster CEMP + Stanford). EU AI Act, HL7 FHIR, EHDS.'
+export const metadata: Metadata = {
+  title: 'Habilidades · Medicina, Salud Digital e IA en Sanidad',
+  description:
+    'Tres capas profesionales: criterio médico (6 años hospital), estrategia de Salud Digital (Máster Universidad Europea) e IA aplicada a Sanidad (Máster CEMP + Stanford). EU AI Act, HL7 FHIR, SNOMED-CT, EHDS.',
+  alternates: { canonical: '/habilidades' },
+  openGraph: {
+    type: 'website',
+    locale: 'es_ES',
+    url: 'https://alejandrozakzuk.com/habilidades',
+    title: 'Habilidades · Aram Zakzuk, MD',
+    description:
+      'Medicina, Salud Digital e IA en Sanidad. Regulación europea (EU AI Act · MDR · SaMD) e interoperabilidad (HL7 FHIR · SNOMED-CT · EHDS).',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Habilidades · Aram Zakzuk, MD',
+    description:
+      'Medicina + Salud Digital + IA en Sanidad. EU AI Act, MDR, SaMD, HL7 FHIR, SNOMED-CT, EHDS.',
+  },
 }
 
 const SKILLS = [
