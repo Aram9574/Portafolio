@@ -364,7 +364,9 @@
         "EU AI Act",
         "Clinical AI"
       ],
-      "published": false
+      "published": true,
+      "publishedSlug": "etica-ia-clinica-mas-alla-compliance",
+      "publishedDate": "2026-05-04"
     },
     {
       "id": "radiologia-ia-estado-2026",
