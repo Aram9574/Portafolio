@@ -378,7 +378,9 @@
         "IA sanitaria",
         "Marcado CE"
       ],
-      "published": false
+      "published": true,
+      "publishedSlug": "radiologia-ia-estado-2026",
+      "publishedDate": "2026-05-04"
     },
     {
       "id": "gestion-cambio-implantacion-cdss",
