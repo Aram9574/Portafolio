@@ -20,11 +20,10 @@ const ITEMS = [
 ];
 
 export default function ClinicalTicker() {
-  const track = [...ITEMS, ...ITEMS];
   return (
-    <div className="ticker" aria-hidden="true">
+    <div className="ticker" role="complementary" aria-label="Áreas de especialización">
       <div className="ticker-track px-6">
-        {track.map((item, i) => (
+        {ITEMS.map((item, i) => (
           <span key={i} className="inline-flex items-center">
             <span className="ticker-dot" />
             {item}
