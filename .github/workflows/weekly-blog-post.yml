@@ -92,6 +92,11 @@ jobs:
           Slug: $SLUG
           URL: https://alejandrozakzuk.com/blog/$SLUG"
 
-          git push origin main
+          # Reintenta con rebase si el remoto avanzó durante la generación
+          for i in 1 2 3; do
+            if git push origin main; then break; fi
+            echo "Push rechazado (intento $i). Rebaseando sobre origin/main..."
+            git pull --rebase origin main
+          done
 
           echo "::notice::Post publicado en main: $SLUG"
