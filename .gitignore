@@ -35,6 +35,7 @@ tsconfig.tsbuildinfo
 
 # Local work files (no commit)
 Foto Perfil Pagina Web*.png
+foto-perfil-web.png
 
 # Lockfiles (standardize on Yarn)
 package-lock.json
@@ -44,4 +45,3 @@ pnpm-lock.yaml
 awesome-skills-repo/
 claude_tasks.lock
 .claude/scheduled_tasks.lock
-.github/workflows/weekly-blog-post.yml
