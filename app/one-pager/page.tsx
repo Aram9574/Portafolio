@@ -161,13 +161,13 @@ export default function OnePagerPage() {
       {/* CTA */}
       <footer className="mt-6 pt-4 op-rule border-t flex items-center justify-between">
         <div className="text-[10px]">
-          <div className="op-mono text-[9px] opacity-60 mb-1">Siguiente paso</div>
+          <div className="op-mono text-[9px] opacity-60 mb-1">Disponibilidad</div>
           <div className="op-serif text-[13px] font-medium">
-            Primera conversación de 15 minutos · sin coste
+            Roles senior en HealthTech, MedTech y Pharma Digital · Madrid · Remoto · Híbrido
           </div>
         </div>
         <div className="text-right text-[10px] op-mono opacity-85">
-          calendly.com/zakzukaram<br />
+          zakzukaram@gmail.com<br />
           <span className="opacity-60">Respuesta en 24h laborables</span>
         </div>
       </footer>

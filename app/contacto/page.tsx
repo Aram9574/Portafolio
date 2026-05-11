@@ -1,16 +1,15 @@
 import type { Metadata } from 'next'
 import { ContactForm } from '@/components/ContactForm'
 import Section from '@/components/ui/Section'
-import PreQualifyForm from '@/components/sections/PreQualifyForm'
 import { Mail, MapPin, Linkedin, Github } from 'lucide-react'
 import { SOCIAL } from '@/lib/site'
 import CopyButton from '@/components/ui/CopyButton'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: 'Reserva 15 min con Clinical AI Consultant · Aram Zakzuk',
+  title: 'Contacto · Aram Zakzuk, MD · Clinical AI · Madrid',
   description:
-    'Valida encaje clínico y regulatorio de tu proyecto IA en 15 minutos sin coste. Respuesta en 24 h laborables. Hospitales, consultoras y HealthTech.',
+    'Escríbeme por email o LinkedIn. Disponible para roles senior en Clinical AI, Medical Affairs digital, Healthcare Data Analytics y asesoría regulatoria EU AI Act en HealthTech, MedTech y Pharma Digital. Respondo en 24 h laborables.',
   alternates: { canonical: '/contacto' },
   openGraph: {
     type: 'website',
@@ -18,20 +17,24 @@ export const metadata: Metadata = {
     url: 'https://alejandrozakzuk.com/contacto',
     title: 'Contacto · Aram Zakzuk, MD',
     description:
-      'Discovery de 15 min gratuito para validar encaje. Healthcare & Clinical AI Consultant basado en Madrid.',
+      'Médico + Clinical AI Specialist disponible para HealthTech, MedTech y Pharma Digital. Madrid.',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Contacto · Aram Zakzuk, MD',
     description:
-      'Discovery de 15 min para validar encaje. Healthcare & Clinical AI Consultant · Madrid.',
+      'Disponible para roles senior en Clinical AI · HealthTech · MedTech · Pharma Digital. Madrid.',
   },
 }
 
 export default function ContactoPage() {
   return (
     <>
-      <Section id="contacto" title="Contacto" subtitle="Asesoramiento estratégico en transformación digital sanitaria, licitaciones públicas, Medical Affairs e IA aplicada a sanidad. Respondo en 24 h laborables.">
+      <Section
+        id="contacto"
+        title="Contacto"
+        subtitle="Escríbeme por email o LinkedIn. Si abrís vacante en Clinical AI, Medical Affairs digital, Healthcare Data Analytics o regulación EU AI Act / MDR, adjunta una breve descripción y respondo en 24 h laborables."
+      >
         <div className="grid md:grid-cols-2 gap-8">
           <div className="border border-rule bg-paper p-6" data-aos="fade-right">
             <h2 className="text-ink font-semibold">Datos directos</h2>
@@ -65,6 +68,17 @@ export default function ContactoPage() {
               </li>
             </ul>
 
+            <div className="mt-6">
+              <a
+                href="/cv/CV_Aram_Zakzuk.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-ink"
+              >
+                Descargar CV →
+              </a>
+            </div>
+
             <div className="mt-8 flex justify-center md:justify-start">
               <div
                 className="badge-base LI-profile-badge"
@@ -85,10 +99,6 @@ export default function ContactoPage() {
             <ContactForm />
           </div>
         </div>
-      </Section>
-
-      <Section id="agenda-wrap" title="Agenda" subtitle="Reserva una breve llamada de descubrimiento. Contesta tres preguntas rápidas para llegar con contexto a los 15 minutos.">
-        <PreQualifyForm />
       </Section>
 
       <Script

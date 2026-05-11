@@ -74,7 +74,7 @@ export default function SolucionesPorEspecialidad({
           <div className="col-span-12 md:col-span-9">
             <Breadcrumbs
               items={[
-                { name: 'Soluciones', url: 'https://alejandrozakzuk.com/trabajemos-juntos' },
+                { name: 'Soluciones', url: 'https://alejandrozakzuk.com/posiciones' },
                 { name: `IA clínica en ${data.nombre}`, url: `https://alejandrozakzuk.com/soluciones/${data.slug}` },
               ]}
             />
@@ -90,8 +90,8 @@ export default function SolucionesPorEspecialidad({
               <Link href="/contacto?audience=healthtech" className="btn-ink">
                 Conversar sobre un caso →
               </Link>
-              <Link href="/trabajemos-juntos" className="btn-ghost">
-                Ver cómo trabajo
+              <Link href="/posiciones" className="btn-ghost">
+                Ver roles que me interesan
               </Link>
             </div>
           </div>

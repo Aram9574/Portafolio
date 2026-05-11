@@ -67,9 +67,9 @@ export default function PoliticaPrivacidadPage() {
             <p>El sitio trata datos personales únicamente en los siguientes supuestos:</p>
             <ul className="space-y-3">
               <li className="border-l-2 border-ink pl-4">
-                <strong className="text-ink">Formulario de contacto y pre-calificación (Calendly):</strong>{' '}
-                nombre, correo electrónico y mensaje voluntario. Finalidad: atender la solicitud del usuario,
-                evaluar encaje profesional y agendar una reunión si procede.
+                <strong className="text-ink">Formulario de contacto:</strong>{' '}
+                nombre, correo electrónico y mensaje voluntario. Finalidad: atender la solicitud profesional
+                del usuario (consultas sobre vacantes, colaboraciones o información sobre el perfil).
               </li>
               <li className="border-l-2 border-ink pl-4">
                 <strong className="text-ink">Suscripción al newsletter:</strong> correo electrónico.
@@ -129,10 +129,6 @@ export default function PoliticaPrivacidadPage() {
               </li>
               <li>
                 <strong className="text-ink">Google LLC</strong> — analítica web (GA4) con IP anonimizada.
-              </li>
-              <li>
-                <strong className="text-ink">Calendly LLC</strong> — agendamiento de reuniones (solo si el
-                usuario lo utiliza voluntariamente).
               </li>
               <li>
                 <strong className="text-ink">Proveedor de email marketing</strong> — envío de newsletter
