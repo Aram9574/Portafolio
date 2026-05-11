@@ -392,7 +392,9 @@
         "Implementación",
         "CDSS"
       ],
-      "published": false
+      "published": true,
+      "publishedSlug": "gestion-cambio-implantacion-cdss",
+      "publishedDate": "2026-05-11"
     },
     {
       "id": "comprador-hospitalario-que-exigir-proveedor-ia",
