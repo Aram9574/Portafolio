@@ -24,7 +24,7 @@ export function Navbar() {
           <Link href="/publicaciones" className="hover:text-muted transition-colors">Insights</Link>
           <Link href="/blog" className="hover:text-muted transition-colors">Blog</Link>
           <Link href="/credenciales" className="hover:text-muted transition-colors">Credenciales</Link>
-          <Link href="/trabajemos-juntos" className="hover:text-muted transition-colors">Trabajemos juntos</Link>
+          <Link href="/posiciones" className="hover:text-muted transition-colors">Posiciones</Link>
           <Link href="/contacto" className="hover:text-muted transition-colors">Contacto</Link>
         </nav>
         <div className="hidden md:flex items-center gap-4">
@@ -69,7 +69,7 @@ export function Navbar() {
               <Link href="/publicaciones" className="py-2 border-b border-ink hover:italic" onClick={() => setOpen(false)}>Insights</Link>
               <Link href="/blog" className="py-2 border-b border-ink hover:italic" onClick={() => setOpen(false)}>Blog</Link>
               <Link href="/credenciales" className="py-2 border-b border-ink hover:italic" onClick={() => setOpen(false)}>Credenciales</Link>
-              <Link href="/trabajemos-juntos" className="py-2 border-b border-ink hover:italic" onClick={() => setOpen(false)}>Trabajemos juntos</Link>
+              <Link href="/posiciones" className="py-2 border-b border-ink hover:italic" onClick={() => setOpen(false)}>Posiciones</Link>
               <Link href="/contacto" className="py-2 hover:italic" onClick={() => setOpen(false)}>Contacto</Link>
             </nav>
             <div className="mt-6 flex items-center gap-4">

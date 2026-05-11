@@ -215,21 +215,21 @@ export default function AboutEnPage() {
           </div>
           <div className="col-span-12 md:col-span-9">
             <h2 className="display-l">
-              Looking for clinical judgment in your AI project?
+              Looking for this profile in your team?
             </h2>
             <p className="lead mt-6">
-              I advise healthcare organizations, consulting firms (Crowe, Deloitte, Accenture, Minsait) and
-              HealthTech / MedTech / Life Sciences companies in Madrid and across Europe. The first 15-minute
-              conversation is free — we validate fit and agree next steps.
+              Available for senior roles in Clinical AI, Medical Affairs digital, Healthcare Data Analytics
+              and EU AI Act / MDR regulatory affairs at HealthTech, MedTech, Pharma Digital, MedDevice and
+              hospital innovation companies. Madrid · Remote · Hybrid.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <a
-                href="https://calendly.com/zakzukaram"
+                href="/cv/CV_Aram_Zakzuk.pdf"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-ink"
               >
-                Book on Calendly →
+                Download CV →
               </a>
               <a href="mailto:zakzukaram@gmail.com" className="btn-ghost">
                 zakzukaram@gmail.com

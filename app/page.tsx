@@ -38,28 +38,30 @@ export default function HomePage() {
 
             {/* Columna izquierda: metadatos editoriales */}
             <aside className="col-span-12 md:col-span-4 lg:col-span-3 space-y-6 md:border-r md:border-ink md:pr-8 md:self-stretch md:pb-4">
-              <div className="eyebrow">№ 01 / Portafolio · 2026</div>
+              <div className="eyebrow">№ 01 / MD · Clinical AI · Madrid</div>
               <div className="caption leading-relaxed">
-                Madrid · España
+                Disponible · Madrid · UE
               </div>
               <div className="flex flex-col gap-3 pt-2">
-                <a href="/contacto" className="btn-ink">Contactar →</a>
-                <a href="/cv/CV_Aram_Zakzuk.pdf" target="_blank" rel="noopener noreferrer" className="btn-ghost">Descargar CV</a>
+                <a href="/cv/CV_Aram_Zakzuk.pdf" target="_blank" rel="noopener noreferrer" className="btn-ink">Descargar CV →</a>
+                <a href="/contacto" className="btn-ghost">Contactar</a>
               </div>
             </aside>
 
             {/* Columna derecha: título display */}
             <div className="col-span-12 md:col-span-8 lg:col-span-9">
               <h1 className="display-xl word-reveal">
-                <span style={{ animationDelay: '0ms' }}>Medicina,</span>{' '}
-                <span style={{ animationDelay: '100ms' }} className="italic">Salud Digital</span>
-                <br />
-                <span style={{ animationDelay: '200ms' }}>e</span>{' '}
-                <span style={{ animationDelay: '300ms' }}>
+                <span style={{ animationDelay: '0ms' }}>Medicina</span>{' '}
+                <span style={{ animationDelay: '100ms' }}>+</span>{' '}
+                <span style={{ animationDelay: '200ms' }}>
                   <span className="hl-accent">IA en Sanidad</span>.
                 </span>
                 <br />
-                <span style={{ animationDelay: '400ms' }}>Un perfil, tres capas.</span>
+                <span style={{ animationDelay: '300ms' }} className="italic">La combinación escasa</span>{' '}
+                <span style={{ animationDelay: '400ms' }}>que separa</span>
+                <br />
+                <span style={{ animationDelay: '500ms' }}>los proyectos en producción</span>{' '}
+                <span style={{ animationDelay: '600ms' }}>de los pilotos.</span>
               </h1>
             </div>
 
@@ -67,10 +69,10 @@ export default function HomePage() {
             <div className="col-span-12 pt-10 md:pt-16 rule-t grid grid-cols-12 gap-y-8 md:gap-x-8">
               <div className="col-span-12 md:col-span-7 space-y-4" data-aos="fade-up">
                 <p className="lead">
-                  Médico (Universidad del Rosario, 6 años hospital) + Máster en IA aplicada a Sanidad (CEMP) + Máster en Salud Digital / eHealth (Universidad Europea). Healthcare & Clinical AI Consultant para organizaciones sanitarias, consultoras y HealthTech en Madrid y Europa.
+                  Soy médico (Universidad del Rosario, homologado en España) con doble máster en IA aplicada a Sanidad (CEMP) y Salud Digital / eHealth (Universidad Europea). Diseño y valido soluciones de Clinical AI bajo el marco regulatorio europeo (EU AI Act · MDR · RGPD · EHDS).
                 </p>
                 <p className="caption normal-case tracking-normal leading-relaxed italic" style={{ fontSize: '0.95rem' }}>
-                  El perfil que las organizaciones sanitarias y las consultoras buscan cuando necesitan que alguien entienda el problema antes de proponer la solución.
+                  Busco rol senior en HealthTech, MedTech, Pharma Digital, MedDevice o innovación hospitalaria. Madrid · Remoto · Híbrido.
                 </p>
               </div>
               <div className="col-span-12 md:col-span-5 md:border-l md:border-ink md:pl-8 flex flex-col gap-5 content-start">
@@ -137,7 +139,7 @@ export default function HomePage() {
 
       <div className="container"><ChartreuseRule className="my-2" /></div>
 
-      <Section id="proyectos" index="№ 04 — Proyectos" title="Proyectos que fundamentan el criterio" subtitle="Validación técnica propia. El criterio consultor no se improvisa: se construye con datos reales, métricas verificables y cumplimiento regulatorio desde el día uno.">
+      <Section id="proyectos" index="№ 04 — Proyectos" title="Proyectos que fundamentan el criterio" subtitle="Validación técnica propia. El criterio no se improvisa: se construye con datos reales, métricas verificables y cumplimiento regulatorio desde el día uno. Código abierto, demos públicas.">
         <ProjectBento projects={destacados} />
 
         <div className="mt-12">
@@ -155,7 +157,7 @@ export default function HomePage() {
             <div className="col-span-12 md:col-span-9">
               <h2 className="display-l mb-6">Un perfil.<br /><span className="italic">Tres capas.</span></h2>
               <p className="lead">
-                Criterio médico, visión estratégica de salud digital y capacidad técnica en IA aplicada a sanidad. Asesoro a hospitales, consultoras y administración pública en la transformación del sistema sanitario — del expediente electrónico al EHDS, de la política regulatoria al despliegue real.
+                Criterio médico, visión de Salud Digital y capacidad técnica en IA aplicada a sanidad. Tres capas que rara vez coinciden en la misma persona y que, juntas, son lo que separa los proyectos que llegan a producción de los que se quedan en piloto.
               </p>
             </div>
           </div>
@@ -188,23 +190,23 @@ export default function HomePage() {
             <div className="col-span-12 md:col-span-8 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
               <div className="border-t border-ink pt-5">
                 <div className="eyebrow mb-3">01 · Criterio</div>
-                <h4 className="display-m text-xl mb-2">Criterio médico ejecutivo</h4>
-                <p className="caption leading-relaxed normal-case tracking-normal" style={{fontSize: '0.875rem'}}>6 años en el sistema asistencial real. Entiendo el flujo clínico desde dentro y lo traduzco a dirección, comité médico y comprador público.</p>
+                <h4 className="display-m text-xl mb-2">Criterio médico para cuestionar la IA</h4>
+                <p className="caption leading-relaxed normal-case tracking-normal" style={{fontSize: '0.875rem'}}>6 años en hospital de tercer nivel. Evalúo y cuestiono soluciones de IA en salud antes de que se desplieguen, no después del primer incidente.</p>
               </div>
               <div className="border-t border-ink pt-5">
-                <div className="eyebrow mb-3">02 · Estrategia</div>
-                <h4 className="display-m text-xl mb-2">Visión de Salud Digital</h4>
-                <p className="caption leading-relaxed normal-case tracking-normal" style={{fontSize: '0.875rem'}}>Transformación digital sanitaria, interoperabilidad, EHDS, licitaciones públicas y fondos europeos. Roadmap clínico-tecnológico con métricas de impacto.</p>
+                <div className="eyebrow mb-3">02 · Técnica</div>
+                <h4 className="display-m text-xl mb-2">Capacidad técnica real</h4>
+                <p className="caption leading-relaxed normal-case tracking-normal" style={{fontSize: '0.875rem'}}>Me siento con un equipo de ingenieros y entiendo exactamente lo que construyen. Machine Learning, XAI/SHAP, HL7 FHIR, EU AI Act. No es teoría: hay código y demos públicas.</p>
               </div>
               <div className="border-t border-ink pt-5">
                 <div className="eyebrow mb-3">03 · Regulación</div>
                 <h4 className="display-m text-xl mb-2">Marco regulatorio europeo</h4>
-                <p className="caption leading-relaxed normal-case tracking-normal" style={{fontSize: '0.875rem'}}>EU AI Act · MDR · ISO 13485 · SaMD · RGPD · EHDS. Restricciones de diseño y auditoría regulatoria desde el día uno.</p>
+                <p className="caption leading-relaxed normal-case tracking-normal" style={{fontSize: '0.875rem'}}>EU AI Act · MDR · ISO 13485 · SaMD · RGPD · EHDS. Conocimiento operativo del marco que decide si un sistema llega o no a producción en Europa.</p>
               </div>
               <div className="border-t border-ink pt-5">
-                <div className="eyebrow mb-3">04 · Ejecución</div>
-                <h4 className="display-m text-xl mb-2">IA aplicada con rigor técnico</h4>
-                <p className="caption leading-relaxed normal-case tracking-normal" style={{fontSize: '0.875rem'}}>CDSS, XAI/SHAP, HL7 FHIR y Machine Learning como capa de ejecución. El código existe para respaldar la decisión estratégica, no al revés.</p>
+                <div className="eyebrow mb-3">04 · Traducción</div>
+                <h4 className="display-m text-xl mb-2">El puente entre tres mundos</h4>
+                <p className="caption leading-relaxed normal-case tracking-normal" style={{fontSize: '0.875rem'}}>Hablo con ingenieros, con comité médico y con compliance regulatorio en su propio idioma, sin que se pierda nada en el camino. Esa es la capacidad escasa.</p>
               </div>
             </div>
           </div>
@@ -319,26 +321,19 @@ export default function HomePage() {
             </div>
             <div className="col-span-12 md:col-span-9">
               <h2 className="display-xl">
-                ¿Transformas el <span className="italic"><span className="hl-accent">sistema sanitario</span></span>?<br />Hablemos.
+                ¿Buscas este perfil para tu <span className="italic"><span className="hl-accent">equipo</span></span>?<br />Hablemos.
               </h2>
               <p className="lead mt-6 max-w-2xl">
-                Hospitales, consultoras (Crowe, Deloitte, Accenture, Minsait), aseguradoras y administración pública: 15 minutos para revisar contexto, objetivo estratégico y encaje clínico-regulatorio.
+                Disponible para roles senior en Clinical AI, Medical Affairs digital, Healthcare Data Analytics y asesoría regulatoria EU AI Act / MDR. HealthTech, MedTech, Pharma Digital, MedDevice e innovación hospitalaria. Madrid · Remoto · Híbrido.
               </p>
               <div className="mt-10 flex flex-col gap-6">
                 <div className="flex flex-wrap gap-4 items-center">
-                  <a href="/contacto#agenda" className="btn-ink">Reservar llamada de 15 min →</a>
-                  <a
-                    href="https://calendly.com/zakzukaram"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="ed-link font-mono text-xs uppercase tracking-widest"
-                  >
-                    o reservar directo en Calendly →
-                  </a>
-                  <a href="/trabajemos-juntos" className="btn-ghost">Ver cómo trabajamos juntos</a>
+                  <a href="/cv/CV_Aram_Zakzuk.pdf" target="_blank" rel="noopener noreferrer" className="btn-ink">Descargar CV →</a>
+                  <a href="/contacto" className="btn-ghost">Contactar</a>
+                  <a href="/posiciones" className="ed-link font-mono text-xs uppercase tracking-widest">Ver roles que me interesan →</a>
                 </div>
                 <div>
-                  <div className="eyebrow mb-3">Descargar documentos</div>
+                  <div className="eyebrow mb-3">CV en tres versiones</div>
                   <CVDownloader variant="compact" />
                 </div>
               </div>

@@ -357,8 +357,8 @@ export default function CaseStudyClinAIClassifier() {
               <Link href="/contacto?audience=healthtech" className="btn-ink">
                 Conversar sobre un caso
               </Link>
-              <Link href="/trabajemos-juntos" className="btn-ghost">
-                Ver cómo trabajo
+              <Link href="/posiciones" className="btn-ghost">
+                Ver roles que me interesan
               </Link>
             </div>
           </div>

@@ -262,8 +262,8 @@ export default function CaseStudyGeriCare() {
               <Link href="/contacto?audience=hospital" className="btn-ink">
                 Conversar sobre arquitectura
               </Link>
-              <Link href="/trabajemos-juntos" className="btn-ghost">
-                Ver cómo trabajo
+              <Link href="/posiciones" className="btn-ghost">
+                Ver roles que me interesan
               </Link>
             </div>
           </div>
