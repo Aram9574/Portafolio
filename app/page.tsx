@@ -51,17 +51,18 @@ export default function HomePage() {
             {/* Columna derecha: título display */}
             <div className="col-span-12 md:col-span-8 lg:col-span-9">
               <h1 className="display-xl word-reveal">
-                <span style={{ animationDelay: '0ms' }}>Medicina</span>{' '}
-                <span style={{ animationDelay: '100ms' }}>+</span>{' '}
-                <span style={{ animationDelay: '200ms' }}>
+                <span style={{ animationDelay: '0ms' }}>Medicina,</span>{' '}
+                <span style={{ animationDelay: '100ms' }} className="italic">Salud Digital</span>{' '}
+                <span style={{ animationDelay: '200ms' }}>e</span>{' '}
+                <span style={{ animationDelay: '300ms' }}>
                   <span className="hl-accent">IA en Sanidad</span>.
                 </span>
                 <br />
-                <span style={{ animationDelay: '300ms' }} className="italic">La combinación escasa</span>{' '}
-                <span style={{ animationDelay: '400ms' }}>que separa</span>
+                <span style={{ animationDelay: '400ms' }} className="italic">La combinación escasa</span>{' '}
+                <span style={{ animationDelay: '500ms' }}>que separa</span>
                 <br />
-                <span style={{ animationDelay: '500ms' }}>los proyectos en producción</span>{' '}
-                <span style={{ animationDelay: '600ms' }}>de los pilotos.</span>
+                <span style={{ animationDelay: '600ms' }}>los proyectos en producción</span>{' '}
+                <span style={{ animationDelay: '700ms' }}>de los pilotos.</span>
               </h1>
             </div>
 
