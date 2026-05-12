@@ -3,7 +3,7 @@ import { ImageResponse } from 'next/og'
 export const runtime = 'nodejs'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
-export const alt = 'Aram Zakzuk, MD — Healthcare & Clinical AI Consultant'
+export const alt = 'Aram Zakzuk, MD — Clinical AI Specialist · Madrid'
 
 export default function Image() {
   return new ImageResponse(
@@ -32,8 +32,11 @@ export default function Image() {
           <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
             <div style={{ height: 6, width: 100, background: '#1F6F5C' }} />
             <div style={{ fontSize: 36, letterSpacing: -0.5 }}>
-              Healthcare & Clinical AI Consultant
+              Clinical AI Specialist · MD
             </div>
+          </div>
+          <div style={{ display: 'flex', fontSize: 24, opacity: 0.75, letterSpacing: -0.3, marginTop: 4 }}>
+            Medicina + Salud Digital + IA en Sanidad
           </div>
         </div>
 

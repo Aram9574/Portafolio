@@ -3,9 +3,9 @@ import Section from '@/components/ui/Section'
 import ExperienceItem from '@/components/sections/ExperienceItem'
 
 export const metadata: Metadata = {
-  title: 'Experiencia · Healthcare & Clinical AI Consultant',
+  title: 'Experiencia · Clinical AI Specialist · MD',
   description:
-    '6 años de práctica clínica en Méderi (Colombia) + Healthcare & Clinical AI Consultant autónomo desde 2025. Evaluación Clinical AI, asesoramiento EU AI Act / MDR / SaMD y estrategia de adopción clínica.',
+    '6 años de práctica clínica en Méderi (Colombia) + Clinical AI Specialist · MD autónomo desde 2025. Evaluación Clinical AI, asesoramiento EU AI Act / MDR / SaMD y estrategia de adopción clínica.',
   alternates: { canonical: '/experiencia' },
   openGraph: {
     type: 'website',
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 const EXPERIENCIAS = [
   {
     icon: 'heart' as const,
-    title: 'Healthcare & Clinical AI Consultant',
+    title: 'Clinical AI Specialist · MD',
     context: 'Autónomo · HealthTech · Madrid (Remoto) · ene. 2025 – actualidad',
     bullets: [
       'Evaluación de soluciones de Clinical AI: análisis de encaje asistencial, riesgo regulatorio y viabilidad de adopción en entornos hospitalarios reales.',

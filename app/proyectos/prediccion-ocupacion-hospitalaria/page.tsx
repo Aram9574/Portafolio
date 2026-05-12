@@ -446,7 +446,7 @@ export default function CaseStudyOcupacionHospitalaria() {
               '@type': 'Person',
               '@id': 'https://alejandrozakzuk.com/#person',
               name: 'Aram Zakzuk',
-              jobTitle: 'Healthcare & Clinical AI Consultant',
+              jobTitle: 'Clinical AI Specialist · MD',
               url: 'https://alejandrozakzuk.com'
             },
             publisher: {

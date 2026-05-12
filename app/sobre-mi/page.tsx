@@ -105,7 +105,7 @@ export default function SobreMiPage() {
             <div className="w-[21rem] h-[21rem] md:w-96 md:h-96 border border-rule bg-paper overflow-hidden relative">
               <Image
                 src="/images/profile-2026.png"
-                alt="Aram Zakzuk, MD · Healthcare & Clinical AI Consultant"
+                alt="Aram Zakzuk, MD · Clinical AI Specialist"
                 fill
                 sizes="(min-width: 768px) 384px, 100vw"
                 className="object-cover"

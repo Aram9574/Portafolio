@@ -5,7 +5,7 @@ import Section from '@/components/ui/Section'
 const BASE = 'https://alejandrozakzuk.com'
 
 export const metadata: Metadata = {
-  title: 'MD + 2 MSc + Stanford AI · Clinical AI Consultant · Madrid',
+  title: 'Aram Zakzuk, MD · Clinical AI Specialist · Madrid',
   description:
     '6 years of clinical practice, dual MSc in AI for Healthcare and Digital Health, plus Stanford AI in Healthcare. Advisor on EU AI Act, MDR and SaMD.',
   alternates: {
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'en_US',
     url: `${BASE}/en`,
-    siteName: 'Aram Zakzuk, MD · Healthcare & Clinical AI Consultant',
-    title: 'Aram Zakzuk, MD · Healthcare & Clinical AI Consultant',
+    siteName: 'Aram Zakzuk, MD · Clinical AI Specialist',
+    title: 'Aram Zakzuk, MD · Clinical AI Specialist',
     description:
       'Medical doctor + dual master in AI applied to Healthcare and Digital Health. Advisory for healthcare organizations, consulting firms and HealthTech companies on Clinical AI, EU AI Act, MDR and SaMD.',
   },
@@ -34,7 +34,7 @@ const enSchema = {
       '@type': 'AboutPage',
       '@id': `${BASE}/en#aboutpage`,
       url: `${BASE}/en`,
-      name: 'About Aram Zakzuk, MD — Healthcare & Clinical AI Consultant',
+      name: 'About Aram Zakzuk, MD — Clinical AI Specialist',
       about: { '@id': `${BASE}/#person` },
       inLanguage: 'en-US',
     },
@@ -47,7 +47,7 @@ const enSchema = {
           name: 'Who is Aram Zakzuk?',
           acceptedAnswer: {
             '@type': 'Answer',
-            text: 'Aram Zakzuk is a medical doctor (MD, Universidad del Rosario) based in Madrid, Spain, working as a Healthcare & Clinical AI Consultant. He holds a Master in AI applied to Healthcare (CEMP), a Master in Digital Health / eHealth (Universidad Europea) and an AI in Healthcare Specialization from Stanford University.',
+            text: 'Aram Zakzuk is a medical doctor (MD, Universidad del Rosario) based in Madrid, Spain, working as a Clinical AI Specialist. He holds a Master in AI applied to Healthcare (CEMP), a Master in Digital Health / eHealth (Universidad Europea) and an AI in Healthcare Specialization from Stanford University.',
           },
         },
         {
@@ -89,7 +89,7 @@ export default function AboutEnPage() {
             <h1 className="display-xl mb-6">
               Aram Zakzuk, MD.
               <br />
-              <span className="italic">Healthcare &amp; Clinical AI Consultant.</span>
+              <span className="italic">Clinical AI Specialist.</span>
             </h1>
             <p className="lead max-w-3xl">
               Medical doctor with 6 years of real clinical practice and dual master in AI applied to Healthcare

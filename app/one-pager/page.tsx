@@ -4,7 +4,7 @@ import PrintButton from './PrintButton'
 export const metadata: Metadata = {
   title: 'Brief ejecutivo · Aram Zakzuk, MD',
   description:
-    'Brief de una página para dirección, consultoras y compra pública. Healthcare & Clinical AI Consultant basado en Madrid.',
+    'Brief de una página para dirección, consultoras y compra pública. Clinical AI Specialist · MD basado en Madrid.',
   robots: 'noindex, nofollow',
   alternates: {
     canonical: '/one-pager',
@@ -45,7 +45,7 @@ export default function OnePagerPage() {
         <div>
           <h1 className="op-serif text-[32px] leading-none font-medium tracking-tight">Aram Zakzuk, MD</h1>
           <p className="op-mono text-[10px] mt-2 opacity-70">
-            Healthcare &amp; Clinical AI Consultant · Madrid
+            Clinical AI Specialist · MD · Madrid
           </p>
         </div>
         <div className="op-mono text-[9px] opacity-60 text-right">

@@ -40,7 +40,7 @@ export default function Image({ params }: { params: { slug: string } }) {
 
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 20, opacity: 0.7, borderTop: '1px solid #111110', paddingTop: 24 }}>
           <div style={{ display: 'flex' }}>alejandrozakzuk.com/proyectos</div>
-          <div style={{ display: 'flex' }}>Healthcare &amp; Clinical AI Consultant</div>
+          <div style={{ display: 'flex' }}>Clinical AI Specialist · MD</div>
         </div>
       </div>
     ),

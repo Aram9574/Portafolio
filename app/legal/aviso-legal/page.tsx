@@ -4,7 +4,7 @@ import Section from '@/components/ui/Section'
 export const metadata: Metadata = {
   title: 'Aviso legal',
   description:
-    'Información legal, titular del sitio y condiciones de uso del portafolio profesional de Aram Zakzuk, MD — Healthcare & Clinical AI Consultant.',
+    'Información legal, titular del sitio y condiciones de uso del portafolio profesional de Aram Zakzuk, MD — Clinical AI Specialist · MD.',
   alternates: { canonical: '/legal/aviso-legal' },
   robots: { index: true, follow: true },
 }
