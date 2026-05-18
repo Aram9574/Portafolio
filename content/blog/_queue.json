@@ -406,7 +406,9 @@
         "Compra pública",
         "Implementación"
       ],
-      "published": false
+      "published": true,
+      "publishedSlug": "comprador-hospitalario-que-exigir-proveedor-ia",
+      "publishedDate": "2026-05-18"
     },
     {
       "id": "atencion-primaria-ia-oportunidad-olvidada",
