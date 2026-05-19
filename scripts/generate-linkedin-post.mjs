@@ -224,11 +224,15 @@ async function main() {
   log(`Escrito: ${EMAIL_SUBJECT_PATH}`);
   log(`Escrito: ${EMAIL_BODY_PATH}`);
 
-  if (!state.processed.includes(post.slug)) {
-    state.processed.push(post.slug);
+  if (DRY_RUN) {
+    log('Modo dry-run: NO se registra el post en _state.json (la cola no se consume).');
+  } else {
+    if (!state.processed.includes(post.slug)) {
+      state.processed.push(post.slug);
+    }
+    writeState(state);
+    log('Estado actualizado: slug registrado como procesado.');
   }
-  writeState(state);
-  log('Estado actualizado: slug registrado como procesado.');
 
   log('OK. Borrador de LinkedIn generado para:', post.slug);
 }
