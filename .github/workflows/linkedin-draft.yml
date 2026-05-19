@@ -7,12 +7,8 @@ on:
     - cron: '0 8 * * 4'
   workflow_dispatch:
     inputs:
-      slug:
-        description: 'Slug del post de blog concreto (opcional, por defecto el más reciente sin procesar)'
-        required: false
-        type: string
       dry_run:
-        description: 'Generar placeholder sin llamar a la API'
+        description: 'Generar placeholder sin llamar a la API (prueba)'
         required: false
         type: boolean
         default: false
@@ -41,9 +37,6 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: |
           ARGS=""
-          if [ -n "${{ inputs.slug }}" ]; then
-            ARGS="$ARGS --slug=${{ inputs.slug }}"
-          fi
           if [ "${{ inputs.dry_run }}" = "true" ]; then
             ARGS="$ARGS --dry-run"
           fi
