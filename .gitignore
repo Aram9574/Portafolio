@@ -41,6 +41,9 @@ foto-perfil-web.png
 package-lock.json
 pnpm-lock.yaml
 
+# LinkedIn draft email artifacts (no commit, solo email)
+content/linkedin/_email_*.txt
+
 # Local Knowledge Base
 awesome-skills-repo/
 claude_tasks.lock

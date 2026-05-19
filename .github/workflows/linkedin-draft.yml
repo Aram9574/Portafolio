@@ -1,0 +1,106 @@
+name: LinkedIn Draft
+
+on:
+  schedule:
+    # Martes y jueves 08:00 UTC (09:00 CET invierno / 10:00 CEST verano).
+    - cron: '0 8 * * 2'
+    - cron: '0 8 * * 4'
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: 'Slug del post de blog concreto (opcional, por defecto el más reciente sin procesar)'
+        required: false
+        type: string
+      dry_run:
+        description: 'Generar placeholder sin llamar a la API'
+        required: false
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Generate LinkedIn draft
+        id: generate
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          ARGS=""
+          if [ -n "${{ inputs.slug }}" ]; then
+            ARGS="$ARGS --slug=${{ inputs.slug }}"
+          fi
+          if [ "${{ inputs.dry_run }}" = "true" ]; then
+            ARGS="$ARGS --dry-run"
+          fi
+          set +e
+          node scripts/generate-linkedin-post.mjs $ARGS
+          EXIT_CODE=$?
+          set -e
+          echo "exit_code=$EXIT_CODE" >> $GITHUB_OUTPUT
+          if [ $EXIT_CODE -eq 2 ]; then
+            echo "::warning::No quedan posts de blog sin procesar para LinkedIn."
+            exit 0
+          fi
+          if [ $EXIT_CODE -ne 0 ]; then
+            exit $EXIT_CODE
+          fi
+
+      - name: Read email subject
+        if: steps.generate.outputs.exit_code == '0'
+        id: detect
+        run: |
+          SUBJECT=$(cat content/linkedin/_email_subject.txt)
+          echo "subject=$SUBJECT" >> $GITHUB_OUTPUT
+
+      - name: Send draft by email
+        if: steps.generate.outputs.exit_code == '0'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: smtp.gmail.com
+          server_port: 465
+          secure: true
+          username: ${{ secrets.GMAIL_ADDRESS }}
+          password: ${{ secrets.GMAIL_APP_PASSWORD }}
+          from: Blog Bot <${{ secrets.GMAIL_ADDRESS }}>
+          to: ${{ secrets.GMAIL_ADDRESS }}
+          subject: ${{ steps.detect.outputs.subject }}
+          body: file://content/linkedin/_email_body.txt
+
+      - name: Commit state to main
+        if: steps.generate.outputs.exit_code == '0'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add content/linkedin/_state.json
+
+          if git diff --cached --quiet; then
+            echo "Sin cambios en _state.json."
+            exit 0
+          fi
+
+          DATE=$(date -u +%Y-%m-%d)
+          git commit -m "chore(linkedin): registra borrador enviado el $DATE"
+
+          for i in 1 2 3; do
+            if git push origin main; then break; fi
+            echo "Push rechazado (intento $i). Rebaseando sobre origin/main..."
+            git pull --rebase origin main
+          done
+
+          echo "::notice::Borrador de LinkedIn enviado por email."
