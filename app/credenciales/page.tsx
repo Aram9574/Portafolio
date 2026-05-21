@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Section from '@/components/ui/Section';
 import CertificationBadge from '@/components/sections/CertificationBadge';
 import { certifications, type CertificationItem } from '@/lib/data/education';
@@ -73,6 +74,8 @@ const GROUPS: Group[] = [
 ];
 
 export default function CredencialesPage() {
+  const featured = certifications.filter(c => c.featured && c.badgeImage);
+
   return (
     <>
       <Section
@@ -89,8 +92,68 @@ export default function CredencialesPage() {
         </div>
       </Section>
 
+      {featured.length > 0 && (
+        <Section
+          id="insignias-destacadas"
+          index="№ 01 — Insignias destacadas"
+          title="Insignias verificables"
+          subtitle="Credenciales emitidas por la institución con verificación pública en tiempo real."
+        >
+          <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
+            {featured.map(cert => (
+              <article
+                key={`featured-${cert.credentialId ?? cert.title}`}
+                className="md:col-span-12 border border-rule bg-paper p-6 md:p-8 flex flex-col md:flex-row items-start md:items-center gap-6"
+              >
+                <a
+                  href={cert.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="shrink-0"
+                  aria-label={`Verificar ${cert.title} en ${cert.issuer}`}
+                >
+                  <Image
+                    src={cert.badgeImage!}
+                    alt={`Insignia ${cert.title} — ${cert.issuer}`}
+                    width={160}
+                    height={160}
+                    unoptimized
+                    className="block"
+                  />
+                </a>
+                <div className="grow">
+                  <div className="eyebrow mb-2">{cert.issuer}</div>
+                  <h3 className="font-display text-xl md:text-2xl text-ink leading-tight">
+                    {cert.title}
+                  </h3>
+                  {cert.note && (
+                    <p className="text-sm text-ink-2 mt-3 leading-relaxed max-w-2xl">
+                      {cert.note}
+                    </p>
+                  )}
+                  <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted font-mono uppercase tracking-widest">
+                    {cert.year && <span>{cert.year}</span>}
+                    {cert.credentialId && <span>ID · {cert.credentialId}</span>}
+                  </div>
+                  {cert.link && (
+                    <a
+                      href={cert.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-1 mt-4 text-sm text-ink underline underline-offset-4 hover:text-emerald-400 transition"
+                    >
+                      Verificar credencial →
+                    </a>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </Section>
+      )}
+
       {GROUPS.map(group => {
-        const items = certifications.filter(group.filter);
+        const items = certifications.filter(c => !c.featured).filter(group.filter);
         if (items.length === 0) return null;
         return (
           <Section

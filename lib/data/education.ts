@@ -15,7 +15,9 @@ export type CertificationItem = {
   note?: string;
   link?: string;
   credentialId?: string;
-  category?: 'regulatoria' | 'stanford' | 'congresos' | 'idiomas' | 'salud';
+  category?: 'master' | 'regulatoria' | 'stanford' | 'congresos' | 'idiomas' | 'salud';
+  featured?: boolean;
+  badgeImage?: string;
 };
 
 export const education: EducationItem[] = [
@@ -25,7 +27,7 @@ export const education: EducationItem[] = [
     location: 'Madrid, España',
     start: 'febrero 2025',
     end: 'marzo 2026',
-    status: 'en-curso',
+    status: 'finalizado',
     highlights: [
       'Modelos de Machine Learning, NLP y Deep Learning aplicados a la optimización clínica y gestión hospitalaria.'
     ]
@@ -64,6 +66,17 @@ export const education: EducationItem[] = [
 ];
 
 export const certifications: CertificationItem[] = [
+  {
+    title: 'Máster en Aplicaciones de Inteligencia Artificial en Sanidad',
+    issuer: 'Centro Europeo de Másters y Posgrados (CEMP)',
+    year: 'mar 2026',
+    note: 'Programa de máster en IA aplicada a la práctica clínica, gestión hospitalaria y datos sanitarios.',
+    link: 'https://eu.credential.net/34d76ac6-2a8d-43a3-a033-ffe8b96311e4',
+    credentialId: '19901069',
+    category: 'master',
+    featured: true,
+    badgeImage: 'https://eu.api.accredible.com/v1/frontend/credential_website_embed_image/badge/19901069'
+  },
   {
     title: 'Inteligencia Artificial Avanzada',
     issuer: 'Comunidad de Madrid',

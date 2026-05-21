@@ -5,6 +5,15 @@ const nextConfig = {
     typedRoutes: true,
     optimizePackageImports: []
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'eu.api.accredible.com',
+        pathname: '/v1/frontend/credential_website_embed_image/**',
+      },
+    ],
+  },
   async redirects() {
     return [
       {
