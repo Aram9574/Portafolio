@@ -420,7 +420,9 @@
         "Clinical AI",
         "Salud Digital"
       ],
-      "published": false
+      "published": true,
+      "publishedSlug": "atencion-primaria-ia-oportunidad-olvidada",
+      "publishedDate": "2026-05-25"
     },
     {
       "id": "fhir-vs-openmrs-vs-hl7v2-comparativa",
