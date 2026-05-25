@@ -22,4 +22,4 @@ Stack: Next.js 15 + TypeScript + Tailwind CSS.
 ## Notas para Claude
 - El usuario es MÉDICO, no ingeniero senior. Explicar trade-offs cuando proponer arquitectura compleja.
 - Backup vía `git push` a GitHub. Nunca subir el proyecto a iCloud o Drive.
-- Si se requiere cambio en contenido, mantener tono "experto accesible, no académico pedante".
+- **Estilo de voz del autor:** la fuente única de verdad es `docs/voz.md`. Antes de generar, sugerir o editar contenido (blog, LinkedIn, copy del sitio, etc.) leer ese archivo y aplicarlo. Los scripts de generación automática (`scripts/generate-weekly-post.mjs`, `scripts/generate-linkedin-post.mjs`) ya lo cargan en tiempo de ejecución.
