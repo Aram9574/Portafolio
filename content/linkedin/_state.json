@@ -1,6 +1,7 @@
 {
   "description": "Registro de control: posts de blog que ya tienen borrador de LinkedIn generado. El script descarta los slugs listados aquí para no repetir.",
   "processed": [
-    "atencion-primaria-ia-oportunidad-olvidada"
+    "atencion-primaria-ia-oportunidad-olvidada",
+    "comprador-hospitalario-que-exigir-proveedor-ia"
   ]
 }
