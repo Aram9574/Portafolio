@@ -1,4 +1,4 @@
-import { ArrowUpRight, Hospital, HeartPulse, Microscope } from "lucide-react";
+import { ArrowUpRight, FirstAidKit, Heartbeat, Microscope } from "@phosphor-icons/react/dist/ssr";
 import Metric from "@/components/ui/Metric";
 
 type Item = {
@@ -12,8 +12,8 @@ type Item = {
 };
 
 const ICONS = {
-  hospital: Hospital,
-  heart: HeartPulse,
+  hospital: FirstAidKit,
+  heart: Heartbeat,
   lab: Microscope,
 };
 
@@ -49,7 +49,7 @@ export default function ExperienceItem({ icon = 'hospital', title, context, bull
                 rel="noopener noreferrer"
               >
                 {ctaText || 'Ver caso'}
-                <ArrowUpRight className="w-4 h-4" />
+                <ArrowUpRight weight="light" className="w-4 h-4" />
               </a>
             </div>
           )}

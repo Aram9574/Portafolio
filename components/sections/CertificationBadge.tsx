@@ -1,10 +1,10 @@
 import type { CertificationItem } from "@/lib/data/education";
-import { Award } from "lucide-react";
+import { Medal } from "@phosphor-icons/react/dist/ssr";
 
 export default function CertificationBadge({ title, issuer, year, note, link }: CertificationItem) {
   const content = (
     <div className="flex items-center gap-2 border border-rule bg-paper px-3 py-2 hover:bg-bone transition h-full w-full">
-      <Award className="w-4 h-4 text-emerald-400 shrink-0" />
+      <Medal className="w-4 h-4 text-emerald-400 shrink-0" />
       <span className="text-sm text-ink">{title}</span>
       <span className="text-xs text-muted ml-auto shrink-0">· {issuer}{year ? ` (${year})` : ''}</span>
     </div>

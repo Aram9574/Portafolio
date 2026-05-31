@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Mail, Sparkles, Loader2, CheckCircle2 } from 'lucide-react';
+import { Envelope, Sparkle, CircleNotch, CheckCircle } from '@phosphor-icons/react/dist/ssr';
 
 export default function Newsletter() {
   const [email, setEmail] = useState('');
@@ -17,7 +17,7 @@ export default function Newsletter() {
       const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, source: 'Newsletter Home' }),
+        body: JSON.stringify({ email, source: 'Newsletter House' }),
       });
 
       if (res.ok) {
@@ -41,7 +41,7 @@ export default function Newsletter() {
           <div className="col-span-12 md:col-span-9 grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             <div data-aos="fade-right">
               <div className="eyebrow mb-6 flex items-center gap-2">
-                <Sparkles className="w-3 h-3" aria-hidden /> Curando el Futuro
+                <Sparkle weight="light" className="w-3 h-3" aria-hidden /> Curando el Futuro
               </div>
               <h2 className="display-l mb-6">
                 Insights de IA Clínica<br />
@@ -55,14 +55,14 @@ export default function Newsletter() {
             <div data-aos="fade-left" data-aos-delay="100" className="lg:pt-12">
               {status === 'success' ? (
                 <div className="border border-[var(--ink)] bg-[var(--paper)] p-8">
-                  <CheckCircle2 className="w-10 h-10 text-[var(--ink)] mb-4" />
+                  <CheckCircle weight="light" className="w-10 h-10 text-[var(--ink)] mb-4" />
                   <h3 className="display-m mb-3">Suscripción confirmada.</h3>
                   <p className="caption normal-case tracking-normal italic" style={{fontSize: '0.9rem'}}>"La mejor forma de predecir el futuro es construyéndolo."</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div className="relative">
-                    <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--ink)]" />
+                    <Envelope weight="light" className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[var(--ink)]" />
                     <input
                       type="email"
                       required
@@ -78,7 +78,7 @@ export default function Newsletter() {
                     className="btn-ink w-full justify-center h-[60px] disabled:opacity-50"
                   >
                     {status === 'loading' ? (
-                      <Loader2 className="w-5 h-5 animate-spin" />
+                      <CircleNotch weight="light" className="w-5 h-5 animate-spin" />
                     ) : (
                       <>Suscribirse al Newsletter →</>
                     )}

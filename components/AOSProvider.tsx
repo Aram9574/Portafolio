@@ -6,8 +6,10 @@ import 'aos/dist/aos.css'
 export function AOSProvider() {
   useEffect(() => {
     AOS.init({
-      duration: 600,
-      easing: 'ease-out',
+      duration: 800,
+      // Easing personalizado 'premium': cubic-bezier(0.32, 0.72, 0, 1).
+      // La curva real está definida en app/globals.css (sobrescribe la default de AOS).
+      easing: 'premium',
       once: true,
       offset: 60,
       startEvent: 'load',

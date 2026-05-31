@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { Github, ExternalLink, ArrowUpRight } from 'lucide-react';
+import { GithubLogo, ArrowSquareOut, ArrowUpRight } from '@phosphor-icons/react/dist/ssr';
 
 export default function ProjectBento({ projects }: { projects: any[] }) {
   if (!projects || projects.length < 3) return null;
@@ -32,7 +32,7 @@ export default function ProjectBento({ projects }: { projects: any[] }) {
                 className="p-2 border border-rule text-ink-2 hover:text-ink hover:border-ink transition"
                 aria-label="Repositorio"
               >
-                <Github className="w-4 h-4" />
+                <GithubLogo weight="light" className="w-4 h-4" />
               </a>
             )}
             {mainProject.links?.demo && (
@@ -43,7 +43,7 @@ export default function ProjectBento({ projects }: { projects: any[] }) {
                 className="p-2 border border-rule text-ink-2 hover:text-ink hover:border-ink transition"
                 aria-label="Demo"
               >
-                <ExternalLink className="w-4 h-4" />
+                <ArrowSquareOut weight="light" className="w-4 h-4" />
               </a>
             )}
           </div>
@@ -74,7 +74,7 @@ export default function ProjectBento({ projects }: { projects: any[] }) {
               </span>
             ))}
           </div>
-          <ArrowUpRight className="w-5 h-5 text-ink-2 group-hover:text-ink group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+          <ArrowUpRight weight="light" className="w-5 h-5 text-ink-2 group-hover:text-ink group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
         </div>
       </HoverCard>
 
@@ -105,7 +105,7 @@ export default function ProjectBento({ projects }: { projects: any[] }) {
                     className="p-1 border border-rule text-ink-2 hover:text-ink hover:border-ink transition"
                     aria-label="Repositorio"
                   >
-                    <Github className="w-3.5 h-3.5" />
+                    <GithubLogo weight="light" className="w-3.5 h-3.5" />
                   </a>
                 )}
                 {project.links?.demo && (
@@ -116,7 +116,7 @@ export default function ProjectBento({ projects }: { projects: any[] }) {
                     className="p-1 border border-rule text-ink-2 hover:text-ink hover:border-ink transition"
                     aria-label="Demo"
                   >
-                    <ExternalLink className="w-3.5 h-3.5" />
+                    <ArrowSquareOut weight="light" className="w-3.5 h-3.5" />
                   </a>
                 )}
               </div>
@@ -145,7 +145,7 @@ export default function ProjectBento({ projects }: { projects: any[] }) {
                   </span>
                 ))}
               </div>
-              <ArrowUpRight className="w-4 h-4 text-ink-2 group-hover:text-ink group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
+              <ArrowUpRight weight="light" className="w-4 h-4 text-ink-2 group-hover:text-ink group-hover:translate-x-1 group-hover:-translate-y-1 transition-all" />
             </div>
           </HoverCard>
         ))}

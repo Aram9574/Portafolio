@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { Download, ShieldCheck, Mail, CheckCircle2, Loader2 } from 'lucide-react';
+import { Download, ShieldCheck, Envelope, CheckCircle, CircleNotch } from '@phosphor-icons/react/dist/ssr';
 
 export default function LeadMagnet() {
   const [email, setEmail] = useState('');
@@ -42,7 +42,7 @@ export default function LeadMagnet() {
 
             <div data-aos="fade-right">
               <div className="eyebrow mb-6 flex items-center gap-2">
-                <ShieldCheck className="w-3 h-3" aria-hidden /> Gratis · CTOs y Dir. Médicos
+                <ShieldCheck weight="light" className="w-3 h-3" aria-hidden /> Gratis · CTOs y Dir. Médicos
               </div>
               <h2 className="display-l mb-6">
                 Checklist de Despliegue Seguro de IA <span className="italic">en entornos clínicos.</span>
@@ -70,7 +70,7 @@ export default function LeadMagnet() {
               <div className="border border-[var(--ink)] bg-[var(--paper)] p-8">
                 {status === 'success' ? (
                   <div>
-                    <CheckCircle2 className="w-10 h-10 text-[var(--ink)] mb-4" />
+                    <CheckCircle weight="light" className="w-10 h-10 text-[var(--ink)] mb-4" />
                     <h3 className="display-m mb-3">Enviado.</h3>
                     <p className="caption normal-case tracking-normal" style={{fontSize: '0.9rem'}}>
                       Revisa tu correo. Si no lo ves, echa un vistazo a la carpeta de spam.
@@ -85,7 +85,7 @@ export default function LeadMagnet() {
 
                     <form onSubmit={handleSubmit} className="space-y-4">
                       <div className="relative">
-                        <Mail className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted)]" />
+                        <Envelope weight="light" className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-[var(--muted)]" />
                         <input
                           type="email"
                           required
@@ -102,9 +102,9 @@ export default function LeadMagnet() {
                         className="btn-ink w-full justify-center h-[52px] disabled:opacity-50"
                       >
                         {status === 'loading' ? (
-                          <Loader2 className="w-5 h-5 animate-spin" />
+                          <CircleNotch weight="light" className="w-5 h-5 animate-spin" />
                         ) : (
-                          <><Download className="w-4 h-4" /> Descargar documento</>
+                          <><Download weight="light" className="w-4 h-4" /> Descargar documento</>
                         )}
                       </button>
 

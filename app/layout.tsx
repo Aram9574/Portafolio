@@ -6,6 +6,7 @@ import { Footer } from '@/components/Footer'
 import { CookieBanner } from '@/components/CookieBanner'
 import { AOSProvider } from '@/components/AOSProvider'
 import ClinicalTicker from '@/components/layout/ClinicalTicker'
+import NoiseOverlay from '@/components/layout/NoiseOverlay'
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
 import { SOCIAL } from '@/lib/site'
 
@@ -97,7 +98,8 @@ const mono = JetBrains_Mono({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" data-theme="ink" className={`${fraunces.variable} ${plex.variable} ${mono.variable}`}>
-      <body className="relative min-h-screen antialiased flex flex-col">
+      <body className="relative min-h-[100dvh] antialiased flex flex-col">
+        <NoiseOverlay />
         <GoogleAnalytics />
         <AOSProvider />
         <Navbar />

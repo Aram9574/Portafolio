@@ -23,11 +23,11 @@ export const metadata: Metadata = {
 
 import Section from '@/components/ui/Section'
 import { Card } from '@/components/ui/Card'
-import { Globe, Code, Database, Layout, MessageSquare, Shield } from 'lucide-react'
+import { Globe, Code, Database, Layout, ChatCenteredText, Shield } from '@phosphor-icons/react/dist/ssr'
 import EducationSection from '@/components/sections/EducationSection'
 import ExperienceItem from '@/components/sections/ExperienceItem'
 import CVDownloader from '@/components/ui/CVDownloader'
-import { Brain, Network, Microscope } from 'lucide-react'
+import { Brain, TreeStructure, Microscope } from '@phosphor-icons/react/dist/ssr'
 
 import Image from 'next/image'
 
@@ -225,7 +225,7 @@ export default function SobreMiPage() {
 
           <ExperienceItem
             icon="hospital"
-            title="Médico Interno Rotatorio · Méderi (Hospital Universitario Mayor)"
+            title="Médico Interno Rotatorio · Méderi (FirstAidKit Universitario Mayor)"
             context="Diciembre 2023 – Diciembre 2024 · Bogotá, Colombia"
             bullets={[
               '12 meses de práctica clínica continua en hospital universitario de tercer nivel: medicina interna, urgencias, pediatría, ginecología y obstetricia, neurología, psiquiatría y atención primaria.',
@@ -250,28 +250,28 @@ export default function SobreMiPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <Card className="p-6" data-aos="fade-up" data-aos-delay="100">
             <div className="w-12 h-12 mb-4 border border-rule bg-bone flex items-center justify-center">
-              <Globe className="text-emerald-400 w-6 h-6" aria-hidden="true" />
+              <Globe weight="light" className="text-emerald-400 w-6 h-6" aria-hidden="true" />
             </div>
             <h3 className="font-display text-xl text-ink mb-2">Criterio clínico real</h3>
             <p className="text-ink-2 text-sm">Formación médica de 6 años + práctica hospitalaria continua en urgencias, medicina interna y atención primaria. El criterio que permite cuestionar una solución de IA antes de implementarla, no después.</p>
           </Card>
           <Card className="p-6" data-aos="fade-up" data-aos-delay="150">
             <div className="w-12 h-12 mb-4 border border-rule bg-bone flex items-center justify-center">
-              <Shield className="text-emerald-400 w-6 h-6" aria-hidden="true" />
+              <Shield weight="light" className="text-emerald-400 w-6 h-6" aria-hidden="true" />
             </div>
             <h3 className="font-display text-xl text-ink mb-2">Marco regulatorio europeo</h3>
             <p className="text-ink-2 text-sm">EU AI Act, MDR, SaMD, ISO 13485, RGPD y EHDS. Clasificación y análisis de conformidad para que las decisiones sean sostenibles, no solo cumplibles.</p>
           </Card>
           <Card className="p-6" data-aos="fade-up" data-aos-delay="200">
             <div className="w-12 h-12 mb-4 border border-rule bg-bone flex items-center justify-center">
-              <Layout className="text-emerald-400 w-6 h-6" aria-hidden="true" />
+              <Layout weight="light" className="text-emerald-400 w-6 h-6" aria-hidden="true" />
             </div>
             <h3 className="font-display text-xl text-ink mb-2">Encaje asistencial real</h3>
             <p className="text-ink-2 text-sm">Identificación de puntos de fallo, rediseño de flujos asistenciales y gestión del cambio. Los algoritmos mejoran solos; los flujos clínicos no.</p>
           </Card>
           <Card className="p-6" data-aos="fade-up" data-aos-delay="250">
             <div className="w-12 h-12 mb-4 border border-rule bg-bone flex items-center justify-center">
-              <MessageSquare className="text-emerald-400 w-6 h-6" aria-hidden="true" />
+              <ChatCenteredText weight="light" className="text-emerald-400 w-6 h-6" aria-hidden="true" />
             </div>
             <h3 className="font-display text-xl text-ink mb-2">Traducción entre tres mundos</h3>
             <p className="text-ink-2 text-sm">El puente entre ingenieros, comité médico y compliance regulatorio. La misma conversación en tres idiomas distintos, sin perder rigor en ninguno.</p>

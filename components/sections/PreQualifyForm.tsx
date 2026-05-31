@@ -1,14 +1,14 @@
 "use client"
 
 import { useEffect, useMemo, useRef, useState } from 'react'
-import { CheckCircle2 } from 'lucide-react'
+import { CheckCircle } from '@phosphor-icons/react/dist/ssr'
 
 type Audience = 'hospital' | 'consultora' | 'publico' | 'healthtech' | 'otro'
 type ProjectKind = 'proyecto_concreto' | 'exploracion' | 'pliego' | 'advisory' | 'otro'
 type Timeline = 'inmediato' | 'trimestre' | 'q3q4_2026' | 'flexible'
 
 const AUDIENCES: { value: Audience; label: string }[] = [
-  { value: 'hospital', label: 'Hospital / aseguradora' },
+  { value: 'hospital', label: 'FirstAidKit / aseguradora' },
   { value: 'consultora', label: 'Consultora' },
   { value: 'publico', label: 'Administración pública' },
   { value: 'healthtech', label: 'HealthTech / MedTech / Farma' },
@@ -203,7 +203,7 @@ export default function PreQualifyForm({ initialAudience }: Props) {
           </form>
         ) : (
           <div className="flex items-start gap-3">
-            <CheckCircle2 className="w-5 h-5 text-ink shrink-0 mt-0.5" aria-hidden="true" />
+            <CheckCircle weight="light" className="w-5 h-5 text-ink shrink-0 mt-0.5" aria-hidden="true" />
             <div>
               <p className="text-ink font-semibold">Perfecto. Tu contexto llegará conmigo a la llamada.</p>
               <p className="text-sm text-ink-2 mt-1">Abajo tienes la agenda con tu contexto precargado.</p>

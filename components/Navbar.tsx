@@ -1,6 +1,6 @@
 "use client";
 import Link from 'next/link'
-import { Github, Linkedin, Menu, X } from 'lucide-react'
+import { GithubLogo, LinkedinLogo, List, X } from '@phosphor-icons/react/dist/ssr'
 import { useEffect, useState } from 'react'
 import { SOCIAL } from '@/lib/site'
 
@@ -35,7 +35,7 @@ export function Navbar() {
             aria-label="GitHub"
             className="text-ink hover:text-muted transition-colors"
           >
-            <Github className="w-4 h-4" />
+            <GithubLogo weight="light" className="w-4 h-4" />
           </a>
           <a
             href={SOCIAL.linkedin}
@@ -44,7 +44,7 @@ export function Navbar() {
             aria-label="LinkedIn"
             className="text-ink hover:text-muted transition-colors"
           >
-            <Linkedin className="w-4 h-4" />
+            <LinkedinLogo weight="light" className="w-4 h-4" />
           </a>
 
         </div>
@@ -55,7 +55,7 @@ export function Navbar() {
           aria-controls="mobile-menu"
           onClick={() => setOpen(v => !v)}
         >
-          {open ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+          {open ? <X weight="light" className="w-5 h-5" /> : <List weight="light" className="w-5 h-5" />}
         </button>
       </div>
       {open && (
@@ -74,10 +74,10 @@ export function Navbar() {
             </nav>
             <div className="mt-6 flex items-center gap-4">
               <a href={SOCIAL.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="text-ink hover:text-muted">
-                <Github className="w-5 h-5" aria-hidden="true" />
+                <GithubLogo weight="light" className="w-5 h-5" aria-hidden="true" />
               </a>
               <a href={SOCIAL.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-ink hover:text-muted">
-                <Linkedin className="w-5 h-5" aria-hidden="true" />
+                <LinkedinLogo weight="light" className="w-5 h-5" aria-hidden="true" />
               </a>
             </div>
           </div>

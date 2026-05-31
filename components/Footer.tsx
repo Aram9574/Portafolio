@@ -2,7 +2,7 @@
 import Link from 'next/link'
 import { useState } from 'react'
 import { SOCIAL } from '@/lib/site'
-import { Send, Loader2, CheckCircle2 } from 'lucide-react'
+import { PaperPlaneRight, CircleNotch, CheckCircle } from '@phosphor-icons/react/dist/ssr'
 import { analyticsEvents } from '@/lib/analytics'
 
 export function Footer() {
@@ -96,7 +96,7 @@ function FooterNewsletterForm() {
   if (status === 'success') {
     return (
       <div className="flex items-center gap-2 text-ink text-xs py-2 font-mono">
-        <CheckCircle2 className="w-4 h-4" /> Suscrito.
+        <CheckCircle weight="light" className="w-4 h-4" /> Suscrito.
       </div>
     )
   }
@@ -118,9 +118,9 @@ function FooterNewsletterForm() {
         className="absolute right-0 top-0 bottom-0 px-4 bg-ink text-bone flex items-center justify-center hover:opacity-90 transition disabled:opacity-50"
       >
         {status === 'loading' ? (
-          <Loader2 className="w-3.5 h-3.5 animate-spin" />
+          <CircleNotch weight="light" className="w-3.5 h-3.5 animate-spin" />
         ) : (
-          <Send className="w-3.5 h-3.5" />
+          <PaperPlaneRight weight="light" className="w-3.5 h-3.5" />
         )}
       </button>
       {status === 'error' && (
