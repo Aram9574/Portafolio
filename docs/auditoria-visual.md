@@ -110,11 +110,16 @@ Opciones honestas:
 
 **Nota:** existe en `globals.css` un override `[data-aos] { opacity: 1 !important; transform: none !important; }` que neutraliza la animación inicial de AOS para evitar FOUC. Se mantiene por seguridad. Si en el futuro se decide reactivar las entries animadas de AOS, retirar ese bloque y aceptar el riesgo de flash inicial.
 
-### Fase 4 — Pulido de componentes clave (1-2 sesiones)
+### Fase 4 — Pulido de componentes clave · ✅ COMPLETADA
 
-8. Aplicar `shadow-soft` reactivada a cards de proyecto y blog para flotación premium.
-9. Aumentar respiración vertical en secciones principales.
-10. Asegurar focus rings visibles en todos los interactivos (accesibilidad y skill exige).
+8. ✅ `shadow-soft` aplicada a `<PostItem>` (cards de blog) con hover-lift y sombra ampliada. Cards de proyecto ya tenían tratamiento equivalente en Fase 1.
+9. ✅ Hero del home: padding subido a `pt-24 pb-32 md:pt-32 md:pb-40` (antes `pt-20 pb-28`). Más respiración vertical en desktop, comportamiento conservador en mobile.
+10. ✅ Focus rings: ya existían en `globals.css` línea 247 (`:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }`). Verificado. No requería trabajo nuevo.
+
+**No hecho intencionalmente:**
+
+- Testimonial: tiene lenguaje editorial propio (border-top sin card). Añadirle sombra rompería su intención. Mantenido como está.
+- Metadata SEO del home (incluye keyword "Consultoría HealthTech" en SEO keywords array): es decisión de posicionamiento profesional vs voz divulgadora, no puramente visual. Requiere conversación aparte sobre estrategia de búsqueda de roles.
 
 ## 5. Lo que NO vamos a hacer
 

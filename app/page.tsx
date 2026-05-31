@@ -32,7 +32,7 @@ export default function HomePage() {
   return (
     <>
       {/* HERO — asimétrico, editorial, col-span 5/7 */}
-      <section id="home" className="pt-20 pb-28 rule-b">
+      <section id="home" className="pt-24 pb-32 md:pt-32 md:pb-40 rule-b">
         <div className="container">
           <div className="grid grid-cols-12 gap-y-10 md:gap-x-8 items-end">
 
