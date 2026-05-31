@@ -95,6 +95,7 @@ body {
   overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: manual;
+  text-wrap: balance;
 }
 
 .display-l {
@@ -106,6 +107,7 @@ body {
   line-height: 0.98;
   letter-spacing: -0.025em;
   color: var(--ink);
+  text-wrap: balance;
 }
 
 .display-m {
@@ -113,6 +115,7 @@ body {
   font-optical-sizing: auto;
   font-variation-settings: "opsz" 48;
   font-weight: 400;
+  text-wrap: balance;
   font-size: clamp(1.5rem, 3vw, 2.25rem);
   line-height: 1.05;
   letter-spacing: -0.015em;

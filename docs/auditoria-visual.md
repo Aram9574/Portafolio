@@ -86,16 +86,19 @@ Opciones honestas:
 
 ## 4. Plan de implementación (por fases)
 
-### Fase 1 — Cambios sin riesgo (1 sesión)
+### Fase 1 — Cambios sin riesgo · ✅ COMPLETADA
 
-1. `min-h-screen` → `min-h-[100dvh]` en `layout.tsx`.
-2. Añadir `text-wrap: balance` a las clases `.display-*` en `globals.css`.
-3. Montar `NoiseOverlay` en `layout.tsx` (o decidir borrarlo).
-4. Reactivar `shadow-soft` con sombra ambiente difusa en `tailwind.config.ts`.
+1. ✅ `min-h-screen` → `min-h-[100dvh]` en `layout.tsx`.
+2. ✅ Añadir `text-wrap: balance` a las clases `.display-*` en `globals.css`.
+3. ✅ Montar `NoiseOverlay` en `layout.tsx`.
+4. ✅ Reactivar `shadow-soft` con sombra ambiente difusa en `tailwind.config.ts` (token: `0 24px 60px -28px rgba(26,24,21,0.18), 0 8px 20px -12px rgba(26,24,21,0.08)`). Aplicada al componente `<Card>` con hover-lift de 2px.
 
-### Fase 2 — Sustitución de iconos (1 sesión)
+### Fase 2 — Sustitución de iconos · ✅ COMPLETADA
 
-5. Instalar `phosphor-react`. Migrar los 15 imports de Lucide uno a uno. Mantener mismos tamaños y strokes consistentes.
+5. ✅ Instalado `@phosphor-icons/react@2.1.10`. Imports desde `/dist/ssr` (compatible Server Components).
+6. ✅ Migrados los 18 archivos con imports de Lucide a Phosphor. Renames realizados (mapping): `BadgeCheck→SealCheck`, `Building2→Buildings`, `CheckCircle2→CheckCircle`, `ExternalLink→ArrowSquareOut`, `FileDown→FileArrowDown`, `Github→GithubLogo`, `Globe2→Globe`, `HeartPulse→Heartbeat`, `LineChart→ChartLine`, `Linkedin→LinkedinLogo`, `Loader2→CircleNotch`, `Mail→Envelope`, `Menu→List`, `MessageSquare→ChatCenteredText`, `Network→TreeStructure`, `Send→PaperPlaneRight`, `Server→HardDrives`, `Sparkles→Sparkle`, `Workflow→FlowArrow`, `Award→Medal`, `School→ChalkboardTeacher`, `Hospital→FirstAidKit`, `AlertTriangle→Warning`, `Home→House`, `RefreshCw→ArrowsClockwise`.
+7. ✅ Aplicado `weight="light"` a cada usage JSX (stroke fino, estética editorial premium).
+8. ✅ Desinstalado `lucide-react` de las dependencias.
 
 ### Fase 3 — Motion (1 sesión, opcional según ganas)
 

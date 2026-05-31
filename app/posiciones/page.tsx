@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Section from '@/components/ui/Section'
-import { Brain, ShieldCheck, LineChart, HeartPulse, Building2, MapPin, Globe2 } from 'lucide-react'
+import { Brain, ShieldCheck, ChartLine, Heartbeat, Buildings, MapPin, Globe } from '@phosphor-icons/react/dist/ssr'
 import { SOCIAL } from '@/lib/site'
 
 export const metadata: Metadata = {
@@ -53,7 +53,7 @@ const roles: Role[] = [
   },
   {
     id: 'medical-affairs',
-    icon: HeartPulse,
+    icon: Heartbeat,
     title: 'Medical Affairs digital · Clinical Validation',
     description:
       'Pharma y MedTech que necesitan validación clínica real de productos digitales: encaje asistencial con facultativos, evidencia clínica, KOL engagement con criterio médico operativo.',
@@ -65,7 +65,7 @@ const roles: Role[] = [
   },
   {
     id: 'data-analytics',
-    icon: LineChart,
+    icon: ChartLine,
     title: 'Healthcare Data Analytics · Real-World Evidence',
     description:
       'Equipos de datos en salud que necesitan criterio médico para diseñar pipelines clínicamente honestos, análisis de equidad algorítmica y evidencia del mundo real.',
@@ -77,7 +77,7 @@ const roles: Role[] = [
   },
   {
     id: 'transformacion',
-    icon: Building2,
+    icon: Buildings,
     title: 'Transformación digital sanitaria · Innovación hospitalaria',
     description:
       'Hospitales, aseguradoras, administración pública o consultoras que necesitan dirección clínica con capacidad técnica para liderar proyectos de transformación digital, EHDS e interoperabilidad.',
@@ -91,7 +91,7 @@ const roles: Role[] = [
 
 const conditions = [
   { icon: MapPin, label: 'Madrid · presencial, remoto o híbrido' },
-  { icon: Globe2, label: 'Disponible para reubicación dentro de la UE' },
+  { icon: Globe, label: 'Disponible para reubicación dentro de la UE' },
   { icon: ShieldCheck, label: 'Médico homologado en España · documentación al día' },
 ]
 

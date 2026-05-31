@@ -38,7 +38,9 @@ const config: Config = {
         '2xl': '0px'
       },
       boxShadow: {
-        soft: 'none'
+        // Sombra ambiente difusa: simula peso óptico sin línea negra dura.
+        // Aplicar selectivamente con `shadow-soft` en cards de proyecto, blog y CTAs.
+        soft: '0 24px 60px -28px rgba(26, 24, 21, 0.18), 0 8px 20px -12px rgba(26, 24, 21, 0.08)'
       },
       transitionTimingFunction: {
         out: 'cubic-bezier(0.2, 0.8, 0.2, 1)'

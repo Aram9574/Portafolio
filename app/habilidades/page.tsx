@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Section from '@/components/ui/Section'
-import { Stethoscope, Layout, Brain, Network, ShieldCheck, Database } from 'lucide-react'
+import { Stethoscope, Layout, Brain, TreeStructure, ShieldCheck, Database } from '@phosphor-icons/react/dist/ssr'
 
 export const metadata: Metadata = {
   title: 'Habilidades · Medicina, Salud Digital e IA en Sanidad',
@@ -41,7 +41,7 @@ const SKILLS = [
   },
   {
     title: 'Interoperabilidad y terminologías',
-    icon: Network,
+    icon: TreeStructure,
     items: ['HL7 FHIR R4', 'SNOMED-CT', 'LOINC', 'Integración EHR / HIS', 'EHDS · Espacio Europeo de Datos Sanitarios']
   },
   {

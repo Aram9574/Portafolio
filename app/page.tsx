@@ -13,7 +13,7 @@ import { publications } from '@/lib/data/publications';
 import { testimonials } from '@/lib/data/testimonials';
 import { blogPosts } from '@/lib/data/blog';
 import { SOCIAL } from '@/lib/site';
-import { Network, Server, Brain, Stethoscope, ShieldCheck, LineChart, Cpu, Workflow, HeartPulse, BadgeCheck } from 'lucide-react';
+import { TreeStructure, HardDrives, Brain, Stethoscope, ShieldCheck, ChartLine, Cpu, FlowArrow, Heartbeat, SealCheck } from '@phosphor-icons/react/dist/ssr';
 import ChartreuseRule from '@/components/ui/ChartreuseRule';
 
 export const metadata: Metadata = {
@@ -80,25 +80,25 @@ export default function HomePage() {
                 <div>
                   <div className="eyebrow mb-2">Medicina</div>
                   <div className="flex flex-wrap gap-2">
-                    <span className="chip-ed"><Stethoscope aria-hidden /> Médico · 6a</span>
-                    <span className="chip-ed"><HeartPulse aria-hidden /> MI · URG · AP</span>
+                    <span className="chip-ed"><Stethoscope weight="light" aria-hidden /> Médico · 6a</span>
+                    <span className="chip-ed"><Heartbeat weight="light" aria-hidden /> MI · URG · AP</span>
                   </div>
                 </div>
                 <div>
                   <div className="eyebrow mb-2">Salud Digital</div>
                   <div className="flex flex-wrap gap-2">
-                    <span className="chip-ed"><Server aria-hidden /> EHDS</span>
-                    <span className="chip-ed"><ShieldCheck aria-hidden /> EU AI Act · MDR</span>
-                    <span className="chip-ed"><Network aria-hidden /> HL7 FHIR</span>
-                    <span className="chip-ed"><Workflow aria-hidden /> Transformación digital</span>
+                    <span className="chip-ed"><HardDrives weight="light" aria-hidden /> EHDS</span>
+                    <span className="chip-ed"><ShieldCheck weight="light" aria-hidden /> EU AI Act · MDR</span>
+                    <span className="chip-ed"><TreeStructure weight="light" aria-hidden /> HL7 FHIR</span>
+                    <span className="chip-ed"><FlowArrow weight="light" aria-hidden /> Transformación digital</span>
                   </div>
                 </div>
                 <div>
                   <div className="eyebrow mb-2">IA aplicada a Sanidad</div>
                   <div className="flex flex-wrap gap-2">
-                    <span className="chip-ed"><Brain aria-hidden /> CDSS · SaMD</span>
-                    <span className="chip-ed"><LineChart aria-hidden /> XAI / SHAP</span>
-                    <span className="chip-ed"><Cpu aria-hidden /> Machine Learning</span>
+                    <span className="chip-ed"><Brain weight="light" aria-hidden /> CDSS · SaMD</span>
+                    <span className="chip-ed"><ChartLine weight="light" aria-hidden /> XAI / SHAP</span>
+                    <span className="chip-ed"><Cpu weight="light" aria-hidden /> Machine Learning</span>
                   </div>
                 </div>
               </div>
@@ -113,7 +113,7 @@ export default function HomePage() {
         <div className="container">
           <ul className="grid grid-cols-2 md:grid-cols-4 gap-y-3 md:gap-y-0 font-mono text-xs uppercase tracking-widest text-ink-2">
             <li className="flex items-center gap-2 md:border-r md:border-rule md:pr-6">
-              <BadgeCheck className="w-4 h-4 text-ink shrink-0" aria-hidden />
+              <SealCheck weight="light" className="w-4 h-4 text-ink shrink-0" aria-hidden />
               <span>Verificado en LinkedIn</span>
             </li>
             <li className="md:border-r md:border-rule md:px-6">

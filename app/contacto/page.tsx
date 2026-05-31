@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { ContactForm } from '@/components/ContactForm'
 import Section from '@/components/ui/Section'
-import { Mail, MapPin, Linkedin, Github } from 'lucide-react'
+import { Envelope, MapPin, LinkedinLogo, GithubLogo } from '@phosphor-icons/react/dist/ssr'
 import { SOCIAL } from '@/lib/site'
 import CopyButton from '@/components/ui/CopyButton'
 import Script from 'next/script'
@@ -40,7 +40,7 @@ export default function ContactoPage() {
             <h2 className="text-ink font-semibold">Datos directos</h2>
             <ul className="mt-2 text-sm text-ink-2 space-y-2">
               <li className="flex items-center gap-3">
-                <Mail className="w-4 h-4 text-ink" aria-hidden="true" />
+                <Envelope weight="light" className="w-4 h-4 text-ink" aria-hidden="true" />
                 <div className="flex items-center">
                   <span className="sr-only">Email: </span>
                   <a className="ed-link" href={`mailto:${SOCIAL.email}`}>{SOCIAL.email}</a>
@@ -48,11 +48,11 @@ export default function ContactoPage() {
                 </div>
               </li>
               <li className="flex items-center gap-3">
-                <MapPin className="w-4 h-4 text-ink" aria-hidden="true" />
+                <MapPin weight="light" className="w-4 h-4 text-ink" aria-hidden="true" />
                 <span>{SOCIAL.location}</span>
               </li>
               <li className="flex items-center gap-3">
-                <Linkedin className="w-4 h-4 text-ink" aria-hidden="true" />
+                <LinkedinLogo weight="light" className="w-4 h-4 text-ink" aria-hidden="true" />
                 <span>
                   <span className="sr-only">LinkedIn: </span>
                   <a className="ed-link" href={SOCIAL.linkedin} target="_blank" rel="noreferrer">Seguir en LinkedIn</a>
@@ -60,7 +60,7 @@ export default function ContactoPage() {
               </li>
 
               <li className="flex items-center gap-3">
-                <Github className="w-4 h-4 text-ink" aria-hidden="true" />
+                <GithubLogo weight="light" className="w-4 h-4 text-ink" aria-hidden="true" />
                 <span>
                   <span className="sr-only">GitHub: </span>
                   <a className="ed-link" href={SOCIAL.github} target="_blank" rel="noreferrer">@Aram9574</a>

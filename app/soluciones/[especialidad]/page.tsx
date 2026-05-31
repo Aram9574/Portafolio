@@ -2,7 +2,7 @@ import Section from '@/components/ui/Section'
 import LeadMagnet from '@/components/sections/LeadMagnet'
 import Breadcrumbs from '@/components/Breadcrumbs'
 import Link from 'next/link'
-import { CheckCircle2, Server, Shield, Stethoscope } from 'lucide-react'
+import { CheckCircle, HardDrives, Shield, Stethoscope } from '@phosphor-icons/react/dist/ssr'
 
 type Especialidad = {
   slug: string
@@ -160,7 +160,7 @@ export default function SolucionesPorEspecialidad({
         <h2 className="display-m text-ink mb-10">Lo que reviso en un proyecto de {data.nombre}</h2>
         <div className="grid md:grid-cols-3 gap-6 max-w-5xl">
           <div className="p-6 border border-rule bg-paper">
-            <Stethoscope className="w-6 h-6 text-ink mb-4" aria-hidden />
+            <Stethoscope weight="light" className="w-6 h-6 text-ink mb-4" aria-hidden />
             <h3 className="font-display text-lg text-ink mb-2">Encaje asistencial</h3>
             <p className="text-sm text-ink-2">
               ¿Dónde se usa, quién confirma, qué pasa si falla? El criterio clínico aplicado al flujo real del
@@ -168,7 +168,7 @@ export default function SolucionesPorEspecialidad({
             </p>
           </div>
           <div className="p-6 border border-rule bg-paper">
-            <Shield className="w-6 h-6 text-ink mb-4" aria-hidden />
+            <Shield weight="light" className="w-6 h-6 text-ink mb-4" aria-hidden />
             <h3 className="font-display text-lg text-ink mb-2">Riesgo regulatorio</h3>
             <p className="text-sm text-ink-2">
               Clasificación EU AI Act, encaje MDR, documentación técnica exigible y camino a marcado CE
@@ -176,7 +176,7 @@ export default function SolucionesPorEspecialidad({
             </p>
           </div>
           <div className="p-6 border border-rule bg-paper">
-            <Server className="w-6 h-6 text-ink mb-4" aria-hidden />
+            <HardDrives weight="light" className="w-6 h-6 text-ink mb-4" aria-hidden />
             <h3 className="font-display text-lg text-ink mb-2">Interoperabilidad</h3>
             <p className="text-sm text-ink-2">
               Arquitectura FHIR, terminologías clínicas y portabilidad EHDS. El sistema que se compra hoy

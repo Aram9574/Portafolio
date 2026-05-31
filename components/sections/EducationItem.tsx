@@ -1,8 +1,8 @@
-import { GraduationCap, School } from "lucide-react";
+import { GraduationCap, ChalkboardTeacher } from "@phosphor-icons/react/dist/ssr";
 import type { EducationItem } from "@/lib/data/education";
 
 export default function EducationItemCard({ title, org, location, start, end, status, highlights = [] }: EducationItem) {
-  const Icon = status === 'en-curso' ? GraduationCap : School;
+  const Icon = status === 'en-curso' ? GraduationCap : ChalkboardTeacher;
   return (
     <article className="relative border border-rule bg-paper p-5 hover:bg-bone transition">
       <div className="flex items-start gap-4">

@@ -1,6 +1,6 @@
 'use client';
 
-import { FileDown, FileText } from 'lucide-react';
+import { FileArrowDown, FileText } from '@phosphor-icons/react/dist/ssr';
 import { analyticsEvents } from '@/lib/analytics';
 
 type Variant = 'stacked' | 'compact';
@@ -33,7 +33,7 @@ export default function CVDownloader({ variant = 'stacked' }: { variant?: Varian
     return (
       <div className="flex flex-wrap gap-3">
         {CV_OPTIONS.map(opt => {
-          const Icon = opt.icon === 'document' ? FileText : FileDown;
+          const Icon = opt.icon === 'document' ? FileText : FileArrowDown;
           return (
             <a
               key={opt.href}
@@ -56,7 +56,7 @@ export default function CVDownloader({ variant = 'stacked' }: { variant?: Varian
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
       {CV_OPTIONS.map(opt => {
-        const Icon = opt.icon === 'document' ? FileText : FileDown;
+        const Icon = opt.icon === 'document' ? FileText : FileArrowDown;
         return (
           <div key={opt.href} className="flex flex-col gap-2">
             <a
