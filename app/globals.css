@@ -394,8 +394,9 @@ a.ed-link:hover {
 /* El viejo "black" de botones ahora debe ser "bone" (fondo) para contraste sobre accent */
 .text-black { color: var(--bone) !important; }
 
-/* AOS timing */
-[data-aos] { transition-timing-function: cubic-bezier(0.2, 0.8, 0.2, 1); }
+/* AOS timing — curva premium editorial (sobrescribe la default de AOS) */
+[data-aos] { transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1); }
+[data-aos][data-aos][data-aos-easing="premium"] { transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1); }
 
 /* Visibilidad inmediata para elementos ya en viewport en la carga inicial.
    AOS sigue animando cuando aparecen por scroll, pero no deja nada oculto. */

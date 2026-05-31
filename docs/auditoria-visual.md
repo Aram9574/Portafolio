@@ -100,10 +100,15 @@ Opciones honestas:
 7. ✅ Aplicado `weight="light"` a cada usage JSX (stroke fino, estética editorial premium).
 8. ✅ Desinstalado `lucide-react` de las dependencias.
 
-### Fase 3 — Motion (1 sesión, opcional según ganas)
+### Fase 3 — Motion · ✅ COMPLETADA
 
-6. Customizar easing de AOS con cubic-bezier premium global. O migrar a Framer Motion (más trabajo, mejor a largo plazo).
-7. Auditar todas las animaciones para asegurar que usan `transform` y `opacity` solamente (no `top`/`left`/`width`/`height`).
+6. ✅ Easing AOS migrado a curva premium `cubic-bezier(0.32, 0.72, 0, 1)` (estilo Linear/Apple). Aplicado tanto al default `[data-aos]` como a `data-aos-easing="premium"`.
+7. ✅ Tailwind `transitionTimingFunction.out` actualizado a la misma curva. Añadida variante `spring` con overshoot sutil para hovers (`cubic-bezier(0.34, 1.56, 0.64, 1)`).
+8. ✅ Duration de AOS subida de 600ms a 800ms (sensación más premium, menos snappy).
+9. ✅ Card hover refinado: duración 300ms, sombra más profunda al hover. Compatible con AOS.
+10. ✅ Verificado: ninguna animación en el repo usa `top/left/width/height`. Todas usan `transform`/`opacity` (GPU-safe).
+
+**Nota:** existe en `globals.css` un override `[data-aos] { opacity: 1 !important; transform: none !important; }` que neutraliza la animación inicial de AOS para evitar FOUC. Se mantiene por seguridad. Si en el futuro se decide reactivar las entries animadas de AOS, retirar ese bloque y aceptar el riesgo de flash inicial.
 
 ### Fase 4 — Pulido de componentes clave (1-2 sesiones)
 

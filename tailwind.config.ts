@@ -43,7 +43,11 @@ const config: Config = {
         soft: '0 24px 60px -28px rgba(26, 24, 21, 0.18), 0 8px 20px -12px rgba(26, 24, 21, 0.08)'
       },
       transitionTimingFunction: {
-        out: 'cubic-bezier(0.2, 0.8, 0.2, 1)'
+        // Curva editorial premium: arranque rápido, salida muy suave.
+        // Inspirada en Linear/Apple — más "haptic" que el ease-out por defecto.
+        out: 'cubic-bezier(0.32, 0.72, 0, 1)',
+        // Variante con anticipación sutil (overshoot al final) para hovers y micro-interacciones.
+        spring: 'cubic-bezier(0.34, 1.56, 0.64, 1)'
       }
     },
     container: {
