@@ -1,36 +1,41 @@
 # Aram Zakzuk, MD — Healthcare & Clinical AI Consultant
 
-## Context
-Aram Zakzuk is a medical doctor (MD, Universidad del Rosario) based in Madrid, Spain, working as a Healthcare & Clinical AI Consultant. He advises healthcare organizations, consulting firms (Crowe, Deloitte, Accenture, Minsait) and HealthTech / MedTech / Life Sciences companies on Clinical AI evaluation, EU regulatory strategy and clinical adoption of digital health solutions. He is not a software developer nor a data scientist — his technical capacity is the credential that underpins his consulting judgment, not the service itself.
+> Medical doctor (MD, Universidad del Rosario) based in Madrid, Spain, working as a Healthcare & Clinical AI Consultant. He advises healthcare organizations, consulting firms and HealthTech / MedTech / Life Sciences companies on Clinical AI evaluation, EU regulatory strategy (EU AI Act, MDR, SaMD) and clinical adoption of digital health solutions.
+
+He is a physician, not a software developer nor a data scientist. His technical capacity is the credential that underpins his consulting judgment, not the service itself. Six years of continuous clinical practice (Internal Medicine, Emergency Medicine and Primary Care) plus a double master's in AI applied to Healthcare and in Digital Health / eHealth.
 
 ## Profile
-- **Medical practice**: 6 years of continuous clinical practice at Méderi (Colombia, 2018–2024) in Internal Medicine, Emergency Medicine and Primary Care.
-- **Master in AI applied to Healthcare**: Centro Europeo de Másters y Posgrados (CEMP), 2025–2026.
-- **Master in Digital Health / eHealth**: Universidad Europea (Madrid), 2025–2026.
-- **AI in Healthcare Specialization**: Stanford University (credential ID JPA2O5IFFDNP).
+
+- [Clinical practice](https://alejandrozakzuk.com/experiencia): 6 years at Méderi (Colombia, 2018–2024) in Internal Medicine, Emergency Medicine and Primary Care.
+- [Master in AI applied to Healthcare](https://alejandrozakzuk.com/educacion): Centro Europeo de Másters y Posgrados (CEMP), 2025–2026.
+- [Master in Digital Health / eHealth](https://alejandrozakzuk.com/educacion): Universidad Europea (Madrid), 2025–2026.
+- [AI in Healthcare Specialization](https://alejandrozakzuk.com/credenciales): Stanford University (credential ID JPA2O5IFFDNP).
 
 ## What he offers
-1. **Clinical AI evaluation and adoption strategy** — auditing AI solutions, clinical fit analysis and adoption roadmap for real hospital environments.
-2. **EU regulatory advisory (EU AI Act, MDR, SaMD)** — classification under Regulation 2024/1689, conformity analysis and compliance roadmap for HealthTech and MedTech projects.
-3. **Clinical viability of CDSS, data and interoperability** — clinical analysis of Clinical Decision Support Systems, Healthcare Data Analytics and healthcare interoperability (HL7 FHIR, SNOMED-CT, EHDS).
-4. **Clinical–technical translation in digital transformation** — bridge between medical judgment, engineering teams and public procurement in healthcare digital transformation projects.
 
-## Projects that ground his consulting judgment
-These are personal projects used to validate his technical depth as a consultant — not products nor services offered.
-1. **Diabetes risk CDSS (Master thesis)** — Random Forest on CDC BRFSS dataset (253,680 records), AUC-ROC 0.942, XAI/SHAP explainability, RGPD + EU AI Act + EHDS compliance by design. Live demo: https://huggingface.co/spaces/aram1585/diabetes-brfss-cdss
-2. **ClinAI Classifier** — open-source tool that classifies healthcare AI systems under EU AI Act (Regulation 2024/1689). Two-stage pipeline (Claude Sonnet 4.5 agent + static rule engine), returns risk level, Annex III categories, Article 5 flags, legal basis and SaMD flag. Live demo: https://huggingface.co/spaces/aram1585/clinai-classifier · Code: https://github.com/aramzakzuk/clinai-classifier
-3. **Hospital bed occupancy prediction** — demand model with estimated 30–40% variance reduction over naive baseline, using clinical and operational variables.
+- [Clinical AI evaluation and adoption strategy](https://alejandrozakzuk.com/soluciones/radiologia): auditing AI solutions, clinical fit analysis and adoption roadmap for real hospital environments.
+- [EU regulatory advisory (EU AI Act, MDR, SaMD)](https://alejandrozakzuk.com/soluciones/radiologia): classification under Regulation 2024/1689, conformity analysis and compliance roadmap for HealthTech and MedTech projects.
+- [Clinical viability of CDSS, data and interoperability](https://alejandrozakzuk.com/habilidades): clinical analysis of Clinical Decision Support Systems, Healthcare Data Analytics and healthcare interoperability (HL7 FHIR, SNOMED-CT, EHDS).
+- [Clinical–technical translation in digital transformation](https://alejandrozakzuk.com/sobre-mi): bridge between medical judgment, engineering teams and public procurement in healthcare digital transformation projects.
 
-## Sectors
-HealthTech · MedTech · Life Sciences · Digital Health · Industria Farmacéutica · Medical Device · Hospitals · Health insurance · Public administration · CCAA · Ministerio de Sanidad
+## Projects
 
-## Regulatory and interoperability frameworks
-EU AI Act (Regulation 2024/1689) · MDR · SaMD · ISO 13485 · RGPD · EHDS · HL7 FHIR R4 · SNOMED-CT · LOINC · CE marking
+These are personal projects used to validate his technical depth as a consultant, not products nor services offered.
 
-## Contact and links
-- **Website**: https://alejandrozakzuk.com
-- **LinkedIn**: https://linkedin.com/in/aramzakzuk
-- **Email**: zakzukaram@gmail.com
-- **GitHub**: https://github.com/Aram9574
-- **Hugging Face**: https://huggingface.co/aram1585
-- **Location**: Madrid, Spain
+- [ClinAI Classifier](https://huggingface.co/spaces/aram1585/clinai-classifier): open-source tool that classifies healthcare AI systems under the EU AI Act (Regulation 2024/1689). Two-stage pipeline (Claude Sonnet 4.5 agent + static rule engine), returns risk level, Annex III categories, Article 5 flags, legal basis and SaMD flag. Code: https://github.com/aramzakzuk/clinai-classifier
+- [Diabetes risk CDSS (Master thesis)](https://huggingface.co/spaces/aram1585/diabetes-brfss-cdss): Random Forest on CDC BRFSS dataset (253,680 records), AUC-ROC 0.942, XAI/SHAP explainability, RGPD + EU AI Act + EHDS compliance by design.
+- [Hospital bed occupancy prediction](https://alejandrozakzuk.com/proyectos): demand model with estimated 30–40% variance reduction over a naive baseline, using clinical and operational variables.
+
+## Scope
+
+- Sectors: HealthTech, MedTech, Life Sciences, Digital Health, Pharma, Medical Device, Hospitals, Health insurance, Public administration, CCAA, Ministerio de Sanidad.
+- Frameworks: EU AI Act (Regulation 2024/1689), MDR, SaMD, ISO 13485, RGPD, EHDS, HL7 FHIR R4, SNOMED-CT, LOINC, CE marking.
+
+## Contact
+
+- [Website](https://alejandrozakzuk.com)
+- [LinkedIn](https://linkedin.com/in/aramzakzuk)
+- [GitHub](https://github.com/Aram9574)
+- [Hugging Face](https://huggingface.co/aram1585)
+- [Email](mailto:zakzukaram@gmail.com): zakzukaram@gmail.com
+- Location: Madrid, Spain
