@@ -48,13 +48,13 @@ export function CookieBanner() {
 
   return (
     <div
-      className="fixed bottom-4 right-4 z-50 max-w-sm"
+      className="fixed inset-x-0 bottom-0 z-50 border-t border-ink bg-paper shadow-sm"
       role="dialog"
       aria-label="Consentimiento de cookies"
       aria-live="polite"
     >
-      <div className="border border-ink bg-paper p-4 text-xs text-ink-2 shadow-sm">
-        <p className="leading-relaxed">
+      <div className="container py-3 flex flex-col gap-3 md:flex-row md:items-center md:justify-between">
+        <p className="text-xs text-ink-2 leading-relaxed md:max-w-3xl">
           Este sitio usa cookies técnicas necesarias para su funcionamiento. Opcionalmente, usamos{' '}
           <strong className="text-ink">analítica anónima (Google Analytics 4)</strong> para medir el uso
           del sitio, solo si das tu consentimiento. Más información en{' '}
@@ -63,7 +63,7 @@ export function CookieBanner() {
           </Link>
           .
         </p>
-        <div className="mt-3 flex flex-wrap gap-2">
+        <div className="flex shrink-0 gap-2">
           <button
             className="btn-ink text-xs px-3 py-1.5"
             onClick={accept}
