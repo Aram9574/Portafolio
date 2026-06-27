@@ -168,18 +168,35 @@ Si lideras un proyecto que toca este tema, [hablemos](/contacto).
 `;
 }
 
-function validateMarkdown(raw, topic) {
-  if (!raw.startsWith('---')) {
+// La API a veces envuelve la respuesta en un bloque de código markdown.
+// Lo quitamos para que el frontmatter quede en la primera línea.
+function stripCodeFences(raw) {
+  const trimmed = raw.trim();
+  if (trimmed.startsWith('```')) {
+    return trimmed.replace(/^```[a-zA-Z]*\n/, '').replace(/\n```$/, '').trim();
+  }
+  return trimmed;
+}
+
+// La API suele devolver un slug ligeramente distinto al de la cola
+// (lo acorta, lo traduce o le cambia el orden). El slug canónico es el de
+// la cola, así que en vez de abortar lo forzamos sobre el frontmatter.
+function normalizeAndValidate(raw, topic) {
+  let md = stripCodeFences(raw);
+  if (!md.startsWith('---')) {
     throw new Error('La salida no empieza con frontmatter YAML');
   }
-  if (!raw.includes(`slug: ${topic.id}`)) {
-    throw new Error(`El slug del frontmatter no coincide con ${topic.id}`);
+  if (/^slug:\s*.+$/m.test(md)) {
+    md = md.replace(/^slug:\s*.+$/m, `slug: ${topic.id}`);
+  } else {
+    // Si la API se olvidó del slug, lo insertamos al inicio del frontmatter.
+    md = md.replace(/^---\n/, `---\nslug: ${topic.id}\n`);
   }
-  const wordCount = raw.split(/\s+/).length;
+  const wordCount = md.split(/\s+/).length;
   if (wordCount < 400) {
     throw new Error(`Post demasiado corto: ${wordCount} palabras`);
   }
-  return true;
+  return md;
 }
 
 async function main() {
@@ -207,7 +224,7 @@ async function main() {
   } else {
     log('Llamando a la API de Anthropic...');
     markdown = await callClaudeAPI(SYSTEM_PROMPT, buildUserPrompt(topic));
-    validateMarkdown(markdown, topic);
+    markdown = normalizeAndValidate(markdown, topic);
   }
 
   fs.writeFileSync(outputFile, markdown, 'utf8');
