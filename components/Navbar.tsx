@@ -1,11 +1,17 @@
 "use client";
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { GithubLogo, LinkedinLogo, List, X } from '@phosphor-icons/react/dist/ssr'
 import { useEffect, useState } from 'react'
 import { SOCIAL } from '@/lib/site'
 
 export function Navbar() {
   const [open, setOpen] = useState(false)
+  const pathname = usePathname()
+  const isEN = pathname?.startsWith('/en')
+  const langHref = isEN ? '/' : '/en'
+  const langLabel = isEN ? 'ES' : 'EN'
+  const langAria = isEN ? 'Ver la web en español' : 'View this site in English'
   useEffect(() => {
     if (open) document.body.style.overflow = 'hidden';
     else document.body.style.overflow = '';
@@ -28,6 +34,13 @@ export function Navbar() {
           <Link href="/contacto" className="hover:text-muted transition-colors">Contacto</Link>
         </nav>
         <div className="hidden md:flex items-center gap-4">
+          <Link
+            href={langHref}
+            aria-label={langAria}
+            className="font-mono text-[0.72rem] tracking-widest uppercase text-ink hover:text-muted transition-colors border border-ink px-2 py-0.5"
+          >
+            {langLabel}
+          </Link>
           <a
             href={SOCIAL.github}
             target="_blank"
@@ -73,6 +86,14 @@ export function Navbar() {
               <Link href="/contacto" className="py-2 hover:italic" onClick={() => setOpen(false)}>Contacto</Link>
             </nav>
             <div className="mt-6 flex items-center gap-4">
+              <Link
+                href={langHref}
+                aria-label={langAria}
+                onClick={() => setOpen(false)}
+                className="font-mono text-xs tracking-widest uppercase text-ink hover:text-muted border border-ink px-2 py-1"
+              >
+                {langLabel}
+              </Link>
               <a href={SOCIAL.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="text-ink hover:text-muted">
                 <GithubLogo weight="light" className="w-5 h-5" aria-hidden="true" />
               </a>

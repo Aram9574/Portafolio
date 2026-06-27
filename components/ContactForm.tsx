@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from 'react'
+import { analyticsEvents } from '@/lib/analytics'
 
 export function ContactForm() {
   const [state, setState] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
@@ -73,6 +74,7 @@ export function ContactForm() {
       }
       setMessage('Mensaje enviado. Te responderé pronto.')
       setState('sent')
+      analyticsEvents.submitContactForm()
       form.reset()
     } catch {
       setMessage('Hubo un error al enviar. Intenta de nuevo en un momento.')

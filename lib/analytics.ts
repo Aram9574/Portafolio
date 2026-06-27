@@ -23,6 +23,8 @@ export const analyticsEvents = {
     trackEvent('click_cta', { location, label }),
   clickContact: (channel: 'email' | 'linkedin' | 'github' | 'calendly' | 'huggingface') =>
     trackEvent('click_contact', { channel }),
+  submitContactForm: () =>
+    trackEvent('contact_form_submit'),
   downloadCV: (variant: string) =>
     trackEvent('download_cv', { variant }),
   newsletterSubscribe: (source: string) =>

@@ -12,6 +12,8 @@ export type Project = {
   tipo?: 'estrella' | 'academico';
   tags:string[];
   cover?:string;
+  metric?:string;
+  metricLabel?:string;
   links?:{demo?:string; repo?:string};
 };
 
@@ -40,6 +42,8 @@ export const projects: Project[] = [
     impact: 'AUC-ROC 0.942 (top 5% de modelos publicados en literatura para dataset NIDDK). Clasificación de variables por importancia clínica que permite triaje preventivo automatizado con precisión por clase documentada.',
     regulatory: 'Diseño bajo RGPD + EU AI Act + EHDS como restricciones desde el día uno, no checklist legal a posteriori.',
     tipo: 'estrella',
+    metric: '0.942',
+    metricLabel: 'AUC-ROC · 253.680 registros',
     tags: ['Random Forest', 'XAI/SHAP', 'Python', 'Scikit-learn', 'Hugging Face', 'EU AI Act'],
     links: {
       repo: 'https://github.com/Aram9574/diabetes-brfss-cdss',
@@ -54,6 +58,8 @@ export const projects: Project[] = [
     solution: 'Modelo predictivo de demanda de camas construido sobre históricos de ocupación, ingresos, altas, estancia media e índices de urgencias. Variables clínicas y operativas combinadas.',
     impact: 'Reducción estimada de varianza en planificación de recursos del 30–40% sobre baseline naive, aplicable a gestión anticipada de capacidad asistencial.',
     tipo: 'estrella',
+    metric: '30–40%',
+    metricLabel: '↓ varianza vs baseline',
     tags: ['Python', 'Time Series', 'Healthcare Data Analytics', 'Hospital Operations']
   },
   {

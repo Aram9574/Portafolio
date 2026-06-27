@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import Section from '@/components/ui/Section';
 import { Card } from '@/components/ui/Card';
 import Metric from '@/components/ui/Metric';
@@ -32,7 +33,7 @@ export default function HomePage() {
   return (
     <>
       {/* HERO — asimétrico, editorial, col-span 5/7 */}
-      <section id="home" className="pt-24 pb-32 md:pt-32 md:pb-40 rule-b">
+      <section id="home" className="pt-20 pb-20 md:pt-24 md:pb-28 rule-b">
         <div className="container">
           <div className="grid grid-cols-12 gap-y-10 md:gap-x-8 items-end">
 
@@ -46,11 +47,23 @@ export default function HomePage() {
                 <a href="/cv/CV_Aram_Zakzuk.pdf" target="_blank" rel="noopener noreferrer" className="btn-ink">Descargar CV →</a>
                 <a href="/contacto" className="btn-ghost">Contactar</a>
               </div>
+              <div className="hidden md:block pt-4">
+                <div className="group relative aspect-square w-full border border-ink bg-paper overflow-hidden">
+                  <Image
+                    src="/images/profile-2026.png"
+                    alt="Aram Zakzuk, MD · Clinical AI Specialist"
+                    fill
+                    sizes="(min-width: 1024px) 22vw, 33vw"
+                    className="object-cover grayscale transition-all duration-700 group-hover:grayscale-0"
+                    priority
+                  />
+                </div>
+              </div>
             </aside>
 
             {/* Columna derecha: título display */}
             <div className="col-span-12 md:col-span-8 lg:col-span-9">
-              <h1 className="display-xl word-reveal">
+              <h1 className="display-hero word-reveal">
                 <span style={{ animationDelay: '0ms' }}>Medicina,</span>{' '}
                 <span style={{ animationDelay: '100ms' }} className="italic">Salud Digital</span>{' '}
                 <span style={{ animationDelay: '200ms' }}>e</span>{' '}

@@ -98,6 +98,23 @@ body {
   text-wrap: balance;
 }
 
+/* Variante del titular de portada: el texto del hero de la home es largo
+   (dos frases), así que usa una escala algo menor que display-xl para que
+   quepa en la primera pantalla sin desbordar. Los demás heros, con títulos
+   cortos, siguen usando display-xl a tamaño completo. */
+.display-hero {
+  font-family: var(--font-display), serif;
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 144, "SOFT" 20;
+  font-weight: 400;
+  font-size: clamp(2.25rem, 4.8vw, 4.25rem);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
 .display-l {
   font-family: var(--font-display), serif;
   font-optical-sizing: auto;

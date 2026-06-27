@@ -51,6 +51,14 @@ export default function ProjectBento({ projects }: { projects: any[] }) {
 
         {/* Título y descripción */}
         <div className="flex-1 flex flex-col justify-center pointer-events-none">
+          {mainProject.metric && (
+            <div className="mb-5">
+              <div className="metric-numeral" style={{ fontSize: 'clamp(2.5rem, 5vw, 4rem)' }}>
+                {mainProject.metric}
+              </div>
+              <div className="eyebrow mt-1">{mainProject.metricLabel}</div>
+            </div>
+          )}
           <h3 className="display-m mb-4 group-hover:italic transition-all">
             {mainProject.title}
           </h3>
@@ -123,13 +131,21 @@ export default function ProjectBento({ projects }: { projects: any[] }) {
             </div>
 
             <div className="flex-1 flex flex-col justify-center pointer-events-none">
+              {project.metric && (
+                <div className="mb-2">
+                  <div className="font-display leading-none text-ink" style={{ fontSize: '1.9rem', letterSpacing: '-0.02em' }}>
+                    {project.metric}
+                  </div>
+                  <div className="eyebrow" style={{ fontSize: '0.55rem' }}>{project.metricLabel}</div>
+                </div>
+              )}
               <h3
                 className="font-display text-xl leading-tight mb-2 text-ink group-hover:italic transition-all"
                 style={{ letterSpacing: '-0.01em' }}
               >
                 {project.title}
               </h3>
-              <p className="text-[0.8rem] leading-snug text-ink-2 line-clamp-3">
+              <p className="text-[0.8rem] leading-snug text-ink-2 line-clamp-2">
                 {project.shortDescription}
               </p>
             </div>
