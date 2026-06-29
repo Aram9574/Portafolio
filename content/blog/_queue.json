@@ -434,7 +434,9 @@
         "Interoperabilidad",
         "Arquitectura"
       ],
-      "published": false
+      "published": true,
+      "publishedSlug": "fhir-vs-openmrs-vs-hl7v2-comparativa",
+      "publishedDate": "2026-06-29"
     },
     {
       "id": "medicina-precision-ia-genomica",
