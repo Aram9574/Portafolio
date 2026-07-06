@@ -448,7 +448,9 @@
         "Genómica",
         "Clinical AI"
       ],
-      "published": false
+      "published": true,
+      "publishedSlug": "medicina-precision-ia-genomica",
+      "publishedDate": "2026-07-06"
     },
     {
       "id": "startups-healthtech-espana-landscape",
