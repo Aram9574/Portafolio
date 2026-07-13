@@ -462,7 +462,9 @@
         "Mercado",
         "España"
       ],
-      "published": false
+      "published": true,
+      "publishedSlug": "startups-healthtech-espana-landscape",
+      "publishedDate": "2026-07-13"
     },
     {
       "id": "validacion-externa-cdss-como-montar-estudio",
