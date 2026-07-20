@@ -476,7 +476,9 @@
         "CDSS",
         "Medical Affairs"
       ],
-      "published": false
+      "published": true,
+      "publishedSlug": "validacion-externa-cdss-como-montar-estudio",
+      "publishedDate": "2026-07-20"
     },
     {
       "id": "telemedicina-europa-post-pandemia",
