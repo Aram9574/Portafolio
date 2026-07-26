@@ -66,17 +66,17 @@ export default function PoliticaPrivacidadPage() {
             </h2>
             <p>El sitio trata datos personales únicamente en los siguientes supuestos:</p>
             <ul className="space-y-3">
-              <li className="border-l-2 border-ink pl-4">
+              <li className="border-l-2 border-hairline pl-4">
                 <strong className="text-ink">Formulario de contacto:</strong>{' '}
                 nombre, correo electrónico y mensaje voluntario. Finalidad: atender la solicitud profesional
                 del usuario (consultas sobre vacantes, colaboraciones o información sobre el perfil).
               </li>
-              <li className="border-l-2 border-ink pl-4">
+              <li className="border-l-2 border-hairline pl-4">
                 <strong className="text-ink">Suscripción al newsletter:</strong> correo electrónico.
                 Finalidad: envío periódico de contenidos profesionales sobre salud digital, IA clínica y
                 regulación europea. El usuario puede darse de baja en cualquier momento.
               </li>
-              <li className="border-l-2 border-ink pl-4">
+              <li className="border-l-2 border-hairline pl-4">
                 <strong className="text-ink">Analítica web (Google Analytics 4):</strong> datos agregados y
                 anonimizados de navegación. Finalidad: medir el interés del contenido y mejorar la
                 experiencia. Este tratamiento solo se activa <em>previo consentimiento expreso</em> del

@@ -20,22 +20,22 @@ export default function OnePagerPage() {
             @page { size: A4; margin: 14mm 14mm 12mm 14mm; }
             @media print {
               nav, header, footer, .no-print { display: none !important; }
-              body { background: #EFE8D9 !important; }
+              body { background: #f7f7f4 !important; }
               main { padding-top: 0 !important; }
               .one-pager { padding: 0 !important; }
             }
             .one-pager {
-              font-family: 'IBM Plex Sans', system-ui, sans-serif;
-              color: #111110;
-              background: #EFE8D9;
+              font-family: var(--font-body), 'Inter', system-ui, sans-serif;
+              color: #26251e;
+              background: #f7f7f4;
               padding: 48px 56px;
               max-width: 900px;
               margin: 0 auto;
             }
-            .op-serif { font-family: 'Fraunces', 'Times New Roman', serif; }
-            .op-mono { font-family: 'JetBrains Mono', monospace; letter-spacing: 0.12em; text-transform: uppercase; }
-            .op-rule { border-top: 1px solid #111110; }
-            .op-accent { background: #1F6F5C; color: #EFE8D9; padding: 1px 6px; border-radius: 2px; }
+            .op-serif { font-family: var(--font-display), 'Inter', system-ui, sans-serif; letter-spacing: -0.02em; }
+            .op-mono { font-family: var(--font-mono), 'IBM Plex Mono', monospace; letter-spacing: 0.02em; }
+            .op-rule { border-top: 1px solid #cfcdc4; }
+            .op-accent { background: #f54e00; color: #ffffff; padding: 1px 6px; border-radius: 4px; }
           `,
         }}
       />
@@ -57,7 +57,7 @@ export default function OnePagerPage() {
 
       {/* Propuesta de valor */}
       <section className="mt-5">
-        <p className="op-serif italic text-[15px] leading-relaxed">
+        <p className="op-serif text-[15px] leading-relaxed">
           El perfil que las organizaciones sanitarias y las consultoras buscan cuando necesitan que alguien
           entienda el problema antes de proponer la solución.
         </p>

@@ -124,7 +124,7 @@ export default function SobreMiPage() {
                 <a href="/contacto" className="btn-ghost">Contactar</a>
               </div>
               <div>
-                <div className="eyebrow mb-3">CV · tres versiones</div>
+                <div className="eyebrow mb-3">CV · dos versiones</div>
                 <CVDownloader />
               </div>
             </div>
@@ -141,22 +141,22 @@ export default function SobreMiPage() {
             <div className="section-index">№ 02 — Lo que aporto</div>
           </div>
           <div className="col-span-12 md:col-span-9 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
-            <div className="border-t border-ink pt-5">
+            <div className="border-t border-hairline pt-5">
               <div className="eyebrow mb-3">01</div>
               <h3 className="font-display text-xl text-ink mb-2">Criterio médico para cuestionar la IA</h3>
               <p className="text-ink-2 text-sm leading-relaxed">Evalúo y cuestiono soluciones de IA en salud antes de desplegarlas. El criterio clínico que solo se construye con turnos en urgencias, medicina interna y atención primaria.</p>
             </div>
-            <div className="border-t border-ink pt-5">
+            <div className="border-t border-hairline pt-5">
               <div className="eyebrow mb-3">02</div>
               <h3 className="font-display text-xl text-ink mb-2">Capacidad técnica real</h3>
               <p className="text-ink-2 text-sm leading-relaxed">Me siento con un equipo de ingenieros y entiendo exactamente lo que construyen. Python, Machine Learning, XAI/SHAP, FHIR. No es teoría: hay proyectos públicos con código.</p>
             </div>
-            <div className="border-t border-ink pt-5">
+            <div className="border-t border-hairline pt-5">
               <div className="eyebrow mb-3">03</div>
               <h3 className="font-display text-xl text-ink mb-2">Marco regulatorio europeo</h3>
               <p className="text-ink-2 text-sm leading-relaxed">Conocimiento operativo del EU AI Act, MDR, SaMD, ISO 13485, RGPD y EHDS. Para que las decisiones sean sostenibles más allá del piloto.</p>
             </div>
-            <div className="border-t border-ink pt-5">
+            <div className="border-t border-hairline pt-5">
               <div className="eyebrow mb-3">04</div>
               <h3 className="font-display text-xl text-ink mb-2">Traducción entre tres mundos</h3>
               <p className="text-ink-2 text-sm leading-relaxed">Ingenieros, comité médico y compliance regulatorio. Hablo los tres idiomas sin que se pierda nada en el camino — la capacidad que rara vez coincide en la misma persona.</p>
@@ -169,22 +169,22 @@ export default function SobreMiPage() {
             <div className="section-index">№ 03 — Áreas de impacto</div>
           </div>
           <div className="col-span-12 md:col-span-9 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
-            <div className="border-t border-ink pt-5">
+            <div className="border-t border-hairline pt-5">
               <div className="eyebrow mb-3">A</div>
               <h3 className="font-display text-xl text-ink mb-2">Clinical AI · CDSS · Healthcare Data Analytics</h3>
               <p className="text-ink-2 text-sm leading-relaxed">Diseño, validación y despliegue de sistemas de IA en salud con métricas clínicamente honestas y explicabilidad real, no decorativa.</p>
             </div>
-            <div className="border-t border-ink pt-5">
+            <div className="border-t border-hairline pt-5">
               <div className="eyebrow mb-3">B</div>
               <h3 className="font-display text-xl text-ink mb-2">EU AI Act · MDR · SaMD · ISO 13485</h3>
               <p className="text-ink-2 text-sm leading-relaxed">Clasificación de riesgo bajo el Reglamento 2024/1689, análisis de conformidad y hoja de ruta para que el sistema pase el primer filtro serio del mercado europeo.</p>
             </div>
-            <div className="border-t border-ink pt-5">
+            <div className="border-t border-hairline pt-5">
               <div className="eyebrow mb-3">C</div>
               <h3 className="font-display text-xl text-ink mb-2">Medical Affairs · validación clínica</h3>
               <p className="text-ink-2 text-sm leading-relaxed">Encaje asistencial real con facultativos, diseño de evidencia clínica y rediseño de flujos. Lo que distingue un producto que se usa de uno que se mantiene archivado.</p>
             </div>
-            <div className="border-t border-ink pt-5">
+            <div className="border-t border-hairline pt-5">
               <div className="eyebrow mb-3">D</div>
               <h3 className="font-display text-xl text-ink mb-2">Interoperabilidad sanitaria · EHDS</h3>
               <p className="text-ink-2 text-sm leading-relaxed">HL7 FHIR, SNOMED-CT, LOINC y preparación EHDS. Una solución que no habla con la HCE no es una solución, es un demo.</p>

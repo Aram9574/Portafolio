@@ -85,7 +85,7 @@ export default function BlogPostPage({ params }: Props) {
                 <div className="caption mt-1">{post.readingTime} · lectura</div>
                 <Link
                   href="/blog"
-                  className="ed-link font-mono text-xs uppercase tracking-widest mt-6 inline-block"
+                  className="ed-link font-mono text-xs mt-6 inline-block"
                 >
                   ← Todos los artículos
                 </Link>

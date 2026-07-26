@@ -131,7 +131,7 @@ export default function CredencialesPage() {
                       {cert.note}
                     </p>
                   )}
-                  <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted font-mono uppercase tracking-widest">
+                  <div className="mt-4 flex flex-wrap items-center gap-x-4 gap-y-1 text-xs text-muted font-mono">
                     {cert.year && <span>{cert.year}</span>}
                     {cert.credentialId && <span>ID · {cert.credentialId}</span>}
                   </div>
@@ -179,7 +179,7 @@ export default function CredencialesPage() {
                     key={`note-${cert.issuer}-${cert.title}`}
                     className="text-xs text-ink-2 border-t border-rule pt-3"
                   >
-                    <span className="font-mono uppercase tracking-widest text-[0.65rem] text-muted">
+                    <span className="font-mono text-[0.65rem] text-muted">
                       {cert.title}
                     </span>
                     {cert.note && (

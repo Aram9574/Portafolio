@@ -166,7 +166,7 @@ export default function PosicionesPage() {
           {conditions.map((c) => {
             const Icon = c.icon
             return (
-              <li key={c.label} className="border-t border-ink pt-5 flex items-start gap-3">
+              <li key={c.label} className="border-t border-hairline pt-5 flex items-start gap-3">
                 <Icon className="w-5 h-5 text-ink shrink-0 mt-0.5" aria-hidden="true" />
                 <span className="text-ink-2 text-sm leading-relaxed">{c.label}</span>
               </li>
@@ -177,7 +177,7 @@ export default function PosicionesPage() {
 
       {/* CTA final */}
       <Section id="cta-final">
-        <div className="border-t border-ink pt-10 text-center" data-aos="fade-up">
+        <div className="border-t border-hairline pt-10 text-center" data-aos="fade-up">
           <p className="text-ink-2 mb-4">¿Tu equipo está abriendo una vacante donde encaja este perfil?</p>
           <div className="flex flex-wrap justify-center gap-4">
             <a

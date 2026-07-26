@@ -30,7 +30,7 @@ export default function Breadcrumbs({ items }: { items: Item[] }) {
     <>
       <nav
         aria-label="Breadcrumb"
-        className="font-mono text-[0.7rem] uppercase tracking-widest text-ink-2 mb-4"
+        className="font-mono text-[0.7rem] text-ink-2 mb-4"
       >
         <ol className="flex flex-wrap items-center gap-x-2 gap-y-1">
           {full.map((it, i) => (

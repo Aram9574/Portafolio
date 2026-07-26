@@ -38,7 +38,7 @@ export default function PublicacionesPage() {
       <InsightsMetrics />
 
       {featured && (
-        <div className="mb-16 border-t border-ink pt-10">
+        <div className="mb-16 border-t border-hairline pt-10">
           <div className="grid grid-cols-12 gap-y-8 md:gap-x-8 items-end">
             <div className="col-span-12 md:col-span-5">
               <div className="eyebrow mb-4">Post destacado</div>
@@ -47,7 +47,7 @@ export default function PublicacionesPage() {
                 Impresiones en LinkedIn · 79 reacciones · 14 comentarios · 9 compartidos.
               </p>
             </div>
-            <div className="col-span-12 md:col-span-7 md:border-l md:border-ink md:pl-8">
+            <div className="col-span-12 md:col-span-7 md:border-l md:border-hairline md:pl-8">
               <h3 className="display-m">{featured.title}</h3>
               <div className="text-xs text-muted mt-3 font-mono">
                 {featured.type} · {featured.venue} · {featured.year}
@@ -64,7 +64,7 @@ export default function PublicacionesPage() {
                   href={featured.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="ed-link font-mono text-sm uppercase tracking-widest"
+                  className="ed-link font-mono text-sm"
                 >
                   Leer en LinkedIn →
                 </a>

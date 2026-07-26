@@ -97,7 +97,7 @@ export default function ScrubbedMetric({
   return (
     <div
       ref={ref}
-      className={`border-l-4 border-ink pl-6 py-2 ${className}`}
+      className={`border-l-4 border-hairline pl-6 py-2 ${className}`}
       style={{
         opacity: visible || reduced ? 1 : 0,
         transform: visible || reduced ? 'translateY(0)' : 'translateY(16px)',

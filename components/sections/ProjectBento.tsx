@@ -29,7 +29,7 @@ export default function ProjectBento({ projects }: { projects: any[] }) {
                 href={mainProject.links.repo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 border border-rule text-ink-2 hover:text-ink hover:border-ink transition"
+                className="p-2 border border-rule text-ink-2 hover:text-ink hover:border-hairline transition"
                 aria-label="Repositorio"
               >
                 <GithubLogo weight="light" className="w-4 h-4" />
@@ -40,7 +40,7 @@ export default function ProjectBento({ projects }: { projects: any[] }) {
                 href={mainProject.links.demo}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="p-2 border border-rule text-ink-2 hover:text-ink hover:border-ink transition"
+                className="p-2 border border-rule text-ink-2 hover:text-ink hover:border-hairline transition"
                 aria-label="Demo"
               >
                 <ArrowSquareOut weight="light" className="w-4 h-4" />
@@ -76,7 +76,7 @@ export default function ProjectBento({ projects }: { projects: any[] }) {
             {mainProject.tags.slice(0, 4).map((tag: string) => (
               <span
                 key={tag}
-                className="px-2 py-1 border border-rule text-[0.65rem] font-mono uppercase tracking-wider text-muted"
+                className="px-2 py-1 border border-rule text-[0.65rem] font-mono text-muted"
               >
                 {tag}
               </span>
@@ -110,7 +110,7 @@ export default function ProjectBento({ projects }: { projects: any[] }) {
                     href={project.links.repo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-1 border border-rule text-ink-2 hover:text-ink hover:border-ink transition"
+                    className="p-1 border border-rule text-ink-2 hover:text-ink hover:border-hairline transition"
                     aria-label="Repositorio"
                   >
                     <GithubLogo weight="light" className="w-3.5 h-3.5" />
@@ -121,7 +121,7 @@ export default function ProjectBento({ projects }: { projects: any[] }) {
                     href={project.links.demo}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-1 border border-rule text-ink-2 hover:text-ink hover:border-ink transition"
+                    className="p-1 border border-rule text-ink-2 hover:text-ink hover:border-hairline transition"
                     aria-label="Demo"
                   >
                     <ArrowSquareOut weight="light" className="w-3.5 h-3.5" />
@@ -155,7 +155,7 @@ export default function ProjectBento({ projects }: { projects: any[] }) {
                 {project.tags.slice(0, 2).map((tag: string) => (
                   <span
                     key={tag}
-                    className="text-[0.6rem] uppercase tracking-wider text-muted font-mono"
+                    className="text-[0.6rem] text-muted font-mono"
                   >
                     {tag}
                   </span>
@@ -184,7 +184,7 @@ function HoverCard({ children, className = '' }: { children: React.ReactNode; cl
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
-      className={`relative border border-ink bg-paper overflow-hidden transition-colors ${className}`}
+      className={`relative border border-hairline bg-paper overflow-hidden transition-colors ${className}`}
     >
       {isHovered && (
         <div

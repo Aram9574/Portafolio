@@ -109,7 +109,7 @@ export default function PostConsultoras() {
         2024/1689). No es opcional.
       </p>
 
-      <div className="not-prose my-12 border-2 border-ink p-6 md:p-8 bg-paper">
+      <div className="not-prose my-12 border-2 border-hairline p-6 md:p-8 bg-paper">
         <div className="eyebrow mb-3">Regla simple</div>
         <p className="display-m text-xl leading-snug">
           Si la propuesta comercial no responde a estas siete preguntas de
@@ -137,7 +137,7 @@ export default function PostConsultoras() {
         aterriza en un hospital real.
       </p>
 
-      <div className="mt-16 border-t-2 border-ink pt-10">
+      <div className="mt-16 border-t-2 border-hairline pt-10">
         <div className="eyebrow mb-4">Para partners y directores de proyecto</div>
         <h3 className="display-m mb-4">
           Si lideras un proyecto de IA clínica en Crowe, Deloitte, Accenture o

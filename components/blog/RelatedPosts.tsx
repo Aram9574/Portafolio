@@ -39,13 +39,13 @@ export default function RelatedPosts({ currentSlug, currentTags }: { currentSlug
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t-2 border-ink">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border-t-2 border-hairline">
           {related.map((post, i) => (
             <article
               key={post.slug}
               className={`py-8 md:py-10 md:px-6 ${i > 0 ? 'border-t border-rule md:border-t-0 md:border-l' : ''}`}
             >
-              <div className="font-mono text-[0.7rem] uppercase tracking-widest text-ink-2 mb-3">
+              <div className="font-mono text-[0.7rem] text-ink-2 mb-3">
                 {new Date(post.date).toLocaleDateString('es-ES', {
                   day: '2-digit',
                   month: 'short',
@@ -67,7 +67,7 @@ export default function RelatedPosts({ currentSlug, currentTags }: { currentSlug
               </div>
               <Link
                 href={`/blog/${post.slug}`}
-                className="mt-5 inline-block ed-link font-mono text-xs uppercase tracking-widest"
+                className="mt-5 inline-block ed-link font-mono text-xs"
               >
                 Leer →
               </Link>
