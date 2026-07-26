@@ -9,7 +9,6 @@ import Newsletter from '@/components/sections/Newsletter';
 import InsightsMetrics from '@/components/sections/InsightsMetrics';
 import CVDownloader from '@/components/ui/CVDownloader';
 import { projects } from '@/lib/data/projects';
-import { services } from '@/lib/data/services';
 import { publications } from '@/lib/data/publications';
 import { testimonials } from '@/lib/data/testimonials';
 import { blogPosts } from '@/lib/data/blog';
@@ -311,10 +310,10 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {testimonials && testimonials.slice(1).length > 0 && (
+      {testimonials && testimonials.length > 0 && (
         <Section id="testimonios" index="№ 07 — Testimonios" title="Voces">
           <div className="grid md:grid-cols-2 gap-6">
-            {testimonials.slice(1).map((t, index) => (
+            {testimonials.map((t, index) => (
               <div data-aos="zoom-in-up" data-aos-delay={150 * (index + 1)} key={t.name + index}>
                 <Testimonial quote={t.quote} name={t.name} role={t.role} />
               </div>
@@ -347,7 +346,7 @@ export default function HomePage() {
                   <a href="/posiciones" className="ed-link font-mono text-xs uppercase tracking-widest">Ver roles que me interesan →</a>
                 </div>
                 <div>
-                  <div className="eyebrow mb-3">CV en tres versiones</div>
+                  <div className="eyebrow mb-3">CV en dos versiones</div>
                   <CVDownloader variant="compact" />
                 </div>
               </div>

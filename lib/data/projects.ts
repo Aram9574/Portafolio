@@ -30,7 +30,7 @@ export const projects: Project[] = [
     tags: ['Python', 'FastAPI', 'Streamlit', 'Claude API', 'WeasyPrint', 'Docker', 'EU AI Act'],
     links: {
       demo: 'https://huggingface.co/spaces/aram1585/clinai-classifier',
-      repo: 'https://github.com/aramzakzuk/clinai-classifier'
+      repo: 'https://github.com/Aram9574/clinai-classifier'
     }
   },
   {
@@ -61,16 +61,5 @@ export const projects: Project[] = [
     metric: '30–40%',
     metricLabel: '↓ varianza vs baseline',
     tags: ['Python', 'Time Series', 'Healthcare Data Analytics', 'Hospital Operations']
-  },
-  {
-    slug: 'erp-geriatrico-fhir',
-    title: 'GeriCare — Prototipo ERP con HL7/FHIR R4',
-    shortDescription: 'Prototipo de capa de interoperabilidad basada en HL7/FHIR R4 para centralización de datos clínicos en residencias geriátricas. Proyecto personal.',
-    context: 'Explorar la modelación de recursos FHIR R4 aplicada a un ERP sanitario para entornos geriátricos con datos fragmentados entre especialistas.',
-    solution: 'Back-end en Django modelado sobre FHIR R4 con módulos de medicación, constantes vitales y perfiles de paciente. Prototipo de interoperabilidad.',
-    impact: 'Prototipo de demostración técnica sobre estándares FHIR. No desplegado en producción ni validado en entornos clínicos reales.',
-    tipo: 'academico',
-    tags: ['Python', 'Django', 'PostgreSQL', 'HL7/FHIR R4', 'Prototipo'],
-    links: { repo: 'https://github.com/Aram9574/GeriCare' }
   }
 ];

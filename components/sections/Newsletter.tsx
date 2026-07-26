@@ -57,7 +57,7 @@ export default function Newsletter() {
                 <div className="border border-[var(--ink)] bg-[var(--paper)] p-8">
                   <CheckCircle weight="light" className="w-10 h-10 text-[var(--ink)] mb-4" />
                   <h3 className="display-m mb-3">Suscripción confirmada.</h3>
-                  <p className="caption normal-case tracking-normal italic" style={{fontSize: '0.9rem'}}>"La mejor forma de predecir el futuro es construyéndolo."</p>
+                  <p className="caption normal-case tracking-normal italic" style={{fontSize: '0.9rem'}}>&ldquo;La mejor forma de predecir el futuro es construyéndolo.&rdquo;</p>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-4">

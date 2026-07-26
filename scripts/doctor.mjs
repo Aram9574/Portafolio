@@ -32,8 +32,8 @@ function parseEnvFile(file) {
 try {
   const nodeVer = process.versions.node
   const major = parseInt(nodeVer.split('.')[0], 10)
-  if (major >= 18 && major < 22) ok(`Node ${nodeVer} (compatible)`) 
-  else warn(`Node ${nodeVer} detectado. Recomendado Node >=18 <22 (usa .nvmrc: 20)`) 
+  if (major >= 20) ok(`Node ${nodeVer} (compatible)`)
+  else warn(`Node ${nodeVer} detectado. Recomendado Node >=20 (usa .nvmrc: 20)`)
 } catch (e) { warn('No se pudo detectar versión de Node') }
 
 // 2) Yarn version

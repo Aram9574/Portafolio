@@ -22,7 +22,7 @@ He is a physician, not a software developer nor a data scientist. His technical 
 
 These are personal projects used to validate his technical depth as a consultant, not products nor services offered.
 
-- [ClinAI Classifier](https://huggingface.co/spaces/aram1585/clinai-classifier): open-source tool that classifies healthcare AI systems under the EU AI Act (Regulation 2024/1689). Two-stage pipeline (Claude Sonnet 4.5 agent + static rule engine), returns risk level, Annex III categories, Article 5 flags, legal basis and SaMD flag. Code: https://github.com/aramzakzuk/clinai-classifier
+- [ClinAI Classifier](https://huggingface.co/spaces/aram1585/clinai-classifier): open-source tool that classifies healthcare AI systems under the EU AI Act (Regulation 2024/1689). Two-stage pipeline (Claude Sonnet 4.5 agent + static rule engine), returns risk level, Annex III categories, Article 5 flags, legal basis and SaMD flag. Code: https://github.com/Aram9574/clinai-classifier
 - [Diabetes risk CDSS (Master thesis)](https://huggingface.co/spaces/aram1585/diabetes-brfss-cdss): Random Forest on CDC BRFSS dataset (253,680 records), AUC-ROC 0.942, XAI/SHAP explainability, RGPD + EU AI Act + EHDS compliance by design.
 - [Hospital bed occupancy prediction](https://alejandrozakzuk.com/proyectos): demand model with estimated 30–40% variance reduction over a naive baseline, using clinical and operational variables.
 
