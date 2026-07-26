@@ -25,9 +25,9 @@ export default function PostEHDS() {
         es el siguiente.
       </p>
 
-      <div className="not-prose my-8 border border-ink">
+      <div className="not-prose my-8 border border-hairline">
         <table className="w-full text-sm">
-          <thead className="bg-ink text-bone font-mono uppercase tracking-widest text-[0.7rem]">
+          <thead className="bg-ink text-bone font-mono text-[0.7rem]">
             <tr>
               <th className="text-left px-4 py-3 border-r border-bone/20">Fase</th>
               <th className="text-left px-4 py-3 border-r border-bone/20">Año</th>
@@ -172,7 +172,7 @@ export default function PostEHDS() {
         anexo RGPD llegará tarde a 2027.
       </p>
 
-      <div className="mt-16 border-t-2 border-ink pt-10">
+      <div className="mt-16 border-t-2 border-hairline pt-10">
         <div className="eyebrow mb-4">Siguiente paso</div>
         <h3 className="display-m mb-4">
           ¿Tu centro tiene un roadmap EHDS real o una intención de roadmap?

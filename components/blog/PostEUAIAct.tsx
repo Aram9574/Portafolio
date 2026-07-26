@@ -72,9 +72,9 @@ export default function PostEUAIAct() {
         CDSS serios.
       </p>
 
-      <div className="not-prose my-8 border border-ink">
+      <div className="not-prose my-8 border border-hairline">
         <table className="w-full text-sm">
-          <thead className="bg-ink text-bone font-mono uppercase tracking-widest text-[0.7rem]">
+          <thead className="bg-ink text-bone font-mono text-[0.7rem]">
             <tr>
               <th className="text-left px-4 py-3 border-r border-bone/20">Tipo de CDSS</th>
               <th className="text-left px-4 py-3 border-r border-bone/20">Clase MDR</th>
@@ -154,7 +154,7 @@ export default function PostEUAIAct() {
         asuntos regulatorios de fabricantes, consultoras y hospitales.
       </p>
 
-      <div className="mt-16 border-t-2 border-ink pt-10">
+      <div className="mt-16 border-t-2 border-hairline pt-10">
         <div className="eyebrow mb-4">Siguiente paso</div>
         <h3 className="display-m mb-4">
           ¿Has clasificado ya los CDSS que tienes en producción?

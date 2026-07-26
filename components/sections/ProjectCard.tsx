@@ -15,11 +15,11 @@ export default function ProjectCard({
   tipo?: 'estrella' | 'academico';
 }) {
   return (
-    <Card className="hover:border-ink transition">
+    <Card className="h-full flex flex-col">
       <div className="flex items-start justify-between gap-3 mb-2">
-        <h3 className="text-xl font-semibold text-ink">{title}</h3>
+        <h3 className="text-xl font-semibold text-ink" style={{ letterSpacing: '-0.02em' }}>{title}</h3>
         {tipo === 'academico' && (
-          <span className="shrink-0 px-2 py-0.5 text-xs font-medium bg-paper text-ink-2 border border-rule font-mono uppercase tracking-wide">
+          <span className="shrink-0 px-3 py-1 text-xs font-medium bg-surface-strong text-ink rounded-full">
             Académico
           </span>
         )}

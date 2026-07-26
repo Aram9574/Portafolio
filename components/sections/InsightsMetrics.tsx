@@ -14,21 +14,21 @@ export default function InsightsMetrics() {
   return (
     <div className="mb-16">
       <div className="grid grid-cols-12 gap-y-10 md:gap-x-8 mb-10">
-        <div className="col-span-12 md:col-span-4 border-t border-ink pt-6">
+        <div className="col-span-12 md:col-span-4 border-t border-hairline pt-6">
           <div className="eyebrow mb-4">Impresiones acumuladas</div>
           <div className="metric-numeral font-display">+15.000</div>
           <p className="caption mt-3">
             Alcance acumulado en publicaciones de LinkedIn durante 2025–2026 sobre Salud Digital, IA clínica y regulación.
           </p>
         </div>
-        <div className="col-span-12 md:col-span-4 border-t border-ink pt-6">
+        <div className="col-span-12 md:col-span-4 border-t border-hairline pt-6">
           <div className="eyebrow mb-4">Publicaciones</div>
           <div className="metric-numeral font-display">+80</div>
           <p className="caption mt-3">
             Posts publicados en LinkedIn: análisis de mercado, tesis técnicas, comentario regulatorio y reflexión clínica.
           </p>
         </div>
-        <div className="col-span-12 md:col-span-4 border-t border-ink pt-6">
+        <div className="col-span-12 md:col-span-4 border-t border-hairline pt-6">
           <div className="eyebrow mb-4">Seguidores profesionales</div>
           <div className="metric-numeral font-display">2.054</div>
           <p className="caption mt-3">
@@ -51,7 +51,7 @@ export default function InsightsMetrics() {
           href={SOCIAL.linkedin}
           target="_blank"
           rel="noopener noreferrer"
-          className="ed-link font-mono text-sm uppercase tracking-widest"
+          className="ed-link font-mono text-sm"
         >
           Seguir en LinkedIn →
         </a>

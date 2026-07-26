@@ -19,7 +19,7 @@ export default function CopyButton({ text }: { text: string }) {
   return (
     <button
       onClick={copy}
-      className="ml-2 p-1.5 border border-rule bg-paper hover:border-ink transition-colors group"
+      className="ml-2 p-1.5 border border-rule bg-paper hover:border-hairline transition-colors group"
       title="Copiar al portapapeles"
     >
       {copied ? (

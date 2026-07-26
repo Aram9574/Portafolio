@@ -8,7 +8,7 @@ import { analyticsEvents } from '@/lib/analytics'
 export function Footer() {
   const year = 2026
   return (
-    <footer className="mt-20 border-t border-ink bg-paper">
+    <footer className="mt-20 border-t border-hairline bg-paper">
       <div className="container grid grid-cols-1 md:grid-cols-4 gap-10 py-12">
         <div>
           <h2 className="text-ink font-semibold mb-3 text-base">Contacto</h2>
@@ -50,8 +50,8 @@ export function Footer() {
           <FooterNewsletterForm />
         </div>
       </div>
-      <div className="border-t border-ink/20 py-8">
-        <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-xs text-ink-2 mb-4 font-medium uppercase tracking-wider">
+      <div className="border-t border-hairline py-8">
+        <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm text-muted mb-4 font-medium">
           <li><Link className="hover:text-ink transition" href="/en">English</Link></li>
           <li><a className="hover:text-ink transition" href="/blog/rss.xml">RSS</a></li>
           <li><Link className="hover:text-ink transition" href="/legal/privacidad">Privacidad</Link></li>
@@ -109,13 +109,13 @@ function FooterNewsletterForm() {
         placeholder="tu@email.com"
         value={email}
         onChange={(e) => setEmail(e.target.value)}
-        className="w-full pl-3 pr-14 py-2.5 bg-bone border-2 border-ink focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-1 focus:ring-offset-paper text-sm text-ink placeholder:text-ink-2/70 transition"
+        className="w-full pl-3 pr-14 py-2.5 bg-paper border border-hairline-strong rounded-md focus:outline-none focus:border-hairline text-sm text-ink placeholder:text-muted-2 transition"
       />
       <button
         type="submit"
         aria-label="Suscribirse"
         disabled={status === 'loading'}
-        className="absolute right-0 top-0 bottom-0 px-4 bg-ink text-bone flex items-center justify-center hover:opacity-90 transition disabled:opacity-50"
+        className="absolute right-1 top-1 bottom-1 px-3 bg-ink text-bone rounded flex items-center justify-center hover:bg-[#1c1b16] transition disabled:opacity-50"
       >
         {status === 'loading' ? (
           <CircleNotch weight="light" className="w-3.5 h-3.5 animate-spin" />

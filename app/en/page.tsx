@@ -89,7 +89,7 @@ export default function AboutEnPage() {
             <h1 className="display-xl mb-6">
               Aram Zakzuk, MD.
               <br />
-              <span className="italic">Clinical AI Specialist.</span>
+              <span>Clinical AI Specialist.</span>
             </h1>
             <p className="lead max-w-3xl">
               Medical doctor with 6 years of real clinical practice and dual master in AI applied to Healthcare
@@ -150,7 +150,7 @@ export default function AboutEnPage() {
             <div className="caption mt-4">Four axes</div>
           </div>
           <div className="col-span-12 md:col-span-9 grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-10">
-            <div className="border-t border-ink pt-5">
+            <div className="border-t border-hairline pt-5">
               <div className="eyebrow mb-3">01</div>
               <h3 className="font-display text-xl text-ink mb-2">Clinical AI evaluation &amp; adoption strategy</h3>
               <p className="text-ink-2 text-sm leading-relaxed">
@@ -158,7 +158,7 @@ export default function AboutEnPage() {
                 hospital environments.
               </p>
             </div>
-            <div className="border-t border-ink pt-5">
+            <div className="border-t border-hairline pt-5">
               <div className="eyebrow mb-3">02</div>
               <h3 className="font-display text-xl text-ink mb-2">EU regulatory advisory — AI Act · MDR · SaMD</h3>
               <p className="text-ink-2 text-sm leading-relaxed">
@@ -166,7 +166,7 @@ export default function AboutEnPage() {
                 HealthTech and MedTech projects.
               </p>
             </div>
-            <div className="border-t border-ink pt-5">
+            <div className="border-t border-hairline pt-5">
               <div className="eyebrow mb-3">03</div>
               <h3 className="font-display text-xl text-ink mb-2">Clinical viability of CDSS, data &amp; interoperability</h3>
               <p className="text-ink-2 text-sm leading-relaxed">
@@ -174,7 +174,7 @@ export default function AboutEnPage() {
                 healthcare interoperability (HL7 FHIR · SNOMED-CT · EHDS).
               </p>
             </div>
-            <div className="border-t border-ink pt-5">
+            <div className="border-t border-hairline pt-5">
               <div className="eyebrow mb-3">04</div>
               <h3 className="font-display text-xl text-ink mb-2">Clinical–technical translation</h3>
               <p className="text-ink-2 text-sm leading-relaxed">

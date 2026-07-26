@@ -60,12 +60,12 @@ export default function PublicationsBrowser({ publications }:{ publications: Pub
       <div className="flex flex-wrap items-center gap-3 mb-4">
         <div className="flex gap-2">
           {TABS.map(t => (
-            <button key={t.key} onClick={() => setTab(t.key)} className={`px-3 py-1 text-sm border font-mono transition-colors ${tab===t.key ? 'border-ink bg-ink text-bone' : 'border-rule text-ink-2 bg-paper hover:text-ink hover:border-ink'}`}>
+            <button key={t.key} onClick={() => setTab(t.key)} className={`px-3 py-1 text-sm border font-mono transition-colors ${tab===t.key ? 'border-hairline bg-ink text-bone' : 'border-rule text-ink-2 bg-paper hover:text-ink hover:border-hairline'}`}>
               {t.label}
             </button>
           ))}
         </div>
-        <input value={q} onChange={e=>setQ(e.target.value)} placeholder="Buscar..." className="ml-auto w-full md:w-64 bg-transparent border border-rule text-ink placeholder:text-muted focus:outline-none focus:border-ink font-mono px-3 py-2" />
+        <input value={q} onChange={e=>setQ(e.target.value)} placeholder="Buscar..." className="ml-auto w-full md:w-64 bg-transparent border border-rule text-ink placeholder:text-muted focus:outline-none focus:border-hairline font-mono px-3 py-2" />
       </div>
 
       <div className="mb-8 border-t border-rule pt-4 flex flex-wrap items-center gap-y-3 gap-x-4">
@@ -79,10 +79,10 @@ export default function PublicationsBrowser({ publications }:{ publications: Pub
                 type="button"
                 onClick={() => toggleTopic(topic)}
                 aria-pressed={active}
-                className={`px-3 py-1.5 text-xs font-mono uppercase tracking-widest border transition-colors ${
+                className={`px-3 py-1.5 text-xs font-mono border transition-colors ${
                   active
-                    ? 'border-ink bg-ink text-bone'
-                    : 'border-rule text-ink-2 bg-paper hover:text-ink hover:border-ink'
+                    ? 'border-hairline bg-ink text-bone'
+                    : 'border-rule text-ink-2 bg-paper hover:text-ink hover:border-hairline'
                 }`}
               >
                 {topic}
@@ -93,7 +93,7 @@ export default function PublicationsBrowser({ publications }:{ publications: Pub
             <button
               type="button"
               onClick={() => setActiveTopics([])}
-              className="px-3 py-1.5 text-xs font-mono uppercase tracking-widest text-muted hover:text-ink transition-colors"
+              className="px-3 py-1.5 text-xs font-mono text-muted hover:text-ink transition-colors"
             >
               Limpiar ×
             </button>

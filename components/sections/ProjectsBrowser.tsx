@@ -77,7 +77,7 @@ export default function ProjectsBrowser({ projects }: { projects: Project[] }) {
             value={q}
             onChange={(e)=>handleSearch(e.target.value)}
             placeholder="Buscar proyectos..."
-            className="w-full bg-transparent border border-rule text-ink placeholder:text-muted focus:outline-none focus:border-ink font-mono px-3 py-2"
+            className="w-full bg-transparent border border-rule text-ink placeholder:text-muted focus:outline-none focus:border-hairline font-mono px-3 py-2"
           />
         </div>
       </div>

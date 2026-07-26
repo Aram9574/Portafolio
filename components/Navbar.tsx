@@ -17,27 +17,40 @@ export function Navbar() {
     else document.body.style.overflow = '';
     return () => { document.body.style.overflow = '' }
   }, [open])
+  const navLinks = [
+    { href: '/#home', label: 'Inicio' },
+    { href: '/sobre-mi', label: 'Perfil' },
+    { href: '/proyectos', label: 'Proyectos' },
+    { href: '/publicaciones', label: 'Insights' },
+    { href: '/blog', label: 'Blog' },
+    { href: '/credenciales', label: 'Credenciales' },
+    { href: '/posiciones', label: 'Posiciones' },
+    { href: '/contacto', label: 'Contacto' },
+  ] as const
+  const isActive = (href: string) =>
+    href === '/#home' ? pathname === '/' : pathname?.startsWith(href.split('#')[0])
   return (
-    <header className="fixed top-0 left-0 right-0 z-40 border-b border-ink bg-bone">
+    <header className="fixed top-0 left-0 right-0 z-40 border-b border-hairline bg-bone/86 backdrop-blur">
       <div className="container flex h-16 items-center justify-between">
-        <Link href="/" className="font-display text-lg tracking-tight text-ink italic">
-          Aram Zakzuk<span className="not-italic font-mono text-[0.6rem] tracking-widest uppercase ml-2 text-muted">MD · AI</span>
+        <Link href="/" className="font-display text-lg font-medium tracking-tight text-ink whitespace-nowrap">
+          Aram Zakzuk<span className="hidden xl:inline font-mono text-[0.7rem] tracking-normal ml-2 text-muted-2">Médico · IA en salud</span>
         </Link>
-        <nav className="hidden md:flex items-center gap-8 font-mono text-[0.72rem] tracking-widest uppercase text-ink">
-          <Link href="/#home" className="hover:text-muted transition-colors">Inicio</Link>
-          <Link href="/sobre-mi" className="hover:text-muted transition-colors">Perfil</Link>
-          <Link href="/proyectos" className="hover:text-muted transition-colors">Proyectos</Link>
-          <Link href="/publicaciones" className="hover:text-muted transition-colors">Insights</Link>
-          <Link href="/blog" className="hover:text-muted transition-colors">Blog</Link>
-          <Link href="/credenciales" className="hover:text-muted transition-colors">Credenciales</Link>
-          <Link href="/posiciones" className="hover:text-muted transition-colors">Posiciones</Link>
-          <Link href="/contacto" className="hover:text-muted transition-colors">Contacto</Link>
+        <nav className="hidden lg:flex items-center gap-6 text-[0.95rem] text-muted">
+          {navLinks.map((l) => (
+            <Link
+              key={l.href}
+              href={l.href as any}
+              className={`transition-colors hover:text-ink ${isActive(l.href) ? 'text-ink' : ''}`}
+            >
+              {l.label}
+            </Link>
+          ))}
         </nav>
-        <div className="hidden md:flex items-center gap-4">
+        <div className="hidden lg:flex items-center gap-4">
           <Link
             href={langHref}
             aria-label={langAria}
-            className="font-mono text-[0.72rem] tracking-widest uppercase text-ink hover:text-muted transition-colors border border-ink px-2 py-0.5"
+            className="text-[0.85rem] text-muted hover:text-ink transition-colors"
           >
             {langLabel}
           </Link>
@@ -46,59 +59,60 @@ export function Navbar() {
             target="_blank"
             rel="noreferrer"
             aria-label="GitHub"
-            className="text-ink hover:text-muted transition-colors"
+            className="text-muted hover:text-ink transition-colors"
           >
-            <GithubLogo weight="light" className="w-4 h-4" />
+            <GithubLogo weight="regular" className="w-[18px] h-[18px]" />
           </a>
           <a
             href={SOCIAL.linkedin}
             target="_blank"
             rel="noreferrer"
             aria-label="LinkedIn"
-            className="text-ink hover:text-muted transition-colors"
+            className="text-muted hover:text-ink transition-colors"
           >
-            <LinkedinLogo weight="light" className="w-4 h-4" />
+            <LinkedinLogo weight="regular" className="w-[18px] h-[18px]" />
           </a>
-
         </div>
         <button
-          className="md:hidden inline-flex items-center justify-center border border-ink p-2 text-ink bg-bone"
+          className="lg:hidden inline-flex items-center justify-center rounded-md border border-hairline-strong p-2 text-ink bg-paper"
           aria-label="Abrir menú"
           aria-expanded={open}
           aria-controls="mobile-menu"
           onClick={() => setOpen(v => !v)}
         >
-          {open ? <X weight="light" className="w-5 h-5" /> : <List weight="light" className="w-5 h-5" />}
+          {open ? <X weight="regular" className="w-5 h-5" /> : <List weight="regular" className="w-5 h-5" />}
         </button>
       </div>
       {open && (
-        <div className="md:hidden" id="mobile-menu">
-          <div className="absolute inset-0 top-16 bg-ink/40" onClick={() => setOpen(false)} />
-          <div className="absolute left-0 right-0 top-16 bg-bone border-y border-ink p-6">
-            <nav className="grid gap-1 font-display text-3xl">
-              <Link href="/#home" className="py-2 border-b border-ink hover:italic" onClick={() => setOpen(false)}>Inicio</Link>
-              <Link href="/sobre-mi" className="py-2 border-b border-ink hover:italic" onClick={() => setOpen(false)}>Perfil</Link>
-              <Link href="/proyectos" className="py-2 border-b border-ink hover:italic" onClick={() => setOpen(false)}>Proyectos</Link>
-              <Link href="/publicaciones" className="py-2 border-b border-ink hover:italic" onClick={() => setOpen(false)}>Insights</Link>
-              <Link href="/blog" className="py-2 border-b border-ink hover:italic" onClick={() => setOpen(false)}>Blog</Link>
-              <Link href="/credenciales" className="py-2 border-b border-ink hover:italic" onClick={() => setOpen(false)}>Credenciales</Link>
-              <Link href="/posiciones" className="py-2 border-b border-ink hover:italic" onClick={() => setOpen(false)}>Posiciones</Link>
-              <Link href="/contacto" className="py-2 hover:italic" onClick={() => setOpen(false)}>Contacto</Link>
+        <div className="lg:hidden" id="mobile-menu">
+          <div className="absolute inset-0 top-16 bg-ink/30" onClick={() => setOpen(false)} />
+          <div className="absolute left-0 right-0 top-16 bg-bone border-b border-hairline p-6">
+            <nav className="grid gap-1 text-2xl font-display">
+              {navLinks.map((l, i) => (
+                <Link
+                  key={l.href}
+                  href={l.href as any}
+                  className={`py-2.5 text-ink hover:text-accent transition-colors ${i < navLinks.length - 1 ? 'border-b border-hairline' : ''}`}
+                  onClick={() => setOpen(false)}
+                >
+                  {l.label}
+                </Link>
+              ))}
             </nav>
-            <div className="mt-6 flex items-center gap-4">
+            <div className="mt-6 flex items-center gap-5">
               <Link
                 href={langHref}
                 aria-label={langAria}
                 onClick={() => setOpen(false)}
-                className="font-mono text-xs tracking-widest uppercase text-ink hover:text-muted border border-ink px-2 py-1"
+                className="text-sm text-muted hover:text-ink"
               >
                 {langLabel}
               </Link>
-              <a href={SOCIAL.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="text-ink hover:text-muted">
-                <GithubLogo weight="light" className="w-5 h-5" aria-hidden="true" />
+              <a href={SOCIAL.github} target="_blank" rel="noreferrer" aria-label="GitHub" className="text-muted hover:text-ink">
+                <GithubLogo weight="regular" className="w-5 h-5" aria-hidden="true" />
               </a>
-              <a href={SOCIAL.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-ink hover:text-muted">
-                <LinkedinLogo weight="light" className="w-5 h-5" aria-hidden="true" />
+              <a href={SOCIAL.linkedin} target="_blank" rel="noreferrer" aria-label="LinkedIn" className="text-muted hover:text-ink">
+                <LinkedinLogo weight="regular" className="w-5 h-5" aria-hidden="true" />
               </a>
             </div>
           </div>

@@ -98,8 +98,8 @@ export default function CookiesPage() {
                         <span
                           className={
                             c.type === 'Técnica'
-                              ? 'inline-block border border-ink bg-ink text-bone px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider'
-                              : 'inline-block border border-rule px-2 py-0.5 text-[10px] font-mono uppercase tracking-wider text-ink'
+                              ? 'inline-block border border-hairline bg-ink text-bone px-2 py-0.5 text-[10px] font-mono'
+                              : 'inline-block border border-rule px-2 py-0.5 text-[10px] font-mono text-ink'
                           }
                         >
                           {c.type}
@@ -159,7 +159,7 @@ export default function CookiesPage() {
                   href={b.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="border border-rule px-4 py-3 text-sm text-ink hover:border-ink transition flex items-center justify-between"
+                  className="border border-rule px-4 py-3 text-sm text-ink hover:border-hairline transition flex items-center justify-between"
                 >
                   {b.name}
                   <span aria-hidden className="text-ink-2">→</span>

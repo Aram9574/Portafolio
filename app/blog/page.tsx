@@ -41,7 +41,7 @@ export default function BlogIndexPage() {
       <section id="blog-hero" className="pt-20 pb-20 rule-b">
         <div className="container">
           <div className="grid grid-cols-12 gap-y-10 md:gap-x-8 items-end">
-            <aside className="col-span-12 md:col-span-4 lg:col-span-3 space-y-6 md:border-r md:border-ink md:pr-8 md:self-stretch md:pb-4">
+            <aside className="col-span-12 md:col-span-4 lg:col-span-3 space-y-6 md:border-r md:border-hairline md:pr-8 md:self-stretch md:pb-4">
               <div className="eyebrow">№ 00 / Blog · Editorial</div>
               <div className="caption leading-relaxed">
                 Artículos largos. Pensados para decisores.
@@ -49,7 +49,7 @@ export default function BlogIndexPage() {
             </aside>
             <div className="col-span-12 md:col-span-8 lg:col-span-9">
               <h1 className="display-xl">
-                Notas sobre <span className="italic"><span className="hl-accent">Salud Digital</span></span><br />
+                Notas sobre <span className="hl-accent">Salud Digital</span><br />
                 e IA clínica.
               </h1>
               <p className="lead mt-8 max-w-3xl">
@@ -69,10 +69,10 @@ export default function BlogIndexPage() {
             {blogPosts.map((post, index) => (
               <li
                 key={post.slug}
-                className={`grid grid-cols-12 gap-y-4 md:gap-x-8 py-10 ${index === 0 ? 'border-t-2 border-ink' : 'border-t border-rule'}`}
+                className={`grid grid-cols-12 gap-y-4 md:gap-x-8 py-10 ${index === 0 ? 'border-t-2 border-hairline' : 'border-t border-rule'}`}
               >
                 <div className="col-span-12 md:col-span-3">
-                  <div className="font-mono text-[0.7rem] uppercase tracking-widest text-ink-2">
+                  <div className="font-mono text-[0.7rem] text-ink-2">
                     № {String(index + 1).padStart(2, '0')}
                   </div>
                   <div className="caption mt-2">{formatDate(post.date)}</div>
@@ -81,7 +81,7 @@ export default function BlogIndexPage() {
 
                 <div className="col-span-12 md:col-span-9">
                   <Link href={`/blog/${post.slug}`} className="block group">
-                    <h2 className="display-m group-hover:italic transition-all">
+                    <h2 className="display-m group-hover:text-accent transition-all">
                       {post.title}
                     </h2>
                     <p className="lead mt-4 text-[1.05rem]">{post.description}</p>
@@ -93,7 +93,7 @@ export default function BlogIndexPage() {
                       ))}
                     </div>
                     <div className="mt-6">
-                      <span className="ed-link font-mono text-xs uppercase tracking-widest">
+                      <span className="ed-link font-mono text-xs">
                         Leer artículo →
                       </span>
                     </div>

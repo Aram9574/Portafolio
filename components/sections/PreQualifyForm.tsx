@@ -101,7 +101,7 @@ export default function PreQualifyForm({ initialAudience }: Props) {
                     <label
                       key={a.value}
                       className={`flex items-center gap-3 border px-4 py-3 cursor-pointer transition ${
-                        checked ? 'border-ink bg-bone' : 'border-rule bg-paper hover:border-ink'
+                        checked ? 'border-hairline bg-bone' : 'border-rule bg-paper hover:border-hairline'
                       }`}
                     >
                       <input
@@ -113,7 +113,7 @@ export default function PreQualifyForm({ initialAudience }: Props) {
                         className="sr-only"
                       />
                       <span
-                        className={`w-4 h-4 border-2 border-ink shrink-0 flex items-center justify-center ${
+                        className={`w-4 h-4 border-2 border-hairline shrink-0 flex items-center justify-center ${
                           checked ? 'bg-ink' : 'bg-paper'
                         }`}
                         aria-hidden="true"
@@ -137,7 +137,7 @@ export default function PreQualifyForm({ initialAudience }: Props) {
                 name="project"
                 value={project}
                 onChange={(e) => setProject(e.target.value as ProjectKind | '')}
-                className="w-full bg-paper border border-ink text-ink text-sm px-4 py-3 focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 focus:ring-offset-paper"
+                className="w-full bg-paper border border-hairline text-ink text-sm px-4 py-3 focus:outline-none focus:ring-2 focus:ring-ink focus:ring-offset-2 focus:ring-offset-paper"
               >
                 <option value="">Selecciona una opción…</option>
                 {PROJECTS.map((p) => (
@@ -158,7 +158,7 @@ export default function PreQualifyForm({ initialAudience }: Props) {
                     <label
                       key={t.value}
                       className={`flex items-center gap-3 border px-4 py-3 cursor-pointer transition ${
-                        checked ? 'border-ink bg-bone' : 'border-rule bg-paper hover:border-ink'
+                        checked ? 'border-hairline bg-bone' : 'border-rule bg-paper hover:border-hairline'
                       }`}
                     >
                       <input
@@ -170,7 +170,7 @@ export default function PreQualifyForm({ initialAudience }: Props) {
                         className="sr-only"
                       />
                       <span
-                        className={`w-4 h-4 border-2 border-ink shrink-0 flex items-center justify-center ${
+                        className={`w-4 h-4 border-2 border-hairline shrink-0 flex items-center justify-center ${
                           checked ? 'bg-ink' : 'bg-paper'
                         }`}
                         aria-hidden="true"
@@ -195,7 +195,7 @@ export default function PreQualifyForm({ initialAudience }: Props) {
               <a
                 href="#agenda"
                 onClick={skipToIframe}
-                className="ed-link font-mono text-xs uppercase tracking-widest"
+                className="ed-link font-mono text-xs"
               >
                 Prefiero reservar sin contexto →
               </a>
