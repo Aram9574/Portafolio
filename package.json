@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=18 <22"
+    "node": ">=20"
   },
   "scripts": {
     "doctor": "node scripts/doctor.mjs",
@@ -11,6 +11,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test tests/",
+    "test:e2e": "playwright test",
     "blog:generate": "node scripts/generate-weekly-post.mjs",
     "blog:dry": "node scripts/generate-weekly-post.mjs --dry-run"
   },
@@ -25,6 +28,7 @@
     "react-markdown": "^9.0.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.62.0",
     "@tailwindcss/typography": "^0.5.15",
     "@types/node": "20.14.11",
     "@types/react": "18.2.66",

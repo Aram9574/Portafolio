@@ -241,7 +241,7 @@ export default function SobreMiPage() {
           />
         </div>
       </Section>
-      <div className="pt-6 md:pt-10">
+      <div id="educacion" className="scroll-mt-24 pt-6 md:pt-10">
         <EducationSection />
       </div>
 

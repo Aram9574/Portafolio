@@ -10,10 +10,19 @@ export async function POST(req: Request) {
 
     const n8nWebhookUrl = process.env.N8N_WEBHOOK_URL;
 
-    // Si no está definida la URL de N8N (desarrollo local sin configurar), simulamos éxito
     if (!n8nWebhookUrl) {
-      console.warn('⚠️ N8N_WEBHOOK_URL no está definido. Simulando éxito de captura (Modo Dev). Correo capturado:', email);
-      return NextResponse.json({ success: true, warning: 'Simulated locally' }, { status: 200 });
+      // En desarrollo, sin webhook, simulamos éxito para poder probar el formulario.
+      if (process.env.NODE_ENV !== 'production') {
+        console.warn('⚠️ N8N_WEBHOOK_URL no definido. Simulando éxito (solo dev). Correo:', email);
+        return NextResponse.json({ success: true, warning: 'Simulated locally' }, { status: 200 });
+      }
+      // En producción NUNCA fingimos éxito: perderíamos el lead en silencio.
+      // Fallamos de forma visible para no engañar al usuario ni ocultar el fallo de config.
+      console.error('N8N_WEBHOOK_URL no configurado en producción. Lead NO capturado:', email);
+      return NextResponse.json(
+        { error: 'El servicio de suscripción no está disponible ahora mismo.' },
+        { status: 503 }
+      );
     }
 
     // Llamada real al Webhook de tu cuenta de n8n o Make

@@ -12,7 +12,7 @@ function inferCategory(slug: string, tags: string[]): Category {
   const s = slug.toLowerCase()
   const t = tags.map(x => x.toLowerCase())
   if (s.includes('erp') || s.includes('geriatr')) return 'Residencias'
-  if (t.includes('hl7/fhir')) return 'Interoperabilidad'
+  if (t.some(x => x.includes('fhir'))) return 'Interoperabilidad'
   if (s.includes('ml') || t.some(x => ['scikit-learn','logistic regression','python'].includes(x))) return 'ML clínico'
   return 'Hospital'
 }

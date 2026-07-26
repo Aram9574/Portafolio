@@ -1,6 +1,17 @@
 import { NextResponse } from 'next/server'
 import { headers } from 'next/headers'
 
+// Escapa entidades HTML para que el contenido del formulario no pueda inyectar
+// markup en el correo que se renderiza en la bandeja del destinatario.
+function escapeHtml(value: unknown): string {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+}
+
 declare global {
   // volatile en memoria del proceso para rate limit simple
   // eslint-disable-next-line no-var
@@ -72,10 +83,10 @@ export async function POST(req: Request) {
     const html = `
       <div style="font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; line-height:1.6; color:#0f172a">
         <h2 style="margin:0 0 12px">Nuevo mensaje del portafolio</h2>
-        <p style="margin:0 0 8px"><strong>Nombre:</strong> ${nombre}</p>
-        <p style="margin:0 0 8px"><strong>Email:</strong> ${email}</p>
+        <p style="margin:0 0 8px"><strong>Nombre:</strong> ${escapeHtml(nombre)}</p>
+        <p style="margin:0 0 8px"><strong>Email:</strong> ${escapeHtml(email)}</p>
         <p style="margin:0 0 8px"><strong>Consentimiento:</strong> ${consentimiento ? 'Sí' : 'No'}</p>
-        <pre style="white-space:pre-wrap; background:#f1f5f9; padding:12px; border-radius:8px; margin-top:12px">${mensaje}</pre>
+        <pre style="white-space:pre-wrap; background:#f1f5f9; padding:12px; border-radius:8px; margin-top:12px">${escapeHtml(mensaje)}</pre>
       </div>
     `
 

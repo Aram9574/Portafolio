@@ -11,8 +11,7 @@ type Props = { params: { slug: string } }
 const STATIC_OVERRIDES = new Set([
   'prediccion-ocupacion-hospitalaria',
   'clinai-classifier',
-  'tfm-deteccion-metabolica',
-  'erp-geriatrico-fhir'
+  'tfm-deteccion-metabolica'
 ])
 
 export function generateStaticParams() {

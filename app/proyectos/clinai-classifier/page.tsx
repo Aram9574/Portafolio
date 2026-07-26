@@ -92,7 +92,7 @@ export default function CaseStudyClinAIClassifier() {
                 Ver demo en Hugging Face →
               </a>
               <a
-                href="https://github.com/aramzakzuk/clinai-classifier"
+                href="https://github.com/Aram9574/clinai-classifier"
                 target="_blank"
                 rel="noreferrer"
                 className="btn-ghost"

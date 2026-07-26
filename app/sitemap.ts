@@ -34,7 +34,6 @@ const PROJECT_UPDATED: Record<string, string> = {
   'clinai-classifier': '2026-04-15',
   'tfm-deteccion-metabolica': '2026-03-20',
   'prediccion-ocupacion-hospitalaria': '2025-12-15',
-  'erp-geriatrico-fhir': '2025-09-10',
 }
 
 function dateFor(path: string, fallback: string): Date {
@@ -61,7 +60,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/experiencia`,      lastModified: dateFor('/experiencia', buildFallback),           changeFrequency: 'monthly', priority: 0.5 },
     { url: `${base}/soluciones/radiologia`,  lastModified: dateFor('/soluciones/radiologia', buildFallback),  changeFrequency: 'monthly', priority: 0.4 },
     { url: `${base}/soluciones/cardiologia`, lastModified: dateFor('/soluciones/cardiologia', buildFallback), changeFrequency: 'monthly', priority: 0.4 },
-    { url: `${base}/soluciones/oncologia`,   lastModified: dateFor('/soluciones/oncologia', buildFallback),   changeFrequency: 'monthly', priority: 0.4 }
+    { url: `${base}/soluciones/oncologia`,   lastModified: dateFor('/soluciones/oncologia', buildFallback),   changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${base}/legal/privacidad`,    lastModified: dateFor('/legal/privacidad', buildFallback),    changeFrequency: 'yearly', priority: 0.2 },
+    { url: `${base}/legal/cookies`,       lastModified: dateFor('/legal/cookies', buildFallback),       changeFrequency: 'yearly', priority: 0.2 },
+    { url: `${base}/legal/aviso-legal`,   lastModified: dateFor('/legal/aviso-legal', buildFallback),   changeFrequency: 'yearly', priority: 0.2 },
+    { url: `${base}/legal/accesibilidad`, lastModified: dateFor('/legal/accesibilidad', buildFallback), changeFrequency: 'yearly', priority: 0.2 }
   ]
 
   const projectRoutes: MetadataRoute.Sitemap = projects.map(p => ({
