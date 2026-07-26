@@ -124,7 +124,7 @@ export default function SobreMiPage() {
                 <a href="/contacto" className="btn-ghost">Contactar</a>
               </div>
               <div>
-                <div className="eyebrow mb-3">CV · tres versiones</div>
+                <div className="eyebrow mb-3">CV · dos versiones</div>
                 <CVDownloader />
               </div>
             </div>
