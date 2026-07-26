@@ -28,26 +28,30 @@ const config: Config = {
         warning: 'var(--warning)'
       },
       fontFamily: {
-        display: ['var(--font-display)', 'ui-serif', 'Georgia', 'serif'],
+        // Design Language: una sola sans (Inter) para display y texto; mono para datos/código.
+        display: ['var(--font-display)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         sans: ['var(--font-body)', 'ui-sans-serif', 'system-ui', 'sans-serif'],
         mono: ['var(--font-mono)', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
       borderRadius: {
+        // Escala del Design Language: 4 / 8 / 12 / 16 / pill.
         none: '0px',
-        xl: '0px',
-        '2xl': '0px'
-      },
-      boxShadow: {
-        // Sombra ambiente difusa: simula peso óptico sin línea negra dura.
-        // Aplicar selectivamente con `shadow-soft` en cards de proyecto, blog y CTAs.
-        soft: '0 24px 60px -28px rgba(26, 24, 21, 0.18), 0 8px 20px -12px rgba(26, 24, 21, 0.08)'
+        sm: '6px',
+        DEFAULT: '8px',
+        md: '8px',
+        lg: '12px',
+        xl: '16px',
+        '2xl': '16px',
+        full: '9999px'
       },
       transitionTimingFunction: {
-        // Curva editorial premium: arranque rápido, salida muy suave.
-        // Inspirada en Linear/Apple — más "haptic" que el ease-out por defecto.
-        out: 'cubic-bezier(0.32, 0.72, 0, 1)',
-        // Variante con anticipación sutil (overshoot al final) para hovers y micro-interacciones.
-        spring: 'cubic-bezier(0.34, 1.56, 0.64, 1)'
+        // Curva estándar única del Design Language: salida suave, sin overshoot.
+        out: 'cubic-bezier(0.2, 0, 0, 1)',
+        standard: 'cubic-bezier(0.2, 0, 0, 1)'
+      },
+      transitionDuration: {
+        fast: '120ms',
+        base: '200ms'
       }
     },
     container: {

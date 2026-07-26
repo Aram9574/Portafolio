@@ -1,12 +1,10 @@
 import type { Metadata } from 'next'
-import { Fraunces, IBM_Plex_Sans, JetBrains_Mono } from 'next/font/google'
+import { Inter, IBM_Plex_Mono } from 'next/font/google'
 import './globals.css'
 import { Navbar } from '@/components/Navbar'
 import { Footer } from '@/components/Footer'
 import { CookieBanner } from '@/components/CookieBanner'
 import { AOSProvider } from '@/components/AOSProvider'
-import ClinicalTicker from '@/components/layout/ClinicalTicker'
-import NoiseOverlay from '@/components/layout/NoiseOverlay'
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
 import { SOCIAL } from '@/lib/site'
 
@@ -71,40 +69,40 @@ export const metadata: Metadata = {
   category: 'healthcare'
 }
 
-const fraunces = Fraunces({
+// Design Language: Inter para display y texto (pesos 400/500/600/700),
+// IBM Plex Mono para datos, código y metadatos.
+const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
   preload: true,
+  weight: ['400', '500', '600', '700'],
   variable: '--font-display',
-  axes: ['opsz', 'SOFT'],
 })
 
-const plex = IBM_Plex_Sans({
+const interBody = Inter({
   subsets: ['latin'],
   display: 'swap',
   preload: true,
-  weight: ['300', '400', '500', '600'],
+  weight: ['400', '500', '600'],
   variable: '--font-body',
 })
 
-const mono = JetBrains_Mono({
+const mono = IBM_Plex_Mono({
   subsets: ['latin'],
   display: 'swap',
-  preload: false, // ticker/labels, no crítico
-  weight: ['400', '500'],
+  preload: false,
+  weight: ['400', '500', '600'],
   variable: '--font-mono',
 })
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" data-theme="ink" className={`${fraunces.variable} ${plex.variable} ${mono.variable}`}>
+    <html lang="es" className={`${inter.variable} ${interBody.variable} ${mono.variable}`}>
       <body className="relative min-h-[100dvh] antialiased flex flex-col">
-        <NoiseOverlay />
         <GoogleAnalytics />
         <AOSProvider />
         <Navbar />
-        <ClinicalTicker />
-        <main className="flex-1 pt-[calc(4rem+2rem)]">{children}</main>
+        <main className="flex-1 pt-16">{children}</main>
         <Footer />
         <CookieBanner />
         <script

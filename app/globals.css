@@ -3,38 +3,52 @@
 @tailwind utilities;
 
 /* =========================================================
-   Clinical Editorial — INK MODE (oscuro)
-   Negro tinta + crema + chartreuse clínico
+   Design Language · Aram Zakzuk (v1.0)
+   Crema cálido + tinta + un solo naranja. Profundidad por hairline,
+   nunca por sombra. Tokens = variables CSS, se usan por nombre.
    ========================================================= */
-:root, [data-theme="ink"] {
-  --ink: #1A1815;          /* tipografía: tinta cálida */
-  --ink-2: #3A3630;
-  --bone: #E8E2D4;         /* fondo: crema papel */
-  --paper: #F0EADC;        /* superficies elevadas: crema claro */
-  --rule: #1A1815;         /* reglas: tinta */
-  --accent: #1F6F5C;       /* verde clínico oscuro */
-  --accent-hover: #185546;
-  --danger: #D63B1F;
-  --muted: #5B564A;
-  --muted-2: #7A7468;
+:root, [data-theme="ink"], [data-theme="paper"] {
+  /* Marca */
+  --ink: #26251e;          /* casi negro cálido: titulares */
+  --ink-2: #5a5852;        /* texto corrido */
+  --accent: #f54e00;       /* naranja: CTAs y acentos, con moderación */
+  --accent-hover: #d04200; /* estado pulsado */
 
-  /* Legacy mapping */
+  /* Superficies */
+  --bone: #f7f7f4;         /* lienzo crema, nunca blanco puro */
+  --paper: #ffffff;        /* tarjetas */
+  --surface-strong: #e6e5e0; /* badges, pills */
+  --surface-inverted: #26251e;
+
+  /* Texto secundario */
+  --muted: #807d72;        /* subtítulos y rótulos */
+  --muted-2: #a09c92;      /* deshabilitado */
+
+  /* Hairlines (profundidad sin sombra) */
+  --hairline-soft: #efeee8;
+  --hairline: #e6e5e0;
+  --hairline-strong: #cfcdc4;
+  --hairline-inverted: #45443c;
+  --rule: #e6e5e0;         /* borde por defecto = hairline, no tinta */
+
+  /* Semántico */
+  --danger: #cf2d56;
+  --success: #1f8a65;
+  --warning: #f59e0b;
+
+  /* Legacy mapping (para clases que aún referencian estos nombres) */
   --bg: var(--bone);
   --surface: var(--paper);
   --primary: var(--accent);
   --primary-600: var(--accent-hover);
-  --success: #4ADE80;
-  --warning: #F59E0B;
-}
 
-[data-theme="paper"] {
-  --ink: #0A0A0A;
-  --ink-2: #1A1A1A;
-  --bone: #F4EFE6;
-  --paper: #FAF7F1;
-  --rule: #1A1A1A;
-  --muted: #5B564F;
-  --muted-2: #7A7469;
+  /* Radios y movimiento */
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-xl: 16px;
+  --duration-fast: 120ms;
+  --duration-base: 200ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
 }
 
 html, body { height: 100%; }
@@ -74,10 +88,10 @@ body {
 
 .section-index {
   font-family: var(--font-mono), monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-  color: var(--muted);
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  text-transform: none;
+  color: var(--muted-2);
 }
 
 /* =========================================================
@@ -150,12 +164,26 @@ body {
   color: var(--ink);
 }
 
+/* Rótulo (eyebrow) del Design Language: sentence case, Inter, muted,
+   con punto naranja delante. Sin mayúsculas: es la regla de la marca. */
 .eyebrow {
-  font-family: var(--font-mono), monospace;
-  font-size: 0.72rem;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-transform: none;
   color: var(--muted);
+}
+.eyebrow::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: var(--accent);
+  flex: none;
 }
 
 .lead {
@@ -176,90 +204,106 @@ body {
 /* =========================================================
    Botones
    ========================================================= */
+/* Botón download / oscuro: tinta con texto crema. Radio 8, Inter 500. */
 .btn-ink {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  padding: 0.9rem 1.4rem;
+  padding: 0.75rem 1.15rem;
   background: var(--ink);
   color: var(--bone);
   border: 1px solid var(--ink);
-  font-family: var(--font-mono), monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
+  border-radius: var(--radius-md);
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  transition: background var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard);
 }
-.btn-ink:hover { background: var(--accent); color: var(--bone); border-color: var(--accent); }
+.btn-ink:hover { background: #1c1b16; border-color: #1c1b16; color: var(--bone); }
 
+/* Botón secundario: blanco con borde hairline. */
 .btn-ghost {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  padding: 0.9rem 1.4rem;
-  background: transparent;
+  padding: 0.75rem 1.15rem;
+  background: var(--paper);
   color: var(--ink);
-  border: 1px solid var(--ink);
-  font-family: var(--font-mono), monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  transition: background 180ms ease, color 180ms ease;
+  border: 1px solid var(--hairline-strong);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  transition: background var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard);
 }
-.btn-ghost:hover { background: var(--ink); color: var(--bone); }
+.btn-ghost:hover { background: var(--bone); border-color: var(--ink); }
 
+/* Botón primario: naranja, uno por vista. */
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.15rem;
+  background: var(--accent);
+  color: #fff;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-md);
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  transition: background var(--duration-fast) var(--ease-standard), border-color var(--duration-fast) var(--ease-standard);
+}
+.btn-accent:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
+
+/* Chip / etiqueta: pill con hairline, sentence case. */
 .chip-ed {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
-  padding: 0.6rem 1rem;
-  border: 1px solid var(--rule);
-  font-family: var(--font-mono), monospace;
-  font-size: 0.82rem;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+  gap: 0.5rem;
+  padding: 0.4rem 0.85rem;
+  border: 1px solid var(--hairline-strong);
+  border-radius: 9999px;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-transform: none;
   color: var(--ink);
-  background: transparent;
-  transition: background 180ms ease, color 180ms ease;
+  background: var(--paper);
+  transition: border-color var(--duration-fast) var(--ease-standard);
 }
-.chip-ed:hover {
-  background: var(--ink);
-  color: var(--bone);
-}
-.chip-ed svg {
-  width: 1rem;
-  height: 1rem;
-}
+.chip-ed:hover { border-color: var(--ink); }
+.chip-ed svg { width: 1rem; height: 1rem; color: var(--muted); }
 
+/* Motivo de énfasis: subrayado naranja de 3px bajo la frase clave. */
 .hl-accent {
   color: var(--ink);
   background-image: linear-gradient(var(--accent), var(--accent));
   background-repeat: no-repeat;
   background-position: 0 100%;
-  background-size: 100% 0.14em;
-  padding-bottom: 0.04em;
+  background-size: 100% 3px;
+  padding-bottom: 0.06em;
   box-decoration-break: clone;
   -webkit-box-decoration-break: clone;
 }
 
-/* Enlaces editoriales */
+/* Enlaces: naranja, sin subrayado por defecto, oscurece al pasar. */
 a.ed-link {
   position: relative;
-  color: var(--ink);
+  color: var(--accent);
   text-decoration: none;
-  padding-bottom: 2px;
-  background-image: linear-gradient(var(--ink), var(--ink));
-  background-size: 100% 1px;
-  background-repeat: no-repeat;
-  background-position: 0 100%;
-  transition: background-size 280ms ease, color 180ms ease;
+  font-weight: 500;
+  transition: color var(--duration-fast) var(--ease-standard);
 }
-a.ed-link:hover {
-  background-image: linear-gradient(var(--accent), var(--accent));
-  background-size: 100% 40%;
-  background-position: 0 90%;
-  color: var(--bone);
-}
+a.ed-link:hover { color: var(--accent-hover); }
 
 :focus-visible {
   outline: 2px solid var(--accent);
@@ -328,41 +372,42 @@ a.ed-link:hover {
    Legacy: .card / .chip / .btn-primary — versión oscura
    ========================================================= */
 .card {
-  border: 1px solid var(--rule);
+  border: 1px solid var(--hairline);
   background: var(--paper);
   padding: 1.5rem;
-  border-radius: 0;
-  transition: border-color 200ms ease;
+  border-radius: var(--radius-lg);
+  transition: border-color var(--duration-base) var(--ease-standard);
 }
-.card:hover { border-color: var(--ink); }
+.card:hover { border-color: var(--hairline-strong); }
 
 .chip {
   display: inline-flex;
   align-items: center;
-  padding: 0.3rem 0.7rem;
-  border: 1px solid var(--rule);
-  font-family: var(--font-mono), monospace;
-  font-size: 0.7rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  background: transparent;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--hairline-strong);
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.85rem;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  background: var(--paper);
   color: var(--ink);
-  border-radius: 0;
+  border-radius: 4px;
 }
 
 .btn-primary {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.9rem 1.4rem;
+  padding: 0.75rem 1.15rem;
   background: var(--accent);
-  color: var(--bone);
+  color: #fff;
   border: 1px solid var(--accent);
-  font-family: var(--font-mono), monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  border-radius: 0;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  border-radius: var(--radius-md);
 }
 .btn-primary:hover { background: var(--accent-hover); border-color: var(--accent-hover); }
 
@@ -370,23 +415,23 @@ a.ed-link:hover {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.9rem 1.4rem;
-  border: 1px solid var(--ink);
+  padding: 0.75rem 1.15rem;
+  border: 1px solid var(--hairline-strong);
   color: var(--ink);
-  font-family: var(--font-mono), monospace;
-  font-size: 0.78rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  border-radius: 0;
-  background: transparent;
+  font-family: var(--font-body), sans-serif;
+  font-size: 0.95rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  text-transform: none;
+  border-radius: var(--radius-md);
+  background: var(--paper);
 }
-.btn-outline:hover { background: var(--ink); color: var(--bone); }
+.btn-outline:hover { background: var(--bone); border-color: var(--ink); }
 
 .section-title {
-  font-family: var(--font-display), serif;
-  font-variation-settings: "opsz" 96;
+  font-family: var(--font-display), sans-serif;
   font-weight: 400;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.03em;
   color: var(--ink);
 }
 
@@ -408,8 +453,8 @@ a.ed-link:hover {
 .hover\:bg-emerald-300:hover { background-color: var(--ink-2) !important; }
 .hover\:text-emerald-400:hover { color: var(--ink) !important; }
 
-/* El viejo "black" de botones ahora debe ser "bone" (fondo) para contraste sobre accent */
-.text-black { color: var(--bone) !important; }
+/* En tema claro, el texto negro se mapea a tinta cálida. */
+.text-black { color: var(--ink) !important; }
 
 /* AOS timing — curva premium editorial (sobrescribe la default de AOS) */
 [data-aos] { transition-timing-function: cubic-bezier(0.32, 0.72, 0, 1); }
