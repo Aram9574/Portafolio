@@ -490,7 +490,9 @@
         "Salud Digital",
         "Europa"
       ],
-      "published": false
+      "published": true,
+      "publishedSlug": "telemedicina-europa-post-pandemia",
+      "publishedDate": "2026-07-27"
     },
     {
       "id": "llm-resumen-clinico-ambient-scribe",
