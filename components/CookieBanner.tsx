@@ -8,6 +8,8 @@ type Consent = 'granted' | 'denied'
 
 function updateGtagConsent(status: Consent) {
   if (typeof window === 'undefined') return
+  // Avisa a otros sistemas de analítica (p. ej. PostHog) del cambio de consentimiento.
+  window.dispatchEvent(new CustomEvent('cookie-consent-changed', { detail: status }))
   // @ts-ignore
   if (typeof window.gtag !== 'function') return
   // @ts-ignore

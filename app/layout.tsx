@@ -6,6 +6,7 @@ import { Footer } from '@/components/Footer'
 import { CookieBanner } from '@/components/CookieBanner'
 import { AOSProvider } from '@/components/AOSProvider'
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
+import PostHogProvider from '@/components/analytics/PostHogProvider'
 import { SOCIAL } from '@/lib/site'
 
 export const metadata: Metadata = {
@@ -100,6 +101,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="es" className={`${inter.variable} ${interBody.variable} ${mono.variable}`}>
       <body className="relative min-h-[100dvh] antialiased flex flex-col">
         <GoogleAnalytics />
+        <PostHogProvider />
         <AOSProvider />
         <Navbar />
         <main className="flex-1 pt-16">{children}</main>
