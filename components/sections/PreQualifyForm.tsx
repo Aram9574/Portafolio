@@ -8,7 +8,7 @@ type ProjectKind = 'proyecto_concreto' | 'exploracion' | 'pliego' | 'advisory' |
 type Timeline = 'inmediato' | 'trimestre' | 'q3q4_2026' | 'flexible'
 
 const AUDIENCES: { value: Audience; label: string }[] = [
-  { value: 'hospital', label: 'FirstAidKit / aseguradora' },
+  { value: 'hospital', label: 'Hospital / aseguradora' },
   { value: 'consultora', label: 'Consultora' },
   { value: 'publico', label: 'Administración pública' },
   { value: 'healthtech', label: 'HealthTech / MedTech / Farma' },
@@ -30,7 +30,9 @@ const TIMELINES: { value: Timeline; label: string }[] = [
   { value: 'flexible', label: 'Flexible' },
 ]
 
-const CALENDLY_BASE = 'https://calendly.com/zakzukaram'
+// Apunta al evento real de la agenda ("30 Minute Meeting"), así el visitante
+// llega directo al calendario sin un paso intermedio de selección.
+const CALENDLY_BASE = 'https://calendly.com/zakzukaram/30min'
 
 type Props = {
   initialAudience?: Audience
@@ -87,7 +89,7 @@ export default function PreQualifyForm({ initialAudience }: Props) {
             <div className="mb-6">
               <h3 className="font-display text-2xl text-ink mb-2">Antes de reservar, tres preguntas rápidas</h3>
               <p className="text-sm text-ink-2">
-                Tu contexto llega conmigo a la llamada y aprovechamos mejor los 15 minutos.
+                Tu contexto llega conmigo y aprovechamos mejor la llamada.
               </p>
             </div>
 

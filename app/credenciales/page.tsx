@@ -204,7 +204,7 @@ export default function CredencialesPage() {
               ¿Necesitas validar una credencial o ver el CV completo?
             </h2>
             <p className="lead mt-4">
-              Puedo compartir la documentación original y el contexto clínico de cada certificación. Revisamos el encaje para tu hospital, consultora o administración en una llamada de 15 minutos.
+              Puedo compartir la documentación original y el contexto clínico de cada certificación. Revisamos el encaje para tu hospital, consultora o administración en una llamada.
             </p>
           </div>
           <div className="md:col-span-4 flex flex-wrap gap-3 md:justify-end">

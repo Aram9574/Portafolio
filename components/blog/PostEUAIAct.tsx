@@ -165,7 +165,7 @@ export default function PostEUAIAct() {
           clasificación inicial y en el plan de cumplimiento asociado.
         </p>
         <a href="/contacto#agenda" className="btn-ink">
-          Reservar llamada de 15 min →
+          Reservar una llamada →
         </a>
       </div>
     </div>

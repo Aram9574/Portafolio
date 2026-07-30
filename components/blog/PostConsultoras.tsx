@@ -144,12 +144,12 @@ export default function PostConsultoras() {
           similar, hablemos.
         </h3>
         <p className="mb-6">
-          Sesión de 15 minutos para revisar el proyecto concreto, identificar
+          Una llamada para revisar el proyecto concreto, identificar
           los riesgos clínicos y regulatorios que no están cubiertos y
           proponer un encaje de advisoría.
         </p>
         <a href="/contacto#agenda" className="btn-ink">
-          Reservar llamada de 15 min →
+          Reservar una llamada →
         </a>
       </div>
     </div>

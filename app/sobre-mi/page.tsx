@@ -225,7 +225,7 @@ export default function SobreMiPage() {
 
           <ExperienceItem
             icon="hospital"
-            title="Médico Interno Rotatorio · Méderi (FirstAidKit Universitario Mayor)"
+            title="Médico Interno Rotatorio · Méderi (Hospital Universitario Mayor)"
             context="Diciembre 2023 – Diciembre 2024 · Bogotá, Colombia"
             bullets={[
               '12 meses de práctica clínica continua en hospital universitario de tercer nivel: medicina interna, urgencias, pediatría, ginecología y obstetricia, neurología, psiquiatría y atención primaria.',

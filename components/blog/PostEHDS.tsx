@@ -180,10 +180,10 @@ export default function PostEHDS() {
         <p className="mb-6">
           Asesoro a hospitales, consultoras y administración pública en el
           diseño de ese roadmap con criterio clínico, técnico y regulatorio. La
-          primera sesión de 15 minutos sirve para ver si encajamos.
+          primera llamada sirve para ver si encajamos.
         </p>
         <a href="/contacto#agenda" className="btn-ink">
-          Reservar llamada de 15 min →
+          Reservar una llamada →
         </a>
       </div>
     </div>

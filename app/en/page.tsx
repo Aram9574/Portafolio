@@ -98,7 +98,7 @@ export default function AboutEnPage() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link href="/contacto?audience=healthtech" className="btn-ink">
-                Book a 15-min call →
+                Book a call →
               </Link>
               <a
                 href="https://linkedin.com/in/aramzakzuk"

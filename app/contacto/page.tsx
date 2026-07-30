@@ -106,7 +106,7 @@ export default function ContactoPage() {
       <Section
         id="reservar"
         index="№ 02 — Agenda"
-        title="Reserva 15 minutos"
+        title="Reserva una llamada"
         subtitle="Si prefieres hablar antes que escribir, cuéntame el contexto en tres clics y elige hueco en mi agenda."
       >
         <PreQualifyForm />
