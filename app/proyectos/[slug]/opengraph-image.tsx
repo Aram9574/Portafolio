@@ -1,5 +1,6 @@
 import { ImageResponse } from 'next/og'
 import { projects } from '@/lib/data/projects'
+import { OgFrame } from '@/lib/og'
 
 export const runtime = 'nodejs'
 export const size = { width: 1200, height: 630 }
@@ -13,36 +14,14 @@ export default function Image({ params }: { params: { slug: string } }) {
 
   return new ImageResponse(
     (
-      <div
-        style={{
-          width: '100%',
-          height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
-          background: '#EFE8D9',
-          padding: '64px',
-          fontFamily: 'serif',
-          color: '#111110',
-        }}
-      >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 20, letterSpacing: 3, textTransform: 'uppercase', opacity: 0.7 }}>
-          <div style={{ display: 'flex' }}>Case Study · Aram Zakzuk, MD</div>
-          <div style={{ display: 'flex' }}>{tag}</div>
-        </div>
-
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
-          <div style={{ display: 'flex', height: 6, width: 120, background: '#1F6F5C' }} />
-          <div style={{ display: 'flex', fontSize: 60, lineHeight: 1.1, fontWeight: 500, letterSpacing: -1 }}>
-            {title.length > 110 ? title.slice(0, 107) + '…' : title}
-          </div>
-        </div>
-
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', fontSize: 20, opacity: 0.7, borderTop: '1px solid #111110', paddingTop: 24 }}>
-          <div style={{ display: 'flex' }}>alejandrozakzuk.com/proyectos</div>
-          <div style={{ display: 'flex' }}>Clinical AI Specialist · MD</div>
-        </div>
-      </div>
+      <OgFrame
+        eyebrowLeft="Case study · Aram Zakzuk, MD"
+        eyebrowRight={tag}
+        title={title.length > 110 ? title.slice(0, 107) + '…' : title}
+        footerLeft="alejandrozakzuk.com/proyectos"
+        footerRight="Clinical AI Specialist · MD"
+        titleSize={60}
+      />
     ),
     size
   )

@@ -53,7 +53,7 @@ export default function HomePage() {
                     alt="Aram Zakzuk, MD · Clinical AI Specialist"
                     fill
                     sizes="(min-width: 1024px) 22vw, 33vw"
-                    className="object-cover grayscale transition-all duration-700 group-hover:grayscale-0"
+                    className="object-cover"
                     priority
                   />
                 </div>
