@@ -7,6 +7,7 @@ import { CookieBanner } from '@/components/CookieBanner'
 import { AOSProvider } from '@/components/AOSProvider'
 import GoogleAnalytics from '@/components/analytics/GoogleAnalytics'
 import PostHogProvider from '@/components/analytics/PostHogProvider'
+import AutoEvents from '@/components/analytics/AutoEvents'
 import { SOCIAL } from '@/lib/site'
 
 export const metadata: Metadata = {
@@ -102,6 +103,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body className="relative min-h-[100dvh] antialiased flex flex-col">
         <GoogleAnalytics />
         <PostHogProvider />
+        <AutoEvents />
         <AOSProvider />
         <Navbar />
         <main className="flex-1 pt-16">{children}</main>

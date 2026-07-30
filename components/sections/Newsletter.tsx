@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Envelope, Sparkle, CircleNotch, CheckCircle } from '@phosphor-icons/react/dist/ssr';
+import { analyticsEvents } from '@/lib/analytics';
 
 export default function Newsletter() {
   const [email, setEmail] = useState('');
@@ -23,6 +24,7 @@ export default function Newsletter() {
       if (res.ok) {
         setStatus('success');
         setEmail('');
+        analyticsEvents.newsletterSubscribe('Newsletter House');
       } else {
         setStatus('error');
       }
