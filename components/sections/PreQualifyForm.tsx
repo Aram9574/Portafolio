@@ -213,7 +213,7 @@ export default function PreQualifyForm({ initialAudience }: Props) {
       </div>
 
       {/* Iframe sección (ancla real de agenda) */}
-      <div ref={iframeSectionRef} id="agenda" className="mt-10 border border-rule bg-paper p-2 scroll-mt-24">
+      <div ref={iframeSectionRef} id="agenda" className="mt-10 rounded-lg border border-hairline bg-paper p-2 scroll-mt-24">
         <div className="aspect-[16/9] w-full">
           <iframe
             key={calendlyUrl}

@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { Download, ShieldCheck, Envelope, CheckCircle, CircleNotch } from '@phosphor-icons/react/dist/ssr';
+import { analyticsEvents } from '@/lib/analytics';
 
 export default function LeadMagnet() {
   const [email, setEmail] = useState('');
@@ -17,12 +18,13 @@ export default function LeadMagnet() {
       const res = await fetch('/api/newsletter', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ email, source: 'Lead Magnet' }),
       });
 
       if (res.ok) {
         setStatus('success');
         setEmail('');
+        analyticsEvents.newsletterSubscribe('Lead Magnet');
       } else {
         setStatus('error');
       }

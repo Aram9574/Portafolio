@@ -4,6 +4,7 @@ import Section from '@/components/ui/Section'
 import { Envelope, MapPin, LinkedinLogo, GithubLogo } from '@phosphor-icons/react/dist/ssr'
 import { SOCIAL } from '@/lib/site'
 import CopyButton from '@/components/ui/CopyButton'
+import PreQualifyForm from '@/components/sections/PreQualifyForm'
 import Script from 'next/script'
 
 export const metadata: Metadata = {
@@ -99,6 +100,16 @@ export default function ContactoPage() {
             <ContactForm />
           </div>
         </div>
+      </Section>
+
+      {/* Reserva de llamada: cualifica el contexto y abre la agenda */}
+      <Section
+        id="reservar"
+        index="№ 02 — Agenda"
+        title="Reserva 15 minutos"
+        subtitle="Si prefieres hablar antes que escribir, cuéntame el contexto en tres clics y elige hueco en mi agenda."
+      >
+        <PreQualifyForm />
       </Section>
 
       <Script
