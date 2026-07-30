@@ -10,7 +10,10 @@ import Script from 'next/script'
  * - Esto cumple con LSSI art. 22.2, RGPD y directrices AEPD.
  */
 export default function GoogleAnalytics() {
-  const id = process.env.NEXT_PUBLIC_GA_ID
+  // El Measurement ID de GA4 es público (aparece en el HTML), así que lo dejamos
+  // cableado como valor por defecto para que funcione sin configurar Vercel.
+  // Se puede sobreescribir con la variable de entorno NEXT_PUBLIC_GA_ID.
+  const id = process.env.NEXT_PUBLIC_GA_ID || 'G-TX3LPT5TME'
   if (!id) return null
 
   return (
