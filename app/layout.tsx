@@ -56,14 +56,14 @@ export const metadata: Metadata = {
     url: 'https://alejandrozakzuk.com',
     siteName: 'Aram Zakzuk · Médico · Salud Digital · IA en Sanidad',
     title: 'Aram Zakzuk, MD · Clinical AI Specialist',
-    description: 'La combinación escasa que separa los proyectos en producción de los pilotos: criterio médico hospitalario + doble máster en IA aplicada a Sanidad y Salud Digital + marco regulatorio europeo (EU AI Act, MDR, SaMD). Disponible para HealthTech, MedTech y Pharma Digital.',
-    images: [{ url: '/og-default.png', width: 1200, height: 630 }]
+    description: 'La combinación escasa que separa los proyectos en producción de los pilotos: criterio médico hospitalario + doble máster en IA aplicada a Sanidad y Salud Digital + marco regulatorio europeo (EU AI Act, MDR, SaMD). Disponible para HealthTech, MedTech y Pharma Digital.'
+    // Imagen OG generada dinámicamente por app/opengraph-image.tsx (Design Language).
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Aram Zakzuk, MD · Clinical AI Specialist',
-    description: 'Médico + doble máster en IA y Salud Digital + EU AI Act / MDR / SaMD. Disponible para HealthTech, MedTech y Pharma Digital. Madrid.',
-    images: ['/og-default.png']
+    description: 'Médico + doble máster en IA y Salud Digital + EU AI Act / MDR / SaMD. Disponible para HealthTech, MedTech y Pharma Digital. Madrid.'
+    // Sin images: Next usa la opengraph-image generada para la tarjeta de Twitter.
   },
   authors: [{ name: 'Aram Zakzuk', url: 'https://alejandrozakzuk.com' }],
   category: 'healthcare'
