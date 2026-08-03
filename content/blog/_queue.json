@@ -504,7 +504,9 @@
         "Ambient scribe",
         "Clinical AI"
       ],
-      "published": false
+      "published": true,
+      "publishedSlug": "llm-resumen-clinico-ambient-scribe",
+      "publishedDate": "2026-08-03"
     },
     {
       "id": "seguridad-paciente-ia-incidentes",
