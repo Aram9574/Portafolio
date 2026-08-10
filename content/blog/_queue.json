@@ -518,7 +518,9 @@
         "Clinical AI",
         "Monitoring"
       ],
-      "published": false
+      "published": true,
+      "publishedSlug": "seguridad-paciente-ia-incidentes",
+      "publishedDate": "2026-08-10"
     },
     {
       "id": "mlops-clinico-diferencia",
