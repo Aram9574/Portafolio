@@ -532,7 +532,9 @@
         "Clinical AI",
         "MDR"
       ],
-      "published": false
+      "published": true,
+      "publishedSlug": "mlops-clinico-diferencia",
+      "publishedDate": "2026-08-17"
     },
     {
       "id": "consentimiento-granular-ehds-como-implementar",
